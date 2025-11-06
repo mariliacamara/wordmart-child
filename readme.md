@@ -1,1 +1,3 @@
 # ZINCOMED CHILD
+
+Developted by:
