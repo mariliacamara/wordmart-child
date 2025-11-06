@@ -1,0 +1,41 @@
+/*
+Theme Name: Woodmart Child
+Theme URI:  https://www.wpserveur.net
+Author:     WPServeur
+Author URI: https://www.wpserveur.net
+Template:   woodmart
+Version:    1.0
+License:    GNU General Public License v2 or later
+*/
+
+:root {
+  --primary-bg-color: green; /* global scope */
+  --primary-color: #010a53;
+  --secondary-color: #29b0c2;
+  --white-color: #fff;
+}
+
+.woocommerce-MyAccount-title {
+    color: var(--secondary-color);
+}
+
+.woocommerce-MyAccount-navigation ul li a {
+    text-transform: uppercase!important;
+    color: var(--primary-color)!important;
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active {
+    background-color: var(--primary-color);
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active>a {
+    color: var(--white-color)!important;
+}
+
+.woocommerce-account .page-title {
+    display: none !important;
+}
+
+.woocommerce-MyAccount-content>p {
+    margin-bottom: 0.5px;
+}
