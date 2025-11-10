@@ -6,6 +6,18 @@ global $product;
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
+  <!-- Breadcrumb -->
+  <div class="wd-breadcrumbs-wrap">
+    <?php if ( function_exists( 'woodmart_current_breadcrumbs' ) ) : ?>
+      <div class="wd-breadcrumbs">
+        <?php woodmart_current_breadcrumbs( 'shop' ); ?>
+      </div>
+    <?php else : ?>
+      <?php woocommerce_breadcrumb(); ?>
+    <?php endif; ?>
+  </div>
+
+
 	<div class="wd-product-top container">
 
 		<div class="row wd-product-main">
