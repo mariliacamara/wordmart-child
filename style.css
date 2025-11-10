@@ -39,3 +39,47 @@ License:    GNU General Public License v2 or later
 .woocommerce-MyAccount-content>p {
     margin-bottom: 0.5px;
 }
+
+/* Layout */
+.wd-product-top { padding: 30px 0; }
+.wd-product-gallery-col { padding-right: 30px; }
+.wd-product-summary-col { padding-left: 30px; display:flex; align-items:flex-start; }
+.wd-summary-inner { width:100%; }
+
+/* Title / brand */
+.wd-product-brand .brand-name { font-weight:700; color:#7a7a7a; display:block; margin-bottom:6px; text-transform:uppercase; }
+.product-title { font-size:28px; margin:0 0 10px; }
+
+/* Price pill */
+.wd-price-pill .price { background:#f8c83b; display:inline-block; padding:10px 18px; border-radius:12px; font-weight:700; font-size:22px; color:#111; }
+
+/* Rating */
+.wd-rating { margin:8px 0 10px; }
+
+/* Delivery */
+.wd-delivery { margin-bottom:12px; color: #2e8b2e; font-weight:600; }
+
+/* Add to cart and quantity */
+.woocommerce div.product form.cart { display:flex; align-items:center; gap:12px; margin:16px 0; }
+.woocommerce .quantity { display:inline-flex; align-items:center; gap:8px; }
+.woocommerce .quantity input.qty { width:56px; text-align:center; padding:8px; border-radius:6px; border:1px solid #ddd; }
+.woocommerce .single_add_to_cart_button { background:#072052; color:#fff; padding:12px 20px; border-radius:10px; border:none; text-transform:uppercase; font-weight:700; }
+
+/* Variation select to look boxed (basic) */
+.variations { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
+.variations .value { display:flex; gap:8px; align-items:center; }
+.variations label { display:block; font-weight:700; margin-bottom:6px; }
+
+/* Tabs / description */
+.woocommerce-tabs { margin-top:30px; border-top:1px solid #e6e6e6; padding-top:20px; }
+.woocommerce-tabs .panel { padding-top:15px; }
+
+/* Related products full width */
+.related-and-upsells { margin-top:40px; }
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+	.wd-product-gallery-col, .wd-product-summary-col { padding:0; }
+	.wd-product-gallery-col, .wd-product-summary-col { width:100%; }
+	.woocommerce div.product form.cart { flex-direction:row; flex-wrap:wrap; }
+}
