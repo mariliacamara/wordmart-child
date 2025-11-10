@@ -7,7 +7,7 @@ global $product;
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
   <!-- Breadcrumb -->
-  <div class="wd-breadcrumbs-wrap">
+  <div class="wd-breadcrumbs-wrap container">
     <?php if ( function_exists( 'woodmart_current_breadcrumbs' ) ) : ?>
       <div class="wd-breadcrumbs">
         <?php woodmart_current_breadcrumbs( 'shop' ); ?>
