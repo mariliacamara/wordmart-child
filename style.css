@@ -174,6 +174,7 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 .wd-nav.wd-style-underline-reverse>li>a>.nav-link-text:after {
     top: -15px!important;
     height: 5px;
+    color: var(--secondary-color);
 }
 
 .wd-nav[class*="wd-style-underline"] .nav-link-text {
