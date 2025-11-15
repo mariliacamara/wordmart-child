@@ -102,11 +102,7 @@ global $product;
 
           <!-- ======== AQUI: Informacao Adicional (colada abaixo do SKU) ======== -->
           <div class="wd-additional-info-below-sku">
-            <?php
-            // Garante que o template de "additional information" tem acesso a $product
-            // e usa o template padrão do WooCommerce que gera a tabela Peso / Medidas / Atributos.
-            wc_get_template( 'single-product/tabs/additional-information.php' );
-            ?>
+             <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
           </div>
           <!-- ================================================================ -->
 
