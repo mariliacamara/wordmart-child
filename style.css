@@ -185,27 +185,149 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
     width: 30%!important;
 }
 
-/* Título e espaçamento da secção de relacionados */
-.wd-related-products {
-  margin: 50px 0;
+/* ============== Related products: card visual (WoodMart) ============== */
+/* Container / grid */
+.wd-related-products { margin: 50px 0; }
+.wd-related-grid { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 -10px; }
+
+/* Each product card */
+.wd-related-grid .product,
+.product-grid-item.product {
+  width: calc(25% - 20px);
+  box-sizing: border-box;
+  padding: 0 10px;
 }
-.wd-related-products .wd-related-title {
-  font-size: 22px;
+
+/* Card inner wrapper */
+.product-grid-item .product-wrapper,
+.product .product-wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16, 24, 60, 0.06);
+  border: 1px solid rgba(16,24,60,0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top: image area */
+.product-element-top { text-align: center; padding-bottom: 6px; }
+.product-element-top .product-image-link img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 8px auto 12px;
+}
+
+/* Title / brand / meta */
+.wd-entities-title { 
+  font-size: 15px; 
+  font-weight: 600; 
+  margin: 8px 0 10px; 
+  line-height: 1.2;
+  color: #222;
+}
+.product-wrapper .product-element-bottom .wd-entities-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Small brand label above title (if exists) */
+.product-wrapper .product-element-bottom .brand,
+.product-wrapper .product-element-bottom .product-brand,
+.product .posted_in {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #8b8b8b;
+  margin-bottom: 6px;
+}
+
+/* Thin separator line */
+.product-wrapper .product-element-bottom hr,
+.product-wrapper .product-element-bottom .sep-line {
+  border: none;
+  border-top: 1px solid rgba(16,24,60,0.08);
+  margin: 10px 0;
+}
+
+/* Rating centered under separator */
+.product-wrapper .product-element-bottom .star-rating,
+.product-wrapper .product-element-bottom .woocommerce-product-rating {
+  display: block;
+  text-align: center;
+  margin: 8px 0 12px;
+}
+
+/* Ensure star icons visible */
+.star-rating,
+.star-rating::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Price + button row */
+.product-wrapper .product-element-bottom .wd-add-btn,
+.product-wrapper .product-element-bottom .wd-add-btn-replace,
+.product-wrapper .product-element-bottom .price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* Price pill (yellow) */
+.product-wrapper .product-element-bottom .price {
+  flex: 0 0 auto;
+}
+.product-wrapper .price .woocommerce-Price-amount {
+  background: #f5c63b; /* amarelo */
+  color: #08103a;
+  padding: 8px 12px;
+  border-radius: 10px;
   font-weight: 700;
-  color: #14224a; /* ajusta se necessário */
-  margin-bottom: 18px;
+  display: inline-block;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
 }
 
-/* Grid: 4 colunas responsivas (usa as classes row/col do tema se preferir) */
-.wd-related-grid .product {
-  margin-bottom: 24px;
-  /* o template content-product do tema já aplica o card, shadow e radius */
+/* Add to cart / CTA button (blue) */
+.product-wrapper .product-element-bottom .add_to_cart_button,
+.product-wrapper .product-element-bottom .button,
+.product-wrapper .product-element-bottom .wd-add-btn a.button,
+.product-wrapper .product-element-bottom .wd-add-btn-replace .button {
+  background: #08103a !important;
+  color: #fff !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* Responsivo: 2 col em tablet, 1 col em mobile */
+/* Button + price alignment: price left, btn right */
+.product-wrapper .product-element-bottom .wd-add-btn { justify-content: space-between; width: 100%; }
+
+/* Card footer spacing */
+.product-wrapper .product-element-bottom { padding-top: 8px; }
+
+/* Make rating stars slightly larger */
+.product-wrapper .product-element-bottom .star-rating { font-size: 18px; line-height: 1; }
+
+/* Ensure image area and bottom align nicely */
+.product-wrapper .product-element-top,
+.product-wrapper .product-element-bottom { flex: 0 0 auto; }
+
+/* Responsive: 2 columns on tablet, 1 on mobile */
 @media (max-width: 991px) {
-  .wd-related-grid .product { width: 50%; float: left; box-sizing: border-box; padding: 0 10px; }
+  .wd-related-grid .product,
+  .product-grid-item.product { width: calc(50% - 20px); }
 }
 @media (max-width: 560px) {
-  .wd-related-grid .product { width: 100%; padding: 0 10px; }
+  .wd-related-grid .product,
+  .product-grid-item.product { width: 100%; padding: 0 8px; }
 }
