@@ -114,3 +114,7 @@ License:    GNU General Public License v2 or later
     color: #777;
     font-style: italic;
 }
+
+p.stock {
+    display: none
+}
