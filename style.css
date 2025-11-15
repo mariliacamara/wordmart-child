@@ -166,5 +166,5 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 }
 
 .wd-nav.wd-style-underline-reverse>li>a {
-    padding-top: 5px;
+    padding-top: 5px!important;
 }
