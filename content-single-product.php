@@ -17,22 +17,19 @@ global $product;
   </div>
 
   <div class="wd-product-top container">
+
     <div class="row wd-product-main">
 
-      <!-- LEFT: Gallery (usa o hook padrão para carregar imagens) -->
+      <!-- LEFT: Gallery -->
       <div class="col-lg-6 wd-product-gallery-col">
         <div class="wd-product-gallery">
           <?php
-          /**
-           * Show product images
-           * hooked normally via woocommerce_before_single_product_summary
-           */
           do_action( 'woocommerce_before_single_product_summary' );
           ?>
         </div>
       </div>
 
-      <!-- RIGHT: Summary (renderizado manualmente para controlar ordem e evitar duplicados) -->
+      <!-- RIGHT: Summary -->
       <div class="col-lg-6 wd-product-summary-col">
         <div class="wd-summary-inner">
 
@@ -49,22 +46,40 @@ global $product;
           <!-- Title -->
           <h1 class="product-title"><?php the_title(); ?></h1>
 
-          <!-- Short description / excerpt -->
+          <!-- Excerpt -->
           <div class="product-excerpt">
             <?php the_excerpt(); ?>
           </div>
 
-          <!-- Price (pill) -->
+          <!-- PRICE -->
           <div class="wd-price-pill">
             <?php woocommerce_template_single_price(); ?>
           </div>
 
-          <!-- Rating -->
-          <div class="wd-rating">
-            <?php woocommerce_template_single_rating(); ?>
+          <!-- ⭐ RATING (FORÇADO) -->
+          <div class="my-rating-force">
+            <?php
+            $avg   = (float) $product->get_average_rating();
+            $count = (int) $product->get_rating_count();
+
+            // wrapper
+            echo '<div class="my-rating-inner">';
+
+            // sempre mostrar estrelas
+            echo wc_get_rating_html( $avg ); // se avg=0, mostra vazias
+
+            // texto ao lado
+            if ( $count > 0 ) {
+                echo '<span class="count">(' . $count . ')</span>';
+            } else {
+                echo '<span class="count no-reviews">Sem avaliações</span>';
+            }
+
+            echo '</div>';
+            ?>
           </div>
 
-          <!-- Shipping / availability text -->
+          <!-- Shipping -->
           <div class="wd-delivery">
             <?php
             if ( function_exists( 'woodmart_get_shipping_text' ) ) {
@@ -75,27 +90,15 @@ global $product;
             ?>
           </div>
 
-          <!-- Quantity + Add to cart (somente esta parte, sem re-chamar o hook completo) -->
+          <!-- ADD TO CART -->
           <div class="wd-add-to-cart-wrap">
-            <?php
-            // Renderiza o formulário add-to-cart (tratando simples e variáveis)
-            if ( function_exists( 'woocommerce_template_single_add_to_cart' ) ) {
-              woocommerce_template_single_add_to_cart();
-            } else {
-              // fallback: tenta incluir template padrão
-              wc_get_template( 'single-product/add-to-cart/simple.php' );
-            }
-            ?>
+            <?php woocommerce_template_single_add_to_cart(); ?>
           </div>
 
-          <!-- Variations boxes (se usares swatches ou personalizações, vai aparecer aqui) -->
-          <div class="wd-variations-boxes">
-            <?php
-            // deixa o espaço preparado para estilos/JS de swatches
-            ?>
-          </div>
+          <!-- Variations placeholder -->
+          <div class="wd-variations-boxes"></div>
 
-          <!-- REF / meta -->
+          <!-- Meta -->
           <div class="wd-product-meta">
             <?php woocommerce_template_single_meta(); ?>
           </div>
@@ -106,17 +109,11 @@ global $product;
     </div> <!-- .row -->
   </div> <!-- .wd-product-top -->
 
-  <!-- TABS and description / additional info (usa o hook padrão) -->
+  <!-- Tabs -->
   <div class="wd-product-tabs container">
     <div class="row">
       <div class="col-12">
-        <?php
-        /**
-         * Product tabs, upsells and related products
-         * hooked via woocommerce_after_single_product_summary
-         */
-        do_action( 'woocommerce_after_single_product_summary' );
-        ?>
+        <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
       </div>
     </div>
   </div>
