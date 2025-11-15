@@ -122,5 +122,10 @@ p.stock {
 .woocommerce .quantity {
     background: #29b0c2;
     border-radius: 8px;
-    display: unset;
+    display: unset!important;
+}
+
+.woocommerce .quantity input.qty {
+    border: none;
+    color: #fff!important;
 }
