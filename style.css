@@ -158,7 +158,7 @@ div.product-excerpt {
 
 .woocommerce-tabs {
     border-top: none;
-    padding-top: none;
+    padding-top: 0px;
 }
 
 div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
