@@ -172,5 +172,14 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 }
 
 .wd-nav.wd-style-underline-reverse>li>a>.nav-link-text:after {
-    top: -10px!important;
+    top: -15px!important;
+    height: 5px;
+}
+
+.wd-nav[class*="wd-style-underline"] .nav-link-text {
+    font-size: 0.8rem;
+}
+
+.wd-nav[class*="wd-style-underline"]>li:is(:hover,.current-menu-item,.wd-active,.active)>a .nav-link-text:after {
+    width: 30%!important;
 }
