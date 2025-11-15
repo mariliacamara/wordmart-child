@@ -184,3 +184,28 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 .wd-nav[class*="wd-style-underline"]>li:is(:hover,.current-menu-item,.wd-active,.active)>a .nav-link-text:after {
     width: 30%!important;
 }
+
+/* Título e espaçamento da secção de relacionados */
+.wd-related-products {
+  margin: 50px 0;
+}
+.wd-related-products .wd-related-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #14224a; /* ajusta se necessário */
+  margin-bottom: 18px;
+}
+
+/* Grid: 4 colunas responsivas (usa as classes row/col do tema se preferir) */
+.wd-related-grid .product {
+  margin-bottom: 24px;
+  /* o template content-product do tema já aplica o card, shadow e radius */
+}
+
+/* Responsivo: 2 col em tablet, 1 col em mobile */
+@media (max-width: 991px) {
+  .wd-related-grid .product { width: 50%; float: left; box-sizing: border-box; padding: 0 10px; }
+}
+@media (max-width: 560px) {
+  .wd-related-grid .product { width: 100%; padding: 0 10px; }
+}
