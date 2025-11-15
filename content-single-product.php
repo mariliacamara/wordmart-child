@@ -123,6 +123,15 @@ global $product;
   </div>
   -->
 
-  <?php do_action( 'woocommerce_after_single_product' ); ?>
+  <?php
+		// coloca isto logo após do_action( 'woocommerce_after_single_product' );
+		if ( function_exists( 'woocommerce_output_related_products' ) ) {
+				// argumentos: posts_per_page, columns
+				woocommerce_output_related_products( array(
+						'posts_per_page' => 4,
+						'columns'        => 4
+				) );
+		}
+	?>
 
 </div>
