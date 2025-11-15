@@ -128,9 +128,9 @@ p.stock {
 .woocommerce .quantity input.qty {
     border: none!important;
     color: #fff!important;
+        width: 30px!important;
 }
 
 div.quantity input[type="button"] {
     border: none!important;
-    width: 30px!important;
 }
