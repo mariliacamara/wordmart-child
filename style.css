@@ -83,3 +83,34 @@ License:    GNU General Public License v2 or later
 	.wd-product-gallery-col, .wd-product-summary-col { width:100%; }
 	.woocommerce div.product form.cart { flex-direction:row; flex-wrap:wrap; }
 }
+
+
+.my-rating-force .star-rating,
+.my-rating-force .star-rating::before,
+.my-rating-force .star-rating span::before {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+.my-rating-force {
+    margin: 8px 0 14px;
+    display: flex;
+    align-items: center;
+}
+
+.my-rating-force .my-rating-inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.my-rating-force .count {
+    font-size: 14px;
+    color: #333;
+}
+
+.my-rating-force .no-reviews {
+    color: #777;
+    font-style: italic;
+}
