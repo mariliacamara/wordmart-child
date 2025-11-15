@@ -23,9 +23,7 @@ global $product;
       <!-- LEFT: Gallery -->
       <div class="col-lg-6 wd-product-gallery-col">
         <div class="wd-product-gallery">
-          <?php
-          do_action( 'woocommerce_before_single_product_summary' );
-          ?>
+          <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
         </div>
       </div>
 
@@ -95,14 +93,22 @@ global $product;
           <!-- META (apenas SKU — sem categorias, sem stock) -->
           <div class="wd-product-meta">
             <?php
-            // Mostrar somente SKU (se existir). Não mostrar categorias nem quantidade em stock.
             $sku = $product->get_sku();
             if ( $sku ) {
-                echo '<div class="product-sku"><strong>REF:</strong> ' . esc_html( $sku ) . '</div>';
+                echo '<div class="product-sku"><strong>SKU:</strong> ' . esc_html( $sku ) . '</div>';
             }
-            // Se quiseres mostrar outros campos personalizados, coloca aqui explicitamente.
             ?>
           </div>
+
+          <!-- ======== AQUI: Informacao Adicional (colada abaixo do SKU) ======== -->
+          <div class="wd-additional-info-below-sku">
+            <?php
+            // Garante que o template de "additional information" tem acesso a $product
+            // e usa o template padrão do WooCommerce que gera a tabela Peso / Medidas / Atributos.
+            wc_get_template( 'single-product/tabs/additional-information.php' );
+            ?>
+          </div>
+          <!-- ================================================================ -->
 
         </div>
       </div>
@@ -110,14 +116,16 @@ global $product;
     </div> <!-- .row -->
   </div> <!-- .wd-product-top -->
 
-  <!-- Tabs -->
+  <!-- REMOVIDO: chamada às tabs abaixo para evitar duplicação -->
+  <!--
   <div class="wd-product-tabs container">
     <div class="row">
       <div class="col-12">
-        <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
+        <?php // do_action( 'woocommerce_after_single_product_summary' ); ?>
       </div>
     </div>
   </div>
+  -->
 
   <?php do_action( 'woocommerce_after_single_product' ); ?>
 
