@@ -150,3 +150,8 @@ div.quantity input[type="button"] {
 div.product-excerpt {
     font-size: 1rem;
 }
+
+.product-sku > strong {
+    color: #000;
+    font-weight: 700;
+}

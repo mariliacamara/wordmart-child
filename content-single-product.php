@@ -98,7 +98,7 @@ global $product;
             // Mostrar somente SKU (se existir). Não mostrar categorias nem quantidade em stock.
             $sku = $product->get_sku();
             if ( $sku ) {
-                echo '<div class="product-sku"><strong>SKU:</strong> ' . esc_html( $sku ) . '</div>';
+                echo '<div class="product-sku"><strong>REF:</strong> ' . esc_html( $sku ) . '</div>';
             }
             // Se quiseres mostrar outros campos personalizados, coloca aqui explicitamente.
             ?>
