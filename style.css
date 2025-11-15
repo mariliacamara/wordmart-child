@@ -165,6 +165,6 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
     text-align: left;
 }
 
-#tab-title-additional_information > a {
-    padding: 10px;
+.wd-nav.wd-style-underline-reverse>li>a {
+    padding-top: 5px;
 }
