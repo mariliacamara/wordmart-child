@@ -137,7 +137,7 @@ global $product;
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) {
                 $loop->the_post();
-                wc_get_template_part( 'content', 'product' ); // O TEMPLATE CERTO!
+                wc_get_template_part( 'content', 'product-related' ); // O TEMPLATE CERTO!
             }
             wp_reset_postdata();
         }
