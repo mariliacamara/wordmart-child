@@ -134,3 +134,7 @@ p.stock {
 div.quantity input[type="button"] {
     border: none!important;
 }
+
+div.quantity input[type="button"] {
+    font-size: 25px!important;
+}
