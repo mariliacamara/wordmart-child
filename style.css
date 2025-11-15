@@ -335,6 +335,6 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 @media (min-width: 1025px) {
     .col-lg-4 {
         flex: 0 0 33.333333%;
-        max-width: 23.333333%;
+        max-width: 23.333333%!important;
     }
 }
