@@ -146,3 +146,7 @@ div.quantity input[type="button"] {
 .woocommerce .single_add_to_cart_button {
     font-size: 16px;
 }
+
+div.product-excerpt {
+    font-size: 1rem;
+}
