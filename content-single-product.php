@@ -123,15 +123,27 @@ global $product;
   </div>
   -->
 
-  <?php
-		// coloca isto logo após do_action( 'woocommerce_after_single_product' );
-		if ( function_exists( 'woocommerce_output_related_products' ) ) {
-				// argumentos: posts_per_page, columns
-				woocommerce_output_related_products( array(
-						'posts_per_page' => 4,
-						'columns'        => 4
-				) );
-		}
-	?>
+  <section class="wd-related-products container">
+    <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
+    <div class="wd-related-grid">
+        <?php
+        $related_ids = wc_get_related_products( $product->get_id(), 4 );
+        if ( ! empty( $related_ids ) ) {
+            $args = array(
+                'post_type' => 'product',
+                'post__in'  => $related_ids,
+                'orderby'   => 'post__in'
+            );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) {
+                $loop->the_post();
+                wc_get_template_part( 'content', 'product' ); // O TEMPLATE CERTO!
+            }
+            wp_reset_postdata();
+        }
+        ?>
+    </div>
+</section>
+
 
 </div>
