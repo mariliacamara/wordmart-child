@@ -126,6 +126,10 @@ p.stock {
 }
 
 .woocommerce .quantity input.qty {
-    border: none;
+    border: none!important;
     color: #fff!important;
+}
+
+div.quantity input[type="button"] {
+    border: none!important;
 }
