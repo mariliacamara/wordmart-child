@@ -1,9 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
-
 global $product;
-
 ?>
+ 
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 
   <!-- Breadcrumb -->
@@ -75,13 +74,11 @@ global $product;
 					<!-- Quantity + Add to cart -->
 					<div class="wd-add-to-cart-wrap">
 						<?php
-						/**
-						 * Add to cart form (handles simple & variable products)
-						 * hooked: woocommerce_template_single_add_to_cart
-						 */
-						do_action( 'woocommerce_single_product_summary' ); // we will remove duplicates via hooks below if needed
+						if ( function_exists('woocommerce_template_single_add_to_cart') ) {
+								woocommerce_template_single_add_to_cart();
+						}
 						?>
-					</div>
+				</div>
 
 					<!-- Variation boxes placeholder (if you use swatches plugin or theme options, it will render here) -->
 					<div class="wd-variations-boxes">
