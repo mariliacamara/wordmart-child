@@ -62,19 +62,13 @@ global $product;
             $avg   = (float) $product->get_average_rating();
             $count = (int) $product->get_rating_count();
 
-            // wrapper
             echo '<div class="my-rating-inner">';
-
-            // sempre mostrar estrelas
-            echo wc_get_rating_html( $avg ); // se avg=0, mostra vazias
-
-            // texto ao lado
+            echo wc_get_rating_html( $avg );
             if ( $count > 0 ) {
                 echo '<span class="count">(' . $count . ')</span>';
             } else {
                 echo '<span class="count no-reviews">Sem avaliações</span>';
             }
-
             echo '</div>';
             ?>
           </div>
@@ -98,9 +92,16 @@ global $product;
           <!-- Variations placeholder -->
           <div class="wd-variations-boxes"></div>
 
-          <!-- Meta -->
+          <!-- META (apenas SKU — sem categorias, sem stock) -->
           <div class="wd-product-meta">
-            <?php woocommerce_template_single_meta(); ?>
+            <?php
+            // Mostrar somente SKU (se existir). Não mostrar categorias nem quantidade em stock.
+            $sku = $product->get_sku();
+            if ( $sku ) {
+                echo '<div class="product-sku"><strong>SKU:</strong> ' . esc_html( $sku ) . '</div>';
+            }
+            // Se quiseres mostrar outros campos personalizados, coloca aqui explicitamente.
+            ?>
           </div>
 
         </div>
