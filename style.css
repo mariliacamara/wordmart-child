@@ -162,7 +162,7 @@ div.product-excerpt {
 }
 
 div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
-    text-align: left;
+    text-align: left!important;
 }
 
 .wd-nav.wd-style-underline-reverse>li>a {
