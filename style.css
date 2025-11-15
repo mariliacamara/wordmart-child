@@ -122,4 +122,5 @@ p.stock {
 .quantity {
     background: #29b0c2;
     border-radius: 8px;
+    display: unset;
 }
