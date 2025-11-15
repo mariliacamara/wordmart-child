@@ -119,7 +119,7 @@ p.stock {
     display: none
 }
 
-.quantity {
+.woocommerce .quantity {
     background: #29b0c2;
     border-radius: 8px;
     display: unset;
