@@ -162,6 +162,8 @@ div.product-excerpt {
 }
 
 div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
+    --content-align: left!important;
+    --text-align: left!important;
     text-align: left!important;
 }
 
