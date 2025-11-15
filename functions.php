@@ -26,3 +26,34 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+// Mostrar rating sempre (mesmo quando não houver reviews)
+add_action( 'woocommerce_single_product_summary', 'my_always_show_product_rating', 10 );
+function my_always_show_product_rating() {
+    global $product;
+    if ( ! $product ) return;
+
+    $avg   = (float) $product->get_average_rating(); // média (0..5)
+    $count = (int)   $product->get_rating_count();   // número de avaliações
+
+    // wrapper com classes para estilização
+    echo '<div class="my-always-rating">';
+
+    if ( $count > 0 ) {
+        // mostra média + contador normal
+        echo '<div class="rating-stars" aria-label="Avaliação média: ' . esc_attr( $avg ) . ' de 5">';
+        echo wc_get_rating_html( $avg ); // HTML padrão das estrelas
+        echo '</div>';
+        echo '<div class="rating-count">(' . intval( $count ) . ' avaliações)</div>';
+    } else {
+        // não há avaliações: mostra estrelas vazias + rótulo "Sem avaliações"
+        // wc_get_rating_html(0) gera o HTML das estrelas com 0 valor (vazias)
+        echo '<div class="rating-stars no-reviews" aria-label="Sem avaliações">';
+        echo wc_get_rating_html( 0 );
+        echo '</div>';
+        echo '<div class="rating-count no-reviews-text">Sem avaliações</div>';
+    }
+
+    echo '</div>'; // .my-always-rating
+}
+
