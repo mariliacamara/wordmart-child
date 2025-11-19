@@ -57,11 +57,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
       <!-- Price + CTA -->
       <div class="product-cta-row">
-        <div class="product-price">
-          <?php echo $product->get_price_html(); ?>
-        </div>
-
         <div class="product-cta">
+           <?php echo $product->get_price_html(); ?>
           <?php
           // botão add to cart (ajax) — garante que funciona para simples/variations
           // Re-usa a markup do tema (fallback)
