@@ -44,15 +44,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       <!-- Título -->
       <h3 class="wd-entities-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
-      <!-- thin separator -->
-      <div class="sep-line" aria-hidden="true"></div>
-
       <!-- Rating (usa HTML padrão do Woo) -->
-      <div class="product-rating">
-        <?php
-        // show rating (if theme hides via CSS, o teu CSS override garantirá visibilidade)
-        echo wc_get_rating_html( $product->get_average_rating() );
-        ?>
+     <div class="product-rating-wrapper">
+          <div class="product-rating">
+              <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+          </div>
       </div>
 
       <!-- Price + CTA -->
