@@ -60,15 +60,29 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         <div class="product-cta">
            <?php echo $product->get_price_html(); ?>
           <?php
-          // botão add to cart (ajax) — garante que funciona para simples/variations
-          // Re-usa a markup do tema (fallback)
-          if ( $product->is_type( 'simple' ) ) {
-              woocommerce_simple_add_to_cart();
-          } else {
-              // para variações/usual: usa template do Woo
-              woocommerce_template_loop_add_to_cart();
-          }
+          // Preço ao lado do botão
+          echo '<div class="price-add">';
+          echo '<span class="my-price">' . $product->get_price_html() . '</span>';
+
+          echo apply_filters(
+              'woocommerce_loop_add_to_cart_link',
+              sprintf(
+                  '<a href="%s" data-quantity="1" class="button add_to_cart_button ajax_add_to_cart" %s>%s</a>',
+                  esc_url( $product->add_to_cart_url() ),
+                  wc_implode_html_attributes( array(
+                      'data-product_id'  => $product->get_id(),
+                      'data-product_sku' => $product->get_sku(),
+                      'aria-label'       => $product->add_to_cart_description(),
+                      'rel'              => 'nofollow',
+                  ) ),
+                  esc_html__( 'ADICIONAR', 'woocommerce' )
+              ),
+              $product,
+              $product->get_id()
+          );
+          echo '</div>';
           ?>
+
         </div>
       </div>
 
