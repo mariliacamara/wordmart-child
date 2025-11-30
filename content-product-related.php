@@ -59,10 +59,16 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       <div class="product-cta-row">
         <div class="product-cta">
         <?php
-        // Preço ao lado do botão (quantity fixo = 1)
-        echo '<div class="price-add">';
-        echo '<span class="my-price">' . $product->get_price_html() . '</span>';
+        // Wrapper que ocupará 100% da largura do card
+        echo '<div class="price-add-row">';
 
+        // Coluna do preço (flex:1)
+        echo '<div class="price-col">';
+        echo $product->get_price_html();
+        echo '</div>';
+
+        // Coluna do botão (flex:1) — quantity fixo 1 e markup padrão Woo (ajax)
+        echo '<div class="button-col">';
         echo apply_filters(
             'woocommerce_loop_add_to_cart_link',
             sprintf(
@@ -80,9 +86,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
             $product->get_id()
         );
         echo '</div>';
+
+        echo '</div>'; // .price-add-row
         ?>
       </div>
-
       </div>
 
     </div> <!-- .product-element-bottom -->

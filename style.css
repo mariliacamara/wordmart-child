@@ -343,17 +343,75 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
   border: none!important;
 }
 
-.price-add {
+/* Container que ocupa a largura total do card */
+.product-cta .price-add-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  width: 100%;
+  gap: 14px;              /* espaço entre preço e botão — ajusta à vontade */
+  align-items: stretch;   /* garante mesma altura */
+  justify-content: space-between;
+  padding: 0 12px 18px;   /* mantém espaço inferior como no exemplo */
+  box-sizing: border-box;
 }
 
-.price-add .my-price {
-  background: #fec917;
-  color: #002060;
+/* Cada coluna ocupa metade (mesma proporção) */
+.product-cta .price-col,
+.product-cta .button-col {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do badge de preço (podes trocar cores/paddings) */
+.product-cta .price-col .price,
+.product-cta .price-col .woocommerce-Price-amount {
+  display: inline-block;
+  background: #fec917;     /* cor amarela do exemplo */
+  color: #07143d;          /* cor do número */
   font-weight: 700;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 1.2rem;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo */
+.product-cta .price-col ins,
+.product-cta .price-col del {
+  display: inline-block;
+}
+
+/* Botão ocupa 100% da coluna, centralizado e com mesma altura visual */
+.product-cta .button-col .add_to_cart_button {
+  width: 100%;
+  height: 100%;
+  max-height: 56px;            /* controla altura máxima — ajusta se quiseres */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #07143d;         /* cor escura do botão */
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+/* Garante que o botão não sofra override por estilos do tema */
+.product-cta .button-col .add_to_cart_button:hover {
+  opacity: 0.95;
+}
+
+/* Responsividade: em telas pequenas empilha verticalmente */
+@media (max-width: 520px) {
+  .product-cta .price-add-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .product-cta .button-col .add_to_cart_button { max-height: none; }
 }
