@@ -340,5 +340,5 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 }
 
 .wd-related-products .product-grid-item .hover-img img, .product-grid-item .product-image-link img {
-  border: 0;
+  border: none!important;
 }
