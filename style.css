@@ -415,3 +415,31 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
   }
   .product-cta .button-col .add_to_cart_button { max-height: none; }
 }
+
+/* Wrapper com as bordas */
+.product-rating-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 16px 0 22px;
+  box-sizing: border-box;
+}
+
+/* Centraliza as estrelas */
+.product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Garante que as estrelas não fiquem grudadas */
+.product-rating .star-rating {
+  margin: 0 auto;
+}
+
+/* Fix para temas que deixam as estrelas inline */
+.product-rating .star-rating span {
+  margin: 0 !important;
+}
