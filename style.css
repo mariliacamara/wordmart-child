@@ -476,3 +476,7 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 .product-wrapper .product-element-bottom .star-rating, .product-wrapper .product-element-bottom .woocommerce-product-rating {
   margin: 0;
 }
+
+.wd-related-products h2 {
+  color: var(--primary-color);
+}
