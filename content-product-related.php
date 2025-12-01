@@ -47,7 +47,18 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       <!-- Rating (usa HTML padrão do Woo) -->
      <div class="product-rating-wrapper">
           <div class="product-rating">
-              <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
+              <?php
+              $rating = $product->get_average_rating();
+
+              // Se não houver rating, mostra 5 estrelas vazias
+              if ( ! $rating || $rating == 0 ) {
+                  echo '<div class="star-rating" role="img" aria-label="0 de 5">
+                          <span style="width:0%"></span>
+                        </div>';
+              } else {
+                  echo wc_get_rating_html( $rating );
+              }
+              ?>
           </div>
       </div>
 
