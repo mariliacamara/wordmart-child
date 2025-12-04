@@ -416,7 +416,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background: #ffffff;
   border-radius: 10px;
   padding: 18px;
-  box-shadow: 0 6px 18px rgba(16, 24, 60, 0.06);
   border: 1px solid rgba(16,24,60,0.06);
   height: 100%;
   display: flex;
@@ -517,7 +516,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background: #08103a !important;
   color: #fff !important;
   padding: 8px 16px !important;
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   text-transform: uppercase;
   font-weight: 600;
   border: none !important;
@@ -709,8 +708,4 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
     height: auto !important; /* garante que não force altura exagerada */
     min-height: 0 !important;
-}
-
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn a.button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
-  border-radius: 5px !important;
 }
