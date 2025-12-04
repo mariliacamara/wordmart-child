@@ -600,15 +600,16 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .product-cta .price-col .price,
 .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
   display: inline-block;
-  background: #fec917;     /* cor amarela do exemplo */
-  color: #07143d;          /* cor do número */
+  background: #fec917;
+  color: #07143d;
   font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 12px;
-  font-size: 1.25rem;
+  padding: 7px 21px;
+  border-radius: 6px;
+  font-size: 0.8rem;
   min-width: 0;
   box-sizing: border-box;
   text-align: center;
+  font-weight: 900;
 }
 
 /* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo (scoped) */
@@ -693,4 +694,32 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* Pequenos ajustes finais */
 .wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
     width: 30%!important;
+}
+
+/* Ajustar altura do botão para igualar ao bloco de preço */
+.wd-related-products .product-cta .price-add-row {
+    display: flex;
+    align-items: stretch !important; /* garante alturas iguais */
+}
+
+.wd-related-products .product-cta .price-col,
+.wd-related-products .product-cta .button-col {
+    flex: 1 1 0;
+    display: flex;
+}
+
+.wd-related-products .product-cta .price-col .woocommerce-Price-amount {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wd-related-products .product-cta .button-col .add_to_cart_button {
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
