@@ -607,7 +607,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     left: 50%;
     transform: translateX(-50%); /* centraliza perfeitamente */
     
-    width: 80px; /* ajuste o tamanho da linha */
+    width: 400px; /* ajuste o tamanho da linha */
     height: 3px; /* espessura */
     background-color: var(--el-title-color);
     border-radius: 2px; /* opcional */
