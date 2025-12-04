@@ -487,6 +487,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background-color: var(--secondary-color);
 }
 
-#menu-categorias > a > span {
+#menu-categorias > li > a > span {
   color: var(--white-color)!important;
 }
