@@ -962,3 +962,141 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Aumenta especificidade para evitar overrides do tema */
 body .owl-carousel .slide-product .product-grid-item .product-wrapper { border-color: rgba(16,24,60,0.06); }
+
+/* ======================
+  1) Scope: estilos apenas para produtos do carousel
+     (Woodmart usa .wd-products-holder / .wd-products-element)
+   ====================== */
+.wd-products-element .product-grid-item.product .product-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* reorganizar visual dentro do card do carousel
+   - title acima da rating
+   - rating logo abaixo do título
+   - price + add-to-cart abaixo, alinhados lado a lado
+*/
+.wd-products-element .product-grid-item.product .product-element-top { order: 0; }        /* imagem */
+.wd-products-element .product-grid-item.product h3.wd-entities-title { order: 1; }       /* título */
+.wd-products-element .product-grid-item.product .product-rating-wrapper,
+.wd-products-element .product-grid-item.product .star-rating,
+.wd-products-element .product-grid-item.product .product-rating { order: 2; margin-top: 6px; }
+.wd-products-element .product-grid-item.product .price { order: 3; margin-top: 10px; }
+.wd-products-element .product-grid-item.product .wd-add-btn { order: 4; margin-top: 12px; }
+
+/* ======================
+  2) Price + button row — reduzir o botão 'ADICIONAR' para ficar proporcional
+   ====================== */
+/* container (se você tem .product-cta / .price-add-row no template) */
+.wd-products-element .product-cta .price-add-row,
+.wd-products-element .product-wrapper .product-element-bottom .price,
+.wd-products-element .product-wrapper .product-element-bottom .wd-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* price column (mantém destaque) */
+.wd-products-element .product-cta .price-col .woocommerce-Price-amount,
+.wd-products-element .product-wrapper .price .woocommerce-Price-amount {
+  padding: 6px 10px;
+  font-size: 0.95rem;            /* controla scaling do preço no carousel */
+  border-radius: 8px;
+  min-width: 64px;
+  box-sizing: border-box;
+}
+
+/* botão menor — diminui padding e font-size para ficar do mesmo “peso” visual do price */
+.wd-products-element .product-cta .button-col .add_to_cart_button,
+.wd-products-element .product-wrapper .wd-add-btn a.button,
+.wd-products-element .product-wrapper .wd-add-btn-replace .button {
+  padding: 8px 12px !important;   /* reduzido */
+  font-size: 0.9rem !important;    /* reduzido */
+  height: auto !important;
+  line-height: 1 !important;
+  max-width: 140px;               /* controla largura máxima do botão */
+  width: auto !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px !important;
+}
+
+/* se quiser que o botão tenha exatamente a mesma altura do price badge */
+.wd-products-element .product-cta .button-col .add_to_cart_button {
+  min-height: 40px;
+}
+
+/* reduzir ícones/quantidade quando em grid pequeno */
+.wd-products-element .product-grid-item .quantity { transform: scale(0.95); }
+
+/* ======================
+  3) Restaurar "linha sobre os labels" (tabs) — mostrar só no .current / :hover
+   ====================== */
+/* remove style genérico que estava deixando a linha sempre visível */
+.wd-nav.wd-style-underline-reverse > li > a .nav-link-text::after,
+.wd-nav[class*="wd-style-underline"] .nav-link-text:after {
+  display: block;
+  width: 0;
+  transition: width .18s ease, background-color .18s ease, opacity .18s;
+  opacity: 0;
+}
+
+/* quando ativo / hover: expandir a linha */
+.wd-nav[class*="wd-style-underline"] > li:is(.wd-active, .current-menu-item, .active) > a .nav-link-text:after,
+.wd-nav[class*="wd-style-underline"] > li > a:hover .nav-link-text:after,
+.wd-nav.wd-style-underline-reverse > li.is-active > a .nav-link-text:after {
+  width: 30% !important;    /* ou ajuste para 40%/50% como preferir */
+  opacity: 1;
+  background-color: var(--secondary-color);
+  height: 4px;
+  top: -18px;                /* posiciona acima do texto — ajuste se precisar */
+}
+
+/* garante que não reste outra regra conflitante (aumenta especificidade) */
+body .wd-nav[class*="wd-style-underline"] > li > a .nav-link-text:after { pointer-events: none; }
+
+/* ======================
+  4) Evitar que related e carousel usem os mesmos estilos onde não queremos
+     — força o related a manter o visual antigo (se já tem .wd-related-products)
+   ====================== */
+/* estilos para related (mantém o estilo que você queria) */
+.wd-related-products .product-grid-item.product .product-wrapper {
+  /* exemplo: boxed card do related */
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,60,0.06);
+}
+
+/* mas evita que o carousel herde box shadow / border se você não quiser */
+.wd-products-element .product-grid-item.product .product-wrapper {
+  box-shadow: none;
+  border: none;
+}
+
+/* ======================
+  5) Responsividade: empilha botão/price em telas pequenas
+   ====================== */
+@media (max-width: 520px) {
+  .wd-products-element .product-cta .price-add-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .wd-products-element .product-cta .button-col .add_to_cart_button { max-width: 100%; padding: 10px 14px; }
+}
+
+/* ======================
+  6) Optional: highlight on hover only for carousel product border
+   ====================== */
+.wd-products-element .product-grid-item.product .product-wrapper {
+  transition: box-shadow .18s ease, transform .12s ease, border-color .18s;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.wd-products-element .product-grid-item.product:hover .product-wrapper {
+  border-color: rgba(37, 163, 92, 0.28); /* exemplo: leve destaque */
+  transform: translateY(-3px);
+}
