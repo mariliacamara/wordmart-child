@@ -499,6 +499,23 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     }
 }
 
-.wd-nav[class*="wd-style-"]>li:is(.wd-has-children,.menu-item-has-children)>a:after {
-    color: var(--nav-plus);
+/* Replace WoodMart menu chevron with your custom SVG */
+.wd-nav > li.menu-item-has-children > a:after,
+.wd-nav > li.menu-item-has-children > a .nav-link-text:after {
+    font-family: none !important;
+    content: "" !important;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+");
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+    transform: translateY(2px);
+}
+
+
+.whb-header-bottom .wd-dropdown {
+    margin-top: 5.5px;
 }
