@@ -587,13 +587,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Cada coluna ocupa metade (mesma proporção) (scoped) */
-.wd-related-products .product-cta .price-col,
+/* .wd-related-products .product-cta .price-col,
 .wd-related-products .product-cta .button-col {
   flex: 1 1 0;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
 .wd-related-products .product-cta .price-col .price,
