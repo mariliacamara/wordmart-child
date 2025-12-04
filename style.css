@@ -515,7 +515,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
   background: #08103a !important;
   color: #fff !important;
-  padding: 8px 16px !important;
+  padding: 8px 27px !important;
   border-radius: 5px !important;
   text-transform: uppercase;
   font-weight: 600;
@@ -582,7 +582,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   gap: 14px;              /* espaço entre preço e botão — ajusta à vontade */
   align-items: stretch;   /* garante mesma altura */
   justify-content: space-between;
-  padding: 0 12px 18px;   /* mantém espaço inferior como no exemplo */
+  padding: 0 0 18px;   /* mantém espaço inferior como no exemplo */
   box-sizing: border-box;
 }
 
@@ -602,7 +602,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background: #fec917;
   color: #07143d;
   font-weight: 700;
-  padding: 7px 21px;
+  padding: 7px 25px;
   border-radius: 6px;
   font-size: 0.8rem;
   min-width: 0;
