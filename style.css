@@ -561,7 +561,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-carousel .owl-dots,
 .owl-carousel .owl-dots {
     display: flex !important;
-    gap: 12px !important;
+    gap: 0 !important;
     justify-content: center;
     align-items: center;
 }
