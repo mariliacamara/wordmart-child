@@ -556,3 +556,30 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   padding-bottom: 5rem !important;
   border-bottom: 5px solid var(--secondary-color) !important;
 }
+
+/* container das bolinhas */
+.wd-carousel .owl-dots,
+.owl-carousel .owl-dots {
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* estilo das bolinhas */
+.wd-carousel .owl-dot span,
+.owl-carousel .owl-dot span {
+    width: 32px !important;        /* deixa o formato pílula */
+    height: 8px !important;
+    border-radius: 10px !important;
+    background-color: #d9d9d9 !important; /* cinza claro */
+    transition: all 0.25s ease-in-out;
+    display: block;
+}
+
+/* quando ativo */
+.wd-carousel .owl-dot.active span,
+.owl-carousel .owl-dot.active span {
+    background-color: var(--primary-color) !important;
+    width: 32px !important;
+}
