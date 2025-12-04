@@ -592,3 +592,23 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-title-style-overlined .liner-continer {
   border-top: none !important;
 }
+
+.wd-title-style-overlined .title {
+    position: relative;
+    padding-top: 20px;
+    margin-top: 0 !important;
+    border-top: none !important;
+}
+
+.wd-title-style-overlined .title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* centraliza perfeitamente */
+    
+    width: 80px; /* ajuste o tamanho da linha */
+    height: 3px; /* espessura */
+    background-color: var(--el-title-color);
+    border-radius: 2px; /* opcional */
+}
