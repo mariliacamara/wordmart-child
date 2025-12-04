@@ -499,7 +499,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     }
 }
 
-/* Replace WoodMart menu chevron with your plus-in-circle SVG (URL-encoded) */
+/* Remove all default WoodMart chevrons */
+.wd-nav > li.menu-item-has-children > a:before,
+.wd-nav > li.menu-item-has-children > a .nav-link-text:before {
+    content: none !important;
+}
+
+/* Replace with your custom SVG icon */
 .wd-nav > li.menu-item-has-children > a:after,
 .wd-nav > li.menu-item-has-children > a .nav-link-text:after {
     font-family: none !important;
@@ -514,6 +520,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     margin-left: 8px;
     transform: translateY(2px);
 }
+
 
 
 .whb-header-bottom .wd-dropdown {
