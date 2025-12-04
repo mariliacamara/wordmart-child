@@ -487,6 +487,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background-color: var(--secondary-color);
 }
 
-header > a > span {
-  color: var(--white-color);
+div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle > a > span {
+  color: var(--white-color)!important;
 }
