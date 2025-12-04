@@ -123,7 +123,7 @@ global $product;
   </div>
   -->
 
-  <section class="wd-related-products container">
+  <section class="related-products wd-related-products container">
     <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
     <div class="wd-related-grid">
         <?php
