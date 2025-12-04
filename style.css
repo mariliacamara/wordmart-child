@@ -569,8 +569,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* estilo das bolinhas */
 .wd-carousel .owl-dot span,
 .owl-carousel .owl-dot span {
-    width: 32px !important;        /* deixa o formato pílula */
-    height: 8px !important;
+    width: 55px !important;
+    height: 4px !important;
     border-radius: 10px !important;
     background-color: #d9d9d9 !important; /* cinza claro */
     transition: all 0.25s ease-in-out;
@@ -580,6 +580,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* quando ativo */
 .wd-carousel .owl-dot.active span,
 .owl-carousel .owl-dot.active span {
-    background-color: var(--primary-color) !important;
-    width: 32px !important;
+    background-color: var(--secondary-color) !important;
+    width: 55px !important;
 }
