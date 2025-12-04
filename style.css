@@ -551,3 +551,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-sub-menu > li > a > .nav-link-text {
     color: var(--primary-color) !important;
 }
+
+.wd-dropdown-menu.wd-dropdown {
+    border-bottom: 3px solid var(--secondary-color) !important;
+}
