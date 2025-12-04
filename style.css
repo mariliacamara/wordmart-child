@@ -522,11 +522,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     background-repeat: no-repeat;
     background-position: center;
 
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
 
     display: inline-block;
-    margin-left: 3px;
+    margin-left: 4px;
     transform: translateY(2px);
 }
 
