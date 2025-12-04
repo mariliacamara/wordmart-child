@@ -499,6 +499,10 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     }
 }
 
+.wd-nav {
+  --nav-gap: 19px;
+}
+
 /* FORCE REMOVE anything added after <a> */
 .wd-nav > li.menu-item-has-children > a:after {
     content: none !important;
@@ -508,7 +512,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     display: none !important;
 }
 
-/* Replace with your custom SVG icon */
 .wd-nav > li.menu-item-has-children > a > .nav-link-text:after {
     content: "" !important;
     font-family: none !important;
@@ -523,7 +526,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     height: 16px;
 
     display: inline-block;
-    margin-left: 8px;
+    margin-left: 3px;
     transform: translateY(2px);
 }
 
