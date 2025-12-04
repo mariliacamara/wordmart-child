@@ -57,3 +57,34 @@ function my_always_show_product_rating() {
     echo '</div>'; // .my-always-rating
 }
 
+/**
+ * Override template for Woodmart product carousel widgets.
+ */
+add_filter( 'wc_get_template_part', function( $template, $slug, $name ) {
+
+    // Só mexe quando é o template de produtos
+    if ( $slug === 'content' && $name === 'product' ) {
+
+        // Detecta se estamos em um widget/carrossel do Woodmart
+        // O Woodmart carrega carrosséis dentro desses wrappers:
+        $is_carousel =
+            did_action('woodmart_products_shortcode') ||
+            did_action('woodmart_shortcode_products_tab') ||
+            did_action('woodmart_shortcode_products') ||
+            ( ! empty( $GLOBALS['woodmart_shortcode_is_carousel'] ) );
+
+        if ( $is_carousel ) {
+
+            // Verifica se existe o template customizado no child theme
+            $custom = get_stylesheet_directory() . '/woocommerce/content-product-carousel.php';
+
+            if ( file_exists( $custom ) ) {
+                return $custom;
+            }
+        }
+    }
+
+    return $template;
+}, 20, 3 );
+
+
