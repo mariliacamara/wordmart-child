@@ -486,3 +486,7 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
 body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
   background-color: var(--secondary-color);
 }
+
+header > a > span {
+  color: var(--white-color);
+}
