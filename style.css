@@ -1200,3 +1200,8 @@ body .wd-nav[class*="wd-style-underline"] > li > a .nav-link-text:after { pointe
 .products .product-grid-item .price {
     margin: 0 !important;
 }
+
+.product-grid-item .product-element-bottom { display:flex; flex-direction:column; min-height:230px; }
+.product-grid-item .wd-add-btn { margin-top: auto; display:flex; align-items:center; gap:12px; }
+.product-grid-item .price { order:0; }
+.product-grid-item .wd-add-btn .button { order:1; }
