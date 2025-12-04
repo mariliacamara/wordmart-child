@@ -500,7 +500,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 .wd-nav {
-  --nav-gap: 17px;
+  --nav-gap: 19px!important;
 }
 
 /* FORCE REMOVE anything added after <a> */
