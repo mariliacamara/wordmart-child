@@ -588,3 +588,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     background-color: var(--secondary-color) !important;
     width: 35px !important;
 }
+
+.wd-title-style-overlined .liner-continer {
+  border-top: none !important;
+}
