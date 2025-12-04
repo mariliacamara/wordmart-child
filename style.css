@@ -442,6 +442,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   margin: 8px 0 10px; 
   line-height: 1.2;
   color: #222;
+  text-align: left;
 }
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-entities-title a {
   color: inherit;
