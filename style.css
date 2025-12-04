@@ -557,6 +557,10 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   border-bottom: 5px solid var(--secondary-color) !important;
 }
 
+.owl-dots {
+  margin-top: none!important;
+}
+
 /* container das bolinhas */
 .wd-carousel .owl-dots,
 .owl-carousel .owl-dots {
@@ -569,17 +573,18 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* estilo das bolinhas */
 .wd-carousel .owl-dot span,
 .owl-carousel .owl-dot span {
-    width: 55px !important;
-    height: 4px !important;
+    width: 35px !important;
+    height: 6px !important;
     border-radius: 10px !important;
     background-color: #d9d9d9 !important; /* cinza claro */
     transition: all 0.25s ease-in-out;
     display: block;
+    border: none!important
 }
 
 /* quando ativo */
 .wd-carousel .owl-dot.active span,
 .owl-carousel .owl-dot.active span {
     background-color: var(--secondary-color) !important;
-    width: 55px !important;
+    width: 35px !important;
 }
