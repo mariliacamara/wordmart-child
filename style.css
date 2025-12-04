@@ -499,27 +499,34 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     }
 }
 
-/* Remove all default WoodMart chevrons */
-.wd-nav > li.menu-item-has-children > a:before,
-.wd-nav > li.menu-item-has-children > a .nav-link-text:before {
+/* FORCE REMOVE anything added after <a> */
+.wd-nav > li.menu-item-has-children > a:after {
     content: none !important;
+    background: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
 }
 
 /* Replace with your custom SVG icon */
-.wd-nav > li.menu-item-has-children > a:after,
-.wd-nav > li.menu-item-has-children > a .nav-link-text:after {
-    font-family: none !important;
+.wd-nav > li.menu-item-has-children > a > .nav-link-text:after {
     content: "" !important;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy0yLCAuY2xzLTMgewogICAgICAgIGZpbGw6IG5vbmU7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlOiAjZmZmOwogICAgICAgIHN0cm9rZS13aWR0aDogLjc5cHg7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgY2xpcC1wYXRoOiB1cmwoI2NsaXBwYXRoKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTIiIHdpZHRoPSIxMi43IiBoZWlnaHQ9IjEyLjciLz4KICAgIDwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+CiAgICA8Y2lyY2xlIGNsYXNzPSJjbHMtMyIgY3g9IjYuMzUiIGN5PSI2LjM1IiByPSI1Ljk1Ii8+CiAgPC9nPgogIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIzLjA3IDUuNzMgMy4wNyA2Ljk3IDUuNzMgNi45NyA1LjczIDkuNjMgNi45NyA5LjYzIDYuOTcgNi45NyA5LjYzIDYuOTcgOS42MyA1LjczIDYuOTcgNS43MyA2Ljk3IDMuMDcgNS43MyAzLjA3IDUuNzMgNS43MyAzLjA3IDUuNzMiLz4KPC9zdmc+");
-    background-size: 14px 14px;
+    font-family: none !important;
+
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7ZmlsbDogI2ZmZjt9CiAgICAgIC5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO30KICAgICAgLmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDouNzlweDt9CiAgICAgIC5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwcGF0aCk7fQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPjxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjEyLjciIGhlaWdodD0iMTIuNyIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+PGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI2LjM1IiBjeT0iNi4zNSIgcj0iNS45NSIvPjwvZz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMy4wNyA1LjczIDMuMDcgNi45NyA1LjczIDYuOTcgNS43MyA5LjYzIDYuOTcgOS42MyA2Ljk3IDYuOTcgOS42MyA2Ljk3IDkuNjMgNS43MyA2Ljk3IDUuNzMgNi45NyAzLjA3IDUuNzMgMy4wNyA1LjczIDUuNzMgMy4wNyA1LjczIi8+PC9zdmc+");
+
+    background-size: 14px;
     background-repeat: no-repeat;
     background-position: center;
+
     width: 16px;
     height: 16px;
+
     display: inline-block;
     margin-left: 8px;
     transform: translateY(2px);
 }
+
 
 
 
