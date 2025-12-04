@@ -1100,3 +1100,16 @@ body .wd-nav[class*="wd-style-underline"] > li > a .nav-link-text:after { pointe
   border-color: rgba(37, 163, 92, 0.28); /* exemplo: leve destaque */
   transform: translateY(-3px);
 }
+
+.wd-products-element .product-grid-item .wd-entities-title a,
+.owl-carousel .slide-product .wd-entities-title a,
+.product-grid-item .wd-entities-title a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;        /* número de linhas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;          /* permite quebra de linha */
+  line-height: 1.2;             /* ajuste se quiser mais/menos espaço */
+  max-height: calc(1.2em * 2);  /* garante a altura correta */
+}
