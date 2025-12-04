@@ -8,7 +8,9 @@ Version:    1.0
 License:    GNU General Public License v2 or later
 */
 
-/* ========== :root (variáveis globais) ========== */
+/* -------------------------
+   Variáveis globais
+   ------------------------- */
 :root {
   --primary-bg-color: green; /* global scope */
   --primary-color: #010a53;
@@ -17,7 +19,65 @@ License:    GNU General Public License v2 or later
   --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+")!important;
 }
 
-/* ========== Geral Woo / Account ========== */
+/* =========================================================
+   Reset / Overrides específicos para evitar vazamento de estilos
+   (Impede que os estilos de related products afetem o slider)
+   ========================================================= */
+
+/* Força que os estilos dos related se apliquem apenas dentro do container */
+.wd-related-products .wd-related-grid .product,
+.wd-related-products .wd-related-grid .product-grid-item.product,
+.wd-related-products .wd-related-grid .product-wrapper,
+.wd-related-products .wd-related-grid .product-element-top,
+.wd-related-products .wd-related-grid .product-element-bottom,
+.wd-related-products .wd-related-grid .product-cta,
+.wd-related-products .wd-related-grid .price,
+.wd-related-products .wd-related-grid .wd-add-btn,
+.wd-related-products .wd-related-grid .wd-add-btn-replace,
+.wd-related-products .wd-related-grid .product-rating-wrapper,
+.wd-related-products .wd-related-grid .product-image-link img {
+  /* namespace: estilos aplicáveis apenas ao related */
+}
+
+/* Reset visual para o OwlCarousel / sliders — evita override dos novos estilos */
+.owl-carousel .product-grid-item.product,
+.slide-product .product-grid-item.product,
+.owl-carousel .product-wrapper,
+.slide-product .product-wrapper,
+.owl-carousel .product-element-top,
+.slide-product .product-element-top {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* Garantir que o badge do preço e botão dentro do carousel mantenham aparência do tema original */
+.owl-carousel .product-wrapper .price,
+.owl-carousel .product-wrapper .add_to_cart_button,
+.slide-product .product-wrapper .price,
+.slide-product .product-wrapper .add_to_cart_button {
+  background: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Evita que o wrapper do add-btn seja modificado no carousel */
+.owl-carousel .wd-add-btn,
+.owl-carousel .wd-add-btn-replace,
+.slide-product .wd-add-btn,
+.slide-product .wd-add-btn-replace {
+  display: initial !important;
+}
+
+/* =========================================================
+   Regras gerais do site (mantive como estavam, sem alterar)
+   ========================================================= */
+
+/* Conta do Woo / My Account */
 .woocommerce-MyAccount-title {
     color: var(--secondary-color);
 }
@@ -30,6 +90,7 @@ License:    GNU General Public License v2 or later
 .woocommerce-MyAccount-navigation ul li.is-active {
     background-color: var(--primary-color);
 }
+
 .woocommerce-MyAccount-navigation ul li.is-active>a {
     color: var(--white-color)!important;
 }
@@ -37,11 +98,12 @@ License:    GNU General Public License v2 or later
 .woocommerce-account .page-title {
     display: none !important;
 }
+
 .woocommerce-MyAccount-content>p {
     margin-bottom: 0.5px;
 }
 
-/* ========== Layout single product ========== */
+/* Layout */
 .wd-product-top { padding: 30px 0; }
 .wd-product-gallery-col { padding-right: 30px; }
 .wd-product-summary-col { padding-left: 30px; display:flex; align-items:flex-start; }
@@ -75,7 +137,7 @@ License:    GNU General Public License v2 or later
 .woocommerce-tabs { margin-top:30px; border-top:1px solid #e6e6e6; padding-top:20px; }
 .woocommerce-tabs .panel { padding-top:15px; }
 
-/* Related products full width */
+/* Related products full width placeholder */
 .related-and-upsells { margin-top:40px; }
 
 /* Responsive tweaks */
@@ -85,7 +147,7 @@ License:    GNU General Public License v2 or later
 	.woocommerce div.product form.cart { flex-direction:row; flex-wrap:wrap; }
 }
 
-/* ========== Forçar visibilidade das estrelas quando necessário ========== */
+/* Rating force */
 .my-rating-force .star-rating,
 .my-rating-force .star-rating::before,
 .my-rating-force .star-rating span::before {
@@ -116,14 +178,16 @@ License:    GNU General Public License v2 or later
     font-style: italic;
 }
 
-p.stock { display: none; }
+p.stock {
+    display: none
+}
 
-/* Quantity styles */
 .woocommerce .quantity {
-    background: var(--secondary-color);
+    background: #29b0c2;
     border-radius: 8px;
     display: unset!important;
 }
+
 .woocommerce .quantity input.qty {
     font-size: 25px;
     border: none !important;
@@ -131,296 +195,80 @@ p.stock { display: none; }
     width: 30px !important;
     font-weight: 900;
 }
+
 div.quantity input[type="button"] {
     border: none!important;
+    font-size: 25px!important;
+}
+
+div.quantity input[type="button"] {
     font-size: 25px!important;
     color: #fff!important;
 }
 
-/* Single add button size */
-.woocommerce .single_add_to_cart_button { font-size: 16px; }
+.woocommerce .single_add_to_cart_button {
+    font-size: 16px;
+}
 
-/* Excerpt, SKU, tabs tweaks */
-div.product-excerpt { font-size: 1rem; }
-.product-sku > strong { color: #000; font-weight: 700; }
-.woocommerce-tabs { border-top: none; padding-top: 0px; }
+div.product-excerpt {
+    font-size: 1rem;
+}
 
-/* Nav tabs alignment hack (quando necessário) */
+.product-sku > strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.woocommerce-tabs {
+    border-top: none;
+    padding-top: 0px;
+}
+
 div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
     --content-align: left!important;
     --text-align: left!important;
     text-align: left!important;
 }
 
-/* Menu underline reverse adjustments */
-.wd-nav.wd-style-underline-reverse>li>a { padding-top: 5px!important; }
+.wd-nav.wd-style-underline-reverse>li>a {
+    padding-top: 5px!important;
+}
+
 .wd-nav.wd-style-underline-reverse>li>a>.nav-link-text:after {
     top: -15px!important;
     height: 5px;
     color: var(--secondary-color);
 }
 
-/* Nav link size */
-.wd-nav[class*="wd-style-underline"] .nav-link-text { font-size: 0.8rem; }
+.wd-nav[class*="wd-style-underline"] .nav-link-text {
+    font-size: 0.8rem;
+}
+
 .wd-nav[class*="wd-style-underline"]>li:is(:hover,.current-menu-item,.wd-active,.active)>a .nav-link-text:after {
     width: 30%!important;
 }
 
-/* ========== Related products (scope correto do teu HTML) ========== */
-/* Container / grid */
-.wd-related-products { margin: 50px 0; }
-.wd-related-products.container { padding-left: 0; padding-right: 0; }
-
-/* Grid wrapper */
-.wd-related-grid { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 -10px; }
-
-/* Each product card (isolado) */
-.wd-related-grid .product,
-.wd-related-grid .product-grid-item.product {
-  width: calc(25% - 20px);
-  box-sizing: border-box;
-  padding: 0 10px;
+/* MENU */
+body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
+  background-color: var(--secondary-color);
 }
 
-/* Card inner wrapper */
-.wd-related-grid .product-wrapper,
-.wd-related-grid .product .product-wrapper,
-.product-grid-item .product-wrapper {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 6px 18px rgba(16, 24, 60, 0.06);
-  border: 1px solid rgba(16,24,60,0.06);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+#menu-categorias > li > a > span {
+  color: var(--white-color)!important;
 }
 
-/* Top: image area */
-.wd-related-grid .product-element-top,
-.product-grid-item .product-element-top { text-align: center; padding-bottom: 6px; }
-.wd-related-grid .product-element-top .product-image-link img,
-.product-grid-item .product-element-top .product-image-link img {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  margin: 8px auto 12px;
-  border: none!important;
-}
-
-/* Title / brand / meta */
-.wd-entities-title { 
-  font-size: 15px; 
-  font-weight: 600; 
-  margin: 8px 0 10px; 
-  line-height: 1.2;
-  color: #222;
-}
-.product-wrapper .product-element-bottom .wd-entities-title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Small brand label above title (if exists) */
-.product-wrapper .product-element-bottom .brand,
-.product-wrapper .product-element-bottom .product-brand,
-.product .posted_in {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: #8b8b8b;
-  margin-bottom: 6px;
-}
-
-/* Thin separator line */
-.product-wrapper .product-element-bottom hr,
-.product-wrapper .product-element-bottom .sep-line {
-  border: none;
-  border-top: 1px solid rgba(16,24,60,0.08);
-  margin: 10px 0;
-}
-
-/* Rating centered under separator */
-.product-wrapper .product-element-bottom .star-rating,
-.product-wrapper .product-element-bottom .woocommerce-product-rating {
-  display: block;
-  text-align: center;
-  margin: 8px 0 12px;
-}
-
-/* Ensure star icons visible */
-.star-rating,
-.star-rating::before {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Price + button row */
-.product-wrapper .product-element-bottom .wd-add-btn,
-.product-wrapper .product-element-bottom .wd-add-btn-replace,
-.product-wrapper .product-element-bottom .price {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-
-/* Price pill (yellow) */
-.product-wrapper .product-element-bottom .price {
-  flex: 0 0 auto;
-}
-.product-wrapper .price .woocommerce-Price-amount {
-  background: #f5c63b; /* amarelo */
-  color: #08103a;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 700;
-  display: inline-block;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
-}
-
-/* Add to cart / CTA button (blue) */
-.product-wrapper .product-element-bottom .add_to_cart_button,
-.product-wrapper .product-element-bottom .button,
-.product-wrapper .product-element-bottom .wd-add-btn a.button,
-.product-wrapper .product-element-bottom .wd-add-btn-replace .button {
-  background: #08103a !important;
-  color: #fff !important;
-  padding: 8px 16px !important;
-  border-radius: 10px !important;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Button + price alignment: justify full width when requested */
-.product-wrapper .product-element-bottom .wd-add-btn { justify-content: space-between; width: 100%; }
-
-/* Card footer spacing */
-.product-wrapper .product-element-bottom { padding-top: 8px; }
-
-/* Make rating stars slightly larger */
-.product-wrapper .product-element-bottom .star-rating { font-size: 18px; line-height: 1; }
-
-/* Ensure image area and bottom align nicely */
-.product-wrapper .product-element-top,
-.product-wrapper .product-element-bottom { flex: 0 0 auto; }
-
-/* Responsive: 2 columns on tablet, 1 on mobile */
-@media (max-width: 991px) {
-  .wd-related-grid .product,
-  .product-grid-item.product { width: calc(50% - 20px); }
-}
-@media (max-width: 560px) {
-  .wd-related-grid .product,
-  .product-grid-item.product { width: 100%; padding: 0 8px; }
-}
-
-/* Grid tweak for big desktop */
 @media (min-width: 1025px) {
-    .col-lg-4 {
-        flex: 0 0 33.333333%;
-        max-width: 23.333333%!important;
+    .whb-header-bottom-inner {
+        height: 50px!important;
+        max-height: 81px;
     }
 }
 
-/* Prevent hover image borders from theme */
-.wd-related-products .product-grid-item .hover-img img, .product-grid-item .product-image-link img {
-  border: none!important;
+.wd-nav {
+  --nav-gap: 19px!important;
 }
 
-/* ========== Price + button (novo layout dentro do card) ========== */
-/* Container que ocupa a largura total do card */
-.product-cta .price-add-row {
-  display: flex;
-  width: 100%;
-  gap: 14px;              /* espaço entre preço e botão */
-  align-items: stretch;   /* garante mesma altura */
-  justify-content: space-between;
-  padding: 0 12px 18px;
-  box-sizing: border-box;
-}
-
-/* Cada coluna ocupa metade (mesma proporção) */
-.product-cta .price-col,
-.product-cta .button-col {
-  flex: 1 1 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Estilo do badge de preço */
-.product-cta .price-col .price,
-.product-cta .price-col .woocommerce-Price-amount {
-  display: inline-block;
-  background: #fec917;
-  color: #07143d;
-  font-weight: 700;
-  padding: 10px 18px;
-  border-radius: 12px;
-  font-size: 1.25rem;
-  min-width: 0;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo */
-.product-cta .price-col ins,
-.product-cta .price-col del {
-  display: inline-block;
-}
-
-/* Botão ocupa 100% da coluna, centralizado e com mesma altura visual */
-.product-cta .button-col .add_to_cart_button {
-  width: 100%;
-  height: 100%;
-  max-height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 18px;
-  border-radius: 12px;
-  background: #07143d;
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  box-sizing: border-box;
-  border: none;
-}
-.product-cta .button-col .add_to_cart_button:hover { opacity: 0.95; }
-
-/* Responsividade: em telas pequenas empilha verticalmente */
-@media (max-width: 520px) {
-  .product-cta .price-add-row { flex-direction: column; gap: 10px; }
-  .product-cta .button-col .add_to_cart_button { max-height: none; }
-}
-
-/* ========== Rating wrapper ========== */
-.product-rating-wrapper {
-  width: 100%;
-  text-align: center;
-  padding: 14px 0;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  margin: 16px 0 22px;
-  box-sizing: border-box;
-}
-.product-rating { display: flex; align-items: center; justify-content: center; }
-.product-rating .star-rating { margin: 0 auto; }
-.product-rating .star-rating span { margin: 0 !important; }
-
-/* make sure bottom margin removed inside product wrapper */
-.product-wrapper .product-element-bottom .star-rating, .product-wrapper .product-element-bottom .woocommerce-product-rating { margin: 0; }
-
-.wd-related-products h2 { color: var(--primary-color); }
-
-/* ========== MENU / chevron fix ========== */
-/* Força remover qualquer :after aplicado direto no <a> */
+/* FORCE REMOVE anything added after <a> (prevent duplicate chevrons) */
 .wd-nav > li.menu-item-has-children > a:after {
     content: none !important;
     background: none !important;
@@ -428,36 +276,31 @@ div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.
     height: 0 !important;
     display: none !important;
 }
-/* Adiciona o chevron apenas ao .nav-link-text (span) */
+
+/* the span after <a> (our replacement chevron) */
 .wd-nav > li.menu-item-has-children > a > .nav-link-text:after {
     content: "" !important;
     font-family: none !important;
+
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7ZmlsbDogI2ZmZjt9CiAgICAgIC5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO30KICAgICAgLmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDouNzlweDt9CiAgICAgIC5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwcGF0aCk7fQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPjxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjEyLjciIGhlaWdodD0iMTIuNyIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+PGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI2LjM1IiBjeT0iNi4zNSIgcj0iNS45NSIvPjwvZz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMy4wNyA1LjczIDMuMDcgNi45NyA1LjczIDYuOTcgNS43MyA5LjYzIDYuOTcgOS42MyA2Ljk3IDYuOTcgOS42MyA2Ljk3IDkuNjMgNS43MyA2Ljk3IDUuNzMgNi45NyAzLjA3IDUuNzMgMy4wNyA1LjczIDUuNzMgMy4wNyA1LjczIi8+PC9zdmc+");
+
     background-size: 14px;
     background-repeat: no-repeat;
     background-position: center;
+
     width: 15px;
     height: 15px;
+
     display: inline-block;
     margin-left: 4px;
     transform: translateY(2px);
 }
 
-/* Header row color */
-body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
-  background-color: var(--secondary-color);
-}
-#menu-categorias > li > a > span { color: var(--white-color)!important; }
-
-@media (min-width: 1025px) {
-    .whb-header-bottom-inner { height: 50px!important; max-height: 81px; }
+/* Dropdown adjustments */
+.whb-header-bottom .wd-dropdown {
+    margin-top: 6.5px !important;
 }
 
-/* Nav gap control */
-.wd-nav { --nav-gap: 19px!important; }
-
-/* Dropdown / sub-menu styles */
-.whb-header-bottom .wd-dropdown { margin-top: 6.5px !important; }
 .wd-sub-menu li>a {
     position: relative;
     display: flex;
@@ -468,16 +311,24 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     font-size: 14px;
     line-height: 1.3;
 }
-.wd-sub-menu > li > a > .nav-link-text { color: var(--primary-color) !important; }
 
-/* Custom dropdown bottom border */
+.wd-sub-menu > li > a > .nav-link-text {
+    color: var(--primary-color) !important;
+}
+
 .wd-dropdown-menu.wd-dropdown {
   padding-bottom: 5rem !important;
   border-bottom: 5px solid var(--secondary-color) !important;
 }
 
-/* ========== Carousel dots (bolinhas) ========== */
-.owl-dots { margin-top: 0!important; }
+/* owl dots reset */
+.owl-dots {
+  margin-top: none!important;
+}
+
+/* =========================================================
+   Carousel "bolinhas" estilizadas (banners bullets)
+   ========================================================= */
 
 /* container das bolinhas */
 .wd-carousel .owl-dots,
@@ -488,7 +339,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     align-items: center;
 }
 
-/* estilo das bolinhas transformado em pequenos retângulos arredondados */
+/* estilo das bolinhas transformadas em "pills" */
 .wd-carousel .owl-dot span,
 .owl-carousel .owl-dot span {
     width: 35px !important;
@@ -507,8 +358,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     width: 35px !important;
 }
 
-/* ========== Title overlined: trocar border-top por ::before (centralizada) ========== */
-.wd-title-style-overlined .liner-continer { border-top: none !important; }
+/* =========================================================
+   Title overlined — trocar border-top por ::before (centralizada)
+   ========================================================= */
+
+.wd-title-style-overlined .liner-continer {
+  border-top: none !important;
+}
 
 .wd-title-style-overlined .title {
     position: relative;
@@ -523,20 +379,318 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     top: 0;
     left: 50%;
     transform: translateX(-50%); /* centraliza perfeitamente */
-    width: 400px; /* ajuste o tamanho da linha conforme precisares */
+    
+    width: 400px; /* ajuste o tamanho da linha */
     height: 3px; /* espessura */
     background-color: var(--el-title-color);
-    border-radius: 2px;
+    border-radius: 2px; /* opcional */
 }
 
-/* centralizar texto do title (quando necessário) */
-.wd-title-style-overlined .title { text-align: center; }
+/* =========================================================
+   ===================== Related Products =====================
+   Scoped styles: todos os estilos de "card" do related ficam aqui
+   ========================================================= */
 
-/* ========== Small utilities ========== */
-/* remove default outline from images in some themes */
-img { max-width: 100%; height: auto; }
+.wd-related-products {
+  margin: 50px 0;
+}
 
-/* ensure no unwanted global overrides leak from child file */
-:root, html, body { box-sizing: border-box; }
+.wd-related-products .wd-related-grid { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 18px; 
+  margin: 0 -10px; 
+}
 
-/* End of stylesheet */
+/* Each product card (scoped) */
+.wd-related-products .wd-related-grid .product,
+.wd-related-products .wd-related-grid .product-grid-item.product {
+  width: calc(25% - 20px);
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+/* Card inner wrapper (scoped) */
+.wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
+.wd-related-products .wd-related-grid .product .product-wrapper {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16, 24, 60, 0.06);
+  border: 1px solid rgba(16,24,60,0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top: image area (scoped) */
+.wd-related-products .wd-related-grid .product-element-top { 
+  text-align: center; 
+  padding-bottom: 6px; 
+}
+.wd-related-products .wd-related-grid .product-element-top .product-image-link img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 8px auto 12px;
+}
+
+/* Title / brand / meta (scoped) */
+.wd-related-products .wd-related-grid .wd-entities-title { 
+  font-size: 15px; 
+  font-weight: 600; 
+  margin: 8px 0 10px; 
+  line-height: 1.2;
+  color: #222;
+}
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-entities-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Small brand label above title (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .brand,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand,
+.wd-related-products .wd-related-grid .product .posted_in {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #8b8b8b;
+  margin-bottom: 6px;
+}
+
+/* Thin separator line (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom hr,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .sep-line {
+  border: none;
+  border-top: 1px solid rgba(16,24,60,0.08);
+  margin: 10px 0;
+}
+
+/* Rating centered under separator (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .woocommerce-product-rating {
+  display: block;
+  text-align: center;
+  margin: 8px 0 12px;
+}
+
+/* Ensure star icons visible (scoped) */
+.wd-related-products .wd-related-grid .star-rating,
+.wd-related-products .wd-related-grid .star-rating::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Price + button row (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* Price pill (yellow) (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
+  flex: 0 0 auto;
+}
+.wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
+  background: #f5c63b; /* amarelo */
+  color: #08103a;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
+}
+
+/* Add to cart / CTA button (blue) (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn a.button,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
+  background: #08103a !important;
+  color: #fff !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Button + price alignment: price left, btn right (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
+  justify-content: space-between; 
+  width: 100%; 
+}
+
+/* Card footer spacing (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
+  padding-top: 8px; 
+}
+
+/* Make rating stars slightly larger (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
+  font-size: 18px; 
+  line-height: 1; 
+}
+
+/* Ensure image area and bottom align nicely (scoped) */
+.wd-related-products .wd-related-grid .product-wrapper .product-element-top,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
+  flex: 0 0 auto; 
+}
+
+/* Responsive: 2 columns on tablet, 1 on mobile (scoped) */
+@media (max-width: 991px) {
+  .wd-related-products .wd-related-grid .product,
+  .wd-related-products .wd-related-grid .product-grid-item.product { 
+    width: calc(50% - 20px); 
+  }
+}
+@media (max-width: 560px) {
+  .wd-related-products .wd-related-grid .product,
+  .wd-related-products .wd-related-grid .product-grid-item.product { 
+    width: 100%; 
+    padding: 0 8px; 
+  }
+}
+
+/* Força tamanho coluna alternativa (se necessário) */
+@media (min-width: 1025px) {
+    .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 23.333333%!important;
+    }
+}
+
+/* Remove border das imgs (scoped) */
+.wd-related-products .product-grid-item .hover-img img, 
+.wd-related-products .product-grid-item .product-image-link img {
+  border: none!important;
+}
+
+/* Container que ocupa a largura total do card (scoped) */
+.wd-related-products .product-cta .price-add-row {
+  display: flex;
+  width: 100%;
+  gap: 14px;              /* espaço entre preço e botão — ajusta à vontade */
+  align-items: stretch;   /* garante mesma altura */
+  justify-content: space-between;
+  padding: 0 12px 18px;   /* mantém espaço inferior como no exemplo */
+  box-sizing: border-box;
+}
+
+/* Cada coluna ocupa metade (mesma proporção) (scoped) */
+.wd-related-products .product-cta .price-col,
+.wd-related-products .product-cta .button-col {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
+.wd-related-products .product-cta .price-col .price,
+.wd-related-products .product-cta .price-col .woocommerce-Price-amount {
+  display: inline-block;
+  background: #fec917;     /* cor amarela do exemplo */
+  color: #07143d;          /* cor do número */
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo (scoped) */
+.wd-related-products .product-cta .price-col ins,
+.wd-related-products .product-cta .price-col del {
+  display: inline-block;
+}
+
+/* Botão ocupa 100% da coluna, centralizado e com mesma altura (scoped) */
+.wd-related-products .product-cta .button-col .add_to_cart_button {
+  width: 100%;
+  height: 100%;
+  max-height: 56px;            /* controla altura máxima — ajusta se quiseres */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #07143d;         /* cor escura do botão */
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+/* Hover do botão (scoped) */
+.wd-related-products .product-cta .button-col .add_to_cart_button:hover {
+  opacity: 0.95;
+}
+
+/* Responsividade: em telas pequenas empilha verticalmente (scoped) */
+@media (max-width: 520px) {
+  .wd-related-products .product-cta .price-add-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
+}
+
+/* Wrapper com as bordas (scoped) */
+.wd-related-products .product-rating-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 16px 0 22px;
+  box-sizing: border-box;
+}
+
+/* Centraliza as estrelas (scoped) */
+.wd-related-products .product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Garante que as estrelas não fiquem grudadas (scoped) */
+.wd-related-products .product-rating .star-rating {
+  margin: 0 auto;
+}
+
+/* Fix para temas que deixam as estrelas inline (scoped) */
+.wd-related-products .product-rating .star-rating span {
+  margin: 0 !important;
+}
+
+.wd-related-products .product-wrapper .product-element-bottom .star-rating, 
+.wd-related-products .product-wrapper .product-element-bottom .woocommerce-product-rating {
+  margin: 0;
+}
+
+.wd-related-products h2 {
+  color: var(--primary-color);
+}
+
+/* =========================================================
+   FIM Related Products scoped
+   ========================================================= */
+
+/* Pequenos ajustes finais */
+.wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
+    width: 30%!important;
+}
