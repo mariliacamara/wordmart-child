@@ -474,7 +474,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .woocommerce-product-rating {
   display: block;
   text-align: center;
-  margin: 8px 0 12px;
+  margin: 0px;
 }
 
 /* Ensure star icons visible (scoped) */
