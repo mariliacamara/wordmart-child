@@ -44,6 +44,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       </div>
     </div>
 
+    123
+
     <!-- PRICE + CTA -->
     <div class="product-element-bottom">
       <div class="product-cta-row">
@@ -75,7 +77,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
                 );
               ?>
             </div>
-
           </div> <!-- .price-add-row -->
         </div>
       </div>
