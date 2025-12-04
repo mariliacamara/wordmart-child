@@ -760,3 +760,205 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .menu > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
   /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
 }
+
+/* =========================
+   Carousel product cards (scoped to Owl carousel)
+   ========================= */
+
+/* Aplica apenas aos slides do owl (ajusta se o teu carousel tiver outra classe) */
+.owl-carousel .slide-product .product-grid-item,
+.owl-carousel .slide-product .product-grid-item * {
+  box-sizing: border-box;
+}
+
+/* Card wrapper — estilo igual ao related */
+.owl-carousel .slide-product .product-grid-item {
+  width: 100% !important; /* o owl controla a largura dos itens */
+  padding: 0 12px;        /* margem interna do item */
+}
+.owl-carousel .slide-product .product-grid-item .product-wrapper {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16,24,60,0.06);
+  border: 1px solid rgba(16,24,60,0.06);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top image area centered */
+.owl-carousel .slide-product .product-element-top {
+  text-align: center;
+  padding-bottom: 6px;
+  flex: 0 0 auto;
+}
+.owl-carousel .slide-product .product-element-top .product-image-link img,
+.owl-carousel .slide-product .product-element-top .hover-img img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 8px auto 12px;
+  border: none !important;
+}
+
+/* Title / brand / meta */
+.owl-carousel .slide-product .wd-entities-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 8px 0 10px;
+  line-height: 1.2;
+  color: #222;
+  text-align: center;
+}
+.owl-carousel .slide-product .product-element-bottom .wd-entities-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Small brand label */
+.owl-carousel .slide-product .product-brand,
+.owl-carousel .slide-product .brand,
+.owl-carousel .slide-product .posted_in {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #8b8b8b;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+/* Rating boxed like related: separator + stars centered */
+.owl-carousel .slide-product .product-rating-wrapper {
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  border-top: 1px solid rgba(16,24,60,0.08);
+  border-bottom: 1px solid rgba(16,24,60,0.08);
+  margin: 12px 0;
+  box-sizing: border-box;
+}
+.owl-carousel .slide-product .product-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.owl-carousel .slide-product .star-rating,
+.owl-carousel .slide-product .star-rating::before {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Price + CTA row: same structure as related */
+.owl-carousel .slide-product .product-element-bottom {
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+
+/* Container like .price-add-row (two equal cols) */
+.owl-carousel .slide-product .product-cta,
+.owl-carousel .slide-product .product-cta-row,
+.owl-carousel .slide-product .product-cta .price-add-row {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px 6px;
+  box-sizing: border-box;
+}
+
+/* Columns: price and button */
+.owl-carousel .slide-product .product-cta .price-col,
+.owl-carousel .slide-product .product-cta .button-col {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Price pill */
+.owl-carousel .slide-product .product-cta .price-col .price,
+.owl-carousel .slide-product .product-cta .price-col .woocommerce-Price-amount {
+  display: inline-block;
+  background: #fec917;
+  color: #07143d;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
+  text-align: center;
+}
+
+/* Make sure quantity + add wrapper aligns */
+.owl-carousel .slide-product .wd-add-btn,
+.owl-carousel .slide-product .wd-add-btn-replace,
+.owl-carousel .slide-product .wd-add-btn .quantity,
+.owl-carousel .slide-product .wd-add-btn-replace .quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Button smaller to match price pill (since você pediu diminuir o botão) */
+.owl-carousel .slide-product .product-cta .button-col .add_to_cart_button,
+.owl-carousel .slide-product .product-cta .button-col a.button,
+.owl-carousel .slide-product .button.product_type_simple.add_to_cart_button {
+  width: auto !important;
+  min-width: 120px;       /* diminui o botão, ajuste se quiser */
+  padding: 8px 12px !important;
+  border-radius: 10px !important;
+  background: #07143d !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Quantity styles: mantém aparência mas reduz tamanho */
+.owl-carousel .slide-product .quantity input.qty {
+  width: 40px !important;
+  font-size: 18px !important;
+  text-align: center;
+  color: #07143d !important;
+  background: transparent;
+  border: none !important;
+}
+
+/* remover posicionamentos flutuantes (tema coloca) dentro do carousel */
+.owl-carousel .slide-product .wd-buttons,
+.owl-carousel .slide-product .wd-buttons .wd-compare-btn,
+.owl-carousel .slide-product .wd-buttons .quick-view,
+.owl-carousel .slide-product .wd-buttons .wd-wishlist-btn {
+  position: static !important;
+  display: inline-block !important;
+  margin-left: 6px;
+}
+
+/* Se o tema inseriu botões flutuantes sobre a imagem, reduz opacidade e reposiciona para o canto superior direito dentro do fluxo */
+.owl-carousel .slide-product .wd-buttons { text-align: right; margin-top: 6px; }
+
+/* mantém a mesma altura entre imagem e conteúdo (prevenir overflow) */
+.owl-carousel .slide-product .product-wrapper { overflow: hidden; }
+
+/* mobile: empilha visual */
+@media (max-width: 991px) {
+  .owl-carousel .slide-product .product-cta .price-col,
+  .owl-carousel .slide-product .product-cta .button-col {
+    flex: 0 0 48%;
+  }
+  .owl-carousel .slide-product .product-wrapper { padding: 12px; }
+}
+
+/* Aumenta especificidade para evitar overrides do tema */
+body .owl-carousel .slide-product .product-grid-item .product-wrapper { border-color: rgba(16,24,60,0.06); }
