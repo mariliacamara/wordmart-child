@@ -13,7 +13,7 @@ License:    GNU General Public License v2 or later
   --primary-color: #010a53;
   --secondary-color: #29b0c2;
   --white-color: #fff;
-  --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+");
+  --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+")!important;
 }
 
 .woocommerce-MyAccount-title {
@@ -497,4 +497,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
         height: 50px!important;
         max-height: 81px;
     }
+}
+
+.wd-nav[class*="wd-style-"]>li:is(.wd-has-children,.menu-item-has-children)>a:after {
+    color: var(--nav-plus);
 }
