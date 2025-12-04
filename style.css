@@ -710,3 +710,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     height: auto !important; /* garante que não force altura exagerada */
     min-height: 0 !important;
 }
+
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn a.button, .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
+  border-radius: 5px !important;
+}
