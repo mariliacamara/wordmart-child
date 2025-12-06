@@ -875,7 +875,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-header-search-form .searchform .searchsubmit:hover,
 .wd-header-search-form .searchform .searchsubmit:focus {
   transform: none;
-  box-shadow: none;
+  box-shadow: transparent;
   background: none;
 }
 
