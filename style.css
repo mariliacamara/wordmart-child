@@ -1055,7 +1055,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 .wd-header-search-form .searchform .searchsubmit:after,
 .wd-header-search-form .searchform .searchsubmit::after {
   background-color: transparent !important;
-  background: transparent !important;
   box-shadow: none !important;
 }
 
