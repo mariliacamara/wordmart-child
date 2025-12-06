@@ -950,6 +950,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle > div > div > div.whb-column.whb-col-center.whb-visible-lg > div.wd-search-form.wd-header-search-form.wd-display-form > form > button {
-  background-color: none!important;
-  border: none!important;
+  background-color: transparent!important;
+  border: transparent!important;
 }
