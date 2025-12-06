@@ -1108,7 +1108,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
     font-weight: 700;
     text-transform: uppercase;
     color: var(--dark-grey);
-    margin-bottom: 6px;
+    margin-bottom: 0;
 }
 
 /* linha com title + logo ao lado */
