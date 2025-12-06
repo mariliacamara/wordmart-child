@@ -605,6 +605,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Container que ocupa a largura total do card (scoped) */
+.pagination-pagination .product-grid-item .product-cta .price-add-row,
 .owl-carousel .owl-item .product-cta .price-add-row,
 .wd-related-products .product-cta .price-add-row {
   display: flex;
@@ -628,6 +629,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
+.pagination-pagination .product-grid-item .product-cta .price-col .price,
 .wd-related-products .product-cta .price-col .price,
 .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
   display: inline-block;
@@ -644,12 +646,15 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo (scoped) */
+.pagination-pagination .product-grid-item .product-cta .price-col ins,
+.pagination-pagination .product-grid-item .product-cta .price-col del
 .wd-related-products .product-cta .price-col ins,
 .wd-related-products .product-cta .price-col del {
   display: inline-block;
 }
 
 /* Botão ocupa 100% da coluna, centralizado e com mesma altura (scoped) */
+.pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
 .owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
   width: 100%;
@@ -669,6 +674,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Hover do botão (scoped) */
+.pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button:hover,
 .owl-carousel .owl-item .button-col .add_to_cart_button:hover,
 .wd-related-products .product-cta .button-col .add_to_cart_button:hover {
   opacity: 0.95;
@@ -676,11 +682,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Responsividade: em telas pequenas empilha verticalmente (scoped) */
 @media (max-width: 520px) {
+  .pagination-pagination .product-grid-item .product-cta .price-add-row,
   .owl-carousel .owl-item .product-cta .price-add-row,
   .wd-related-products .product-cta .price-add-row {
     flex-direction: column;
     gap: 10px;
   }
+  .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
   .owl-carousel .owl-item .button-col .add_to_cart_button,
   .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
 }
@@ -732,7 +740,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
     width: 30%!important;
 }
-
+.pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
 .owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
     padding-top: 10px !important;
