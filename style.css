@@ -623,6 +623,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Botão ocupa 100% da coluna, centralizado e com mesma altura (scoped) */
+.owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
   width: 100%;
   height: 100%;
@@ -641,6 +642,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Hover do botão (scoped) */
+.owl-carousel .owl-item .button-col .add_to_cart_button:hover,
 .wd-related-products .product-cta .button-col .add_to_cart_button:hover {
   opacity: 0.95;
 }
@@ -651,6 +653,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     flex-direction: column;
     gap: 10px;
   }
+  .owl-carousel .owl-item .button-col .add_to_cart_button,
   .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
 }
 
@@ -700,6 +703,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     width: 30%!important;
 }
 
+.owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
