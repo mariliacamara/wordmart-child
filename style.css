@@ -772,3 +772,40 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .menu > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
   /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
 }
+
+/* MY ACCOUNT */
+
+.wd-my-account-links .wd-account-link {
+	margin-bottom: 12px;
+}
+
+.wd-account-anchor {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: #333; /* cor padrão do ícone/label (usa currentColor) */
+	text-decoration: none;
+}
+
+.wd-account-icon svg {
+	width: 22px;
+	height: 22px;
+	display: block;
+	vertical-align: middle;
+	/* fills do SVG foram substituídos para usar currentColor */
+	fill: currentColor;
+	transition: color .15s ease, transform .12s ease;
+}
+
+.wd-account-label {
+	font-size: 14px;
+}
+
+.wd-account-anchor:hover,
+.wd-account-anchor:focus {
+	color: #f7a430; /* cor no hover — ajuste para a sua cor */
+}
+
+.wd-account-anchor:hover .wd-account-icon svg {
+	transform: translateY(-2px);
+}
