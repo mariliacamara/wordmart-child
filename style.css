@@ -1750,3 +1750,23 @@ body .products .product-grid-item .product-wrapper,
 body .woocommerce ul.products li.product .product-wrapper {
   min-height: 540px !important;
 }
+
+/* Opção 3: remove min-height e reduz altura da área da imagem */
+.products .product-grid-item .product-wrapper,
+.woocommerce ul.products li.product .product-wrapper {
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 14px !important;
+}
+
+.products .product-grid-item .product-image-link,
+.woocommerce ul.products li.product .product-image-link {
+  height: 240px !important; /* imagem menor -> card mais compacto */
+}
+
+@media (max-width: 991px) {
+  .products .product-grid-item .product-image-link,
+  .woocommerce ul.products li.product .product-image-link {
+    height: 200px !important;
+  }
+}
