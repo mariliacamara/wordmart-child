@@ -151,6 +151,9 @@ License:    GNU General Public License v2 or later
 }
 
 /* Rating force */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating::before,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating span::before,
 .my-rating-force .star-rating,
 .my-rating-force .star-rating::before,
 .my-rating-force .star-rating span::before {
@@ -488,6 +491,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Ensure star icons visible (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating::before,
 .wd-related-products .wd-related-grid .star-rating,
 .wd-related-products .wd-related-grid .star-rating::before {
   opacity: 1 !important;
@@ -712,11 +717,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Garante que as estrelas não fiquem grudadas (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-rating .star-rating,
 .wd-related-products .product-rating .star-rating {
   margin: 0 auto;
 }
 
 /* Fix para temas que deixam as estrelas inline (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-rating .star-rating span,
 .wd-related-products .product-rating .star-rating span {
   margin: 0 !important;
 }
