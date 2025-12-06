@@ -920,7 +920,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* :after com o seu SVG (base64) */
 .searchform .searchsubmit:after {
-  content: "";
+  content: ""!important;
   display: inline-block;
   width: calc(var(--wd-form-height) / 2.3);
   height: calc(var(--wd-form-height) / 2.3);
