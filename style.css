@@ -1518,5 +1518,5 @@ div.product-excerpt {
     border-radius: 1px 1px 1px 1px;
     -moz-border-radius: 1px 1px 1px 1px;
     -webkit-border-radius: 1px 1px 1px 1px;
-    border: 1px solid #dadada;
+    border: none;
 }
