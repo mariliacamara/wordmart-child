@@ -854,8 +854,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   height: 52px;
   min-width: 52px;
   border-radius: 50%;
-  border: 3px solid #49c7c9;       /* mesma cor da borda do input */
-  background: linear-gradient(0deg, #49c7c9 0%, #3fb9b9 100%); /* leve gradiente */
+  border: none;       /* mesma cor da borda do input */
+  background: none; /* leve gradiente */
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
   padding: 0;
   cursor: pointer;
