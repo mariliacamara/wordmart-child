@@ -1093,3 +1093,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 .wd-header-search-form .searchform .searchsubmit:hover {
   color: #f7a430 !important;
 }
+
+.wd-tools-element .wd-tools-icon {
+  width: 40px;
+}
