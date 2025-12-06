@@ -18,18 +18,24 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
     <!-- TOP: imagem e quick actions -->
     <div class="product-element-top wd-quick-shop">
-      <a href="<?php the_permalink(); ?>" class="product-image-link">
+      <a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link">
         <?php
-        // thumbnail (usa a função padrão do WC)
-        echo woocommerce_get_product_thumbnail( '600x600' );
+        /**
+         * Hook woocommerce_before_shop_loop_item_title.
+         *
+         * @hooked woodmart_template_loop_product_thumbnails_gallery - 5
+         * @hooked woocommerce_show_product_loop_sale_flash - 10
+         * @hooked woodmart_template_loop_product_thumbnail - 10
+         */
+        do_action( 'woocommerce_before_shop_loop_item_title' );
         ?>
       </a>
 
-      <div class="wd-buttons wd-pos-r-t">
-        <?php if ( function_exists( 'woodmart_quick_view_button' ) ) : ?>
-          <?php // woodmart_quick_view_button(); // descoment se quiser ?>
-        <?php endif; ?>
-      </div>
+      <?php
+      if ( 'no' === woodmart_loop_prop( 'grid_gallery' ) || ! woodmart_loop_prop( 'grid_gallery' ) ) {
+        woodmart_hover_image();
+      }
+      ?>
     </div>
 
     <!-- BOTTOM: conteúdo do card -->
