@@ -87,9 +87,6 @@ add_filter( 'wc_get_template_part', function( $template, $slug, $name ) {
     return $template;
 }, 20, 3 );
 
-<?php
-// Colar no functions.php do tema filho
-
 // 1) Remove a ação do tema pai (executa AFTER parent)
 add_action( 'after_setup_theme', function() {
     // tenta remover a função original do pai (se foi adicionada com o mesmo nome/prioridade)
