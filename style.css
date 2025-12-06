@@ -968,7 +968,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   margin: 0 auto;
   border: 2px solid #49c7c9;       /* borda contínua */
   border-radius: 42px;             /* arco contínuo */
-  background: #fff;
+  background:none;
   box-sizing: border-box;
   position: relative;
 }
@@ -990,7 +990,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   min-width: 56px;
   border-radius: 50%;
   border: none;               /* important: retirar border pra não quebrar o arco */
-  background: #fff;           /* cor do botão (interno) */
+  background: none;           /* cor do botão (interno) */
   display: inline-flex;
   align-items: center;
   justify-content: center;
