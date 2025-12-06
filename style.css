@@ -809,3 +809,98 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-account-anchor:hover .wd-account-icon svg {
 	transform: translateY(-2px);
 }
+
+/* Container / layout */
+.wd-header-search-form .searchform {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 760px; /* ajuste: controla largura do searchbar */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* campo de texto */
+.wd-header-search-form .searchform .s {
+  flex: 1 1 auto;
+  border: 3px solid #49c7c9;        /* cor da borda principal (ajusta se quiser) */
+  border-right: none;               /* sem borda entre input e botão */
+  background: #fff;
+  padding: 16px 18px;
+  font-size: 15px;
+  line-height: 1;
+  border-radius: 42px;              /* arredondado grande */
+  outline: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  -webkit-appearance: none;
+  appearance: none;
+  transition: box-shadow .12s ease, border-color .12s ease;
+}
+
+/* remove sombra e foco padrão; aplica borda de foco */
+.wd-header-search-form .searchform .s:focus {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-color: #2bb2b4;
+}
+
+/* botão circular na direita */
+.wd-header-search-form .searchform .searchsubmit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  border: 3px solid #49c7c9;       /* mesma cor da borda do input */
+  background: linear-gradient(0deg, #49c7c9 0%, #3fb9b9 100%); /* leve gradiente */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  padding: 0;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+/* ícone dentro do botão usa currentColor */
+.wd-header-search-form .searchform .searchsubmit .icon-search {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+  fill: currentColor;
+}
+
+/* hover/focus do botão — altera cor */
+.wd-header-search-form .searchform .searchsubmit:hover,
+.wd-header-search-form .searchform .searchsubmit:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
+  background: linear-gradient(0deg, #3fb9b9 0%, #36a9a9 100%);
+}
+
+/* Quando hover na âncora inteira (caso o tema aplique hover por outro container) -->
+   também altera cor do input (borda) para combinar */
+.wd-header-search-form .searchform:hover .s,
+.wd-header-search-form .searchform:focus-within .s {
+  border-color: #3fb9b9;
+}
+
+/* placeholder styling */
+.wd-header-search-form .searchform .s::placeholder {
+  color: #9aa7aa;
+  opacity: 1;
+}
+
+/* responsivo: reduz largura e botão em telas pequenas */
+@media (max-width: 900px) {
+  .wd-header-search-form .searchform { max-width: 520px; }
+  .wd-header-search-form .searchform .searchsubmit { width:46px; height:46px; }
+  .wd-header-search-form .searchform .s { padding:12px 14px; }
+}
+
+@media (max-width: 480px) {
+  .wd-header-search-form .searchform { max-width: 100%; padding: 0 12px; }
+  .wd-header-search-form .searchform .searchsubmit { width:42px; height:42px; }
+  .wd-header-search-form .searchform .s { padding:10px 12px; font-size:14px; }
+}
