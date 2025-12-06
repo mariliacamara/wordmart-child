@@ -1138,8 +1138,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 }
 
 .my-brand-logo img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
 }
 
@@ -1150,7 +1150,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
         align-items: flex-start;
     }
     .my-brand-logo {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
     }
 }
