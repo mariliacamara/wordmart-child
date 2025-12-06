@@ -1097,3 +1097,61 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 .wd-tools-element .wd-tools-icon {
   width: 40px;
 }
+
+/* wrapper que agrupa brand name + title-row */
+.my-brand-wrapper {
+    margin-bottom: 18px;
+}
+
+/* nome da marca acima */
+.my-brand-name {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 6px;
+}
+
+/* linha com title + logo ao lado */
+.my-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* título ajustado para não quebrar o layout */
+.my-title-row .product-title {
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+/* logo da brand */
+.my-brand-logo {
+    flex: 0 0 auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-brand-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* responsivo mobile */
+@media (max-width: 768px) {
+    .my-title-row {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .my-brand-logo {
+        width: 60px;
+        height: 60px;
+    }
+}
