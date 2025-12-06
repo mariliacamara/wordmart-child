@@ -437,6 +437,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Title / brand / meta (scoped) */
+.pagination-pagination .product-grid-item .wd-entities-title,
 .owl-carousel .owl-item .wd-entities-title,
 .wd-related-products .wd-related-grid .wd-entities-title { 
   font-size: 14px; 
@@ -445,6 +446,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   color: #222;
   text-align: left;
 }
+.pagination-pagination .product-grid-item .wd-entities-title a,
 .owl-carousel .owl-item .wd-entities-title,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-entities-title a,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-entities-title a {
