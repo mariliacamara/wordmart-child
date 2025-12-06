@@ -69,12 +69,15 @@ if ( empty( $product ) || ! $product->is_visible() ) {
           }
       }
 
-      if ( $brand_name ) : ?>
-        <div class="product-brand"><?php echo esc_html( $brand_name ); ?></div>
-      <?php endif; ?>
+      <div>
+        if ( $brand_name ) : ?>
+          <div class="product-brand"><?php echo esc_html( $brand_name ); ?></div>
+        <?php endif; ?>
 
-      <!-- Título -->
-      <h3 class="wd-entities-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <!-- Título -->
+        <h3 class="wd-entities-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+      </div>
+
 
       <!-- Rating (usa HTML padrão do Woo) -->
       <div class="product-rating-wrapper">
