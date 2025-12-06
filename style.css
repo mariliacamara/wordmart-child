@@ -255,3 +255,96 @@
   .wd-related-products .wd-related-grid .product,
   .wd-related-products .wd-related-grid .product-grid-item.product{ width:100%; padding:0 8px; }
 }
+
+/* === RESTORE CRÍTICO: searchbar, svg stroke, input transparency, related alignment === */
+
+/* Força input do search transparente (mantém wrapper com borda) */
+.wd-header-search-form .searchform .s,
+.wd-header-search-form .searchform input[type="search"],
+.wd-header-search-form .searchform input[type="text"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Botão circular: sem background e controlando a cor do SVG via color */
+.wd-header-search-form .searchform .searchsubmit {
+  background: transparent !important;
+  border: none !important;
+  color: #29b0c2 !important; /* default stroke color */
+  z-index: 2;
+}
+
+/* :after data-uri (fallback) - se o tema usa esse pseudo, garante stroke fixo */
+.wd-header-search-form .searchform .searchsubmit:after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'><path d='M23.69 23.69l5.88 5.88M27.63 14.19c0 7.42-6.02 13.44-13.44 13.44S0.75 21.61 0.75 14.19 6.77 0.75 14.19 0.75s13.44 6.02 13.44 13.44Z' fill='none' stroke='%2329b0c2' stroke-width='1.5'/></svg>") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 18px; height: 18px;
+  display: inline-block;
+  opacity: 1;
+}
+
+/* Caso use SVG inline com stroke="currentColor", mantém color override */
+.wd-header-search-form .searchform .searchsubmit svg,
+.wd-header-search-form .searchform .searchsubmit .icon-search {
+  color: #29b0c2 !important;
+  fill: none !important;
+  stroke: #29b0c2 !important;
+}
+
+/* Ring atrás do botão (o "bico" teal) */
+.wd-header-search-form .searchform .searchsubmit::before {
+  box-shadow: 0 0 0 4px #49c7c9 !important;
+  background: transparent !important;
+}
+
+/* === Related products: garantir título alinhado mesmo sem brand === */
+.wd-related-products .wd-related-grid .product-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Espaço reservado para brand (mesma altura em todos cards) */
+.wd-related-products .product-wrapper .product-element-bottom > div:first-child {
+  /* wrapper contendo brand + title; já presente no seu template */
+  display: block;
+}
+
+/* Forçar area do brand a ocupar altura mínima para alinhar títulos */
+.wd-related-products .product-wrapper .product-element-bottom .product-brand {
+  min-height: 36px; /* reserva espaço mesmo se não houver brand */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8b8b8b;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+/* Título reserva linhas para ficar alinhado verticalmente */
+.wd-related-products .wd-related-grid .product-wrapper .wd-entities-title {
+  min-height: 3.6em; /* 2 linhas aproximadamente (ajusta conforme seu layout) */
+  margin: 0 0 10px;
+}
+
+/* Brand logo (se usarmos imagem) */
+.wd-related-products .product-brand .product-brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Small niceties */
+.wd-related-products .product-wrapper { background: #fff; border-radius: 10px; }
+.wd-related-products .product-element-top { text-align: center; padding-bottom: 6px; }
+
+/* Mobile reduz reserva */
+@media (max-width: 991px) {
+  .wd-related-products .product-wrapper .product-element-bottom .product-brand { min-height: 28px; }
+  .wd-related-products .wd-related-grid .product-wrapper .wd-entities-title { min-height: 3em; }
+}
