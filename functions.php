@@ -186,3 +186,78 @@ function zincomed_child_scripts() {
 }
 add_action('wp_enqueue_scripts', 'zincomed_child_scripts', 9999);
 
+function zincomed_override_categories_script() {
+    ?>
+    <script type="text/javascript">
+    (function($){
+      // Espera o DOM e também que o objeto exista
+      function overrideAccordion() {
+        if (typeof woodmartThemeModule === 'undefined') {
+          return false;
+        }
+
+        // substitui a função exatamente como combinamos
+        woodmartThemeModule.categoriesAccordion = function() {
+          if (typeof woodmart_settings !== 'undefined' && woodmart_settings.categories_toggle === 'no') {
+            return;
+          }
+
+          var $widget = $('.widget_product_categories'),
+              $list   = $widget.find('.product-categories'),
+              time    = 300;
+
+          $list.find('.cat-parent').each(function() {
+            var $this = $(this);
+
+            if ($this.find(' > .wd-cats-toggle').length > 0) return;
+            if ($this.find(' > .children').length === 0 || $this.find(' > .children > *').length === 0) return;
+
+            var $link = $this.find('> a').first();
+            if ($link.length) {
+              $link.before('<div class="wd-cats-toggle"></div>');
+            } else {
+              $this.prepend('<div class="wd-cats-toggle"></div>');
+            }
+          });
+
+          $list.off('click.zincomed').on('click.zincomed', '.wd-cats-toggle', function(e) {
+            e.preventDefault();
+            var $btn     = $(this),
+                $subList = $btn.siblings('ul.children').first();
+
+            if (!$subList.length) $subList = $btn.closest('li').find('> .children').first();
+
+            if ($subList.hasClass('list-shown')) {
+              $btn.removeClass('toggle-active');
+              $subList.stop().slideUp(time).removeClass('list-shown');
+            } else {
+              $subList.parent().parent().find('> li > .list-shown').stop().slideUp().removeClass('list-shown');
+              $subList.parent().parent().find('> li > .toggle-active').removeClass('toggle-active');
+              $btn.addClass('toggle-active');
+              $subList.stop().slideDown(time).addClass('list-shown');
+            }
+          });
+
+          if ($list.find('li.current-cat.cat-parent, li.current-cat-parent').length > 0) {
+            $list.find('li.current-cat.cat-parent, li.current-cat-parent').find('> .wd-cats-toggle').trigger('click');
+          }
+        };
+
+        // chama uma vez agora (se já houver markup)
+        try { woodmartThemeModule.categoriesAccordion(); } catch(e) {}
+        return true;
+      }
+
+      // tenta executar depois do DOM pronto e também a cada 300ms até conseguir (máx 10 tentativas)
+      $(function(){
+        var tries = 0;
+        var i = setInterval(function(){
+          if (overrideAccordion() || ++tries > 10) clearInterval(i);
+        }, 300);
+      });
+
+    })(jQuery);
+    </script>
+    <?php
+}
+add_action('wp_footer', 'zincomed_override_categories_script', 9999);
