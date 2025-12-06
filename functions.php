@@ -175,5 +175,13 @@ if ( ! function_exists( 'woodmart_my_account_links_child' ) ) {
     }
 }
 
-
-
+function zincomed_child_scripts() {
+    wp_enqueue_script(
+        'zincomed-cat-toggle',
+        get_stylesheet_directory_uri() . '/js/categories-fix.js',
+        array('jquery'),
+        '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'zincomed_child_scripts', 100);
