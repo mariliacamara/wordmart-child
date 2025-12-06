@@ -950,6 +950,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 .wd-header-search-form .searchform .searchsubmit {
-  background-color: none;
-  border: none;
+  background-color: none!important;
+  border: none!important;
 }
