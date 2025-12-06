@@ -439,7 +439,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .owl-carousel .owl-item .wd-entities-title,
 .wd-related-products .wd-related-grid .wd-entities-title { 
   font-size: 14px; 
-  margin: 8px 0 10px; 
+  margin: 0 0 10px; 
   line-height: 1.2;
   color: #222;
   text-align: left;
@@ -1158,4 +1158,9 @@ div.product-excerpt {
         width: 65px;
         height: 65px;
     }
+}
+
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
+  margin-bottom: 0;
+  text-align: left;
 }
