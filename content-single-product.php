@@ -96,12 +96,14 @@ global $product;
 
             <?php if ( $brand_term ) : ?>
               <div class="my-brand-wrapper">
-                <div class="my-brand-name">
-                  <?php echo esc_html( $brand_term->name ); ?>
-                </div>
 
                 <div class="my-title-row">
-                  <h1 class="product-title"><?php the_title(); ?></h1>
+                  <div>
+                    <div class="my-brand-name">
+                      <?php echo esc_html( $brand_term->name ); ?>
+                    </div>
+                    <h1 class="product-title"><?php the_title(); ?></h1>
+                  </div>
 
                   <?php if ( $brand_logo_url ) : ?>
                     <div class="my-brand-logo">
