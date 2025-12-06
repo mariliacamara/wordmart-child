@@ -504,7 +504,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .owl-carousel .owl-item .woocommerce-Price-amount,
 .wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
   background: #f5c63b; /* amarelo */
-  color: #08103a;
+  color: var(--primary-color)!important;
   padding: 8px 12px;
   border-radius: 10px;
   font-weight: 700;
