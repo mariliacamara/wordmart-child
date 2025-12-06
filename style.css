@@ -1123,6 +1123,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 .my-title-row .product-title {
     flex: 1 1 auto;
     margin: 0;
+    font-size: 1.4rem;
+}
+
+div.product-excerpt {
+  color: var(--dark-grey);
 }
 
 /* logo da brand */
