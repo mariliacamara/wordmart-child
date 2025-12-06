@@ -391,10 +391,6 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
    Scoped styles: todos os estilos de "card" do related ficam aqui
    ========================================================= */
 
-.wd-related-products {
-  margin: 50px 0;
-}
-
 .wd-related-products .wd-related-grid { 
   display: flex; 
   flex-wrap: wrap; 
