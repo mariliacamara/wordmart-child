@@ -1,60 +1,32 @@
-/* global woodmart_settings */
-(function($) {
+(function($){
+  function moveCatToggles() {
+    $('.widget_product_categories .product-categories li.cat-parent').each(function(){
+      var $li = $(this);
+      var $toggle = $li.find('> .wd-cats-toggle').first();
+      var $link = $li.find('> a').first();
+      if ($toggle.length && $link.length) {
+        // se ainda estiver depois do ul, move para antes do link
+        if ($toggle.index() > $link.index()) {
+          $toggle.insertBefore($link);
+        }
+      }
+    });
+  }
 
-	woodmartThemeModule.categoriesAccordion = function() {
+  // executa depois do DOM e também quando woodmart reinicializar
+  $(function(){
+    moveCatToggles();
+    // tenta novamente algumas vezes caso o tema adicione dinamicamente
+    var tries = 0;
+    var timer = setInterval(function(){
+      moveCatToggles();
+      tries++;
+      if (tries > 10) clearInterval(timer);
+    }, 300);
+  });
 
-		if (woodmart_settings.categories_toggle === 'no') {
-			return;
-		}
-
-		var $widget = $('.widget_product_categories'),
-		    $list   = $widget.find('.product-categories'),
-		    time    = 300;
-
-		$list.find('.cat-parent').each(function() {
-			var $this = $(this);
-
-			if ($this.find(' > .wd-cats-toggle').length > 0) {
-				return;
-			}
-			if ($this.find(' > .children').length === 0 || $this.find(' > .children > *').length === 0) {
-				return;
-			}
-
-			var $link = $this.find('> a').first();
-			if ($link.length) {
-				$link.before('<div class="wd-cats-toggle"></div>');
-			} else {
-				$this.append('<div class="wd-cats-toggle"></div>');
-			}
-		});
-
-		$list.on('click', '.wd-cats-toggle', function() {
-			var $btn     = $(this),
-			    $subList = $btn.siblings('ul.children').first();
-
-			if (!$subList.length) {
-				$subList = $btn.closest('li').find('> .children').first();
-			}
-
-			if ($subList.hasClass('list-shown')) {
-				$btn.removeClass('toggle-active');
-				$subList.stop().slideUp(time).removeClass('list-shown');
-			} else {
-				$subList.parent().parent().find('> li > .list-shown').slideUp().removeClass('list-shown');
-				$subList.parent().parent().find('> li > .toggle-active').removeClass('toggle-active');
-				$btn.addClass('toggle-active');
-				$subList.stop().slideDown(time).addClass('list-shown');
-			}
-		});
-
-		if ($list.find('li.current-cat.cat-parent, li.current-cat-parent').length > 0) {
-			$list.find('li.current-cat.cat-parent, li.current-cat-parent').find('> .wd-cats-toggle').trigger('click');
-		}
-	};
-
-	$(document).ready(function() {
-		woodmartThemeModule.categoriesAccordion();
-	});
-
+  // opcional: também ouve evento do tema (se existir)
+  if (typeof woodmartThemeModule !== 'undefined') {
+    woodmartThemeModule.$document.on('wdShopPageInit wdBackHistory', moveCatToggles);
+  }
 })(jQuery);

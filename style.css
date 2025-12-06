@@ -1433,3 +1433,52 @@ div.product-excerpt {
 @media (max-width: 991px) {
   .sidebar-container.area-sidebar-shop { display: none; }
 }
+
+/* força o <li> a ser flex e com wrap para permitir a sublista abaixo */
+.widget_product_categories .product-categories > li {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+/* toggle visualmente primeiro */
+.widget_product_categories .product-categories > li > .wd-cats-toggle {
+  order: 0 !important;
+  margin-right: 10px !important;
+  width: 26px !important;
+  height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  border-radius: 50% !important;
+  background: #07224a !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+
+/* link depois do toggle */
+.widget_product_categories .product-categories > li > a {
+  order: 1 !important;
+  display: inline-block !important;
+  flex: 0 1 auto !important;
+}
+
+/* sublista fica abaixo e ocupa 100% */
+.widget_product_categories .product-categories > li > ul.children {
+  order: 2 !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+}
+
+/* se o tema esconder a sublista com inline-style display:none, mantemos a regra */
+.widget_product_categories .product-categories > li > ul.children:not(.list-shown) {
+  display: none !important;
+}
+
+/* símbolos + / − */
+.widget_product_categories .product-categories > li > .wd-cats-toggle::after { content: '+'; font-size: 14px; line-height:1; }
+.product-categories li.toggle-open > .wd-cats-toggle::after,
+.product-categories li .wd-cats-toggle.toggle-active::after { content: '−'; }
+
