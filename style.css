@@ -1512,3 +1512,11 @@ div.product-excerpt {
         max-width: 229px;
     }
   }
+
+  .product-grid-item .hover-img img, .product-grid-item .product-image-link img {
+    width: 100%;
+    border-radius: 1px 1px 1px 1px;
+    -moz-border-radius: 1px 1px 1px 1px;
+    -webkit-border-radius: 1px 1px 1px 1px;
+    border: 1px solid #dadada;
+}
