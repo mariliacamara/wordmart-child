@@ -1770,3 +1770,7 @@ body .woocommerce ul.products li.product .product-wrapper {
     height: 200px !important;
   }
 }
+
+.products, .woocommerce ul.products, .archive .products {
+  gap: 0;
+}
