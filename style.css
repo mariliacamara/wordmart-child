@@ -513,6 +513,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
   flex: 0 0 auto;
 }
+
+.pagination-pagination .product-grid-item > div > div.product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
+.pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
 .wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
   background: #f5c63b; /* amarelo */
@@ -623,6 +626,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 } */
 
 /* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
+.pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
 .wd-related-products .product-cta .price-col .price,
 .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
@@ -1515,8 +1519,8 @@ div.product-excerpt {
     }
 }
 
-.pagination-pagination .product-grid-item  .hover-img img, 
-.pagination-pagination .product-grid-item  .product-image-link img {
+.pagination-pagination .product-grid-item .hover-img img, 
+.pagination-pagination .product-grid-item .product-image-link img {
     width: 100%;
     border-radius: 1px 1px 1px 1px;
     -moz-border-radius: 1px 1px 1px 1px;
