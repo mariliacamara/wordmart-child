@@ -874,9 +874,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* hover/focus do botão — altera cor */
 .wd-header-search-form .searchform .searchsubmit:hover,
 .wd-header-search-form .searchform .searchsubmit:focus {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.16);
-  background: linear-gradient(0deg, #3fb9b9 0%, #36a9a9 100%);
+  transform: none;
+  box-shadow: none;
+  background: none;
 }
 
 /* Quando hover na âncora inteira (caso o tema aplique hover por outro container) -->
