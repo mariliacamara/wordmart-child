@@ -1203,6 +1203,10 @@ div.product-excerpt {
     }
 }
 
+.pagination-pagination {
+  gap: 1rem;
+}
+
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
   margin-bottom: 0;
