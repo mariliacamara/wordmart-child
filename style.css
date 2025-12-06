@@ -856,7 +856,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   border-radius: 50%;
   border: transparent;       /* mesma cor da borda do input */
   background: transparent; /* leve gradiente */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  box-shadow: none;
   padding: 0;
   cursor: pointer;
   transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
