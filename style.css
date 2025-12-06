@@ -953,3 +953,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   background-color: transparent!important;
   border: transparent!important;
 }
+
+.searchform[class*="wd-style-with-bg"] .searchsubmit:hover {
+  box-shadow: none;
+}
