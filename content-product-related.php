@@ -94,14 +94,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         ?>
 
         <div class="product-brand">
-          <?php if ( $brand_logo ) : ?>
-            <span class="product-brand-logo">
-              <a href="<?php echo esc_url( isset( $term ) ? get_term_link( $term ) : '#' ); ?>" aria-label="<?php echo esc_attr( $brand_name ); ?>">
-                <img src="<?php echo esc_url( $brand_logo ); ?>" alt="<?php echo esc_attr( $brand_name ); ?>">
-              </a>
-            </span>
-          <?php endif; ?>
-
           <?php if ( $brand_name ) : ?>
             <span class="product-brand-name"><?php echo esc_html( $brand_name ); ?></span>
           <?php endif; ?>
