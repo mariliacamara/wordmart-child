@@ -1772,5 +1772,5 @@ body .woocommerce ul.products li.product .product-wrapper {
 }
 
 .products, .woocommerce ul.products, .archive .products {
-  gap: 0;
+  gap: 0!important;
 }
