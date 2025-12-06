@@ -412,7 +412,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Card inner wrapper (scoped) */
 .wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
-.wd-related-products .wd-related-grid .product .product-wrapper {
+.wd-related-products .wd-related-grid .product .product-wrapper,
+.owl-carousel .owl-item {
   background: #ffffff;
   border-radius: 10px;
   padding: 18px;
@@ -760,4 +761,3 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .menu > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
   /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
 }
-
