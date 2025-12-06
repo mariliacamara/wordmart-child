@@ -446,12 +446,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   text-align: left;
 }
 .owl-carousel .owl-item .wd-entities-title,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-entities-title a,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-entities-title a {
   color: inherit;
   text-decoration: none;
 }
 
 /* Small brand label above title (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand,
 .wd-related-products .wd-related-grid .product .posted_in {
@@ -464,6 +466,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Thin separator line (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom hr,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .sep-line,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom hr,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .sep-line {
   border: none;
@@ -472,7 +476,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Rating centered under separator (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .woocommerce-product-rating {
   display: block;
   text-align: center;
@@ -487,6 +493,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price + button row (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .price,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
