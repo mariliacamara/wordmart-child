@@ -36,6 +36,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         woodmart_hover_image();
       }
       ?>
+
+      <div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
+        <?php do_action( 'woodmart_product_action_buttons' ); ?>
+      </div>
     </div>
 
     <!-- BOTTOM: conteúdo do card -->
