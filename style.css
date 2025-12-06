@@ -1374,3 +1374,62 @@ div.product-excerpt {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* 1) Faz o <li> um flex container — mantém estrutura DOM inalterada */
+.widget_product_categories .product-categories > li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* garante que o conteúdo normal (link) alinhe bem */
+}
+
+/* 2) Força o toggle (que no DOM vem depois) a aparecer antes do link */
+.widget_product_categories .product-categories > li > .wd-cats-toggle {
+  order: 0;              /* aparece visualmente primeiro */
+  margin-right: 8px;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #07224a;   /* ajuste a cor se quiser */
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 3) O link da categoria aparece depois */
+.widget_product_categories .product-categories > li > a {
+  order: 1;
+  display: inline-block; /* garante comportamento previsível */
+}
+
+/* 4) Garante que a UL.children continue abaixo (ocupa 100% de largura)
+      Em caso do <ul> aparecer inline por conta do flex, força o comportamento em bloco */
+.widget_product_categories .product-categories > li > .children {
+  order: 2;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* 5) Quando a sublista está escondida, mantém o fluxo (evita quebra de layout) */
+.widget_product_categories .product-categories > li > .children:not(.list-shown) {
+  display: none;
+}
+
+/* 6) Estilização mínima do toggle para ficar bonito */
+.widget_product_categories .product-categories > li > .wd-cats-toggle::after {
+  content: '+';
+  font-size: 14px;
+  line-height: 1;
+}
+.product-categories li.toggle-open > .wd-cats-toggle::after,
+.product-categories li .wd-cats-toggle.toggle-active::after {
+  content: '−';
+}
+
+/* 7) Mobile — se preferir esconder sidebar no mobile */
+@media (max-width: 991px) {
+  .sidebar-container.area-sidebar-shop { display: none; }
+}
