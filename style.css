@@ -410,6 +410,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Card inner wrapper (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper,
 .wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
 .wd-related-products .wd-related-grid .product .product-wrapper,
 .owl-carousel .owl-item {
