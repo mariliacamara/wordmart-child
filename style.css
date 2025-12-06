@@ -1343,3 +1343,34 @@ div.product-excerpt {
 .widget_product_categories .product-categories > li > a {
   order: 1;
 }
+
+/* Deixa o item em linha */
+.widget_product_categories .product-categories > li {
+  display: flex;
+  align-items: center;
+}
+
+/* Joga o toggle para antes do link */
+.widget_product_categories .product-categories > li > .wd-cats-toggle {
+  order: 0;              /* aparece primeiro */
+  margin-right: 10px;    /* espaçamento */
+}
+
+/* Deixa o texto depois */
+.widget_product_categories .product-categories > li > a {
+  order: 1;              /* aparece depois */
+}
+
+/* Ajuste visual do toggle */
+.widget_product_categories .wd-cats-toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #07224a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  cursor: pointer;
+}
