@@ -651,6 +651,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Responsividade: em telas pequenas empilha verticalmente (scoped) */
 @media (max-width: 520px) {
+  .owl-carousel .owl-item .product-cta .price-add-row,
   .wd-related-products .product-cta .price-add-row {
     flex-direction: column;
     gap: 10px;
