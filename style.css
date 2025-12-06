@@ -1,1224 +1,257 @@
 /*
-Theme Name: Woodmart Child
-Theme URI:  https://www.wpserveur.net
-Author:     WPServeur
-Author URI: https://www.wpserveur.net
-Template:   woodmart
-Version:    1.0
-License:    GNU General Public License v2 or later
+  Cleaned Woodmart child styles
+  - Removidas regras duplicadas e sobrescritas
+  - Agrupadas regras do searchform e related products
 */
 
 /* -------------------------
    Variáveis globais
    ------------------------- */
-:root {
-  --primary-bg-color: green; /* global scope */
+:root{
   --primary-color: #010a53;
   --secondary-color: #29b0c2;
   --white-color: #fff;
   --light-grey: #f7f6f5;
   --grey: #dadada;
   --dark-grey: #706f6f;
-  --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+")!important;
 }
 
-/* =========================================================
-   Reset / Overrides específicos para evitar vazamento de estilos
-   (Impede que os estilos de related products afetem o slider)
-   ========================================================= */
-
-/* Força que os estilos dos related se apliquem apenas dentro do container */
-.wd-related-products .wd-related-grid .product,
-.wd-related-products .wd-related-grid .product-grid-item.product,
-.wd-related-products .wd-related-grid .product-wrapper,
-.wd-related-products .wd-related-grid .product-element-top,
-.wd-related-products .wd-related-grid .product-element-bottom,
-.wd-related-products .wd-related-grid .product-cta,
-.wd-related-products .wd-related-grid .price,
-.wd-related-products .wd-related-grid .wd-add-btn,
-.wd-related-products .wd-related-grid .wd-add-btn-replace,
-.wd-related-products .wd-related-grid .product-rating-wrapper,
-.wd-related-products .wd-related-grid .product-image-link img {
-  /* namespace: estilos aplicáveis apenas ao related */
-}
-
-/* Reset visual para o OwlCarousel / sliders — evita override dos novos estilos */
-.owl-carousel .product-grid-item.product,
-.slide-product .product-grid-item.product,
-.owl-carousel .product-wrapper,
-.slide-product .product-wrapper,
-.owl-carousel .product-element-top,
-.slide-product .product-element-top {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-  height: auto !important;
-}
-
-/* Garantir que o badge do preço e botão dentro do carousel mantenham aparência do tema original */
-.owl-carousel .product-wrapper .price,
-.owl-carousel .product-wrapper .add_to_cart_button,
-.slide-product .product-wrapper .price,
-.slide-product .product-wrapper .add_to_cart_button {
-  background: none !important;
-  color: inherit !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Evita que o wrapper do add-btn seja modificado no carousel */
-.owl-carousel .wd-add-btn,
-.owl-carousel .wd-add-btn-replace,
-.slide-product .wd-add-btn,
-.slide-product .wd-add-btn-replace {
-  display: initial !important;
-}
-
-/* =========================================================
-   Regras gerais do site (mantive como estavam, sem alterar)
-   ========================================================= */
-
-/* Conta do Woo / My Account */
-.woocommerce-MyAccount-title {
-    color: var(--secondary-color);
-}
-
-.woocommerce-MyAccount-navigation ul li a {
-    text-transform: uppercase!important;
-    color: var(--primary-color)!important;
-}
-
-.woocommerce-MyAccount-navigation ul li.is-active {
-    background-color: var(--primary-color);
-}
-
-.woocommerce-MyAccount-navigation ul li.is-active>a {
-    color: var(--white-color)!important;
-}
-
-.woocommerce-account .page-title {
-    display: none !important;
-}
-
-.woocommerce-MyAccount-content>p {
-    margin-bottom: 0.5px;
-}
-
-/* Layout */
-.wd-product-top { padding: 30px 0; }
-.wd-product-gallery-col { padding-right: 30px; }
-.wd-product-summary-col { padding-left: 30px; display:flex; align-items:flex-start; }
-.wd-summary-inner { width:100%; }
-
-/* Title / brand */
-.wd-product-brand .brand-name { font-weight:700; color:#7a7a7a; display:block; margin-bottom:6px; text-transform:uppercase; }
-.product-title { font-size:28px; margin:0 0 10px; }
-
-/* Price pill */
-.wd-price-pill .price { background:#f8c83b; display:inline-block; padding:10px 18px; border-radius:12px; font-weight:700; font-size:22px; color:#111; }
-
-/* Rating */
-.wd-rating { margin:8px 0 10px; }
-
-/* Delivery */
-.wd-delivery { margin-bottom:12px; color: #2e8b2e; font-weight:600; }
-
-/* Add to cart and quantity */
-.woocommerce div.product form.cart { display:flex; align-items:center; gap:12px; margin:16px 0; }
-.woocommerce .quantity { display:inline-flex; align-items:center; gap:8px; }
-.woocommerce .quantity input.qty { width:56px; text-align:center; padding:8px; border-radius:6px; border:1px solid #ddd; }
-.woocommerce .single_add_to_cart_button { background:#072052; color:#fff; padding:12px 20px; border-radius:10px; border:none; text-transform:uppercase; font-weight:700; }
-
-/* Variation select to look boxed (basic) */
-.variations { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
-.variations .value { display:flex; gap:8px; align-items:center; }
-.variations label { display:block; font-weight:700; margin-bottom:6px; }
-
-/* Tabs / description */
-.woocommerce-tabs { margin-top:30px; border-top:1px solid #e6e6e6; padding-top:20px; }
-.woocommerce-tabs .panel { padding-top:15px; }
-
-/* Related products full width placeholder */
-.related-and-upsells { margin-top:40px; }
-
-/* Responsive tweaks */
-@media (max-width: 991px) {
-	.wd-product-gallery-col, .wd-product-summary-col { padding:0; }
-	.wd-product-gallery-col, .wd-product-summary-col { width:100%; }
-	.woocommerce div.product form.cart { flex-direction:row; flex-wrap:wrap; }
-}
-
-/* Rating force */
-.my-rating-force .star-rating,
-.my-rating-force .star-rating::before,
-.my-rating-force .star-rating span::before {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: inline-block !important;
-}
-
-.my-rating-force {
-    margin: 8px 0 14px;
-    display: flex;
-    align-items: center;
-}
-
-.my-rating-force .my-rating-inner {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.my-rating-force .count {
-    font-size: 14px;
-    color: #333;
-}
-
-.my-rating-force .no-reviews {
-    color: #777;
-    font-style: italic;
-}
-
-p.stock {
-    display: none
-}
-
-.woocommerce .quantity {
-    background: #29b0c2;
-    border-radius: 8px;
-    display: unset!important;
-}
-
-.woocommerce .quantity input.qty {
-    font-size: 25px;
-    border: none !important;
-    color: #fff !important;
-    width: 30px !important;
-    font-weight: 900;
-}
-
-div.quantity input[type="button"] {
-    border: none!important;
-    font-size: 25px!important;
-}
-
-div.quantity input[type="button"] {
-    font-size: 25px!important;
-    color: #fff!important;
-}
-
-.woocommerce .single_add_to_cart_button {
-    font-size: 16px;
-}
-
-div.product-excerpt {
-    font-size: 1rem;
-}
-
-.product-sku > strong {
-    color: #000;
-    font-weight: 700;
-}
-
-.woocommerce-tabs {
-    border-top: none;
-    padding-top: 0px;
-}
-
-div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
-    --content-align: left!important;
-    --text-align: left!important;
-    text-align: left!important;
-}
-
-.wd-nav.wd-style-underline-reverse>li>a {
-    padding-top: 5px!important;
-}
-
-.wd-nav.wd-style-underline-reverse>li>a>.nav-link-text:after {
-    top: -15px!important;
-    height: 5px;
-    color: var(--secondary-color);
-}
-
-.wd-nav[class*="wd-style-underline"] .nav-link-text {
-    font-size: 0.8rem;
-}
-
-.wd-nav[class*="wd-style-underline"]>li:is(:hover,.current-menu-item,.wd-active,.active)>a .nav-link-text:after {
-    width: 30%!important;
-}
-
-/* MENU */
-body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
-  background-color: var(--secondary-color);
-}
-
-#menu-categorias > li > a > span {
-  color: var(--white-color)!important;
-}
-
-@media (min-width: 1025px) {
-    .whb-header-bottom-inner {
-        height: 50px!important;
-        max-height: 81px;
-    }
-}
-
-.wd-nav {
-  --nav-gap: 19px!important;
-}
-
-/* FORCE REMOVE anything added after <a> (prevent duplicate chevrons) */
-.wd-nav > li.menu-item-has-children > a:after {
-    content: none !important;
-    background: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
-}
-
-/* the span after <a> (our replacement chevron) */
-.wd-nav > li.menu-item-has-children > a > .nav-link-text:after {
-    content: "" !important;
-    font-family: none !important;
-
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7ZmlsbDogI2ZmZjt9CiAgICAgIC5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO30KICAgICAgLmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDouNzlweDt9CiAgICAgIC5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwcGF0aCk7fQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPjxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjEyLjciIGhlaWdodD0iMTIuNyIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+PGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI2LjM1IiBjeT0iNi4zNSIgcj0iNS45NSIvPjwvZz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMy4wNyA1LjczIDMuMDcgNi45NyA1LjczIDYuOTcgNS43MyA5LjYzIDYuOTcgOS42MyA2Ljk3IDYuOTcgOS42MyA2Ljk3IDkuNjMgNS43MyA2Ljk3IDUuNzMgNi45NyAzLjA3IDUuNzMgMy4wNyA1LjczIDUuNzMgMy4wNyA1LjczIi8+PC9zdmc+");
-
-    background-size: 14px;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    width: 15px;
-    height: 15px;
-
-    display: inline-block;
-    margin-left: 4px;
-    transform: translateY(2px);
-}
-
-/* Dropdown adjustments */
-.whb-header-bottom .wd-dropdown {
-    margin-top: 6.5px !important;
-}
-
-.wd-sub-menu li>a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-top: 2px!important;
-    padding-bottom: 2px!important;
-    color: var(--sub-menu-color);
-    font-size: 14px;
-    line-height: 1.3;
-}
-
-.wd-sub-menu > li > a > .nav-link-text {
-    color: var(--primary-color) !important;
-}
-
-.wd-dropdown-menu.wd-dropdown {
-  padding-bottom: 5rem !important;
-  border-bottom: 5px solid var(--secondary-color) !important;
-}
-
-/* owl dots reset */
-.owl-dots {
-  margin-top: none!important;
-}
-
-/* =========================================================
-   Carousel "bolinhas" estilizadas (banners bullets)
-   ========================================================= */
-
-/* container das bolinhas */
-.wd-carousel .owl-dots,
-.owl-carousel .owl-dots {
-    display: flex !important;
-    gap: 0 !important;
-    justify-content: center;
-    align-items: center;
-}
-
-/* estilo das bolinhas transformadas em "pills" */
-.wd-carousel .owl-dot span,
-.owl-carousel .owl-dot span {
-    width: 35px !important;
-    height: 6px !important;
-    border-radius: 10px !important;
-    background-color: #d9d9d9 !important; /* cinza claro */
-    transition: all 0.25s ease-in-out;
-    display: block;
-    border: none!important;
-}
-
-/* quando ativo */
-.wd-carousel .owl-dot.active span,
-.owl-carousel .owl-dot.active span {
-    background-color: var(--secondary-color) !important;
-    width: 35px !important;
-}
-
-/* =========================================================
-   Title overlined — trocar border-top por ::before (centralizada)
-   ========================================================= */
-
-.wd-title-style-overlined .liner-continer {
-  border-top: none !important;
-}
-
-.wd-title-style-overlined .title {
-    position: relative;
-    padding-top: 20px;
-    margin-top: 0 !important;
-    border-top: none !important;
-}
-
-.wd-title-style-overlined .title::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* centraliza perfeitamente */
-    
-    width: 400px; /* ajuste o tamanho da linha */
-    height: 3px; /* espessura */
-    background-color: var(--el-title-color);
-    border-radius: 2px; /* opcional */
-}
-
-/* =========================================================
-   ===================== Related Products =====================
-   Scoped styles: todos os estilos de "card" do related ficam aqui
-   ========================================================= */
-
-.wd-related-products .wd-related-grid { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 18px; 
-  margin: 0 -10px; 
-}
-
-/* Each product card (scoped) */
-.wd-related-products .wd-related-grid .product,
-.wd-related-products .wd-related-grid .product-grid-item.product {
-  width: calc(25% - 20px);
-  box-sizing: border-box;
-  padding: 0 10px;
-}
-
-/* Card inner wrapper (scoped) */
-.wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
-.wd-related-products .wd-related-grid .product .product-wrapper,
-.owl-carousel .owl-item {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 18px;
-  border: 1px solid rgba(16,24,60,0.06);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Top: image area (scoped) */
-.wd-related-products .wd-related-grid .product-element-top { 
-  text-align: center; 
-  padding-bottom: 6px; 
-}
-.wd-related-products .wd-related-grid .product-element-top .product-image-link img {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  margin: 8px auto 12px;
-}
-
-/* Title / brand / meta (scoped) */
-.owl-carousel .owl-item .wd-entities-title,
-.wd-related-products .wd-related-grid .wd-entities-title { 
-  font-size: 14px; 
-  margin: 0 0 10px; 
-  line-height: 1.2;
-  color: #222;
-  text-align: left;
-}
-.owl-carousel .owl-item .wd-entities-title,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-entities-title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Small brand label above title (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .brand,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand,
-.wd-related-products .wd-related-grid .product .posted_in {
-  display: block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: #8b8b8b;
-  margin-bottom: 6px;
-}
-
-/* Thin separator line (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom hr,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .sep-line {
-  border: none;
-  border-top: 1px solid rgba(16,24,60,0.08);
-  margin: 10px 0;
-}
-
-/* Rating centered under separator (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .woocommerce-product-rating {
-  display: block;
-  text-align: center;
-  margin: 0px;
-}
-
-/* Ensure star icons visible (scoped) */
-.wd-related-products .wd-related-grid .star-rating,
-.wd-related-products .wd-related-grid .star-rating::before {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Price + button row (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-  margin-top: 8px;
-}
-
-/* Price pill (yellow) (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
-  flex: 0 0 auto;
-}
-.owl-carousel .owl-item .woocommerce-Price-amount,
-.wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
-  background: #f5c63b; /* amarelo */
-  color: var(--primary-color)!important;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-weight: 700;
-  display: inline-block;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
-}
-
-/* Add to cart / CTA button (blue) (scoped) */
-.owl-carousel .owl-item .product-wrapper .product-element-bottom .add_to_cart_button
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn a.button,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
-  background: #08103a !important;
-  color: #fff !important;
-  padding: 8px 27px !important;
-  border-radius: 5px !important;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Button + price alignment: price left, btn right (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
-  justify-content: space-between; 
-  width: 100%; 
-}
-
-/* Card footer spacing (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
-  padding-top: 8px; 
-}
-
-/* Make rating stars slightly larger (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
-  font-size: 18px; 
-  line-height: 1; 
-}
-
-/* Ensure image area and bottom align nicely (scoped) */
-.wd-related-products .wd-related-grid .product-wrapper .product-element-top,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
-  flex: 0 0 auto; 
-}
-
-/* Responsive: 2 columns on tablet, 1 on mobile (scoped) */
-@media (max-width: 991px) {
-  .wd-related-products .wd-related-grid .product,
-  .wd-related-products .wd-related-grid .product-grid-item.product { 
-    width: calc(50% - 20px); 
-  }
-}
-@media (max-width: 560px) {
-  .wd-related-products .wd-related-grid .product,
-  .wd-related-products .wd-related-grid .product-grid-item.product { 
-    width: 100%; 
-    padding: 0 8px; 
-  }
-}
-
-/* Força tamanho coluna alternativa (se necessário) */
-@media (min-width: 1025px) {
-    .col-lg-4 {
-        flex: 0 0 33.333333%;
-        max-width: 23.333333%!important;
-    }
-}
-
-/* Remove border das imgs (scoped) */
-.wd-related-products .product-grid-item .hover-img img, 
-.wd-related-products .product-grid-item .product-image-link img {
-  border: none!important;
-}
-
-/* Container que ocupa a largura total do card (scoped) */
-.owl-carousel .owl-item .product-cta .price-add-row,
-.wd-related-products .product-cta .price-add-row {
-  display: flex;
-  width: 100%;
-  gap: 14px;              /* espaço entre preço e botão — ajusta à vontade */
-  align-items: stretch;   /* garante mesma altura */
-  justify-content: space-between;
-  padding: 0 0 18px;   /* mantém espaço inferior como no exemplo */
-  box-sizing: border-box;
-}
-
-/* Cada coluna ocupa metade (mesma proporção) (scoped) */
-/* .wd-related-products .product-cta .price-col,
-.wd-related-products .product-cta .button-col {
-  flex: 1 1 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
-.owl-carousel .owl-item .woocommerce-Price-amount,
-.wd-related-products .product-cta .price-col .price,
-.wd-related-products .product-cta .price-col .woocommerce-Price-amount {
-  display: inline-block;
-  background: #fec917;
-  color: #07143d;
-  font-weight: 700;
-  padding: 7px 25px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  min-width: 0;
-  box-sizing: border-box;
-  text-align: center;
-  font-weight: 900;
-}
-
-/* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo (scoped) */
-.wd-related-products .product-cta .price-col ins,
-.wd-related-products .product-cta .price-col del {
-  display: inline-block;
-}
-
-/* Botão ocupa 100% da coluna, centralizado e com mesma altura (scoped) */
-.owl-carousel .owl-item .button-col .add_to_cart_button,
-.wd-related-products .product-cta .button-col .add_to_cart_button {
-  width: 100%;
-  height: 100%;
-  max-height: 56px;            /* controla altura máxima — ajusta se quiseres */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 18px;
-  border-radius: 12px;
-  background: #07143d;         /* cor escura do botão */
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  box-sizing: border-box;
-  border: none;
-}
-
-/* Hover do botão (scoped) */
-.owl-carousel .owl-item .button-col .add_to_cart_button:hover,
-.wd-related-products .product-cta .button-col .add_to_cart_button:hover {
-  opacity: 0.95;
-}
-
-/* Responsividade: em telas pequenas empilha verticalmente (scoped) */
-@media (max-width: 520px) {
-  .owl-carousel .owl-item .product-cta .price-add-row,
-  .wd-related-products .product-cta .price-add-row {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .owl-carousel .owl-item .button-col .add_to_cart_button,
-  .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
-}
-
-/* Wrapper com as bordas (scoped) */
-.wd-related-products .product-rating-wrapper {
-  width: 100%;
-  text-align: center;
-  padding: 14px 0;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-  margin: 16px 0 22px;
-  box-sizing: border-box;
-}
-
-/* Centraliza as estrelas (scoped) */
-.wd-related-products .product-rating {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Garante que as estrelas não fiquem grudadas (scoped) */
-.wd-related-products .product-rating .star-rating {
-  margin: 0 auto;
-}
-
-/* Fix para temas que deixam as estrelas inline (scoped) */
-.wd-related-products .product-rating .star-rating span {
-  margin: 0 !important;
-}
-
-.wd-related-products .product-wrapper .product-element-bottom .star-rating, 
-.wd-related-products .product-wrapper .product-element-bottom .woocommerce-product-rating {
-  margin: 0;
-}
-
-.wd-related-products h2 {
-  color: var(--primary-color);
-}
-
-/* =========================================================
-   FIM Related Products scoped
-   ========================================================= */
-
-/* Pequenos ajustes finais */
-.wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
-    width: 30%!important;
-}
-
-.owl-carousel .owl-item .button-col .add_to_cart_button,
-.wd-related-products .product-cta .button-col .add_to_cart_button {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
-
-    /* Mantém mesmo alinhamento interno */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    height: auto !important; /* garante que não force altura exagerada */
-    min-height: 0 !important;
-}
-
-/* Restaurar underline como before/after controlável */
-/* garante que .nav-link-text é posicionável */
-.wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text {
-  position: relative; /* necessário para o ::after posicionado */
-  display: inline-block;
-}
-
-/* pseudo-elemento (linha) — escondido por padrão */
-.wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
-  content: "";
-  position: absolute;
-  top: -15px;                     /* afasta a linha do texto — ajusta se precisa */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;                       /* começa fechado */
-  height: 3px;                    /* espessura da linha */
-  background-color: var(--secondary-color);
-  border-radius: 2px;
-  opacity: 0;
-  transition: width .22s ease, opacity .22s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* mostrar linha no hover */
-.wd-nav[class*="wd-style-underline"] > li:hover > a > .nav-link-text::after {
-  width: 30%;                     /* tamanho em hover — ajusta aqui */
-  opacity: 1;
-}
-
-/* mostrar linha no item ativo / atual */
-.wd-nav[class*="wd-style-underline"] > li.wd-active > a > .nav-link-text::after,
-.wd-nav[class*="wd-style-underline"] > li.current-menu-item > a > .nav-link-text::after,
-.wd-nav[class*="wd-style-underline"] > li.active > a > .nav-link-text::after {
-  width: 30%;                     /* tamanho do underline no estado ativo */
-  opacity: 1;
-}
-
-/* opcional: tornar o hover da linha mais curto que o active (ex.: 22% hover, 30% active) */
-.wd-nav[class*="wd-style-underline"] > li:hover > a > .nav-link-text::after { width: 22%; }
-.wd-nav[class*="wd-style-underline"] > li.wd-active > a > .nav-link-text::after { width: 30%; }
-
-/* força remover qualquer regra anterior que adicionava ::after ao <a>:after em vez de ao .nav-link-text */
-.wd-nav > li.menu-item-has-children > a:after { content: none !important; display: none !important; }
-
-/* Caso o tema tenha colocado width/height fixos noutros seletores, usa maior especificidade */
-.nav > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after,
-.menu > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
-  /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
-}
-
-/* MY ACCOUNT */
-
-.wd-my-account-links .wd-account-link {
-	margin-bottom: 12px;
-}
-
-.wd-account-anchor {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	color: #333; /* cor padrão do ícone/label (usa currentColor) */
-	text-decoration: none;
-}
-
-.wd-account-icon svg {
-	width: 22px;
-	height: 22px;
-	display: block;
-	vertical-align: middle;
-	/* fills do SVG foram substituídos para usar currentColor */
-	fill: currentColor;
-	transition: color .15s ease, transform .12s ease;
-}
-
-.wd-account-label {
-	font-size: 14px;
-}
-
-.wd-account-anchor:hover,
-.wd-account-anchor:focus {
-	color: #f7a430; /* cor no hover — ajuste para a sua cor */
-}
-
-.wd-account-anchor:hover .wd-account-icon svg {
-	transform: translateY(-2px);
-}
-
-/* Container / layout */
-.wd-header-search-form .searchform {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  max-width: 760px; /* ajuste: controla largura do searchbar */
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-/* campo de texto */
-.wd-header-search-form .searchform .s {
-  flex: 1 1 auto;
-  border: 3px solid #49c7c9;        /* cor da borda principal (ajusta se quiser) */
-  border-right: none;               /* sem borda entre input e botão */
-  background: none;
-  font-size: 15px;
-  line-height: 1;
-  border-radius: 42px;              /* arredondado grande */
-  outline: none;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-  -webkit-appearance: none;
-  appearance: none;
-  transition: box-shadow .12s ease, border-color .12s ease;
-  padding: 6px;                    /* espaço entre borda e conteúdo */
-  border: 4px solid #49c7c9;       /* borda contínua */      
-}
-
-/* remove sombra e foco padrão; aplica borda de foco */
-.wd-header-search-form .searchform .s:focus {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  border-color: #2bb2b4;
-}
-
-/* botão circular na direita */
-.wd-header-search-form .searchform .searchsubmit {
-  flex: 0 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  border-radius: 50%;
-  border: transparent;       /* mesma cor da borda do input */
-  background: transparent; /* leve gradiente */
-  box-shadow: none;
-  padding: 0;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-}
-
-/* ícone dentro do botão usa currentColor */
-.wd-header-search-form .searchform .searchsubmit .icon-search {
-  display: block;
-  width: 18px;
-  height: 18px;
-  color: #ffffff;
-  fill: currentColor;
-}
-
-/* hover/focus do botão — altera cor */
-.wd-header-search-form .searchform .searchsubmit:hover,
-.wd-header-search-form .searchform .searchsubmit:focus {
-  transform: none;
-  box-shadow: transparent;
-  background: none;
-}
-
-/* Quando hover na âncora inteira (caso o tema aplique hover por outro container) -->
-   também altera cor do input (borda) para combinar */
-.wd-header-search-form .searchform:hover .s,
-.wd-header-search-form .searchform:focus-within .s {
-  border-color: #3fb9b9;
-}
-
-/* placeholder styling */
-.wd-header-search-form .searchform .s::placeholder {
-  color: #9aa7aa;
-  opacity: 1;
-}
-
-/* responsivo: reduz largura e botão em telas pequenas */
-@media (max-width: 900px) {
-  .wd-header-search-form .searchform { max-width: 520px; }
-  .wd-header-search-form .searchform .searchsubmit { width:46px; height:46px; }
-  .wd-header-search-form .searchform .s { padding:12px 14px; }
-}
-
-@media (max-width: 480px) {
-  .wd-header-search-form .searchform { max-width: 100%; padding: 0 12px; }
-  .wd-header-search-form .searchform .searchsubmit { width:42px; height:42px; }
-  .wd-header-search-form .searchform .s { padding:10px 12px; font-size:14px; }
-}
-
-/* ---- Substitui o ícone por SVG em base64, usando currentColor ---- */
-
-/* garante que o botão possa controlar a cor do SVG via color */
-.searchform .searchsubmit {
-  position: relative; /* mantém o posicionamento do pseudo-elemento */
-  color: #ffffff;     /* cor padrão do ícone (ajusta se quiser) */
-}
-
-/* remove o spinner antes se existir */
-.searchform .searchsubmit:before {
-  content: none !important;
-}
-
-/* :after com o seu SVG (base64) */
-.searchform .searchsubmit:after {
-  content: ""!important;
-  display: inline-block;
-  width: calc(var(--wd-form-height) / 2.3);
-  height: calc(var(--wd-form-height) / 2.3);
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  /* SVG base64 com stroke="currentColor" => a cor segue a propriedade `color` */
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'><path d='M23.69 23.69l5.88 5.88M27.63 14.19c0 7.42-6.02 13.44-13.44 13.44S0.75 21.61 0.75 14.19 6.77 0.75 14.19 0.75s13.44 6.02 13.44 13.44Z' fill='none' stroke='currentColor' stroke-width='1.5'/></svg>");
-  transition: opacity .2s ease, transform .12s ease;
-  vertical-align: middle;
-  opacity: 1;
-}
-
-/* hover: altera a cor do botão (e do SVG, já que usa currentColor) */
-.searchform .searchsubmit:hover,
-.searchform .searchsubmit:focus {
-  color: #f7a430; /* cor no hover — ajusta para a que quiser */
-  transform: translateY(-2px);
-}
-
-/* caso seu botão use outline/focus visual */
-.searchform .searchsubmit:focus {
-  outline: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle > div > div > div.whb-column.whb-col-center.whb-visible-lg > div.wd-search-form.wd-header-search-form.wd-display-form > form > button {
-  background-color: transparent!important;
-  border: transparent!important;
-}
-
-.searchform[class*="wd-style-with-bg"] .searchsubmit:hover {
-  box-shadow: none;
-}
-
-/* wrapper que segura input + botão */
-.wd-header-search-form .searchform {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  max-width: 760px;
-  margin: 0 auto;
-  border: 1px solid #49c7c9;       /* borda contínua */
-  border-radius: 42px;             /* arco contínuo */
-  background:none;
-  box-sizing: border-box;
-  position: relative;
-}
-
-/* input sem bordas — ocupa o espaço restante */
-.wd-header-search-form .searchform .s {
-  flex: 1 1 auto;
-  border: none;
-  background: transparent;
-  padding: 16px 18px;
-  font-size: 15px;
-  outline: none;
-}
-
-/* botão circular POSICIONADO DENTRO do wrapper; sem borda para não criar overlap */
-.wd-header-search-form .searchform .searchsubmit {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  border-radius: 50%;
-  border: none;               /* important: retirar border pra não quebrar o arco */
-  background: none;           /* cor do botão (interno) */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06); /* opcional */
-  margin-right: 0;
-  z-index: 2;                 /* garante que esteja acima da borda do wrapper */
-  position: relative;
+/* =========================
+   Header search (compactado)
+   ========================= */
+.wd-header-search-form .searchform{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  max-width:760px;
+  margin:0 auto;
+  border:1px solid #49c7c9;
+  border-radius:42px;
+  background:transparent;
+  box-sizing:border-box;
+  position:relative;
+}
+
+.wd-header-search-form .searchform .s,
+.wd-header-search-form .searchform input[type="search"],
+.wd-header-search-form .searchform input[type="text"]{
+  flex:1 1 auto;
+  border:none;
+  background:transparent;
+  padding:16px 18px;
+  font-size:15px;
+  outline:none;
+  box-shadow:none;
+}
+
+.wd-header-search-form .searchform .searchsubmit{
+  width:56px;
+  height:56px;
+  min-width:56px;
+  border-radius:50%;
+  border:none;
+  background:transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  position:relative;
+  z-index:2;
+  color: #29b0c2; /* controla cor do SVG que usa currentColor */
 }
 
-/* cria um ring teal atrás do botão alinhado com a borda do wrapper —
-   isso dá o "bico" arredondado contínuo ao lado direito */
 .wd-header-search-form .searchform .searchsubmit::before{
-  content: "";
-  position: absolute;
-  inset: -4px;               /* expande atrás do botão para cobrir borda do wrapper */
-  right: -4px;               /* ajusta para encaixar no canto direito */
-  width: calc(100% + 8px);   /* garante cobertura da borda */
-  height: calc(100% + 8px);
-  border-radius: 50%;
-  background: transparent;
-  box-shadow: 0 0 0 4px #49c7c9; /* ring que casa com a borda do wrapper */
-  z-index: -1;               /* por trás do botão, na mesma camada do wrapper */
+  /* ring atrás do botão para o "bico" arredondado */
+  content:"";
+  position:absolute;
+  inset:-4px;
+  right:-4px;
+  width:calc(100% + 8px);
+  height:calc(100% + 8px);
+  border-radius:50%;
+  box-shadow:0 0 0 4px #49c7c9;
+  z-index:-1;
 }
 
-/* ícone dentro do :after (se usar data-uri) — ajusta cor via color */
-.wd-header-search-form .searchform .searchsubmit:after {
-  display:block;
+.searchform .searchsubmit:after{
+  display:inline-block;
   width:18px;
   height:18px;
   background-repeat:no-repeat;
   background-position:center;
   background-size:contain;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'><path d='M23.69 23.69l5.88 5.88M27.63 14.19c0 7.42-6.02 13.44-13.44 13.44S0.75 21.61 0.75 14.19 6.77 0.75 14.19 0.75s13.44 6.02 13.44 13.44Z' fill='none' stroke='%2329b0c2' stroke-width='1.5'/></svg>");
-  color: #29b0c2; /* cor do ícone */
+  /* data-uri SVG (usa stroke=currentColor) */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'><path d='M23.69 23.69l5.88 5.88M27.63 14.19c0 7.42-6.02 13.44-13.44 13.44S0.75 21.61 0.75 14.19 6.77 0.75 14.19 0.75s13.44 6.02 13.44 13.44Z' fill='none' stroke='currentColor' stroke-width='1.5'/></svg>");
 }
 
-/* Place this at the very end of your child style.css */
-
-/* 1) Input - forçar transparente e sem sombra */
-.wd-header-search-form .searchform .s,
-.wd-header-search-form .searchform input[type="search"],
-.wd-header-search-form .searchform input[type="text"] {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  border: none !important;            /* se o wrapper já tem borda, o input não precisa */
-  outline: none !important;
+/* foco/hover do botão */
+.wd-header-search-form .searchform .searchsubmit:hover,
+.wd-header-search-form .searchform .searchsubmit:focus{
+  color:#f7a430;
+  transform:translateY(-2px);
 }
 
-/* 2) Botão - garantir transparente e sem fundo */
-.wd-header-search-form .searchform .searchsubmit,
-.wd-header-search-form .searchform button.searchsubmit {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* 3) Pseudo-elemento :after (ícone) - transparente por trás */
-.wd-header-search-form .searchform .searchsubmit:after,
-.wd-header-search-form .searchform .searchsubmit::after {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
-/* 4) Caso Woodmart tenha wrappers com background aplicado diretamente,
-   neutraliza também o ancestor */
+/* garantir transparência de wrappers possíveis */
 .wd-header-search-form,
 .wd-header-search-form .wd-display-form,
-.wd-header-search-form .wd-search-form {
-  background: transparent !important;
+.wd-header-search-form .wd-search-form{
+  background:transparent !important;
 }
 
-/* 5) Se ainda existir CARD branco dentro do botão (algumas regras usam > span),
-   força também esses elementos */
-.wd-header-search-form .searchform .searchsubmit > span,
-.wd-header-search-form .searchform .searchsubmit > i,
-.wd-header-search-form .searchform .searchsubmit .wd-tools-icon {
-  background: transparent !important;
-  box-shadow: none !important;
+/* =========================
+   Related products (scope)
+   ========================= */
+
+.wd-related-products .wd-related-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin:0 -10px;
 }
 
-/* 6) mantém o ícone visível (ajusta se você quer cor fixa) */
-.wd-header-search-form .searchform .searchsubmit:after {
-  /* seu background-image / data-uri continua aqui */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+.wd-related-products .wd-related-grid .product,
+.wd-related-products .wd-related-grid .product-grid-item.product{
+  width:calc(25% - 20px);
+  box-sizing:border-box;
+  padding:0 10px;
 }
 
-/* mantém o fundo transparente, mas força a cor do ícone via color */
-.wd-header-search-form .searchform .searchsubmit {
-  background: transparent !important;
-  color: #29b0c2 !important; /* stroke do SVG currentColor */
+.wd-related-products .product-wrapper{
+  background:#fff;
+  border-radius:10px;
+  padding:18px;
+  border:1px solid rgba(16,24,60,0.06);
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
 }
 
-/* hover troca a cor se quiser */
-.wd-header-search-form .searchform .searchsubmit:hover {
-  color: #f7a430 !important;
+/* Imagem */
+.wd-related-products .product-element-top{
+  text-align:center;
+  padding-bottom:6px;
+}
+.wd-related-products .product-element-top .product-image-link img,
+.wd-related-products .product-grid-item .hover-img img{
+  max-width:100%;
+  height:auto;
+  display:inline-block;
+  margin:8px auto 12px;
+  border:none!important;
 }
 
-.wd-tools-element .wd-tools-icon {
-  width: 40px;
+/* Brand + title wrapper */
+.product-brand-title-wrap{ display:block; }
+
+/* Brand container reserva espaço para alinhar títulos */
+.wd-related-products .product-wrapper .product-element-bottom .product-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:36px; /* reserva espaço mesmo sem brand */
+  margin-bottom:8px;
+  color:#8b8b8b;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.04em;
 }
 
-/* wrapper que agrupa brand name + title-row */
-.my-brand-wrapper {
-    margin-bottom: 18px;
+/* brand logo */
+.wd-related-products .product-brand .product-brand-logo{
+  display:inline-flex;
+  width:56px;
+  height:28px;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
 }
-
-/* nome da marca acima */
-.my-brand-name {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark-grey);
-    margin-bottom: 0;
-}
-
-/* linha com title + logo ao lado */
-.my-title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-/* título ajustado para não quebrar o layout */
-.my-title-row .product-title {
-    flex: 1 1 auto;
-    margin: 0;
-    font-size: 1.3rem;
-}
-
-div.product-excerpt {
-  color: var(--dark-grey);
-}
-
-/* logo da brand */
-.my-brand-logo {
-    flex: 0 0 auto;
-    width: 100px;
-    height: 100px;
-    border-radius: 6px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.my-brand-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* responsivo mobile */
-@media (max-width: 768px) {
-    .my-title-row {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .my-brand-logo {
-        width: 65px;
-        height: 65px;
-    }
-}
-
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
-  margin-bottom: 0;
-  text-align: left;
-}
-
-/* Related products: brand logo + name + título alinhado */
-
-/* Wrapper brand + title para controlar layout */
-.product-brand-title-wrap {
-  display: block;
-}
-
-/* Brand container sempre ocupa espaço para alinhar títulos */
-.wd-related-products .product-wrapper .product-element-bottom .product-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 36px; /* reserva espaço mesmo sem brand */
-  margin-bottom: 8px;
-  color: #8b8b8b;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .04em;
-}
-
-/* logo */
-.wd-related-products .product-brand .product-brand-logo {
-  display: inline-flex;
-  width: 56px;
-  height: 28px;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-}
-
-.wd-related-products .product-brand .product-brand-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
+.wd-related-products .product-brand .product-brand-logo img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  display:block;
 }
 
 /* brand name */
-.wd-related-products .product-brand .product-brand-name {
-  font-weight: 700;
-  color: #8b8b8b;
-  font-size: 12px;
+.wd-related-products .product-brand .product-brand-name{
+  font-weight:700;
+  color:#8b8b8b;
+  font-size:12px;
 }
 
-/* Forçar altura mínima do título para alinhar colunas (ajusta conforme linhas desejadas) */
-.wd-related-products .wd-related-grid .product-wrapper .wd-entities-title {
-  min-height: 3.6em; /* ajusta para controlar quantas linhas reservar */
-  margin: 0 0 10px;
+/* título com min-height pra alinhar linhas */
+.wd-related-products .wd-related-grid .product-wrapper .wd-entities-title{
+  font-size:14px;
+  line-height:1.2;
+  color:#222;
+  min-height:3.6em; /* ajusta pra controlar quantas linhas reservar */
+  margin:0 0 10px;
 }
 
-/* Se quiser que o título quebre mais cedo, reduza o min-height.
-   Em mobiles: diminuir reserva */
-@media (max-width: 991px) {
-  .wd-related-products .product-brand { min-height: 30px; }
-  .wd-related-products .product-brand .product-brand-logo { width: 44px; height: 22px; }
-  .wd-related-products .wd-related-grid .product-wrapper .wd-entities-title { min-height: 3em; }
+/* Rating */
+.wd-related-products .product-rating-wrapper{
+  width:100%;
+  text-align:center;
+  padding:14px 0;
+  border-top:1px solid #e6e6e6;
+  border-bottom:1px solid #e6e6e6;
+  margin:16px 0 22px;
+  box-sizing:border-box;
+}
+.wd-related-products .product-rating{ display:flex; align-items:center; justify-content:center; }
+.wd-related-products .product-rating .star-rating{ margin:0 auto; }
+
+/* Price + CTA layout */
+.wd-related-products .product-cta .price-add-row,
+.owl-carousel .owl-item .product-cta .price-add-row{
+  display:flex;
+  width:100%;
+  gap:14px;
+  align-items:stretch;
+  justify-content:space-between;
+  padding:0 0 18px;
+  box-sizing:border-box;
+}
+
+.wd-related-products .product-cta .price-col .woocommerce-Price-amount,
+.owl-carousel .owl-item .woocommerce-Price-amount{
+  display:inline-block;
+  background:#fec917;
+  color:#07143d;
+  padding:7px 25px;
+  border-radius:6px;
+  font-weight:900;
+  font-size:.8rem;
+}
+
+/* CTA button style */
+.wd-related-products .product-cta .button-col .add_to_cart_button,
+.owl-carousel .owl-item .button-col .add_to_cart_button{
+  width:100%;
+  height:100%;
+  max-height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 18px;
+  border-radius:12px;
+  background:#07143d;
+  color:#fff;
+  font-weight:700;
+  border:none;
+  box-sizing:border-box;
+}
+
+/* small responsive tweaks */
+@media (max-width:991px){
+  .wd-related-products .wd-related-grid .product,
+  .wd-related-products .wd-related-grid .product-grid-item.product{ width:calc(50% - 20px); }
+  .wd-related-products .product-brand{ min-height:30px; }
+  .wd-related-products .product-brand .product-brand-logo{ width:44px; height:22px; }
+  .wd-related-products .wd-related-grid .product-wrapper .wd-entities-title{ min-height:3em; }
+}
+@media (max-width:560px){
+  .wd-related-products .wd-related-grid .product,
+  .wd-related-products .wd-related-grid .product-grid-item.product{ width:100%; padding:0 8px; }
 }
