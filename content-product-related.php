@@ -45,11 +45,32 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <!-- BOTTOM: conteúdo do card -->
     <div class="product-element-bottom">
 
-      <!-- Brand (se tiver) -->
+      <!-- Brand (robusto: taxonomy attribute -> term name OR fallback _brand_name) -->
       <?php
-      $brand = get_post_meta( $product->get_id(), '_brand_name', true );
-      if ( $brand ) : ?>
-        <div class="product-brand"><?php echo esc_html( $brand ); ?></div>
+      // tenta obter o atributo de brand configurado no tema
+      $brand_name = '';
+      $attr = function_exists( 'woodmart_get_opt' ) ? woodmart_get_opt( 'brands_attribute' ) : '';
+
+      if ( $attr ) {
+          // retorna termos completos
+          $terms = wc_get_product_terms( $product->get_id(), $attr, array( 'fields' => 'all' ) );
+
+          if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
+              $term = $terms[0];
+              $brand_name = $term->name;
+          }
+      }
+
+      // fallback para meta antiga _brand_name caso não exista taxonomy
+      if ( empty( $brand_name ) ) {
+          $meta_brand = get_post_meta( $product->get_id(), '_brand_name', true );
+          if ( $meta_brand ) {
+              $brand_name = $meta_brand;
+          }
+      }
+
+      if ( $brand_name ) : ?>
+        <div class="product-brand"><?php echo esc_html( $brand_name ); ?></div>
       <?php endif; ?>
 
       <!-- Título -->
