@@ -184,4 +184,5 @@ function zincomed_child_scripts() {
         true
     );
 }
-add_action('wp_enqueue_scripts', 'zincomed_child_scripts', 100);
+add_action('wp_enqueue_scripts', 'zincomed_child_scripts', 9999);
+
