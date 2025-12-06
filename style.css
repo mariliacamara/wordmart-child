@@ -581,6 +581,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Container que ocupa a largura total do card (scoped) */
+.owl-carousel .owl-item .product-cta .price-add-row,
 .wd-related-products .product-cta .price-add-row {
   display: flex;
   width: 100%;
