@@ -32,72 +32,90 @@ global $product;
         <div class="wd-summary-inner">
 
           <?php
-          /* ============================================================
-             BRAND NAME + LOGO ao lado do título
-          ============================================================ */
+            // BRAND NAME acima do título + logo ao lado (robusto)
+            global $product;
 
-          // pega atributo configurado no Woodmart
-          $attr = woodmart_get_opt( 'brands_attribute' );
-          $brand_term = null;
-          $brand_logo = null;
+            $attr = woodmart_get_opt( 'brands_attribute' );
+            $brand_term = null;
+            $brand_logo_url = null;
 
-          if ( $attr ) {
-              $terms = wc_get_product_terms(
-                  $product->get_id(),
-                  $attr,
-                  array( 'fields' => 'all' )
-              );
+            // 1) Pegar o termo configurado como brand (atributo)
+            if ( $attr ) {
+                $terms = wc_get_product_terms(
+                    $product->get_id(),
+                    $attr,
+                    array( 'fields' => 'all' )
+                );
 
-              if ( ! empty( $terms ) ) {
-                  $brand_term = $terms[0];
+                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                    $brand_term = $terms[0];
 
-                  $logo_id = get_term_meta( $brand_term->term_id, 'image_id', true );
-                  if ( $logo_id ) {
-                      $brand_logo = wp_get_attachment_image_url( $logo_id, 'full' );
-                  }
-              }
-          }
+                    // 2) Tentar várias meta keys onde a imagem pode estar
+                    $image_meta = get_term_meta( $brand_term->term_id, 'image', true );       // woodmart sometimes use 'image' array
+                    $image_id_meta = get_term_meta( $brand_term->term_id, 'image_id', true ); // some versions
+                    $thumb_id_meta = get_term_meta( $brand_term->term_id, 'thumbnail_id', true ); // WP standard
 
-          // fallback: meta customizada antiga
-          if ( ! $brand_term ) {
-              $fallback = get_post_meta( get_the_ID(), '_brand_name', true );
-              if ( $fallback ) {
-                  $brand_term = (object)[ 'name' => $fallback ];
-              }
-          }
-          ?>
+                    // Normalize into a URL
+                    if ( $image_meta ) {
+                        // sometimes it's array with ['id'] or it's already a URL
+                        if ( is_array( $image_meta ) && ! empty( $image_meta['id'] ) ) {
+                            $brand_logo_url = wp_get_attachment_image_url( intval( $image_meta['id'] ), 'full' );
+                        } elseif ( is_numeric( $image_meta ) ) {
+                            $brand_logo_url = wp_get_attachment_image_url( intval( $image_meta ), 'full' );
+                        } else {
+                            // assume it's a URL string
+                            $brand_logo_url = esc_url_raw( $image_meta );
+                        }
+                    }
 
-          <?php if ( $brand_term ) : ?>
-            <div class="my-brand-wrapper">
+                    if ( ! $brand_logo_url && $image_id_meta ) {
+                        if ( is_numeric( $image_id_meta ) ) {
+                            $brand_logo_url = wp_get_attachment_image_url( intval( $image_id_meta ), 'full' );
+                        }
+                    }
 
-              <!-- Nome da marca acima do título -->
-              <div class="my-brand-name">
-                <?= esc_html( $brand_term->name ); ?>
+                    if ( ! $brand_logo_url && $thumb_id_meta ) {
+                        if ( is_numeric( $thumb_id_meta ) ) {
+                            $brand_logo_url = wp_get_attachment_image_url( intval( $thumb_id_meta ), 'full' );
+                        }
+                    }
+
+                    // final fallback: sometimes theme stores directly term meta 'image' as attachment array
+                    // already covered above
+                }
+            }
+
+            // 3) Fallback para meta antiga _brand_name (só nome)
+            if ( ! $brand_term ) {
+                $fallback_name = get_post_meta( get_the_ID(), '_brand_name', true );
+                if ( $fallback_name ) {
+                    $brand_term = (object) array( 'name' => $fallback_name );
+                }
+            }
+            ?>
+
+            <?php if ( $brand_term ) : ?>
+              <div class="my-brand-wrapper">
+                <div class="my-brand-name">
+                  <?php echo esc_html( $brand_term->name ); ?>
+                </div>
+
+                <div class="my-title-row">
+                  <h1 class="product-title"><?php the_title(); ?></h1>
+
+                  <?php if ( $brand_logo_url ) : ?>
+                    <div class="my-brand-logo">
+                      <a href="<?php echo esc_url( get_term_link( $brand_term ) ); ?>" aria-label="<?php echo esc_attr( $brand_term->name ); ?>">
+                        <img src="<?php echo esc_url( $brand_logo_url ); ?>" alt="<?php echo esc_attr( $brand_term->name ); ?>">
+                      </a>
+                    </div>
+                  <?php endif; ?>
+                </div>
               </div>
+            <?php else : ?>
+              <h1 class="product-title"><?php the_title(); ?></h1>
+            <?php endif; ?>
 
-              <!-- Título + logo -->
-              <div class="my-title-row">
-
-                <h1 class="product-title">
-                  <?= esc_html( get_the_title() ); ?>
-                </h1>
-
-                <?php if ( $brand_logo ) : ?>
-                  <div class="my-brand-logo">
-                    <img src="<?= esc_url( $brand_logo ); ?>"
-                         alt="<?= esc_attr( $brand_term->name ); ?>">
-                  </div>
-                <?php endif; ?>
-
-              </div>
-            </div>
-
-          <?php else : ?>
-
-            <!-- Sem brand → apenas título -->
-            <h1 class="product-title"><?php the_title(); ?></h1>
-
-          <?php endif; ?>
 
           <!-- Excerpt -->
           <div class="product-excerpt">
