@@ -1482,3 +1482,181 @@ div.product-excerpt {
 .product-categories li.toggle-open > .wd-cats-toggle::after,
 .product-categories li .wd-cats-toggle.toggle-active::after { content: '−'; }
 
+/* === Category cards -> same look as related products === */
+
+/* garante que o li use o mesmo container e padding */
+.product-grid-item.product {
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+/* wrapper do card */
+.product-grid-item .product-wrapper {
+  background: #ffffff;
+  border: 1px solid rgba(27, 151, 88, 0.06); /* borda leve como no exemplo */
+  padding: 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* TOP: imagem e botões */
+.product-grid-item .product-element-top {
+  position: relative;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+/* imagem maior e centralizada */
+.product-grid-item .product-element-top .product-image-link img {
+  width: 100%;
+  height: auto;
+  max-height: 340px; /* ajusta conforme layout */
+  object-fit: contain;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* botoes de ação (comparar / fav / quickview) na mesma posição do related */
+.product-grid-item .wd-buttons {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 5;
+}
+
+/* estilos dos botões (size/shape) */
+.product-grid-item .wd-buttons .wd-action-btn {
+  background: rgba(7,34,74,0.9);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: -9999px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* BOTTOM: conteúdo do card */
+.product-grid-item .product-element-bottom {
+  margin-top: auto; /* empurra para baixo, mantém altura consistente */
+  padding-top: 8px;
+}
+
+/* Brand + Title layout */
+.product-grid-item .product-brand-title-wrap {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* brand name */
+.product-grid-item .product-brand-name {
+  display: block;
+  color: #88a3a3;
+  font-size: 12px;
+  text-transform: none;
+  margin-bottom: 6px;
+}
+
+/* Título */
+.product-grid-item .wd-entities-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+/* Rating */
+.product-grid-item .product-rating-wrapper {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Price + CTA row */
+.product-grid-item .product-cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* price-add-row (colunas) */
+.product-grid-item .price-add-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* preço */
+.product-grid-item .price-col {
+  font-size: 18px;
+  color: #0b2b55;
+  font-weight: 700;
+}
+
+/* botão adicionar estilo similar */
+.product-grid-item .button-col .button {
+  background: #0b2b55;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  border: none;
+}
+
+/* quantity inline (quando existe) reduzido e compacto */
+.product-grid-item .wd-add-btn .quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.product-grid-item .wd-add-btn .qty,
+.product-grid-item .wd-add-btn input.qty {
+  width: 56px;
+  text-align: center;
+  padding: 6px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}
+
+/* margens internas do card para o visual exato */
+.product-grid-item .product-wrapper .product-element-top,
+.product-grid-item .product-wrapper .product-element-bottom {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+/* responsivo: reduz imagem e rearranja preço/botão */
+@media (max-width: 991px) {
+  .product-grid-item .product-element-top .product-image-link img {
+    max-height: 260px;
+  }
+  .product-grid-item .price-add-row {
+    gap: 8px;
+  }
+}
+
+/* pequena borda verde clara como no exemplo ao redor da imagem */
+.product-grid-item .product-wrapper {
+  box-shadow: none;
+  border-radius: 2px;
+}
+
+/* se o tema aplicar largura fixa nas colunas, garante que os cards preencham */
+.products .product-grid-item { display: flex; }
+.products .product-grid-item .product-wrapper { flex: 1 1 auto; }
+
+/* corrige alguns elementos do woodmart que podem quebrar o visual */
+.product-grid-item .wd-quick-shop .wd-buttons a { color: #fff; }
