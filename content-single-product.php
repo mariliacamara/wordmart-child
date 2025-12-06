@@ -31,23 +31,73 @@ global $product;
       <div class="col-lg-6 wd-product-summary-col">
         <div class="wd-summary-inner">
 
-          <!-- Brand -->
-          <div class="wd-product-brand">
-            <?php
-            $brand = get_post_meta( get_the_ID(), '_brand_name', true );
-            if ( $brand ) {
-              echo '<span class="brand-name">'. esc_html( $brand ) .'</span>';
-            }
-            ?>
-            <?php
-              if ( function_exists( 'woodmart_product_brand' ) ) {
-                  woodmart_product_brand();
-              }
-            ?>
-          </div>
+          <?php
+          /* ============================================================
+             BRAND NAME + LOGO ao lado do título
+          ============================================================ */
 
-          <!-- Title -->
-          <h1 class="product-title"><?php the_title(); ?></h1>
+          // pega atributo configurado no Woodmart
+          $attr = woodmart_get_opt( 'brands_attribute' );
+          $brand_term = null;
+          $brand_logo = null;
+
+          if ( $attr ) {
+              $terms = wc_get_product_terms(
+                  $product->get_id(),
+                  $attr,
+                  array( 'fields' => 'all' )
+              );
+
+              if ( ! empty( $terms ) ) {
+                  $brand_term = $terms[0];
+
+                  $logo_id = get_term_meta( $brand_term->term_id, 'image_id', true );
+                  if ( $logo_id ) {
+                      $brand_logo = wp_get_attachment_image_url( $logo_id, 'full' );
+                  }
+              }
+          }
+
+          // fallback: meta customizada antiga
+          if ( ! $brand_term ) {
+              $fallback = get_post_meta( get_the_ID(), '_brand_name', true );
+              if ( $fallback ) {
+                  $brand_term = (object)[ 'name' => $fallback ];
+              }
+          }
+          ?>
+
+          <?php if ( $brand_term ) : ?>
+            <div class="my-brand-wrapper">
+
+              <!-- Nome da marca acima do título -->
+              <div class="my-brand-name">
+                <?= esc_html( $brand_term->name ); ?>
+              </div>
+
+              <!-- Título + logo -->
+              <div class="my-title-row">
+
+                <h1 class="product-title">
+                  <?= esc_html( get_the_title() ); ?>
+                </h1>
+
+                <?php if ( $brand_logo ) : ?>
+                  <div class="my-brand-logo">
+                    <img src="<?= esc_url( $brand_logo ); ?>"
+                         alt="<?= esc_attr( $brand_term->name ); ?>">
+                  </div>
+                <?php endif; ?>
+
+              </div>
+            </div>
+
+          <?php else : ?>
+
+            <!-- Sem brand → apenas título -->
+            <h1 class="product-title"><?php the_title(); ?></h1>
+
+          <?php endif; ?>
 
           <!-- Excerpt -->
           <div class="product-excerpt">
@@ -105,28 +155,16 @@ global $product;
             ?>
           </div>
 
-          <!-- ======== AQUI: Informacao Adicional (colada abaixo do SKU) ======== -->
+          <!-- Informação adicional -->
           <div class="wd-additional-info-below-sku">
              <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
           </div>
-          <!-- ================================================================ -->
 
         </div>
       </div>
 
     </div> <!-- .row -->
   </div> <!-- .wd-product-top -->
-
-  <!-- REMOVIDO: chamada às tabs abaixo para evitar duplicação -->
-  <!--
-  <div class="wd-product-tabs container">
-    <div class="row">
-      <div class="col-12">
-        <?php // do_action( 'woocommerce_after_single_product_summary' ); ?>
-      </div>
-    </div>
-  </div>
-  -->
 
   <section class="related-products wd-related-products container">
     <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
@@ -142,13 +180,12 @@ global $product;
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) {
                 $loop->the_post();
-                wc_get_template_part( 'content', 'product-related' ); // O TEMPLATE CERTO!
+                wc_get_template_part( 'content', 'product-related' );
             }
             wp_reset_postdata();
         }
         ?>
     </div>
-</section>
-
+  </section>
 
 </div>
