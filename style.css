@@ -507,6 +507,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price pill (yellow) (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .price,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
   flex: 0 0 auto;
 }
@@ -522,6 +523,10 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Add to cart / CTA button (blue) (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .add_to_cart_button,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .button,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn a.button,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace .button
 .owl-carousel .owl-item .product-wrapper .product-element-bottom .add_to_cart_button
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button,
@@ -538,23 +543,28 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Button + price alignment: price left, btn right (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
   justify-content: space-between; 
   width: 100%; 
 }
 
 /* Card footer spacing (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
   padding-top: 8px; 
 }
 
 /* Make rating stars slightly larger (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
   font-size: 18px; 
   line-height: 1; 
 }
 
 /* Ensure image area and bottom align nicely (scoped) */
+.pagination-pagination .product-grid-item .product-wrapper .product-element-top,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-top,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
   flex: 0 0 auto; 
@@ -697,6 +707,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   margin: 0 !important;
 }
 
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating, 
 .wd-related-products .product-wrapper .product-element-bottom .star-rating, 
 .wd-related-products .product-wrapper .product-element-bottom .woocommerce-product-rating {
   margin: 0;
@@ -1170,6 +1182,7 @@ div.product-excerpt {
     }
 }
 
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
   margin-bottom: 0;
   text-align: left;
