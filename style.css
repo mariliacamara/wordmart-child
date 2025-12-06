@@ -1505,3 +1505,10 @@ div.product-excerpt {
 .product-categories li.toggle-open > .wd-cats-toggle::after,
 .product-categories li .wd-cats-toggle.toggle-active::after { content: '−'; }
 
+@media (min-width: 1025px) {
+    .products.wd-stretch-cont-lg .product {
+        display: flex;
+        flex-direction: column;
+        max-width: 229px;
+    }
+  }
