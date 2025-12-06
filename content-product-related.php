@@ -44,35 +44,68 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
     <!-- BOTTOM: conteúdo do card -->
     <div class="product-element-bottom">
-      <div>
-        <!-- Brand (robusto: taxonomy attribute -> term name OR fallback _brand_name) -->
+      <div class="product-brand-title-wrap">
+
+        <!-- Brand (taxonomy attribute -> term name + logo OR fallback _brand_name) -->
         <?php
-        // tenta obter o atributo de brand configurado no tema
         $brand_name = '';
+        $brand_logo = '';
+
         $attr = function_exists( 'woodmart_get_opt' ) ? woodmart_get_opt( 'brands_attribute' ) : '';
 
         if ( $attr ) {
-            // retorna termos completos
             $terms = wc_get_product_terms( $product->get_id(), $attr, array( 'fields' => 'all' ) );
-
             if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
                 $term = $terms[0];
                 $brand_name = $term->name;
+
+                // tentar meta image / image_id / thumbnail_id
+                $meta_image = get_term_meta( $term->term_id, 'image', true );
+                $meta_image_id = get_term_meta( $term->term_id, 'image_id', true );
+                $meta_thumb = get_term_meta( $term->term_id, 'thumbnail_id', true );
+
+                if ( $meta_image ) {
+                    if ( is_array( $meta_image ) && ! empty( $meta_image['id'] ) ) {
+                        $brand_logo = wp_get_attachment_image_url( intval( $meta_image['id'] ), 'full' );
+                    } elseif ( is_numeric( $meta_image ) ) {
+                        $brand_logo = wp_get_attachment_image_url( intval( $meta_image ), 'full' );
+                    } else {
+                        $brand_logo = esc_url_raw( $meta_image );
+                    }
+                }
+
+                if ( ! $brand_logo && $meta_image_id && is_numeric( $meta_image_id ) ) {
+                    $brand_logo = wp_get_attachment_image_url( intval( $meta_image_id ), 'full' );
+                }
+
+                if ( ! $brand_logo && $meta_thumb && is_numeric( $meta_thumb ) ) {
+                    $brand_logo = wp_get_attachment_image_url( intval( $meta_thumb ), 'full' );
+                }
             }
         }
 
-        // fallback para meta antiga _brand_name caso não exista taxonomy
+        // fallback para meta antiga do produto
         if ( empty( $brand_name ) ) {
             $meta_brand = get_post_meta( $product->get_id(), '_brand_name', true );
             if ( $meta_brand ) {
                 $brand_name = $meta_brand;
             }
         }
+        ?>
 
-      
-        if ( $brand_name ) : ?>
-          <div class="product-brand"><?php echo esc_html( $brand_name ); ?></div>
-        <?php endif; ?>
+        <div class="product-brand">
+          <?php if ( $brand_logo ) : ?>
+            <span class="product-brand-logo">
+              <a href="<?php echo esc_url( isset( $term ) ? get_term_link( $term ) : '#' ); ?>" aria-label="<?php echo esc_attr( $brand_name ); ?>">
+                <img src="<?php echo esc_url( $brand_logo ); ?>" alt="<?php echo esc_attr( $brand_name ); ?>">
+              </a>
+            </span>
+          <?php endif; ?>
+
+          <?php if ( $brand_name ) : ?>
+            <span class="product-brand-name"><?php echo esc_html( $brand_name ); ?></span>
+          <?php endif; ?>
+        </div>
 
         <!-- Título -->
         <h3 class="wd-entities-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
