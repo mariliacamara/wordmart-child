@@ -39,6 +39,11 @@ global $product;
               echo '<span class="brand-name">'. esc_html( $brand ) .'</span>';
             }
             ?>
+            <?php
+              if ( function_exists( 'woodmart_product_brand' ) ) {
+                  woodmart_product_brand();
+              }
+            ?>
           </div>
 
           <!-- Title -->
