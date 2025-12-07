@@ -1563,6 +1563,10 @@ div.product-excerpt {
   gap: 24px !important;
 }
 
+.pagination-pagination .product-grid-item {
+  margin: 0;
+}
+
 /* CARD CONTAINER */
 .pagination-pagination .products .product-grid-item.product,
 .pagination-pagination .woocommerce ul.products li.product {
