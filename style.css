@@ -1549,228 +1549,167 @@ div.product-excerpt {
     border: none!important;
 }
 
-/* === Igualar tamanho dos cards na grid de category / archive ===
-   Colar no final do style.css do child (ou CSS adicional) === */
+/* ============================================================
+   CATEGORY GRID PATCH — aplica SOMENTE dentro de .pagination-pagination
+   ============================================================ */
 
-/* 1) garante que o grid estique os itens */
-.products,
-.woocommerce ul.products,
-.archive .products {
+/* GRID */
+.pagination-pagination .products,
+.pagination-pagination .woocommerce ul.products,
+.pagination-pagination .archive .products {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: stretch !important;
   gap: 24px !important;
 }
 
-/* 2) cada item vira um flex column e ocupa coluna consistente */
-.products .product-grid-item.product,
-.woocommerce ul.products li.product,
-.archive .products .product-grid-item.product {
+/* CARD CONTAINER */
+.pagination-pagination .products .product-grid-item.product,
+.pagination-pagination .woocommerce ul.products li.product {
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
-  box-sizing: border-box !important;
-  padding: 0 10px 10px !important;
-  width: calc(33.333% - 20px) !important; /* 3 colunas desktop — ajusta se necessário */
-  max-width: calc(33.333% - 20px) !important;
-}
-
-/* se o tema usa outras classes para col layout, força também */
-.products.wd-stretch-cont-lg .product,
-.products .product {
   width: calc(33.333% - 20px) !important;
-}
-
-/* 3) wrapper interno ocupa 100% e organiza conteúdo verticalmente */
-.products .product-grid-item .product-wrapper,
-.woocommerce ul.products li.product .product-wrapper {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: stretch !important;
-  height: 100% !important;
-  min-height: 540px !important; /* garante altura igual dos cards desktop; ajusta se quiser menor */
-  padding: 18px !important;
-  border-radius: 10px !important;
-  background: #fff !important;
-  border: 1px solid rgba(16,24,60,0.06) !important;
+  max-width: calc(33.333% - 20px) !important;
+  padding: 0 10px 10px !important;
+  margin: 0 !important;
   box-sizing: border-box !important;
 }
 
-/* 4) área da imagem: tamanho fixo para todas */
-.products .product-grid-item .product-element-top,
-.woocommerce ul.products li.product .product-element-top {
+/* CARD WRAPPER */
+.pagination-pagination .product-grid-item .product-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 16px !important;
+  background: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(16,24,60,0.06) !important;
+  gap: 8px !important;
+}
+
+/* IMAGE AREA */
+.pagination-pagination .product-element-top {
+  padding-bottom: 0 !important;
+  margin-bottom: 8px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 12px 0 !important;
-  flex: 0 0 auto !important;
 }
 
-/* container para forçar altura da imagem e manter proporção */
-.products .product-grid-item .product-image-link,
-.woocommerce ul.products li.product .product-image-link {
+.pagination-pagination .product-image-link {
   width: 100% !important;
-  height: 320px !important; /* ajuste: controla altura das imagens */
+  height: 240px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   overflow: hidden !important;
-  box-sizing: border-box !important;
 }
 
-/* imagem obedecerá o container sem distorcer */
-.products .product-grid-item .product-image-link img,
-.woocommerce ul.products li.product .product-image-link img {
-  max-width: 100% !important;
+.pagination-pagination .product-image-link img {
+  max-height: 180px !important;
   width: auto !important;
-  height: 100% !important;
   object-fit: contain !important;
   display: block !important;
 }
 
-/* 5) conteúdo textual e rating - ocupa espaço médio */
-.products .product-grid-item .product-element-bottom,
-.woocommerce ul.products li.product .product-element-bottom {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
-  padding-top: 12px !important;
-  margin-top: 12px !important;
-  flex: 1 1 auto !important; /* permite crescer/encolher bem */
-  box-sizing: border-box !important;
+/* TITLE */
+.pagination-pagination .wd-entities-title,
+.pagination-pagination h3.wd-entities-title {
+  font-size: 14px !important;
+  margin: 6px 0 8px !important;
+  line-height: 1.2 !important;
+  color: #222 !important;
 }
 
-/* título com clamp para no máximo 2 linhas */
-.products .product-grid-item .wd-entities-title a,
-.woocommerce ul.products li.product .wd-entities-title a {
+.pagination-pagination .wd-entities-title a {
   display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important; /* mostra até 2 linhas */
+  -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  line-height: 1.2 !important;
-  max-height: 2.4em !important;
-  color: #222 !important;
-  font-size: 14px !important;
 }
 
-/* 6) rating area centralizada */
-.products .product-grid-item .product-rating-wrapper,
-.woocommerce ul.products li.product .product-rating-wrapper {
-  margin: 8px 0 !important;
+/* BRAND */
+.pagination-pagination .product-brand,
+.pagination-pagination .brand {
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  color: #8b8b8b !important;
+  margin-bottom: 6px !important;
+}
+
+/* RATING */
+.pagination-pagination .product-rating-wrapper {
   text-align: center !important;
-  border-top: 1px solid rgba(0,0,0,0.04) !important;
-  border-bottom: 1px solid rgba(0,0,0,0.04) !important;
   padding: 12px 0 !important;
+  border-top: 1px solid rgba(0,0,0,0.06) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  margin: 8px 0 !important;
 }
 
-/* 7) price + button row: fixa em baixo do card */
-.products .product-grid-item .product-element-bottom .price-add-row,
-.woocommerce ul.products li.product .product-element-bottom .price-add-row,
-.products .product-grid-item .product-cta .price-add-row {
+.pagination-pagination .star-rating {
+  margin: 0 auto !important;
+  transform: scale(0.95) !important;
+}
+
+/* PRICE + BUTTON ROW */
+.pagination-pagination .price-add-row,
+.pagination-pagination .wd-add-btn,
+.pagination-pagination .wd-add-btn-replace {
   display: flex !important;
-  gap: 14px !important;
-  align-items: center !important;
   justify-content: space-between !important;
-  margin-top: auto !important; /* empurra a row pra base do card */
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: auto !important;
   padding-top: 8px !important;
-  padding-bottom: 0 !important;
 }
 
-/* price badge */
-.products .product-grid-item .price .woocommerce-Price-amount,
-.woocommerce ul.products li.product .price .woocommerce-Price-amount {
+/* PRICE PILL */
+.pagination-pagination .woocommerce-Price-amount {
   background: #fec917 !important;
   color: #07143d !important;
-  padding: 7px 18px !important;
+  padding: 8px 14px !important;
   border-radius: 8px !important;
   font-weight: 900 !important;
-  display: inline-block !important;
-}
-
-/* botão */
-.products .product-grid-item .add_to_cart_button,
-.woocommerce ul.products li.product .add_to_cart_button,
-.products .product-grid-item .button,
-.woocommerce ul.products li.product .button {
-  background: #08103a !important;
-  color: #fff !important;
-  padding: 10px 18px !important;
-  border-radius: 8px !important;
-  text-transform: uppercase !important;
-  font-weight: 700 !important;
-  border: none !important;
   box-shadow: none !important;
 }
 
-/* 8) Forçar alinhamento e remover margens externas conflituantes */
-.products .product-grid-item,
-.woocommerce ul.products li.product {
-  margin: 0 !important;
-  vertical-align: top !important;
+/* ADD TO CART BUTTON */
+.pagination-pagination .add_to_cart_button,
+.pagination-pagination .button {
+  background: #07143d !important;
+  color: #fff !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  border: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 44px !important;
 }
 
-/* 9) mobile: 2 colunas e reduzir alturas */
+/* MOBILE 2 COL */
 @media (max-width: 991px) {
-  .products .product-grid-item.product,
-  .woocommerce ul.products li.product {
+  .pagination-pagination .product-grid-item.product {
     width: calc(50% - 16px) !important;
     max-width: calc(50% - 16px) !important;
   }
-  .products .product-grid-item .product-wrapper,
-  .woocommerce ul.products li.product .product-wrapper {
-    min-height: 420px !important;
-  }
-  .products .product-grid-item .product-image-link,
-  .woocommerce ul.products li.product .product-image-link {
-    height: 260px !important;
-  }
-}
-
-/* 10) mobile small: 1 coluna */
-@media (max-width: 520px) {
-  .products .product-grid-item.product,
-  .woocommerce ul.products li.product {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  .products .product-grid-item .product-wrapper,
-  .woocommerce ul.products li.product .product-wrapper {
-    min-height: auto !important;
-  }
-  .products .product-grid-item .product-image-link,
-  .woocommerce ul.products li.product .product-image-link {
-    height: 220px !important;
-  }
-}
-
-/* 11) caso o parent tenha regras que quebram, última linha com specificity extra */
-body .products .product-grid-item .product-wrapper,
-body .woocommerce ul.products li.product .product-wrapper {
-  min-height: 540px !important;
-}
-
-/* Opção 3: remove min-height e reduz altura da área da imagem */
-.products .product-grid-item .product-wrapper,
-.woocommerce ul.products li.product .product-wrapper {
-  min-height: 0 !important;
-  height: auto !important;
-  padding: 14px !important;
-}
-
-.products .product-grid-item .product-image-link,
-.woocommerce ul.products li.product .product-image-link {
-  height: 240px !important; /* imagem menor -> card mais compacto */
-}
-
-@media (max-width: 991px) {
-  .products .product-grid-item .product-image-link,
-  .woocommerce ul.products li.product .product-image-link {
+  .pagination-pagination .product-image-link {
     height: 200px !important;
   }
 }
 
-.products, .woocommerce ul.products, .archive .products {
-  gap: 0!important;
+/* MOBILE 1 COL */
+@media (max-width: 520px) {
+  .pagination-pagination .product-grid-item.product {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .pagination-pagination .product-image-link {
+    height: 180px !important;
+  }
 }
