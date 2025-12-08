@@ -2194,44 +2194,30 @@ nav[class*="-pagination"] li .current {
   flex-direction: row-reverse!important;
 }
 
-/* Força actions à esquerda quando o tema marca como "wd-pos-r-*" */
+/* ===== Mover action buttons da direita para a esquerda mantendo hover ===== */
+
+/* Reposiciona quando o tema usa .wd-pos-r-* */
 .wd-buttons[class*="wd-pos-r"] {
-  /* reposiciona para a esquerda */
-  inset-inline-end: auto !important;
-  inset-inline-start: var(--wd-btn-inset) !important;
+  inset-inline-end: auto !important;           /* remove lado direito */
+  inset-inline-start: var(--wd-btn-inset) !important; /* coloca à esquerda */
+  
+  /* movimento para fora à ESQUERDA (como antes era para fora à direita) */
   transform: translateX(-20px) translateZ(0) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
-/* topo */
+/* Topo à esquerda */
 .wd-buttons.wd-pos-r-t {
   top: var(--wd-btn-inset) !important;
-  bottom: auto !important;
 }
 
-/* base */
+/* Base à esquerda */
 .wd-buttons.wd-pos-r-b {
   bottom: var(--wd-btn-inset) !important;
-  top: auto !important;
 }
 
-/* garante que os botões apareçam na ordem visual correta (top-down) */
-.wd-buttons {
-  right: auto !important;
-  left: auto !important;
-}
-
-/* se quiser inverter a ordem das actions (ex.: primeiro btn à esquerda) */
-.wd-buttons {
-  flex-direction: column !important; /* mantém coluna; use row para linha */
-  align-items: flex-start !important; /* garante alinhamento à esquerda */
-}
-
-/* suporte para sites RTL: mantém comportamento correto */
-[dir="rtl"] .wd-buttons[class*="wd-pos-r"] {
-  inset-inline-start: auto !important;
-  inset-inline-end: var(--wd-btn-inset) !important;
-  transform: translateX(20px) translateZ(0) !important;
-  align-items: flex-end !important;
+/* Quando o card é hover, Woodmart adiciona .wd-hover-buttons */
+.wd-hover-buttons .wd-buttons[class*="wd-pos-r"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0) translateZ(0) !important; /* entra suave pela esquerda */
 }
