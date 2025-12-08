@@ -2188,6 +2188,8 @@ nav[class*="-pagination"] li .current {
   display: none;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-element-top {
-  flex-direction: row-reverse;
+.product-carrousel .owl-item .owl-carousel-item .product-element-top,
+.wd-products-element .product-element-top,
+.pagination-pagination .product-element-top {
+  flex-direction: row-reverse!important;
 }
