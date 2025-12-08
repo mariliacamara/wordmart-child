@@ -19,6 +19,9 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
     <!-- TOP: imagem e quick actions -->
     <div class="product-element-top wd-quick-shop">
+      <div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
+        <?php do_action( 'woodmart_product_action_buttons' ); ?>
+      </div>
       <a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="product-image-link">
         <?php
         /**
@@ -38,10 +41,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         woodmart_hover_image();
       }
       ?>
-
-      <div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
-        <?php do_action( 'woodmart_product_action_buttons' ); ?>
-      </div>
     </div>
 
     <!-- BOTTOM: conteúdo do card -->
