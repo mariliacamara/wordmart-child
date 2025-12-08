@@ -734,6 +734,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Wrapper com as bordas (scoped) */
+.wd-products-element .product-rating-wrapper,
 .wd-related-products .product-rating-wrapper {
   width: 100%;
   text-align: center;
@@ -745,6 +746,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Centraliza as estrelas (scoped) */
+.wd-products-element .product-rating,
 .wd-related-products .product-rating {
   display: flex;
   align-items: center;
@@ -752,17 +754,21 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Garante que as estrelas não fiquem grudadas (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .product-rating .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-rating .star-rating,
 .wd-related-products .product-rating .star-rating {
   margin: 0 auto;
 }
 
 /* Fix para temas que deixam as estrelas inline (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .product-rating .star-rating span,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-rating .star-rating span,
 .wd-related-products .product-rating .star-rating span {
   margin: 0 !important;
 }
 
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .woocommerce-product-rating
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating, 
 .wd-related-products .product-wrapper .product-element-bottom .star-rating, 
