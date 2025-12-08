@@ -636,6 +636,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Container que ocupa a largura total do card (scoped) */
+.wd-products-element .elements-grid .product-cta .price-add-row, 
 .pagination-pagination .product-grid-item .product-cta .price-add-row,
 .owl-carousel .owl-item .product-cta .price-add-row,
 .wd-related-products .product-cta .price-add-row {
@@ -658,9 +659,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 } */
 
 /* Estilo do badge de preço (podes trocar cores/paddings) (scoped) */
+.wd-products-element .elements-grid .woocommerce-Price-amount,
+.wd-products-element .elements-grid .product-cta .price-col .price,
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
-.owl-carousel .owl-item .woocommerce-Price-amount,
 .pagination-pagination .product-grid-item .product-cta .price-col .price,
+.owl-carousel .owl-item .woocommerce-Price-amount,
 .wd-related-products .product-cta .price-col .price,
 .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
   display: inline-block;
