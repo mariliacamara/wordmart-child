@@ -151,6 +151,9 @@ License:    GNU General Public License v2 or later
 }
 
 /* Rating force */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
+.product-carrousel .owl-item .owl-carousel-item .product-element-bottom .star-rating::before,
+.product-carrousel .owl-item .owl-carousel-item .product-element-bottom .star-rating span::before,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating::before,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating span::before,
