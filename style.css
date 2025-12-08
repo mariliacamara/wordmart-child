@@ -2104,3 +2104,8 @@ nav[class*="-pagination"] li .current {
   height: 18px;
   object-fit: contain;
 }
+
+.wd-related-products li, 
+.product-carrousel li {
+  list-style: none;
+}
