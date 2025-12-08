@@ -598,6 +598,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Button + price alignment: price left, btn right (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
@@ -606,6 +607,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Card footer spacing (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom ,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
@@ -613,6 +615,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Make rating stars slightly larger (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
@@ -621,6 +624,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Ensure image area and bottom align nicely (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-top,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom,
 .wd-products-element .elements-grid .product-wrapper .product-element-top, 
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-top,
@@ -655,12 +660,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Remove border das imgs (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .hover-img img,
 .wd-related-products .product-grid-item .hover-img img, 
 .wd-related-products .product-grid-item .product-image-link img {
   border: none!important;
 }
 
 /* Container que ocupa a largura total do card (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row,
 .wd-products-element .elements-grid .product-cta .price-add-row, 
 .pagination-pagination .product-grid-item .product-cta .price-add-row,
 .owl-carousel .owl-item .product-cta .price-add-row,
