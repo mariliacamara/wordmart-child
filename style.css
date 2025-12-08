@@ -1963,3 +1963,19 @@ div.product-excerpt {
 .product-brand-name {
   text-align: left;
 }
+
+.pagination-pagination nav[class*="-pagination"] li .prev:before {
+    content: "\25c0";
+    font-family: "woodmart-font";
+}
+
+.pagination-pagination nav[class*="-pagination"] li :is( .next, .prev):before {
+    font-size: 12px;
+    content: "\25b6";
+    font-family: "woodmart-font";
+}
+
+.pagination-pagination nav[class*="-pagination"] li :is( .next, .prev) {
+    font-size: 0;
+    color: var(--secondary-color);
+}
