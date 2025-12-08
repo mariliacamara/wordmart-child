@@ -549,10 +549,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Add to cart / CTA button (blue) (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .add_to_cart_button,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .button,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn a.button,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .add_to_cart_button,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .button,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn a.button,
-.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace .button
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace .button,
 .owl-carousel .owl-item .product-wrapper .product-element-bottom .add_to_cart_button
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button,
@@ -569,6 +573,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Button + price alignment: price left, btn right (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
   justify-content: space-between; 
@@ -576,12 +581,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Card footer spacing (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom ,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
   padding-top: 8px; 
 }
 
 /* Make rating stars slightly larger (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
   font-size: 18px; 
@@ -589,6 +596,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Ensure image area and bottom align nicely (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-top, 
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-top,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-top,
@@ -598,6 +607,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Responsive: 2 columns on tablet, 1 on mobile (scoped) */
 @media (max-width: 991px) {
+  .wd-products-element .elements-grid .product,
   .wd-related-products .wd-related-grid .product,
   .wd-related-products .wd-related-grid .product-grid-item.product { 
     width: calc(50% - 20px); 
