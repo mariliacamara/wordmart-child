@@ -500,6 +500,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Rating centered under separator (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .woocommerce-product-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .woocommerce-product-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
@@ -512,6 +514,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Ensure star icons visible (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating::before,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating::before,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
@@ -523,6 +527,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price + button row (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn-replace,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .price,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn-replace,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .price,
@@ -540,13 +547,15 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price pill (yellow) (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .price,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .price,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .price,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
   flex: 0 0 auto;
 }
 
-.wd-products-element .elements-grid .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
 .pagination-pagination .product-grid-item > div > div.product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
@@ -561,6 +570,10 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Add to cart / CTA button (blue) (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .add_to_cart_button,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .button,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn a.button,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn-replace .button,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .add_to_cart_button,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .button,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn a.button,
