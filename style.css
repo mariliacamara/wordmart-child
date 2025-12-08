@@ -1969,7 +1969,7 @@ nav[class*="-pagination"] li .prev:before {
     font-family: "woodmart-font";
 }
 
- nav[class*="-pagination"] li :is( .next, .prev):before {
+ nav[class*="-pagination"] li .next:before {
     font-size: 12px;
     content: "\25b6";
     font-family: "woodmart-font";
