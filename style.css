@@ -1995,8 +1995,8 @@ nav[class*="-pagination"] li .current {
   padding: 0;
   margin: 20px auto 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 20px; /* espaço entre os ícones */
 }
 
