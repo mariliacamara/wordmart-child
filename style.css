@@ -1985,3 +1985,7 @@ nav[class*="-pagination"] li :is( .next, .prev) {
     color: var(--secondary-color);
     background: none;
 }
+
+nav[class*="-pagination"] li .current {
+  background-color: var(--secondary-color);
+}
