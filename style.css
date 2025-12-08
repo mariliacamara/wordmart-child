@@ -1843,3 +1843,111 @@ div.product-excerpt {
     max-width: 100% !important;
   }
 }
+
+/* === 4 cards por linha SEM GAP — para .wd-products-element .elements-grid === */
+.pagination-pagination .wd-products-element .elements-grid,
+.wd-products-element .elements-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0 !important;
+  align-items: stretch !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Cada card ocupa 25% exatamente (4 colunas) */
+.pagination-pagination .wd-products-element .elements-grid .product,
+.wd-products-element .elements-grid .product,
+.pagination-pagination .wd-products-element .elements-grid .product-grid-item.product,
+.wd-products-element .elements-grid .product-grid-item.product {
+  flex: 0 0 25% !important;
+  max-width: 25% !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 !important; /* padding interno vai pro wrapper abaixo */
+}
+
+/* Wrapper interno: dá espaçamento interno e borda sem afetar o grid */
+.pagination-pagination .wd-products-element .elements-grid .product-wrapper,
+.wd-products-element .elements-grid .product-wrapper {
+  margin: 12px !important;             /* cria "respiro" visual entre cards */
+  padding: 16px !important;            /* espaçamento dentro do card */
+  background: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(16,24,60,0.06) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Área da imagem: altura controlada, centralizada e sem esticar */
+.pagination-pagination .wd-products-element .elements-grid .product-image-link,
+.wd-products-element .elements-grid .product-image-link {
+  width: 100% !important;
+  height: 220px !important;   /* ajusta pra seu gosto */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  box-sizing: border-box;
+}
+
+.pagination-pagination .wd-products-element .elements-grid img,
+.wd-products-element .elements-grid img {
+  max-height: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Título/rating/price se comportam e não esticam o card */
+.pagination-pagination .wd-products-element .elements-grid .wd-entities-title,
+.wd-products-element .elements-grid .wd-entities-title {
+  margin: 8px 0 !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  color: #222 !important;
+}
+
+/* Price + CTA alinhados e fixos na base do card */
+.pagination-pagination .wd-products-element .elements-grid .price-add-row,
+.wd-products-element .elements-grid .price-add-row {
+  margin-top: auto !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  align-items: center !important;
+  padding-top: 10px !important;
+}
+
+/* Responsivo: tablet 2 colunas, mobile 1 coluna */
+@media (max-width: 991px) {
+  .pagination-pagination .wd-products-element .elements-grid .product,
+  .wd-products-element .elements-grid .product {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  .pagination-pagination .wd-products-element .elements-grid .product-image-link,
+  .wd-products-element .elements-grid .product-image-link {
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pagination-pagination .wd-products-element .elements-grid .product,
+  .wd-products-element .elements-grid .product {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  .pagination-pagination .wd-products-element .elements-grid .product-wrapper,
+  .wd-products-element .elements-grid .product-wrapper {
+    margin: 10px !important;
+  }
+  .pagination-pagination .wd-products-element .elements-grid .product-image-link,
+  .wd-products-element .elements-grid .product-image-link {
+    height: 160px !important;
+  }
+}
