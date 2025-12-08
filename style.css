@@ -152,8 +152,8 @@ License:    GNU General Public License v2 or later
 
 /* Rating force */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
-.product-carrousel .owl-item .owl-carousel-item .product-element-bottom .star-rating::before,
-.product-carrousel .owl-item .owl-carousel-item .product-element-bottom .star-rating span::before,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating::before,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating span::before,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating::before,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating span::before,
@@ -419,6 +419,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Card inner wrapper (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper,
 .wd-products-element .elements-grid .product-wrapper,
 .pagination-pagination .product-grid-item .product-wrapper,
 .wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
@@ -448,6 +449,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Title / brand / meta (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .wd-entities-title,
 .wd-products-element .elements-grid .wd-entities-title,
 .pagination-pagination .product-grid-item .wd-entities-title,
 .owl-carousel .owl-item .wd-entities-title,
@@ -458,6 +460,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   color: #222;
   text-align: left;
 }
+.product-carrousel .owl-item .owl-carousel-item .wd-entities-title a,
 .wd-products-element .elements-grid .wd-entities-title a,
 .pagination-pagination .product-grid-item .wd-entities-title a,
 .owl-carousel .owl-item .wd-entities-title,
@@ -468,6 +471,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Small brand label above title (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .brand,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .brand,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .brand,
@@ -482,6 +486,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Thin separator line (scoped) */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom hr,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .sep-line,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom hr,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .sep-line,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom hr,
