@@ -1964,6 +1964,11 @@ div.product-excerpt {
   text-align: left;
 }
 
+nav[class*="-pagination"] li .page-numbers {
+  background-color: var(--grey);
+  border-radius: 10px;
+}
+
 nav[class*="-pagination"] li .prev:before {
     content: "\25c0";
     font-family: "woodmart-font";
@@ -1978,9 +1983,5 @@ nav[class*="-pagination"] li .prev:before {
 nav[class*="-pagination"] li :is( .next, .prev) {
     font-size: 0;
     color: var(--secondary-color);
-}
-
-nav[class*="-pagination"] li .page-numbers {
-  background-color: var(--grey);
-  border-radius: 10px;
+    background: none;
 }
