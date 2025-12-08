@@ -1989,3 +1989,41 @@ nav[class*="-pagination"] li :is( .next, .prev) {
 nav[class*="-pagination"] li .current {
   background-color: var(--secondary-color);
 }
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espaço entre os ícones */
+}
+
+.social-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-list li a {
+  display: block;
+  width: 40px;   /* tamanho do círculo */
+  height: 40px;
+  border-radius: 50%;
+  background: #bcbcbc; /* cor cinza do print */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.social-list li a:hover {
+  background: #8f8f8f; /* hover opcional */
+}
+
+.social-list li img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
