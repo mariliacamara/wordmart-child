@@ -1964,6 +1964,11 @@ div.product-excerpt {
   text-align: left;
 }
 
+.product-brand {
+  text-transform: uppercase;
+  text-align: left;
+}
+
 nav[class*="-pagination"] li .page-numbers {
   background-color: var(--grey);
   border-radius: 10px;
