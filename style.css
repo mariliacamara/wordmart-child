@@ -1997,7 +1997,7 @@ nav[class*="-pagination"] li .current {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 20px; /* espaço entre os ícones */
+  gap: 10px; /* espaço entre os ícones */
 }
 
 .social-list li {
