@@ -2109,3 +2109,81 @@ nav[class*="-pagination"] li .current {
 .product-carrousel li {
   list-style: none;
 }
+
+/* === Forçar cards iguais e títulos alinhados - adicionar no final do child style.css === */
+
+/* garante que cada card ocupe mesma altura dentro do grid/carousel */
+.product-carrousel .owl-item .owl-carousel-item .product-grid-item.product,
+.product-carrousel .owl-item .owl-carousel-item .products .product-grid-item.product,
+.pagination-pagination .product-grid-item.product,
+.wd-products-element .elements-grid .product {
+  display: flex !important;
+  align-items: stretch !important;
+  height: auto !important;
+}
+
+/* wrapper do card: coluna flex com altura 100% para empurrar price/btn para base */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper,
+.wd-products-element .elements-grid .product-wrapper,
+.pagination-pagination .product-grid-item .product-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* forçar área da imagem com altura fixa (uniforme) */
+.product-carrousel .owl-item .owl-carousel-item .product-image-link,
+.wd-products-element .product-image-link,
+.pagination-pagination .product-image-link {
+  height: 240px !important;   /* ajusta se quiser menor/maior */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+/* mantém as imagens dentro da caixa sem deformar */
+.product-carrousel .owl-item .owl-carousel-item .product-image-link img,
+.wd-products-element .product-image-link img,
+.pagination-pagination .product-image-link img {
+  max-height: 100% !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* título: truncar em 2 linhas e garantir altura fixa para alinhar */
+.product-carrousel .wd-entities-title,
+.wd-products-element .wd-entities-title,
+.pagination-pagination .wd-entities-title {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;      /* 2 linhas */
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.2 !important;
+  min-height: calc(1.2em * 2) !important; /* garante mesma altura (2 linhas) */
+  margin: 6px 0 8px !important;
+}
+
+/* se preferir 3 linhas (produtos com nomes maiores) troque 2 por 3 acima e no min-height */
+
+/* garante que a linha de preço / botão fique sempre alinhada na base */
+.product-carrousel .price-add-row,
+.wd-products-element .price-add-row,
+.pagination-pagination .price-add-row {
+  margin-top: auto !important;
+}
+
+/* remove margens/desalinhamentos inesperados */
+.product-carrousel .owl-item,
+.product-carrousel .owl-item .owl-carousel-item {
+  align-self: stretch !important;
+}
+
+/* pequena ajuda para evitar que títulos com <br> criem alturas diferentes */
+.product-carrousel .wd-entities-title br,
+.wd-products-element .wd-entities-title br {
+  display: none;
+}
