@@ -1951,3 +1951,10 @@ div.product-excerpt {
     height: 160px !important;
   }
 }
+
+.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+}
