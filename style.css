@@ -1798,3 +1798,48 @@ div.product-excerpt {
   padding-left: 40px !important;
   padding-right: 40px !important;
 }
+
+/* === Forçar 4 cards por linha dentro de .wd-products-element .elements-grid === */
+.wd-products-element .elements-grid,
+.wd-products-element .elements-grid .products {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 24px !important; /* mantém gap consistente */
+  align-items: stretch !important;
+  box-sizing: border-box;
+}
+
+/* cada card ocupa 25% menos o gap */
+.wd-products-element .elements-grid .product,
+.wd-products-element .elements-grid .product-grid-item.product {
+  flex: 0 0 calc(25% - 18px) !important; /* ajuste o 18px se quiser maior/menor espaço entre cards */
+  max-width: calc(25% - 18px) !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 0 10px !important;
+}
+
+/* garantir wrapper interno ok */
+.wd-products-element .elements-grid .product-wrapper {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* responsivo: 2 colunas tablet, 1 coluna mobile */
+@media (max-width: 991px) {
+  .wd-products-element .elements-grid .product,
+  .wd-products-element .elements-grid .product-grid-item.product {
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .wd-products-element .elements-grid .product,
+  .wd-products-element .elements-grid .product-grid-item.product {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
