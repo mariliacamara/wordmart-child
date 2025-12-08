@@ -2004,6 +2004,7 @@ nav[class*="-pagination"] li .current {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 0;
 }
 
 .social-list li a {
