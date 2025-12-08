@@ -1959,3 +1959,7 @@ div.product-excerpt {
   padding-left: 32px !important;
   padding-right: 32px !important;
 }
+
+.product-brand-name {
+  text-align: left;
+}
