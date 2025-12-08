@@ -1979,3 +1979,8 @@ nav[class*="-pagination"] li :is( .next, .prev) {
     font-size: 0;
     color: var(--secondary-color);
 }
+
+nav[class*="-pagination"] li .page-numbers {
+  background-color: var(--grey);
+  border-radius: 10px;
+}
