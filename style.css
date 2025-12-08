@@ -1703,6 +1703,7 @@ div.product-excerpt {
   text-transform: uppercase !important;
   color: #8b8b8b !important;
   margin-bottom: 6px !important;
+  text-align: center;
 }
 
 /* RATING */
