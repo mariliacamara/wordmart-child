@@ -413,6 +413,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Card inner wrapper (scoped) */
+.wd-products-element .elements-grid .product-wrapper,
 .pagination-pagination .product-grid-item .product-wrapper,
 .wd-related-products .wd-related-grid .product-grid-item .product-wrapper,
 .wd-related-products .wd-related-grid .product .product-wrapper {
@@ -427,10 +428,12 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Top: image area (scoped) */
+.wd-products-element .elements-grid .product-element-top,
 .wd-related-products .wd-related-grid .product-element-top { 
   text-align: center; 
   padding-bottom: 6px; 
 }
+.wd-products-element .elements-grid .product-element-top .product-image-link img,
 .wd-related-products .wd-related-grid .product-element-top .product-image-link img {
   max-width: 100%;
   height: auto;
@@ -439,6 +442,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Title / brand / meta (scoped) */
+.wd-products-element .elements-grid .wd-entities-title,
 .pagination-pagination .product-grid-item .wd-entities-title,
 .owl-carousel .owl-item .wd-entities-title,
 .wd-related-products .wd-related-grid .wd-entities-title { 
