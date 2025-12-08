@@ -1614,8 +1614,6 @@ div.product-excerpt {
 
 .pagination-pagination .product-image-link img {
   max-height: 240px !important;
-  width: auto !important;
-  object-fit: contain !important;
   display: block !important;
 }
 
