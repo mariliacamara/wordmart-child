@@ -452,6 +452,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   color: #222;
   text-align: left;
 }
+.wd-products-element .elements-grid .wd-entities-title a,
 .pagination-pagination .product-grid-item .wd-entities-title a,
 .owl-carousel .owl-item .wd-entities-title,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-entities-title a,
@@ -461,6 +462,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Small brand label above title (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .brand,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand,
@@ -474,6 +476,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Thin separator line (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom hr,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .sep-line,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom hr,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .sep-line,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom hr,
@@ -484,9 +488,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Rating centered under separator (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .woocommerce-product-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .woocommerce-product-rating {
   display: block;
   text-align: center;
@@ -494,6 +500,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Ensure star icons visible (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating::before,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating::before,
 .wd-related-products .wd-related-grid .star-rating,
@@ -503,6 +511,9 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price + button row (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn-replace,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .price,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .price,
@@ -517,11 +528,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Price pill (yellow) (scoped) */
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .price,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .price,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .price {
   flex: 0 0 auto;
 }
 
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount
 .pagination-pagination .product-grid-item > div > div.product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
