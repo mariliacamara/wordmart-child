@@ -680,14 +680,17 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Caso o tema coloque <ins>/<del> para promo, centraliza o conteúdo (scoped) */
+.wd-products-element .elements-grid .product-cta .price-col ins,
+.wd-products-element .elements-grid .product-cta .price-col del,
 .pagination-pagination .product-grid-item .product-cta .price-col ins,
-.pagination-pagination .product-grid-item .product-cta .price-col del
+.pagination-pagination .product-grid-item .product-cta .price-col del,
 .wd-related-products .product-cta .price-col ins,
 .wd-related-products .product-cta .price-col del {
   display: inline-block;
 }
 
 /* Botão ocupa 100% da coluna, centralizado e com mesma altura (scoped) */
+.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button,
 .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
 .owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
@@ -708,6 +711,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Hover do botão (scoped) */
+.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button:hover,
 .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button:hover,
 .owl-carousel .owl-item .button-col .add_to_cart_button:hover,
 .wd-related-products .product-cta .button-col .add_to_cart_button:hover {
@@ -716,12 +720,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Responsividade: em telas pequenas empilha verticalmente (scoped) */
 @media (max-width: 520px) {
+  .wd-products-element .elements-grid .product-cta .price-add-row,
   .pagination-pagination .product-grid-item .product-cta .price-add-row,
   .owl-carousel .owl-item .product-cta .price-add-row,
   .wd-related-products .product-cta .price-add-row {
     flex-direction: column;
     gap: 10px;
   }
+  .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button,
   .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
   .owl-carousel .owl-item .button-col .add_to_cart_button,
   .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
