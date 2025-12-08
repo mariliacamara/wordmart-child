@@ -1672,7 +1672,7 @@ div.product-excerpt {
 .pagination-pagination .woocommerce-Price-amount {
   background: #fec917 !important;
   color: #07143d !important;
-  padding: 8px 14px !important;
+  padding: 8px 30px !important;
   border-radius: 8px !important;
   font-weight: 900 !important;
   box-shadow: none !important;
@@ -1714,4 +1714,11 @@ div.product-excerpt {
   .pagination-pagination .product-image-link {
     height: 180px !important;
   }
+}
+
+.pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
 }
