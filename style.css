@@ -2309,3 +2309,12 @@ td.product-price>.amount {
     background: var(--dark-grey)!important;
     box-shadow: none;
 }
+
+.cart_item .quantity input.qty {
+  font-size: 14px;
+}
+
+.cart_item div.quantity input[type="button"] {
+    font-size: 14px !important;
+    color: #fff !important;
+}
