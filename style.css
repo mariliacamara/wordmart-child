@@ -2221,3 +2221,8 @@ nav[class*="-pagination"] li .current {
   visibility: visible !important;
   transform: translateX(0) translateZ(0) !important; /* entra suave pela esquerda */
 }
+
+td.product-remove a, .woocommerce-remove-coupon {
+    background: var(--grey);
+    border-radius: 50%;
+}
