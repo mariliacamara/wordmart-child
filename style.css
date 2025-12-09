@@ -2474,4 +2474,5 @@ a.glink img {
   background-color: transparent!important;
   border: none!important;
   box-shadow: none !important;
+  text-transform: uppercase;
 }
