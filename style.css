@@ -2360,3 +2360,8 @@ th.product-subtotal {
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner .checkout-button {
   background-color: var(--black);
 }
+
+.cart-content-wrapper tr.order-total strong .amount,
+.cart-totals-inner table .cart-subtotal .amount {
+  color: var(--black);
+}
