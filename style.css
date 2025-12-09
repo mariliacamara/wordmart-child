@@ -2344,5 +2344,9 @@ th.product-subtotal {
 }
 
 .wd-coupon-form .button[name="apply_coupon"] {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color)!important;
+}
+
+.cart-table-section>.cart .cart-actions>:is(.button,.wd-coupon-form) {
+  background-color: var(--grey);
 }
