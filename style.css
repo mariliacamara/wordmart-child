@@ -2406,3 +2406,7 @@ th.product-subtotal {
     padding: 5px;
     border-radius: 5px;
 }
+
+.footer-container {
+    border-top: 3px solid var(--grey)!important;
+}
