@@ -2304,9 +2304,10 @@ td.product-price>.amount {
     padding: 0 5px;
     min-width: 25px;
     min-height: unset;
-    height: 42px;
+    height: 26px;
     border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
-    background: var(--dark-grey)!important;
+    color: var(--dark-grey);
+    background: var(--grey)!important;
     box-shadow: none;
 }
 
