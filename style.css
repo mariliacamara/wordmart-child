@@ -2398,3 +2398,11 @@ th.product-subtotal {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.cart-totals-inner .shipping-calculator-button {
+    color: #fff;
+    font-weight: 600;
+    background-color: var(--black);
+    padding: 5px;
+    border-radius: 5px;
+}
