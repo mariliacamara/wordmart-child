@@ -2317,5 +2317,9 @@ td.product-price>.amount {
 
 .cart_item div.quantity input[type="button"] {
     font-size: 14px !important;
-    color: var(--dark-grey);
+    color: var(--dark-grey)!important;
+}
+
+.cart_item div.quantity :is(input[type="number"],input[type="text"]) {
+  height: 26px;
 }
