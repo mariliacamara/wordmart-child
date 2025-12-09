@@ -2336,5 +2336,9 @@ th.product-subtotal {
 
 .cart-table-section table th {
     padding: 15px 10px;
-    border-bottom: 3px solid var(--secondary-color); 
+    border-bottom: 3px solid var(--primary-color); 
+}
+
+.cart-table-section input[type='text'] {
+  border: var(--wd-form-brd-width) solid var(--secondary-color);
 }
