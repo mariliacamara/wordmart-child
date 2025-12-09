@@ -2458,3 +2458,11 @@ a.glink img {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.wd-my-account-links {
+    --wd-col-lg: 7!important;
+    --wd-col-md: 3!important;
+    --wd-col-sm: 2!important;
+    --wd-gap-lg: 20px;
+    margin-top: 30px;
+}
