@@ -2422,3 +2422,7 @@ th.product-subtotal {
   white-space: nowrap;
   border: 0;
 }
+
+.cart-content-wrapper {
+    margin-bottom: 2rem;
+}
