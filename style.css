@@ -2448,3 +2448,13 @@ a.glink img {
   flex-direction: row;
   gap: 6px;
 }
+
+.wd-my-account-links .orders-link a:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
