@@ -2226,3 +2226,15 @@ td.product-remove a, .woocommerce-remove-coupon {
     background: var(--grey);
     border-radius: 50%;
 }
+
+td.product-thumbnail img {
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+td.product-price>.amount {
+    color: var(--dark-grey);
+    background-color: var(--grey);
+    padding: 4px 12px;
+    border-radius: 5px;
+}
