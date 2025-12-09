@@ -2426,3 +2426,7 @@ th.product-subtotal {
 .cart-content-wrapper {
     margin-bottom: 2rem;
 }
+
+table > tbody > tr > td.product-subtotal {
+  text-align: center;
+}
