@@ -2400,8 +2400,8 @@ th.product-subtotal {
 }
 
 .cart-totals-inner .shipping-calculator-button {
-    color: #fff;
-    font-weight: 600;
+    color: #fff!important;
+    font-weight: 600!important;
     background-color: var(--black);
     padding: 5px;
     border-radius: 5px;
