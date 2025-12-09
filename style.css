@@ -2350,3 +2350,7 @@ th.product-subtotal {
 .cart-table-section>.cart .cart-actions>:is(.button) {
   background-color: var(--grey);
 }
+
+.cart-content-wrapper>.cart-totals-section .cart-totals-inner {
+  background-color: var(--grey);
+}
