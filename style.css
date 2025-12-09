@@ -2247,7 +2247,7 @@ td.product-price>.amount {
   padding: 20px 0;
   width: 1px; /* evita forçar largura da coluna */
 }
-
+ 
 /* badge arredondada com valor */
 .product-subtotal .woocommerce-Price-amount {
     display: inline-block;
@@ -2429,4 +2429,9 @@ th.product-subtotal {
 
 table > tbody > tr > td.product-subtotal {
   text-align: center;
+}
+
+.wd-tools-element:is(.wd-design-6,.wd-design-7,.wd-design-8) .wd-custom-icon {
+    min-width: auto;
+    max-width: 35px;
 }
