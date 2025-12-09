@@ -2438,7 +2438,13 @@ table > tbody > tr > td.product-subtotal {
 
 a.glink img {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     object-fit: cover;
+}
+
+gtranslate_wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
 }
