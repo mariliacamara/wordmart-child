@@ -2466,3 +2466,8 @@ a.glink img {
     --wd-gap-lg: 20px;
     margin-top: 30px;
 }
+
+.wd-my-account-links a {
+  background-color: none!important;
+  border: none!important;
+}
