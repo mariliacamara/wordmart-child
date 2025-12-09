@@ -19,6 +19,7 @@ License:    GNU General Public License v2 or later
   --light-grey: #f7f6f5;
   --grey: #dadada;
   --dark-grey: #706f6f;
+  --black: #000;
   --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+")!important;
 }
 
@@ -2357,5 +2358,5 @@ th.product-subtotal {
 }
 
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner .checkout-button {
-  background-color: var(--dark-grey);
+  background-color: var(--black);
 }
