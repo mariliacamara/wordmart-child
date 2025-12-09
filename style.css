@@ -2326,3 +2326,10 @@ td.product-price>.amount {
   border-top: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
 }
+
+th.product-name,
+th.product-price,
+th.product-quantity,
+th.product-subtotal {
+  color: var(--primary-color);
+}
