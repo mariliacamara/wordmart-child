@@ -2249,18 +2249,18 @@ td.product-price>.amount {
 
 /* badge arredondada com valor */
 .product-subtotal .woocommerce-Price-amount {
-  display: inline-block;
-  background: #232447;           /* cor do badge (escuro azul) */
-  color: #fff;
-  font-weight: 700;
-  font-family: "Open Sans", sans-serif;
-  border-radius: 14px;
-  padding: 10px 18px;            /* controla altura/espessura do badge */
-  min-width: 80px;               /* largura mínima para valores curtos */
-  text-align: center;
-  box-shadow: none;
-  line-height: 1;
-  font-size: 18px;               /* valor grande dentro do badge */
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 5px;
+    padding: 7px 15px;
+    min-width: 80px;
+    text-align: center;
+    box-shadow: none;
+    line-height: 1;
+    font-size: 15px;
 }
 
 /* manter símbolo € junto e sem quebre de linha */
@@ -2270,16 +2270,16 @@ td.product-price>.amount {
 }
 
 /* label "com IVA" embaixo, discreta e em maiúsculas */
-.product-subtotal .tax_label,
-.product-subtotal small {
-  display: block;
-  margin-top: 6px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #394056;                /* cor cinza-azulada da label */
-  font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+.product-subtotal .tax_label, .product-subtotal small {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
 }
 
 /* ajustar o símbolo de moeda (separação visual) */
