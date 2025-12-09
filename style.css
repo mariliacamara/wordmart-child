@@ -2391,7 +2391,7 @@ th.product-subtotal {
   content: "";
   width: 10px;
   height: 10px;
-  background: #1c7c54; /* cor do "pontinho" interno */
+  background: var(--black)!important; /* cor do "pontinho" interno */
   border-radius: 50%;
   position: absolute;
   top: 50%;
