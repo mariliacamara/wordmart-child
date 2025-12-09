@@ -2342,3 +2342,7 @@ th.product-subtotal {
 .cart-table-section input[type='text'] {
   border: var(--wd-form-brd-width) solid var(--secondary-color);
 }
+
+.wd-coupon-form .button[name="apply_coupon"] {
+  background-color: var(--secondary-color);
+}
