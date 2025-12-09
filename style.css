@@ -2435,3 +2435,10 @@ table > tbody > tr > td.product-subtotal {
     min-width: auto;
     max-width: 35px!important;
 }
+
+a.glink img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
