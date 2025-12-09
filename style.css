@@ -2480,3 +2480,7 @@ a.glink img {
 .wd-my-account-links a {
     padding: 10px!important;
 }
+
+.wd-products-element .elements-grid .product-grid-item.product {
+  max-width: 20% !important;
+}
