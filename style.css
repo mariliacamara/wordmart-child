@@ -2361,7 +2361,8 @@ th.product-subtotal {
   background-color: var(--black);
 }
 
+.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.order-total > td > small,
 .cart-content-wrapper tr.order-total strong .amount,
 .cart-totals-inner table .cart-subtotal .amount {
-  color: var(--black);
+  color: var(--black)!important;
 }
