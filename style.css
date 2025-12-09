@@ -2306,7 +2306,7 @@ td.product-price>.amount {
     min-height: unset;
     height: 26px;
     border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
-    color: var(--dark-grey);
+
     background: var(--grey)!important;
     box-shadow: none;
 }
@@ -2317,5 +2317,5 @@ td.product-price>.amount {
 
 .cart_item div.quantity input[type="button"] {
     font-size: 14px !important;
-    color: #fff !important;
+    color: var(--dark-grey);
 }
