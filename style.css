@@ -2361,10 +2361,40 @@ th.product-subtotal {
   background-color: var(--black);
 }
 
-cart-totals-section.cart-collaterals > div > div > table > tbody > tr.cart-subtotal > td > small
+.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.cart-subtotal > td > small
 .cart-totals-section.cart-collaterals > div > div > table > tbody > tr.order-total > td > small > span,
 .cart-totals-section.cart-collaterals > div > div > table > tbody > tr.order-total > td > small,
 .cart-content-wrapper tr.order-total strong .amount,
 .cart-totals-inner table .cart-subtotal .amount {
   color: var(--black)!important;
+}
+
+/* remove estilo padrão */
+.cart-content-wrapper input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* estado selecionado com cor personalizada */
+.cart-content-wrapper input[type="radio"]:checked {
+  border-color: var(--black)!important; /* borda quando selecionado */
+}
+
+.cart-content-wrapper input[type="radio"]:checked::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #1c7c54; /* cor do "pontinho" interno */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
