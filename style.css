@@ -2484,3 +2484,7 @@ a.glink img {
 .wd-products-element .elements-grid .product-grid-item.product {
   max-width: 20% !important;
 }
+
+.wd-products-element .elements-grid .product-wrapper {
+  margin: 5px !important;
+}
