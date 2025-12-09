@@ -2443,7 +2443,7 @@ a.glink img {
     object-fit: cover;
 }
 
-gtranslate_wrapper {
+.gtranslate_wrapper {
   display: flex;
   flex-direction: row;
   gap: 6px;
