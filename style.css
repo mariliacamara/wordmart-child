@@ -2243,7 +2243,7 @@ td.product-price>.amount {
 /* container da célula */
 .product-subtotal {
   vertical-align: middle;
-  text-align: center;            /* centraliza conteúdo (badge + label) */
+  text-align: center!important;            /* centraliza conteúdo (badge + label) */
   padding: 20px 0;
   width: 1px; /* evita forçar largura da coluna */
 }
