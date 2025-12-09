@@ -2333,3 +2333,8 @@ th.product-quantity,
 th.product-subtotal {
   color: var(--primary-color);
 }
+
+.cart-table-section table th {
+    padding: 15px 10px;
+    border-bottom: 3px solid var(--secondary-color); 
+}
