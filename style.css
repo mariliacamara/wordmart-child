@@ -2488,3 +2488,7 @@ a.glink img {
 .wd-products-element .elements-grid .product-wrapper {
   margin: 5px !important;
 }
+
+.wd-products-element .elements-grid .product-cta .price-add-row {
+  padding: 0;
+}
