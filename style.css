@@ -2468,6 +2468,7 @@ a.glink img {
 }
 
 .wd-my-account-links a {
-  background-color: none!important;
+  background-color: transparent!important;
   border: none!important;
+  box-shadow: none !important;
 }
