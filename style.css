@@ -2300,12 +2300,12 @@ td.product-price>.amount {
   .product-subtotal .tax_label { font-size: 10px; }
 }
 
-div.quantity input[type="button"] {
+.cart_item div.quantity input[type="button"] {
     padding: 0 5px;
     min-width: 25px;
     min-height: unset;
     height: 42px;
     border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
-    background: var(--dark-grey);
+    background: var(--dark-grey)!important;
     box-shadow: none;
 }
