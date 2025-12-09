@@ -2238,3 +2238,64 @@ td.product-price>.amount {
     padding: 4px 12px;
     border-radius: 5px;
 }
+
+/* container da célula */
+.product-subtotal {
+  vertical-align: middle;
+  text-align: center;            /* centraliza conteúdo (badge + label) */
+  padding: 20px 0;
+  width: 1px; /* evita forçar largura da coluna */
+}
+
+/* badge arredondada com valor */
+.product-subtotal .woocommerce-Price-amount {
+  display: inline-block;
+  background: #232447;           /* cor do badge (escuro azul) */
+  color: #fff;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 14px;
+  padding: 10px 18px;            /* controla altura/espessura do badge */
+  min-width: 80px;               /* largura mínima para valores curtos */
+  text-align: center;
+  box-shadow: none;
+  line-height: 1;
+  font-size: 18px;               /* valor grande dentro do badge */
+}
+
+/* manter símbolo € junto e sem quebre de linha */
+.product-subtotal .woocommerce-Price-amount bdi {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* label "com IVA" embaixo, discreta e em maiúsculas */
+.product-subtotal .tax_label,
+.product-subtotal small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #394056;                /* cor cinza-azulada da label */
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ajustar o símbolo de moeda (separação visual) */
+.product-subtotal .woocommerce-Price-currencySymbol {
+  margin-left: 4px;
+  font-weight: 700;
+}
+
+/* versão responsiva — diminuir badge em telas pequenas */
+@media (max-width: 420px) {
+  .product-subtotal .woocommerce-Price-amount {
+    padding: 8px 14px;
+    min-width: 64px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  .product-subtotal .tax_label { font-size: 10px; }
+}
