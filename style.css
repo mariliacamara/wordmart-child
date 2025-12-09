@@ -2347,6 +2347,6 @@ th.product-subtotal {
   background-color: var(--secondary-color)!important;
 }
 
-.cart-table-section>.cart .cart-actions>:is(.button,.wd-coupon-form) {
+.cart-table-section>.cart .cart-actions>:is(.button) {
   background-color: var(--grey);
 }
