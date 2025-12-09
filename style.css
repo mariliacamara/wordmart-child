@@ -2476,3 +2476,7 @@ a.glink img {
   box-shadow: none !important;
   text-transform: uppercase;
 }
+
+.wd-my-account-links a {
+    padding: 10px!important;
+}
