@@ -2489,6 +2489,7 @@ a.glink img {
   margin: 5px !important;
 }
 
+.product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row, 
 .wd-products-element .elements-grid .product-cta .price-add-row {
   padding: 0;
   padding-top: 0 !important;
