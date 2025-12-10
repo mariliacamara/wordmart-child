@@ -2502,3 +2502,17 @@ a.glink img {
   padding: 9px 17px !important;
 }
 
+.owl-stage {
+  display: flex;              /* faz os .owl-item alinharem e esticarem */
+  align-items: stretch;
+}
+
+.owl-item {
+  height: auto;               /* deixar o flex controlar */
+}
+
+.owl-item > .product-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
