@@ -1764,7 +1764,7 @@ div.product-excerpt {
   font-size: 12px !important;
   text-transform: uppercase !important;
   color: #8b8b8b !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 0 !important;
   text-align: left;
 }
 
