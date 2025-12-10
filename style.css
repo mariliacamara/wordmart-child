@@ -2492,3 +2492,11 @@ a.glink img {
 .wd-products-element .elements-grid .product-cta .price-add-row {
   padding: 0;
 }
+
+.wd-products-element .woocommerce-Price-amount {
+  padding: 8px 18px !important;
+}
+
+.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
+  padding: 9px 17px !important;
+}
