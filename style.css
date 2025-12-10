@@ -2508,11 +2508,11 @@ a.glink img {
 }
 
 .owl-item {
-  height: auto;               /* deixar o flex controlar */
+  height: auto!important;               /* deixar o flex controlar */
 }
 
 .owl-item > .product-wrapper {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  height: 100%!important;
+  display: flex!important;
+  flex-direction: column!important;
 }
