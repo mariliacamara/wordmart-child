@@ -1771,10 +1771,10 @@ div.product-excerpt {
 .wd-products-element .product-rating-wrapper,
 .pagination-pagination .product-rating-wrapper {
   text-align: center !important;
-  padding: 12px 0 !important;
+  padding: 7px 0 !important;
   border-top: 1px solid rgba(0,0,0,0.06) !important;
   border-bottom: 1px solid rgba(0,0,0,0.06) !important;
-  margin: 8px 0 !important;
+  margin: 0 !important;
 }
 .product-carrousel .star-rating,
 .wd-products-element .star-rating,
