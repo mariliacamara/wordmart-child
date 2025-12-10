@@ -1718,7 +1718,7 @@ div.product-excerpt {
 .wd-products-element .product-image-link,
 .pagination-pagination .product-image-link {
   width: 100% !important;
-  height: 240px !important;
+  height: 194px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2152,7 +2152,7 @@ nav[class*="-pagination"] li .current {
 .pagination-pagination .product-image-link img {
   max-height: 100% !important;
   width: auto !important;
-  object-fit: contain !important;
+  object-fit: fill !important;
   display: block !important;
 }
 
