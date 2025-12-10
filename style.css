@@ -2495,10 +2495,12 @@ a.glink img {
   padding-top: 0 !important;
 }
 
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
 .wd-products-element .woocommerce-Price-amount {
   padding: 8px 18px !important;
 }
 
+.product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button,
 .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
   padding: 9px 17px !important;
 }
