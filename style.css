@@ -2526,3 +2526,39 @@ a.glink img {
   display: flex;
   align-items: flex-end;
 }
+
+
+/* remove ícone da fonte original */
+.wd-wishlist-icon > a:before {
+  content: none !important;
+}
+
+/* ícone SVG via :before — cor controlada por `color` */
+.wd-wishlist-icon > a:before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+
+  /* SVG minificado com stroke usando currentColor */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74.8 71.1'><path stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' fill='none' d='M31.3,41.7c-1.1-1.1-2.9-1.1-4,0s-1.1,2.8,0,3.9l4,3.9,4-3.9c1.1-1.1,1.1-2.8,0-3.9s-2.9-1.1-4,0Z'/><path stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' fill='none' d='M35.8,21.2c-.9-3-3.7-5.2-7.1-5.2s-7.4,3.3-7.4,7.4.3,2.5.9,3.5c0,.1.1.2.2.4,1.2,1.8,3.1,3.1,5.4,3.4.3,0,.6,0,.9,0h0c.6,0,1.2,0,1.8-.2M34.2,30.5c0,1.7-1.4,3.1-3.1,3.1s-3.1-1.4-3.1-3.1,1.4-3.1,3.1-3.1,3.1,1.4,3.1,3.1ZM31,22.8c1.8-1.1,3.8-1.6,5.8-1.6,3.9,0,7.7,2,9.8,5.5l10.2,17c.7,1.2.3,2.8-.9,3.5l-14.2,8.4M40.3,56.4h0M39.8,56.5h-17.6c-1.4,0-2.6-1.2-2.6-2.6v-19.8c0-6.3,5.1-11.3,11.4-11.3s11.4,5.1,11.4,11.3v19.8c0,1.4-1.2,2.6-2.6,2.6h0Z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  /* default color do ícone */
+  color: #575756;
+}
+
+/* exemplo: cor no hover */
+.wd-wishlist-icon > a:hover:before {
+  color: #ff3b57;
+}
+
+/* exemplo: quando estiver favoritado (alguns plugins adicionam .added .is-active etc) */
+.wd-wishlist-icon > a.added:before,
+.wd-wishlist-icon > a.is-active:before {
+  color: #ff3b57;
+}
+
