@@ -2491,6 +2491,7 @@ a.glink img {
 
 .wd-products-element .elements-grid .product-cta .price-add-row {
   padding: 0;
+  padding-top: 0 !important;
 }
 
 .wd-products-element .woocommerce-Price-amount {
