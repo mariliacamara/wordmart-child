@@ -2138,7 +2138,7 @@ nav[class*="-pagination"] li .current {
 .product-carrousel .owl-item .owl-carousel-item .product-image-link,
 .wd-products-element .product-image-link,
 .pagination-pagination .product-image-link {
-  height: 240px !important;   /* ajusta se quiser menor/maior */
+  height: 189px !important;   /* ajusta se quiser menor/maior */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
