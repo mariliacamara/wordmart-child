@@ -1301,9 +1301,10 @@ div.product-excerpt {
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .product-brand,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
-  margin-bottom: 0;
+  margin-bottom: 0!important;
   text-align: left;
   text-transform: uppercase;
+  font-weight: 900;
 }
 
 /* Container geral */
@@ -1739,7 +1740,7 @@ div.product-excerpt {
 .pagination-pagination .wd-entities-title,
 .pagination-pagination h3.wd-entities-title {
   font-size: 14px !important;
-  margin: 6px 0 8px !important;
+  margin: 0 0 8px !important;
   line-height: 1.2 !important;
   color: #222 !important;
 }
