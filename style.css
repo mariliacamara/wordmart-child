@@ -634,6 +634,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .wd-related-grid .product-wrapper .product-element-top,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
   flex: 0 0 auto; 
+  margin-bottom: 0!important;
 }
 
 /* Responsive: 2 columns on tablet, 1 on mobile (scoped) */
@@ -2501,3 +2502,4 @@ a.glink img {
 .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
   padding: 9px 17px !important;
 }
+
