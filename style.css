@@ -1978,6 +1978,7 @@ div.product-excerpt {
 }
 
 /* Título/rating/price se comportam e não esticam o card */
+.product-carrousel .owl-item .owl-carousel-item .wd-entities-title,
 .pagination-pagination .wd-products-element .elements-grid .wd-entities-title,
 .wd-products-element .elements-grid .wd-entities-title {
   margin: 8px 0 !important;
