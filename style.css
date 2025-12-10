@@ -2115,7 +2115,6 @@ nav[class*="-pagination"] li .current {
 /* === Forçar cards iguais e títulos alinhados - adicionar no final do child style.css === */
 
 /* garante que cada card ocupe mesma altura dentro do grid/carousel */
-.product-carrousel .owl-item .owl-carousel-item .product-grid-item.product,
 .product-carrousel .owl-item .owl-carousel-item .products .product-grid-item.product,
 .pagination-pagination .product-grid-item.product,
 .wd-products-element .elements-grid .product {
