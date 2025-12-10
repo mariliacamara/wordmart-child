@@ -2509,3 +2509,18 @@ a.glink img {
 .wd-action-btn {
   margin-left: 10px;
 }
+
+/* Wrapper do brand + título: mesma altura em todos */
+.product-carrousel .product-brand-title-wrap {
+  min-height: 70px; /* ajusta conforme o teu layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* deixa o título sempre encostado embaixo */
+}
+
+/* Título sem variação de altura */
+.product-carrousel .wd-entities-title {
+  min-height: 40px; /* ajusta para títulos de 1–2 linhas */
+  display: flex;
+  align-items: flex-end;
+}
