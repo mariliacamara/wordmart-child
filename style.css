@@ -1982,7 +1982,7 @@ div.product-excerpt {
 .product-carrousel .owl-item .owl-carousel-item .wd-entities-title,
 .pagination-pagination .wd-products-element .elements-grid .wd-entities-title,
 .wd-products-element .elements-grid .wd-entities-title {
-  margin: 8px 0 !important;
+  margin: 0 0 8px !important;
   font-size: 14px !important;
   line-height: 1.2 !important;
   color: #222 !important;
