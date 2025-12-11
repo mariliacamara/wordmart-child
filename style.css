@@ -2669,6 +2669,10 @@ a.glink img {
     background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist2.svg");
 }
 
+.wd-my-account-links .wishlist-link a:hover::before {
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist1.svg");
+}
+
 .wd-my-account-links .customer-logout-link a:before {
     content: "\f137"!important;
     color: #000!important;
