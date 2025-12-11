@@ -2211,7 +2211,7 @@ nav[class*="-pagination"] li .current {
 
 /* Topo à esquerda */
 .wd-buttons.wd-pos-r-t {
-  top: var(--wd-btn-inset) !important;
+  top: 3px !important;
   background: transparent!important;
   box-shadow: none!important;
 }
