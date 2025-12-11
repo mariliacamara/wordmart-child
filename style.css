@@ -2558,7 +2558,7 @@ a.glink img {
 .wd-wishlist-icon > a:hover::before,
 .wd-wishlist-icon > a.is-active::before,
 .wd-wishlist-icon > a.added::before {
-  color: #ff3b57 !important;
+  color: #fff !important;
   background-color: transparent !important; /* esconde debug */
 }
 
