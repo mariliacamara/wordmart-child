@@ -2896,3 +2896,7 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
 @media (max-width:480px){
   .wd-variations-boxes .size-label { min-width:66px; height:44px; font-size:14px; }
 }
+
+.section-title {
+  margin: 0;
+}
