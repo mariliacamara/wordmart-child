@@ -2212,6 +2212,8 @@ nav[class*="-pagination"] li .current {
 /* Topo à esquerda */
 .wd-buttons.wd-pos-r-t {
   top: var(--wd-btn-inset) !important;
+  background: transparent!important;
+  box-shadow: none!important;
 }
 
 /* Base à esquerda */
