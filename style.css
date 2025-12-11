@@ -2575,3 +2575,27 @@ a.glink img {
 }
 
 
+/* Força 4 itens por linha na wishlist (desktop) */
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 30px !important; /* espaçamento entre itens */
+}
+
+/* garante que os <li> ocupem o grid cell corretamente */
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li {
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* responsivo: 2 por linha em tablet, 1 por linha no mobile */
+@media (max-width: 992px) {
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 480px) {
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
