@@ -2575,27 +2575,41 @@ a.glink img {
 }
 
 
-/* Força 4 itens por linha na wishlist (desktop) */
+/* Wishlist: forçar layout em flex com 4 itens por linha */
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 30px !important; /* espaçamento entre itens */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 30px !important;               /* espaçamento entre cards */
+  margin: 0 -15px !important;         /* compensa padding interno, opcional */
 }
 
-/* garante que os <li> ocupem o grid cell corretamente */
-.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li {
-  width: 100% !important;
-  box-sizing: border-box;
+/* Cada item ocupa ~25% menos o gap */
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
+  flex: 0 0 calc(25% - 22.5px) !important; /* 25% minus half the gap */
+  max-width: calc(25% - 22.5px) !important;
+  box-sizing: border-box !important;
+  margin: 0 15px !important;           /* ajusta o espaçamento lateral interno */
 }
 
-/* responsivo: 2 por linha em tablet, 1 por linha no mobile */
+/* Ajustes internos dos cards (garante que expansões não quebrem a linha) */
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li .product-wrapper {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Responsivo: 2 por linha em tablet, 1 por linha em mobile */
 @media (max-width: 992px) {
-  .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
+    flex: 0 0 calc(50% - 15px) !important;
+    max-width: calc(50% - 15px) !important;
   }
 }
 @media (max-width: 480px) {
-  .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
-    grid-template-columns: 1fr !important;
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
