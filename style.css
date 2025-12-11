@@ -2897,6 +2897,7 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
   .wd-variations-boxes .size-label { min-width:66px; height:44px; font-size:14px; }
 }
 
+.vc_column_container>.vc_column-inner,
 .section-title {
   margin: 0!important;
 }
