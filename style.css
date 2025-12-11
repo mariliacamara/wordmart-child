@@ -2853,6 +2853,7 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
   height:52px;
   padding:0 12px;
   box-sizing:border-box;
+  border-radius: 0;
 }
 
 /* input invisível */
