@@ -867,7 +867,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   content: "";
   position: absolute;
   top: -15px;                     /* afasta a linha do texto — ajusta se precisa */
-  left: 50%;
+  left: 15%;
   transform: translateX(-50%);
   width: 0;                       /* começa fechado */
   height: 3px;                    /* espessura da linha */
