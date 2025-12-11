@@ -2672,6 +2672,8 @@ a.glink img {
 
 .wd-my-account-links .customer-logout-link a:before {
     content: "\f137"!important;
+    color: #000!important;
+    padding: 30px !important;
 }
 
 .wd-my-account-links .orders-link a:hover::before,
