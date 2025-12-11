@@ -2718,40 +2718,87 @@ a.glink img {
 }
 
 
-/* ---------- estilo dos botões que substituem o select ---------- */
-.variations .size-options { display:flex; gap:12px; margin:8px 0; flex-wrap:wrap; align-items:center; }
+/* ---------- layout: label numa row separada + opções embaixo ---------- */
+/* garante que a nova tabela continue responsiva */
+table.variations { width:100%; border-collapse:collapse; }
 
-.variations .size-converter-select { position:absolute !important; left:-9999px !important; width:1px !important; height:1px !important; overflow:hidden !important; }
-
-/* botão visual (estilo cartão) */
-.variations .size-label { display:inline-block; cursor:pointer; user-select:none; }
-.variations .size-option {
-  -webkit-appearance:none; appearance:none;
-  border:2px solid #0b2450;
-  background:#fff;
-  color:#0b2450;
-  padding:14px 18px;
-  border-radius:10px;
-  min-width:84px;
-  text-align:center;
+/* nova linha de label (estilo parecido com o resto) */
+table.variations tr.size-label-row th {
+  text-align:left;
+  padding: 10px 0 6px;
   font-weight:700;
-  transition: transform .06s ease, background .06s ease, color .06s ease;
-  display:inline-block;
+  font-size: 1rem;
+  vertical-align: middle;
+  border: none;
 }
 
-/* selecionado */
-.variations .size-option.is-checked,
-.variations .size-option:checked {
+/* linha das opções */
+table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
+
+/* container das opções — ocupar toda a largura disponível */
+.variations .size-options {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* esconder select original (mantemos para WooCommerce) */
+.variations .size-converter-select {
+  position:absolute !important;
+  left:-9999px !important;
+  width:1px !important;
+  height:1px !important;
+  overflow:hidden !important;
+}
+
+/* o "quadrado" visual que contém o texto */
+.variations .size-label {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  border-radius:10px;
+  overflow:hidden;
+  border: 2px solid #0b2450;
+  background:#fff;
+  min-width:84px;
+  height:52px;               /* altura fixa para ficar "quadrado" visual */
+  padding:0 12px;
+  box-sizing:border-box;
+}
+
+/* o input radio fica invisível, o label é o visual clicável */
+.variations .size-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* o texto fica dentro do quadrado e centralizado vertical/horizontalmente */
+.variations .size-label span {
+  display:block;
+  width:100%;
+  text-align:center;
+  line-height:1;
+  font-weight:700;
+  color:#0b2450;
+  font-size:16px;
+}
+
+/* estado selecionado */
+.variations .size-label.is-checked {
   background:#0b2450;
   color:#fff;
   border-color:#0b2450;
-  transform: translateY(-2px);
 }
+.variations .size-label.is-checked span { color:#fff; }
 
 /* hover */
-.variations .size-option:hover { transform: translateY(-1px); }
+.variations .size-label:hover { transform: translateY(-2px); transition: transform .06s; }
 
-/* pequeno - responsivo */
+/* responsivo: reduzir altura em telas pequenas */
 @media (max-width:480px){
-  .variations .size-option { padding:10px 12px; min-width:68px; font-size:14px; }
+  .variations .size-label { min-width:66px; height:44px; font-size:14px; }
 }
