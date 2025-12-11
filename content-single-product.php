@@ -211,25 +211,23 @@ global $product;
 </div>
 
 <script>
-  (function () {
+(function () {
   const SELECT_SELECTOR = 'select#pa_tamanho, select[name="attribute_pa_tamanho"]';
 
   function buildOptions(select) {
-    if (!select) return;
-    if (select.dataset.converted === '1') return;
+    if (!select) return null;
+    if (select.dataset.converted === '1') return null;
     select.dataset.converted = '1';
     select.classList.add('size-converter-select');
 
-    // cria container visual
     const container = document.createElement('div');
     container.className = 'size-options';
 
-    Array.from(select.options).forEach((opt, idx) => {
+    Array.from(select.options).forEach((opt) => {
       const val = opt.value;
       const text = opt.textContent.trim();
       if (!val) return; // pula placeholder
 
-      // label visual (contém input invisível + span dentro do quadrado)
       const label = document.createElement('label');
       label.className = 'size-label';
       label.setAttribute('data-val', val);
@@ -239,7 +237,6 @@ global $product;
       input.name = 'product_size_converted';
       input.value = val;
 
-      // se select já tem valor selecionado, marca visual
       if (select.value === val) {
         label.classList.add('is-checked');
         input.checked = true;
@@ -252,19 +249,12 @@ global $product;
       label.appendChild(span);
       container.appendChild(label);
 
-      // clique no label -> sincroniza select e dispara change
-      label.addEventListener('click', function (e) {
-        // previne comportamento se já está selecionado
-        if (!input.checked) {
-          input.checked = true;
-        }
-        // atualiza select
+      label.addEventListener('click', function () {
+        if (!input.checked) input.checked = true;
         select.value = val;
-        // dispara change para WooCommerce reagir
         const evt = new Event('change', { bubbles: true });
         select.dispatchEvent(evt);
 
-        // atualiza estilos visuais
         container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
         label.classList.add('is-checked');
       });
@@ -273,99 +263,111 @@ global $product;
     return container;
   }
 
-  function restructureTable(select) {
-    const table = select.closest('table.variations');
-    if (!table) return;
-
-    // evita refazer se já reestruturado
-    if (table.dataset.restructured === '1') return;
-    table.dataset.restructured = '1';
-
-    const origTr = select.closest('tr');
-    if (!origTr) return;
-
-    // extrai a label do <th>
-    const th = origTr.querySelector('th.label.cell');
-    const labelText = th ? th.textContent.trim() : 'Opção';
-
-    // cria nova tr só com label (th spanning full)
-    const labelTr = document.createElement('tr');
-    labelTr.className = 'size-label-row';
-    const newTh = document.createElement('th');
-    newTh.colSpan = 2; // ocupa as 2 colunas (th + td)
-    newTh.innerHTML = `<label>${labelText}</label>`;
-    labelTr.appendChild(newTh);
-
-    // cria tr com as opções: td ocupa toda largura (ou manter th vazio)
-    const optionsTr = document.createElement('tr');
-    optionsTr.className = 'size-options-row';
-    const emptyTh = document.createElement('th');
-    emptyTh.className = 'label cell';
-    emptyTh.innerHTML = ''; // mantemos sem texto
-    const td = document.createElement('td');
-    td.className = 'value cell';
-
-    // move select e reset link para o td
-    const reset = origTr.querySelector('.wd-reset-var');
-    // remove o tr original
-    origTr.parentNode.removeChild(origTr);
-
-    td.appendChild(select); // move o select para dentro do new td
-    if (reset) td.appendChild(reset);
-    optionsTr.appendChild(emptyTh);
-    optionsTr.appendChild(td);
-
-    // insere labelTr + optionsTr no tbody
-    const tbody = table.querySelector('tbody') || table;
-    tbody.insertBefore(labelTr, tbody.firstChild);
-    tbody.insertBefore(optionsTr, labelTr.nextSibling);
-
-    // constrói container de opções e insere
-    const container = buildOptions(select);
-    if (container) {
-      // insere logo após o select dentro do td
-      td.insertBefore(container, select.nextSibling);
-
-      // sincronia: quando select muda (por outro script) atualiza visual
-      select.addEventListener('change', function () {
-        const v = select.value;
-        container.querySelectorAll('.size-label').forEach(l => {
-          if (l.getAttribute('data-val') === v) {
-            l.classList.add('is-checked');
-            const inp = l.querySelector('input');
-            if (inp) inp.checked = true;
-          } else {
-            l.classList.remove('is-checked');
-            const inp = l.querySelector('input');
-            if (inp) inp.checked = false;
-          }
-        });
-      });
-
-      // esconder select visualmente (já adicionamos classe no buildOptions)
-      select.classList.add('size-converter-select');
+  function placeBelowAddToCart(select) {
+    const targetBox = document.querySelector('.wd-variations-boxes');
+    // fallback: se não existir, tenta inserir depois do .wd-add-to-cart-wrap
+    let target = targetBox;
+    if (!target) {
+      const addWrap = document.querySelector('.wd-add-to-cart-wrap');
+      if (addWrap && addWrap.parentNode) {
+        const fallback = document.createElement('div');
+        fallback.className = 'wd-variations-boxes';
+        addWrap.parentNode.insertBefore(fallback, addWrap.nextSibling);
+        target = fallback;
+      } else {
+        // último recurso: inserir no body
+        target = document.body;
+      }
     }
+
+    // cria label row + container visual dentro do target (abaixo do add to cart)
+    const labelText = (() => {
+      const origTh = select.closest('tr') ? select.closest('tr').querySelector('th.label.cell') : null;
+      return origTh ? origTh.textContent.trim() : 'Opção';
+    })();
+
+    // remove visual antigo caso já tenha
+    const oldLabelRow = target.querySelector('.size-label-row');
+    const oldContainer = target.querySelector('.size-options');
+    if (oldLabelRow) oldLabelRow.remove();
+    if (oldContainer) oldContainer.remove();
+
+    const labelRow = document.createElement('div');
+    labelRow.className = 'size-label-row';
+    labelRow.textContent = labelText;
+
+    // build options
+    const container = buildOptions(select);
+    if (!container) return;
+
+    // se houver reset link na linha original, mover/duplicar um link funcional para cá
+    const origTr = select.closest('tr');
+    const resetOriginal = origTr ? origTr.querySelector('.wd-reset-var .reset_variations') : null;
+    let resetWrapper = null;
+    if (resetOriginal) {
+      // clona o link para manter comportamento, mas mantemos o original também invisível
+      const clone = resetOriginal.cloneNode(true);
+      clone.style.visibility = resetOriginal.style.visibility || 'hidden';
+      clone.addEventListener('click', function (ev) {
+        // permitir o comportamento padrão do Woo reset (original também executará)
+        // limpa seleção visual após micro delay para deixar WooCommerce processar
+        setTimeout(() => {
+          container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
+          // garante que select volte ao placeholder (se o original fizer isso)
+        }, 50);
+      });
+      resetWrapper = document.createElement('div');
+      resetWrapper.className = 'reset-wrapper';
+      resetWrapper.appendChild(clone);
+    }
+
+    // inserir tudo no target
+    target.appendChild(labelRow);
+    target.appendChild(container);
+    if (resetWrapper) target.appendChild(resetWrapper);
+
+    // esconder a linha original da tabela (mantendo o select no DOM para WooCommerce)
+    if (origTr) origTr.style.display = 'none';
+
+    // sincroniza select->visual quando select mudar por outro script
+    select.addEventListener('change', function () {
+      const v = select.value;
+      container.querySelectorAll('.size-label').forEach(l => {
+        const inp = l.querySelector('input');
+        if (l.getAttribute('data-val') === v) {
+          l.classList.add('is-checked');
+          if (inp) inp.checked = true;
+        } else {
+          l.classList.remove('is-checked');
+          if (inp) inp.checked = false;
+        }
+      });
+      // atualiza visibilidade do resetOriginal se existir
+      if (resetOriginal) resetOriginal.style.visibility = select.value ? 'visible' : 'hidden';
+    });
+
+    // inicial: ajustar resetOriginal visibilidade
+    if (resetOriginal) resetOriginal.style.visibility = select.value ? 'visible' : 'hidden';
   }
 
   function init() {
     const select = document.querySelector(SELECT_SELECTOR);
     if (!select) return;
-    restructureTable(select);
+    placeBelowAddToCart(select);
   }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else init();
 
-  // observer para caso o select seja re-renderizado pelo WooCommerce
-  const tableRoot = document.querySelector('table.variations') || document.body;
+  // observer caso WooCommerce re-renderize o select
+  const root = document.querySelector('table.variations') || document.body;
   const mo = new MutationObserver((mutations) => {
     const sel = document.querySelector(SELECT_SELECTOR);
     if (sel && sel.dataset.converted !== '1') {
-      restructureTable(sel);
+      placeBelowAddToCart(sel);
     }
   });
-  mo.observe(tableRoot, { childList: true, subtree: true });
+  mo.observe(root, { childList: true, subtree: true });
 })();
-
 </script>
