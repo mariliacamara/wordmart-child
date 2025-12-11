@@ -2638,7 +2638,7 @@ a.glink img {
   background-color: var(--grey, #e9e9e9) !important;   /* fundo cinza por default */
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-size: 48px 48px !important;               /* tamanho do ícone dentro do quadrado */
+  background-size: 80px 80px !important;             /* tamanho do ícone dentro do quadrado */
   transition: background-color .18s ease, transform .12s ease, box-shadow .18s ease, color .12s ease !important;
   box-shadow: 0 8px 22px rgba(0,0,0,0.06) !important;   /* sombra suave */
   padding: 0 !important;
@@ -2650,14 +2650,30 @@ a.glink img {
   background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74.8 71.1'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' fill='none' d='M23,19.9l12.1-3.5c1.8-.5,3.7.5,4.2,2.4l3,10.7M56.4,48.6l-5-18.1c-.5-1.8-2.4-2.9-4.2-2.4l-20.3,5.8M37.5,54c.7,2.6-.8,5.3-3.3,6-2.6.7-5.2-.8-5.9-3.4-.7-2.6.8-5.3,3.3-6s5.2.8,5.9,3.4ZM31.6,50.6L21.4,14.2c-.7-2.4-3.1-3.8-5.5-3.1l-2.7.8M62.9,46.7l-25.4,7.2'/%3E%3C/svg%3E") !important;
 }
 
+.wd-my-account-links .downloads-link a:before {
+    content: "\f135";
+}
 
-/* .wd-my-account-links .orders-link a:hover::before{
-  background-color: var(--secondary-color) !important;
-  -webkit-mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-  mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-} */
+.wd-my-account-links .edit-address-link a:before {
+    content: "\f135";
+}
 
-/* Hover / ativo: fundo secundário e stroke branco, leve elevação */
+.wd-my-account-links .edit-account-link a:before {
+    content: "\f135";
+}
+
+.wd-my-account-links .wt-smart-coupon-link a:before {
+    content: "\f135";
+}
+
+.wd-my-account-links .wishlist-link a:before {
+    content: "\f134";
+}
+
+.wd-my-account-links .customer-logout-link a:before {
+    content: "\f137"!important;
+}
+
 .wd-my-account-links .orders-link a:hover::before,
 .wd-my-account-links .orders-link a:focus::before,
 .wd-my-account-links .orders-link a.is-active::before,
@@ -2665,12 +2681,11 @@ a.glink img {
 .wd-my-account-links a:hover::before,
 .wd-my-account-links a:focus::before {
   background-color: var(--secondary-color) !important;
-  color: #ffffff !important;              /* stroke do svg (currentColor) vira branco */
+  color: #ffffff !important;
   transform: translateY(-6px) !important;
   box-shadow: 0 18px 36px rgba(0,0,0,0.12) !important;
 }
 
-/* Label (texto embaixo) */
 .wd-my-account-links .orders-link a .nav-label,
 .wd-my-account-links .orders-link a span,
 .wd-my-account-links a span {
@@ -2685,66 +2700,14 @@ a.glink img {
   text-align: center;
 }
 
-/* Pequena proteção se o tema aplicar pointer-events:none em algo */
 .wd-my-account-links .orders-link a,
 .wd-my-account-links a {
   pointer-events: auto !important;
 }
 
-/* Opcional: reduz o gap e o tamanho em telas pequenas */
 @media (max-width: 768px){
   .wd-my-account-links { gap: 28px; }
   .wd-my-account-links .orders-link a::before,
   .wd-my-account-links a::before { width: 90px !important; height: 90px !important; background-size: 40px 40px !important; }
   .wd-my-account-links { justify-content: flex-start; padding-left: 20px; }
 }
-
-
-/* normal */
-/* .wd-my-account-links .orders-link a::before {
-  content: "" !important;
-  display: inline-block;
-  padding: 40px;
-  border-radius: 10px;
-
-  background-color: var(--grey);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60px;
-
-  color: #575756;
-  transition: background-color .18s ease, color .12s ease, transform .12s ease;
-  box-shadow: none; 
-} */
-
-/* .wd-my-account-links .orders-link a::before {
-  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 74.8 71.1'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' fill='none' d='M23,19.9l12.1-3.5c1.8-.5,3.7.5,4.2,2.4l3,10.7M56.4,48.6l-5-18.1c-.5-1.8-2.4-2.9-4.2-2.4l-20.3,5.8M37.5,54c.7,2.6-.8,5.3-3.3,6-2.6.7-5.2-.8-5.9-3.4-.7-2.6.8-5.3,3.3-6s5.2.8,5.9,3.4ZM31.6,50.6L21.4,14.2c-.7-2.4-3.1-3.8-5.5-3.1l-2.7.8M62.9,46.7l-25.4,7.2'/%3E%3C/svg%3E");
-} */
-
-/* hover / focus (igual aos actions) */
-/* .wd-my-account-links .edit-address-link a:hover::before,
-.wd-my-account-links .edit-address-link a:focus::before,
-.wd-my-account-links .downloads-link a:hover::before,
-.wd-my-account-links .downloads-link a:focus::before
-.wd-my-account-links .orders-link a:hover::before,
-.wd-my-account-links .orders-link a:focus::before {
-  background-color: var(--secondary-color);
-  color: #fff!important; 
-  transform: translateY(-2px); 
-} */
-
-/* .wd-my-account-links .orders-link a::before{
-  content: "" !important;
-  display:inline-block !important;
-  border-radius:10px;
-  background-color: var(--grey) !important;
-  -webkit-mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-  mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-} */
-
-/* hover: pinta com secondary color */
-/* .wd-my-account-links .orders-link a:hover::before{
-  background-color: var(--secondary-color) !important;
-  -webkit-mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-  mask: url("/wp-content/themes/woodmart-child/assets/icons/orders.svg") center/50px no-repeat;
-} */
