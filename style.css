@@ -2588,8 +2588,7 @@ a.glink img {
   flex: 0 0 calc(33.333% - 20px) !important; /* 25% minus half the gap */
   width: calc(33.333% - 20px) !important;
   max-width: calc(33.333% - 20px) !important;
-  box-sizing: border-box !important;
-  margin: 0 15px !important;           /* ajusta o espaçamento lateral interno */
+  box-sizing: border-box !important;         /* ajusta o espaçamento lateral interno */
 }
 
 /* Ajustes internos dos cards (garante que expansões não quebrem a linha) */
