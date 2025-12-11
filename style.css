@@ -2651,23 +2651,23 @@ a.glink img {
 }
 
 .wd-my-account-links .downloads-link a:before {
-    content: "\f135";
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/download2.svg");
 }
 
 .wd-my-account-links .edit-address-link a:before {
-    content: "\f135";
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/address2.svg");
 }
 
 .wd-my-account-links .edit-account-link a:before {
-    content: "\f135";
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/account2.svg");
 }
 
 .wd-my-account-links .wt-smart-coupon-link a:before {
-    content: "\f135";
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/coupon2.svg");
 }
 
 .wd-my-account-links .wishlist-link a:before {
-    content: "\f134";
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist2.svg");
 }
 
 .wd-my-account-links .customer-logout-link a:before {
