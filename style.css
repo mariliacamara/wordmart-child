@@ -2467,6 +2467,16 @@ a.glink img {
   border-radius: 10px;
 }
 
+.wd-my-account-links .orders-link a:hover:before,
+.wd-my-account-links .orders-link a:focus:before {
+    background-color: var(--secondary-color);
+
+    /* SVG branco (precisa ser uma versão com stroke='currentColor' e currentColor = white) */
+    background-image: url("/wp-content/themes/woodmart-child/assets/icons/orders-white.svg");
+
+    color: #fff; /* currentColor para o svg */
+}
+
 .wd-my-account-links {
     --wd-col-lg: 6!important;
     --wd-col-md: 3!important;
@@ -2550,6 +2560,7 @@ a.glink img {
 
   /* cor do ícone — currentColor dentro do SVG lê isso */
   color: #575756;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .wd-wishlist-icon > a.is-active::before,
