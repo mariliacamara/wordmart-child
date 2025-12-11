@@ -2717,6 +2717,106 @@ a.glink img {
   .wd-my-account-links { justify-content: flex-start; padding-left: 20px; }
 }
 
+
+/* ---------- layout: label numa row separada + opções embaixo ---------- */
+/* garante que a nova tabela continue responsiva */
+table.variations { width:100%; border-collapse:collapse; }
+
+/* nova linha de label (estilo parecido com o resto) */
+table.variations tr.size-label-row th {
+  text-align:left;
+  padding: 10px 0 6px;
+  font-weight:700;
+  font-size: 1rem;
+  vertical-align: middle;
+  border: none;
+}
+
+/* linha das opções */
+table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
+
+/* container das opções — ocupar toda a largura disponível */
+.variations .size-options {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* esconder select original (mantemos para WooCommerce) */
+.variations .size-converter-select {
+  position:absolute !important;
+  left:-9999px !important;
+  width:1px !important;
+  height:1px !important;
+  overflow:hidden !important;
+}
+
+/* o "quadrado" visual que contém o texto */
+.variations .size-label {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  user-select:none;
+  border-radius:10px;
+  overflow:hidden;
+  border: 2px solid #0b2450;
+  background:#fff;
+  min-width:84px;
+  height:52px;               /* altura fixa para ficar "quadrado" visual */
+  padding:0 12px;
+  box-sizing:border-box;
+  border-radius: 0;
+}
+
+/* o input radio fica invisível, o label é o visual clicável */
+.variations .size-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* o texto fica dentro do quadrado e centralizado vertical/horizontalmente */
+.variations .size-label span {
+  display:block;
+  width:100%;
+  text-align:center;
+  line-height:1;
+  font-weight:700;
+  color:#0b2450;
+  font-size:14px;
+}
+
+/* estado selecionado */
+.variations .size-label.is-checked {
+  background:#0b2450;
+  color:#fff;
+  border-color:#0b2450;
+}
+.variations .size-label.is-checked span { color:#fff; }
+
+/* hover */
+.variations .size-label:hover { transform: translateY(-2px); transition: transform .06s; }
+
+/* responsivo: reduzir altura em telas pequenas */
+@media (max-width:480px){
+  .variations .size-label { min-width:66px; height:44px; font-size:14px; }
+}
+
+table.variations label:after {
+  content: ""!important;
+}
+
+div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table > tbody > tr.size-options-row > th {
+  display: none;
+}
+
+div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table {
+  margin: 0;
+  padding: 0;
+}
+
 /* pequeno ajuste para o container que ficará abaixo do add-to-cart */
 .wd-variations-boxes {
   margin-top: 22px;
@@ -2793,18 +2893,4 @@ a.glink img {
 /* responsivo */
 @media (max-width:480px){
   .wd-variations-boxes .size-label { min-width:66px; height:44px; font-size:14px; }
-}
-
-
-table.variations label:after {
-  content: ""!important;
-}
-
-div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table > tbody > tr.size-options-row > th {
-  display: none;
-}
-
-div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table {
-  margin: 0;
-  padding: 0;
 }
