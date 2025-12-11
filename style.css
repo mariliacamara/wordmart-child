@@ -2585,8 +2585,9 @@ a.glink img {
 
 /* Cada item ocupa ~25% menos o gap */
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
-  flex: 0 0 calc(25% - 22.5px) !important; /* 25% minus half the gap */
-  max-width: calc(25% - 22.5px) !important;
+  flex: 0 0 calc(33.333% - 20px) !important; /* 25% minus half the gap */
+  width: calc(33.333% - 20px) !important;
+  max-width: calc(33.333% - 20px) !important;
   box-sizing: border-box !important;
   margin: 0 15px !important;           /* ajusta o espaçamento lateral interno */
 }
