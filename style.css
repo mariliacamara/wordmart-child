@@ -2804,5 +2804,5 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
 }
 
 table.variations label:after {
-  content: "";
+  content: ""!important;
 }
