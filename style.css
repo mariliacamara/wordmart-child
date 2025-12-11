@@ -2716,3 +2716,58 @@ a.glink img {
   .wd-my-account-links a::before { width: 90px !important; height: 90px !important; background-size: 40px 40px !important; }
   .wd-my-account-links { justify-content: flex-start; padding-left: 20px; }
 }
+
+
+/* container */
+.size-options { display:flex; gap:12px; margin:12px 0; align-items:center; flex-wrap:wrap; }
+
+/* esconder select original (mantemos o elemento para forms) */
+.size-converter-select { display:none !important; }
+
+/* radio visual */
+.size-option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #0b2450; /* borda azul escura */
+  padding: 18px 22px;
+  border-radius: 6px;
+  min-width: 92px;
+  text-align:center;
+  font-weight:700;
+  cursor:pointer;
+  background:white;
+  box-shadow:none;
+  transition: transform .08s ease, background .08s ease, color .08s ease;
+  position:relative;
+}
+
+/* preço secundário embaixo (opcional) */
+.size-option .price {
+  display:block;
+  font-weight:600;
+  font-size:0.9rem;
+  color:#4b5563;
+  margin-top:6px;
+  font-weight:500;
+}
+
+/* estado selecionado */
+.size-option:checked,
+.size-option.is-checked {
+  background:#0b2450; /* azul escuro preenchido */
+  color:white;
+  border-color:#0b2450;
+  transform: translateY(-2px);
+}
+
+/* estado hover */
+.size-option:hover { transform: translateY(-1px); }
+
+/* estilo do label que envolve o input invisível para compatibilidade */
+.size-label { display:inline-block; }
+
+/* responsivo */
+@media (max-width:480px){
+  .size-option { padding:14px 12px; min-width:80px; font-size:14px; }
+}
