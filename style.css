@@ -2625,8 +2625,3 @@ a.glink img {
 #menu-categorias .wd-dropdown-menu {
   z-index: 1000;
 }
-
-/* se o dropdown estiver cobrindo o link por causa de margin/padding, empurra-o um pouco */
-#menu-categorias > li.menu-item > a.woodmart-nav-link {
-  padding-top: 18px; /* ajusta se necessário */
-}
