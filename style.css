@@ -2802,3 +2802,7 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
 @media (max-width:480px){
   .variations .size-label { min-width:66px; height:44px; font-size:14px; }
 }
+
+table.variations label:after {
+  content: "";
+}
