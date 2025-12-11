@@ -2510,6 +2510,8 @@ a.glink img {
 
 .wd-action-btn {
   margin-left: 10px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 /* Wrapper do brand + título: mesma altura em todos */
@@ -2532,8 +2534,8 @@ a.glink img {
 .wd-wishlist-icon > a::before {
   content: "" !important;              /* força existir (substitui content:none) */
   display: inline-block !important;
-  width: 22px !important;
-  height: 22px !important;
+  width: 45px !important;
+  height: 45px !important;
   vertical-align: middle !important;
 
   /* debug: cor de fundo visível — remove depois que aparecer */
