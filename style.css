@@ -2898,5 +2898,5 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
 }
 
 .section-title {
-  margin: 0;
+  margin: 0!important;
 }
