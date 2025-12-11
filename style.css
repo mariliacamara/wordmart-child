@@ -2841,6 +2841,7 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
 /* quadrado */
 .wd-variations-boxes .size-label {
   display:inline-flex;
+  flex-direction: column;
   align-items:center;
   justify-content:center;
   cursor:pointer;
