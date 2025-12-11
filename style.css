@@ -2540,9 +2540,6 @@ a.glink img {
   height: 45px !important;
   vertical-align: middle !important;
 
-  /* debug: cor de fundo visível — remove depois que aparecer */
-  background-color: rgba(255,0,0,0.12) !important;
-
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: contain !important;
@@ -2560,6 +2557,6 @@ a.glink img {
 .wd-wishlist-icon > a.is-active::before,
 .wd-wishlist-icon > a.added::before {
   color: #fff !important;
-  background-color: transparent !important; /* esconde debug */
+  background-color: var(--secondary-color)!important; 
 }
 
