@@ -2811,3 +2811,8 @@ table.variations label:after {
 div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table > tbody > tr.size-options-row > th {
   display: none;
 }
+
+div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table {
+  margin: 0;
+  padding: 0;
+}
