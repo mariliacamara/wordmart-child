@@ -214,40 +214,37 @@ global $product;
   (function () {
   const SELECT_SELECTOR = 'select#pa_tamanho, select[name="attribute_pa_tamanho"]';
 
-  function buildFromSelect(select) {
-    if (!select || select.dataset.converted === '1') return;
+  function buildOptions(select) {
+    if (!select) return;
+    if (select.dataset.converted === '1') return;
     select.dataset.converted = '1';
     select.classList.add('size-converter-select');
 
-    // criar container
+    // cria container visual
     const container = document.createElement('div');
     container.className = 'size-options';
-    container.setAttribute('aria-hidden', 'false');
 
-    // for each option
     Array.from(select.options).forEach((opt, idx) => {
       const val = opt.value;
       const text = opt.textContent.trim();
-      // pula placeholder / vazio
-      if (!val) return;
+      if (!val) return; // pula placeholder
+
+      // label visual (contém input invisível + span dentro do quadrado)
       const label = document.createElement('label');
       label.className = 'size-label';
+      label.setAttribute('data-val', val);
 
       const input = document.createElement('input');
       input.type = 'radio';
       input.name = 'product_size_converted';
       input.value = val;
-      input.className = 'size-option';
-      input.style.display = 'inline-block';
-      input.dataset.originalIndex = idx;
 
-      // marca se o select tiver o valor
+      // se select já tem valor selecionado, marca visual
       if (select.value === val) {
+        label.classList.add('is-checked');
         input.checked = true;
-        input.classList.add('is-checked');
       }
 
-      // conteúdo visível (texto simples). Se quiser preço, modifique aqui.
       const span = document.createElement('span');
       span.textContent = text;
 
@@ -255,76 +252,120 @@ global $product;
       label.appendChild(span);
       container.appendChild(label);
 
-      // evento de clique que sincroniza o select (dispara change)
-      input.addEventListener('change', function () {
+      // clique no label -> sincroniza select e dispara change
+      label.addEventListener('click', function (e) {
+        // previne comportamento se já está selecionado
+        if (!input.checked) {
+          input.checked = true;
+        }
         // atualiza select
         select.value = val;
-        // dispara change para que WooCommerce detecte variação
+        // dispara change para WooCommerce reagir
         const evt = new Event('change', { bubbles: true });
         select.dispatchEvent(evt);
 
-        // atualiza visual de todos
-        container.querySelectorAll('.size-option').forEach(i => {
-          i.classList.toggle('is-checked', i.checked);
+        // atualiza estilos visuais
+        container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
+        label.classList.add('is-checked');
+      });
+    });
+
+    return container;
+  }
+
+  function restructureTable(select) {
+    const table = select.closest('table.variations');
+    if (!table) return;
+
+    // evita refazer se já reestruturado
+    if (table.dataset.restructured === '1') return;
+    table.dataset.restructured = '1';
+
+    const origTr = select.closest('tr');
+    if (!origTr) return;
+
+    // extrai a label do <th>
+    const th = origTr.querySelector('th.label.cell');
+    const labelText = th ? th.textContent.trim() : 'Opção';
+
+    // cria nova tr só com label (th spanning full)
+    const labelTr = document.createElement('tr');
+    labelTr.className = 'size-label-row';
+    const newTh = document.createElement('th');
+    newTh.colSpan = 2; // ocupa as 2 colunas (th + td)
+    newTh.innerHTML = `<label>${labelText}</label>`;
+    labelTr.appendChild(newTh);
+
+    // cria tr com as opções: td ocupa toda largura (ou manter th vazio)
+    const optionsTr = document.createElement('tr');
+    optionsTr.className = 'size-options-row';
+    const emptyTh = document.createElement('th');
+    emptyTh.className = 'label cell';
+    emptyTh.innerHTML = ''; // mantemos sem texto
+    const td = document.createElement('td');
+    td.className = 'value cell';
+
+    // move select e reset link para o td
+    const reset = origTr.querySelector('.wd-reset-var');
+    // remove o tr original
+    origTr.parentNode.removeChild(origTr);
+
+    td.appendChild(select); // move o select para dentro do new td
+    if (reset) td.appendChild(reset);
+    optionsTr.appendChild(emptyTh);
+    optionsTr.appendChild(td);
+
+    // insere labelTr + optionsTr no tbody
+    const tbody = table.querySelector('tbody') || table;
+    tbody.insertBefore(labelTr, tbody.firstChild);
+    tbody.insertBefore(optionsTr, labelTr.nextSibling);
+
+    // constrói container de opções e insere
+    const container = buildOptions(select);
+    if (container) {
+      // insere logo após o select dentro do td
+      td.insertBefore(container, select.nextSibling);
+
+      // sincronia: quando select muda (por outro script) atualiza visual
+      select.addEventListener('change', function () {
+        const v = select.value;
+        container.querySelectorAll('.size-label').forEach(l => {
+          if (l.getAttribute('data-val') === v) {
+            l.classList.add('is-checked');
+            const inp = l.querySelector('input');
+            if (inp) inp.checked = true;
+          } else {
+            l.classList.remove('is-checked');
+            const inp = l.querySelector('input');
+            if (inp) inp.checked = false;
+          }
         });
       });
 
-      // também faz clique no label para marcar
-      label.addEventListener('click', function (e) {
-        // se input já estiver checked, não precisa reenviar
-        if (!input.checked) input.checked = true;
-        // dispara change manualmente (alguns browsers não disparam automaticamente ao alterar programaticamente)
-        const ev = new Event('change', { bubbles: true });
-        input.dispatchEvent(ev);
-      });
-    });
-
-    // inserir container logo após o select dentro da célula .value
-    const parentTd = select.closest('td') || select.parentNode;
-    parentTd.insertBefore(container, select.nextSibling);
-
-    // adiciona listener no select para atualizar UI se o select mudar por outro script
-    select.addEventListener('change', function () {
-      const current = select.value;
-      container.querySelectorAll('.size-option').forEach(inp => {
-        inp.checked = (inp.value === current);
-        inp.classList.toggle('is-checked', inp.checked);
-      });
-    });
-
-    // se houver link de reset, exibe/esconde conforme select value
-    const resetLink = parentTd.querySelector('.reset_variations');
-    if (resetLink) {
-      // inicial
-      resetLink.style.visibility = select.value ? 'visible' : 'hidden';
-      select.addEventListener('change', () => {
-        resetLink.style.visibility = select.value ? 'visible' : 'hidden';
-      });
-      resetLink.addEventListener('click', (ev) => {
-        // ao limpar, remove seleção visual
-        setTimeout(() => {
-          container.querySelectorAll('.size-option').forEach(i => { i.checked = false; i.classList.remove('is-checked'); });
-        }, 20);
-      });
+      // esconder select visualmente (já adicionamos classe no buildOptions)
+      select.classList.add('size-converter-select');
     }
   }
 
-  function initOnce() {
+  function init() {
     const select = document.querySelector(SELECT_SELECTOR);
-    if (select) buildFromSelect(select);
+    if (!select) return;
+    restructureTable(select);
   }
 
-  // inicializa ao carregar DOM
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initOnce);
-  } else initOnce();
+    document.addEventListener('DOMContentLoaded', init);
+  } else init();
 
-  // MutationObserver para recapturar caso WooCommerce substitua o select dinamicamente
-  const target = document.querySelector('table.variations') || document.body;
+  // observer para caso o select seja re-renderizado pelo WooCommerce
+  const tableRoot = document.querySelector('table.variations') || document.body;
   const mo = new MutationObserver((mutations) => {
     const sel = document.querySelector(SELECT_SELECTOR);
-    if (sel && sel.dataset.converted !== '1') buildFromSelect(sel);
+    if (sel && sel.dataset.converted !== '1') {
+      restructureTable(sel);
+    }
   });
-  mo.observe(target, { childList: true, subtree: true });
+  mo.observe(tableRoot, { childList: true, subtree: true });
 })();
+
 </script>
