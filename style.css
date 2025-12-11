@@ -2718,56 +2718,40 @@ a.glink img {
 }
 
 
-/* container */
-.size-options { display:flex; gap:12px; margin:12px 0; align-items:center; flex-wrap:wrap; }
+/* ---------- estilo dos botões que substituem o select ---------- */
+.variations .size-options { display:flex; gap:12px; margin:8px 0; flex-wrap:wrap; align-items:center; }
 
-/* esconder select original (mantemos o elemento para forms) */
-.size-converter-select { display:none !important; }
+.variations .size-converter-select { position:absolute !important; left:-9999px !important; width:1px !important; height:1px !important; overflow:hidden !important; }
 
-/* radio visual */
-.size-option {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: 2px solid #0b2450; /* borda azul escura */
-  padding: 18px 22px;
-  border-radius: 6px;
-  min-width: 92px;
+/* botão visual (estilo cartão) */
+.variations .size-label { display:inline-block; cursor:pointer; user-select:none; }
+.variations .size-option {
+  -webkit-appearance:none; appearance:none;
+  border:2px solid #0b2450;
+  background:#fff;
+  color:#0b2450;
+  padding:14px 18px;
+  border-radius:10px;
+  min-width:84px;
   text-align:center;
   font-weight:700;
-  cursor:pointer;
-  background:white;
-  box-shadow:none;
-  transition: transform .08s ease, background .08s ease, color .08s ease;
-  position:relative;
+  transition: transform .06s ease, background .06s ease, color .06s ease;
+  display:inline-block;
 }
 
-/* preço secundário embaixo (opcional) */
-.size-option .price {
-  display:block;
-  font-weight:600;
-  font-size:0.9rem;
-  color:#4b5563;
-  margin-top:6px;
-  font-weight:500;
-}
-
-/* estado selecionado */
-.size-option:checked,
-.size-option.is-checked {
-  background:#0b2450; /* azul escuro preenchido */
-  color:white;
+/* selecionado */
+.variations .size-option.is-checked,
+.variations .size-option:checked {
+  background:#0b2450;
+  color:#fff;
   border-color:#0b2450;
   transform: translateY(-2px);
 }
 
-/* estado hover */
-.size-option:hover { transform: translateY(-1px); }
+/* hover */
+.variations .size-option:hover { transform: translateY(-1px); }
 
-/* estilo do label que envolve o input invisível para compatibilidade */
-.size-label { display:inline-block; }
-
-/* responsivo */
+/* pequeno - responsivo */
 @media (max-width:480px){
-  .size-option { padding:14px 12px; min-width:80px; font-size:14px; }
+  .variations .size-option { padding:10px 12px; min-width:68px; font-size:14px; }
 }
