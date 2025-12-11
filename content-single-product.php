@@ -213,8 +213,37 @@ global $product;
 <script>
 (function () {
   const SELECT_SELECTOR = 'select#pa_tamanho, select[name="attribute_pa_tamanho"]';
+  const FORM_SELECTOR = 'form.variations_form';
 
-  function buildOptions(select) {
+  // util: remove tags HTML
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html || '';
+    return tmp.textContent || tmp.innerText || '';
+  }
+
+  function getVariationsData(form) {
+    if (!form) return null;
+    const raw = form.getAttribute('data-product_variations') || form.dataset.productVariations || form.dataset.product_variations;
+    if (!raw) return null;
+    try {
+      // raw pode estar JSON-escaped (com &quot;), tentar unescape
+      const jsonText = raw.trim();
+      // se começa com '[' então já é JSON
+      if (/^\s*\[/.test(jsonText)) {
+        return JSON.parse(jsonText);
+      } else {
+        // tentar substituir &quot; e depois parse
+        const unescaped = jsonText.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+        return JSON.parse(unescaped);
+      }
+    } catch (e) {
+      console.warn('Could not parse product_variations JSON', e);
+      return null;
+    }
+  }
+
+  function buildOptions(select, variations) {
     if (!select) return null;
     if (select.dataset.converted === '1') return null;
     select.dataset.converted = '1';
@@ -225,9 +254,36 @@ global $product;
 
     Array.from(select.options).forEach((opt) => {
       const val = opt.value;
-      const text = opt.textContent.trim();
-      if (!val) return; // pula placeholder
+      let text = opt.textContent.trim();
+      if (!val) return; // placeholder
 
+      // achar variação correspondente nas variations (matching attribute_pa_tamanho)
+      let priceText = '';
+      if (variations && Array.isArray(variations)) {
+        const found = variations.find(v => {
+          if (!v.attributes) return false;
+          // várias formas de key; preferimos attribute_pa_tamanho
+          return v.attributes['attribute_pa_tamanho'] === val || v.attributes['attribute_tamanho'] === val || v.attributes['attribute_pa_tamanho'] === val.replace(/\s+/g, '-');
+        });
+        if (found) {
+          // price_html sometimes like '<span class="price">3.57€</span>'
+          if (found.price_html) priceText = stripHtml(found.price_html).trim();
+          else if (typeof found.display_price !== 'undefined') {
+            // número: formatar com 2 decimais + símbolo euro
+            priceText = Number(found.display_price).toFixed(2) + '€';
+          }
+        }
+      }
+
+      // Atualiza texto do option para incluir preço (texto simples)
+      if (priceText) {
+        // evita duplicar se já tiver o preço
+        const baseText = opt.getAttribute('data-base-text') || text;
+        opt.setAttribute('data-base-text', baseText);
+        opt.text = baseText + ' — ' + priceText;
+      }
+
+      // label visual (contém input invisível + span com size + price)
       const label = document.createElement('label');
       label.className = 'size-label';
       label.setAttribute('data-val', val);
@@ -243,10 +299,17 @@ global $product;
       }
 
       const span = document.createElement('span');
+      span.className = 'size-text';
       span.textContent = text;
+
+      // price element dentro do quadrado
+      const priceEl = document.createElement('small');
+      priceEl.className = 'size-price';
+      priceEl.textContent = priceText || '';
 
       label.appendChild(input);
       label.appendChild(span);
+      label.appendChild(priceEl);
       container.appendChild(label);
 
       label.addEventListener('click', function () {
@@ -264,56 +327,44 @@ global $product;
   }
 
   function placeBelowAddToCart(select) {
-    const targetBox = document.querySelector('.wd-variations-boxes');
-    // fallback: se não existir, tenta inserir depois do .wd-add-to-cart-wrap
-    let target = targetBox;
-    if (!target) {
+    const form = document.querySelector(FORM_SELECTOR);
+    const variationsData = getVariationsData(form);
+    const targetBox = document.querySelector('.wd-variations-boxes') || (function () {
       const addWrap = document.querySelector('.wd-add-to-cart-wrap');
       if (addWrap && addWrap.parentNode) {
         const fallback = document.createElement('div');
         fallback.className = 'wd-variations-boxes';
         addWrap.parentNode.insertBefore(fallback, addWrap.nextSibling);
-        target = fallback;
-      } else {
-        // último recurso: inserir no body
-        target = document.body;
+        return fallback;
       }
-    }
+      return document.body;
+    })();
 
-    // cria label row + container visual dentro do target (abaixo do add to cart)
+    // limpa se já houver
+    targetBox.querySelectorAll('.size-label-row, .size-options, .reset-wrapper').forEach(n => n.remove());
+
     const labelText = (() => {
       const origTh = select.closest('tr') ? select.closest('tr').querySelector('th.label.cell') : null;
       return origTh ? origTh.textContent.trim() : 'Opção';
     })();
 
-    // remove visual antigo caso já tenha
-    const oldLabelRow = target.querySelector('.size-label-row');
-    const oldContainer = target.querySelector('.size-options');
-    if (oldLabelRow) oldLabelRow.remove();
-    if (oldContainer) oldContainer.remove();
-
     const labelRow = document.createElement('div');
     labelRow.className = 'size-label-row';
     labelRow.textContent = labelText;
 
-    // build options
-    const container = buildOptions(select);
+    const container = buildOptions(select, variationsData);
     if (!container) return;
 
-    // se houver reset link na linha original, mover/duplicar um link funcional para cá
+    // reset link handling (clona)
     const origTr = select.closest('tr');
     const resetOriginal = origTr ? origTr.querySelector('.wd-reset-var .reset_variations') : null;
     let resetWrapper = null;
     if (resetOriginal) {
-      // clona o link para manter comportamento, mas mantemos o original também invisível
       const clone = resetOriginal.cloneNode(true);
       clone.style.visibility = resetOriginal.style.visibility || 'hidden';
-      clone.addEventListener('click', function (ev) {
-        // permitir o comportamento padrão do Woo reset (original também executará)
-        // limpa seleção visual após micro delay para deixar WooCommerce processar
+      clone.addEventListener('click', function () {
         setTimeout(() => {
           container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
-          // garante que select volte ao placeholder (se o original fizer isso)
         }, 50);
       });
       resetWrapper = document.createElement('div');
@@ -321,15 +372,14 @@ global $product;
       resetWrapper.appendChild(clone);
     }
 
-    // inserir tudo no target
-    target.appendChild(labelRow);
-    target.appendChild(container);
-    if (resetWrapper) target.appendChild(resetWrapper);
+    targetBox.appendChild(labelRow);
+    targetBox.appendChild(container);
+    if (resetWrapper) targetBox.appendChild(resetWrapper);
 
-    // esconder a linha original da tabela (mantendo o select no DOM para WooCommerce)
+    // esconder origem
     if (origTr) origTr.style.display = 'none';
 
-    // sincroniza select->visual quando select mudar por outro script
+    // sincronia quando select muda (por WooCommerce)
     select.addEventListener('change', function () {
       const v = select.value;
       container.querySelectorAll('.size-label').forEach(l => {
@@ -342,11 +392,11 @@ global $product;
           if (inp) inp.checked = false;
         }
       });
-      // atualiza visibilidade do resetOriginal se existir
+
       if (resetOriginal) resetOriginal.style.visibility = select.value ? 'visible' : 'hidden';
     });
 
-    // inicial: ajustar resetOriginal visibilidade
+    // inicial: atualiza reset visibility
     if (resetOriginal) resetOriginal.style.visibility = select.value ? 'visible' : 'hidden';
   }
 
@@ -360,9 +410,9 @@ global $product;
     document.addEventListener('DOMContentLoaded', init);
   } else init();
 
-  // observer caso WooCommerce re-renderize o select
-  const root = document.querySelector('table.variations') || document.body;
-  const mo = new MutationObserver((mutations) => {
+  // observer caso WooCommerce re-renderize o select/form
+  const root = document.querySelector('form.variations_form') || document.body;
+  const mo = new MutationObserver(() => {
     const sel = document.querySelector(SELECT_SELECTOR);
     if (sel && sel.dataset.converted !== '1') {
       placeBelowAddToCart(sel);
