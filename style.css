@@ -2767,6 +2767,7 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
   height:52px;               /* altura fixa para ficar "quadrado" visual */
   padding:0 12px;
   box-sizing:border-box;
+  border-radius: 0;
 }
 
 /* o input radio fica invisível, o label é o visual clicável */
@@ -2784,7 +2785,7 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
   line-height:1;
   font-weight:700;
   color:#0b2450;
-  font-size:16px;
+  font-size:14px;
 }
 
 /* estado selecionado */
