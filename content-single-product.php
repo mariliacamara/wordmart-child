@@ -209,3 +209,122 @@ global $product;
   </section>
 
 </div>
+
+<script>
+  (function () {
+  const SELECT_SELECTOR = 'select#pa_tamanho, select[name="attribute_pa_tamanho"]';
+
+  function buildFromSelect(select) {
+    if (!select || select.dataset.converted === '1') return;
+    select.dataset.converted = '1';
+    select.classList.add('size-converter-select');
+
+    // criar container
+    const container = document.createElement('div');
+    container.className = 'size-options';
+    container.setAttribute('aria-hidden', 'false');
+
+    // for each option
+    Array.from(select.options).forEach((opt, idx) => {
+      const val = opt.value;
+      const text = opt.textContent.trim();
+      // pula placeholder / vazio
+      if (!val) return;
+      const label = document.createElement('label');
+      label.className = 'size-label';
+
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'product_size_converted';
+      input.value = val;
+      input.className = 'size-option';
+      input.style.display = 'inline-block';
+      input.dataset.originalIndex = idx;
+
+      // marca se o select tiver o valor
+      if (select.value === val) {
+        input.checked = true;
+        input.classList.add('is-checked');
+      }
+
+      // conteúdo visível (texto simples). Se quiser preço, modifique aqui.
+      const span = document.createElement('span');
+      span.textContent = text;
+
+      label.appendChild(input);
+      label.appendChild(span);
+      container.appendChild(label);
+
+      // evento de clique que sincroniza o select (dispara change)
+      input.addEventListener('change', function () {
+        // atualiza select
+        select.value = val;
+        // dispara change para que WooCommerce detecte variação
+        const evt = new Event('change', { bubbles: true });
+        select.dispatchEvent(evt);
+
+        // atualiza visual de todos
+        container.querySelectorAll('.size-option').forEach(i => {
+          i.classList.toggle('is-checked', i.checked);
+        });
+      });
+
+      // também faz clique no label para marcar
+      label.addEventListener('click', function (e) {
+        // se input já estiver checked, não precisa reenviar
+        if (!input.checked) input.checked = true;
+        // dispara change manualmente (alguns browsers não disparam automaticamente ao alterar programaticamente)
+        const ev = new Event('change', { bubbles: true });
+        input.dispatchEvent(ev);
+      });
+    });
+
+    // inserir container logo após o select dentro da célula .value
+    const parentTd = select.closest('td') || select.parentNode;
+    parentTd.insertBefore(container, select.nextSibling);
+
+    // adiciona listener no select para atualizar UI se o select mudar por outro script
+    select.addEventListener('change', function () {
+      const current = select.value;
+      container.querySelectorAll('.size-option').forEach(inp => {
+        inp.checked = (inp.value === current);
+        inp.classList.toggle('is-checked', inp.checked);
+      });
+    });
+
+    // se houver link de reset, exibe/esconde conforme select value
+    const resetLink = parentTd.querySelector('.reset_variations');
+    if (resetLink) {
+      // inicial
+      resetLink.style.visibility = select.value ? 'visible' : 'hidden';
+      select.addEventListener('change', () => {
+        resetLink.style.visibility = select.value ? 'visible' : 'hidden';
+      });
+      resetLink.addEventListener('click', (ev) => {
+        // ao limpar, remove seleção visual
+        setTimeout(() => {
+          container.querySelectorAll('.size-option').forEach(i => { i.checked = false; i.classList.remove('is-checked'); });
+        }, 20);
+      });
+    }
+  }
+
+  function initOnce() {
+    const select = document.querySelector(SELECT_SELECTOR);
+    if (select) buildFromSelect(select);
+  }
+
+  // inicializa ao carregar DOM
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOnce);
+  } else initOnce();
+
+  // MutationObserver para recapturar caso WooCommerce substitua o select dinamicamente
+  const target = document.querySelector('table.variations') || document.body;
+  const mo = new MutationObserver((mutations) => {
+    const sel = document.querySelector(SELECT_SELECTOR);
+    if (sel && sel.dataset.converted !== '1') buildFromSelect(sel);
+  });
+  mo.observe(target, { childList: true, subtree: true });
+})();
+</script>
