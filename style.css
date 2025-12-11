@@ -2807,3 +2807,7 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
 table.variations label:after {
   content: ""!important;
 }
+
+div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table > tbody > tr.size-options-row > th {
+  display: none;
+}
