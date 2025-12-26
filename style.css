@@ -3205,5 +3205,5 @@ div.wd-search-form.wd-header-search-form.wd-display-form.whb-9x1ytaxq7aphtb3npid
 }
 
 .whb-color-dark:not(.whb-with-bg) {
-  background-color: #f5fafa;
+  background-color: #f5fafa !important;
 }
