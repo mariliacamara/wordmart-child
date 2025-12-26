@@ -3207,3 +3207,8 @@ div.wd-search-form.wd-header-search-form.wd-display-form.whb-9x1ytaxq7aphtb3npid
 .whb-color-dark:not(.whb-with-bg) {
   background-color: #f5fafa !important;
 }
+
+.product-box {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
