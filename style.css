@@ -12,7 +12,8 @@ License:    GNU General Public License v2 or later
    Variáveis globais
    ------------------------- */
 :root {
-  --primary-bg-color: green; /* global scope */
+  --primary-bg-color: green;
+  /* global scope */
   --primary-color: #010a53;
   --secondary-color: #29b0c2;
   --white-color: #fff;
@@ -20,7 +21,7 @@ License:    GNU General Public License v2 or later
   --grey: #dadada;
   --dark-grey: #706f6f;
   --black: #000;
-  --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+")!important;
+  --wd-form-chevron: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDE2IDEyTDEyIDgiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTZMMTIgMTIiIHN0cm9rZT0iIzFGMkEzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+") !important;
 }
 
 /* =========================================================
@@ -83,72 +84,171 @@ License:    GNU General Public License v2 or later
 
 /* Conta do Woo / My Account */
 .woocommerce-MyAccount-title {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .woocommerce-MyAccount-navigation ul li a {
-    text-transform: uppercase!important;
-    color: var(--primary-color)!important;
+  text-transform: uppercase !important;
+  color: var(--primary-color) !important;
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active>a {
-    color: var(--white-color)!important;
+  color: var(--white-color) !important;
 }
 
 .woocommerce-account .page-title {
-    display: none !important;
+  display: none !important;
 }
 
 .woocommerce-MyAccount-content>p {
-    margin-bottom: 0.5px;
+  margin-bottom: 0.5px;
 }
 
 /* Layout */
-.wd-product-top { padding: 30px 0; }
-.wd-product-gallery-col { padding-right: 30px; }
-.wd-product-summary-col { padding-left: 30px; display:flex; align-items:flex-start; }
-.wd-summary-inner { width:100%; }
+.wd-product-top {
+  padding: 30px 0;
+}
+
+.wd-product-gallery-col {
+  padding-right: 30px;
+}
+
+.wd-product-summary-col {
+  padding-left: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.wd-summary-inner {
+  width: 100%;
+}
 
 /* Title / brand */
-.wd-product-brand .brand-name { font-weight:700; color:#7a7a7a; display:block; margin-bottom:6px; text-transform:uppercase; }
-.product-title { font-size:28px; margin:0 0 10px; }
+.wd-product-brand .brand-name {
+  font-weight: 700;
+  color: #7a7a7a;
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.product-title {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
 
 /* Price pill */
-.wd-price-pill .price { background:#f8c83b; display:inline-block; padding:10px 18px; border-radius:12px; font-weight:700; font-size:22px; color:#111; }
+.wd-price-pill .price {
+  background: #f8c83b;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #111;
+}
 
 /* Rating */
-.wd-rating { margin:8px 0 10px; }
+.wd-rating {
+  margin: 8px 0 10px;
+}
 
 /* Delivery */
-.wd-delivery { margin-bottom:12px; color: #2e8b2e; font-weight:600; }
+.wd-delivery {
+  margin-bottom: 12px;
+  color: #2e8b2e;
+  font-weight: 600;
+}
 
 /* Add to cart and quantity */
-.woocommerce div.product form.cart { display:flex; align-items:center; gap:12px; margin:16px 0; }
-.woocommerce .quantity { display:inline-flex; align-items:center; gap:8px; }
-.woocommerce .quantity input.qty { width:56px; text-align:center; padding:8px; border-radius:6px; border:1px solid #ddd; }
-.woocommerce .single_add_to_cart_button { background:#072052; color:#fff; padding:12px 20px; border-radius:10px; border:none; text-transform:uppercase; font-weight:700; }
+.woocommerce div.product form.cart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.woocommerce .quantity {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.woocommerce .quantity input.qty {
+  width: 56px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.woocommerce .single_add_to_cart_button {
+  background: #072052;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
 /* Variation select to look boxed (basic) */
-.variations { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; }
-.variations .value { display:flex; gap:8px; align-items:center; }
-.variations label { display:block; font-weight:700; margin-bottom:6px; }
+.variations {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.variations .value {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.variations label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
 
 /* Tabs / description */
-.woocommerce-tabs { margin-top:30px; border-top:1px solid #e6e6e6; padding-top:20px; }
-.woocommerce-tabs .panel { padding-top:15px; }
+.woocommerce-tabs {
+  margin-top: 30px;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 20px;
+}
+
+.woocommerce-tabs .panel {
+  padding-top: 15px;
+}
 
 /* Related products full width placeholder */
-.related-and-upsells { margin-top:40px; }
+.related-and-upsells {
+  margin-top: 40px;
+}
 
 /* Responsive tweaks */
 @media (max-width: 991px) {
-	.wd-product-gallery-col, .wd-product-summary-col { padding:0; }
-	.wd-product-gallery-col, .wd-product-summary-col { width:100%; }
-	.woocommerce div.product form.cart { flex-direction:row; flex-wrap:wrap; }
+
+  .wd-product-gallery-col,
+  .wd-product-summary-col {
+    padding: 0;
+  }
+
+  .wd-product-gallery-col,
+  .wd-product-summary-col {
+    width: 100%;
+  }
+
+  .woocommerce div.product form.cart {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /* Rating force */
@@ -164,169 +264,169 @@ License:    GNU General Public License v2 or later
 .my-rating-force .star-rating,
 .my-rating-force .star-rating::before,
 .my-rating-force .star-rating span::before {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
 }
 
 .my-rating-force {
-    margin: 8px 0 14px;
-    display: flex;
-    align-items: center;
+  margin: 8px 0 14px;
+  display: flex;
+  align-items: center;
 }
 
 .my-rating-force .my-rating-inner {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .my-rating-force .count {
-    font-size: 14px;
-    color: #333;
+  font-size: 14px;
+  color: #333;
 }
 
 .my-rating-force .no-reviews {
-    color: #777;
-    font-style: italic;
+  color: #777;
+  font-style: italic;
 }
 
 p.stock {
-    display: none
+  display: none
 }
 
 .woocommerce .quantity {
-    background: #29b0c2;
-    border-radius: 8px;
-    display: unset!important;
+  background: #29b0c2;
+  border-radius: 8px;
+  display: unset !important;
 }
 
 .woocommerce .quantity input.qty {
-    font-size: 25px;
-    border: none !important;
-    color: #fff !important;
-    width: 30px !important;
-    font-weight: 900;
+  font-size: 25px;
+  border: none !important;
+  color: #fff !important;
+  width: 30px !important;
+  font-weight: 900;
 }
 
 div.quantity input[type="button"] {
-    border: none!important;
-    font-size: 25px!important;
+  border: none !important;
+  font-size: 25px !important;
 }
 
 div.quantity input[type="button"] {
-    font-size: 25px!important;
-    color: #fff!important;
+  font-size: 25px !important;
+  color: #fff !important;
 }
 
 .woocommerce .single_add_to_cart_button {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 div.product-excerpt {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-.product-sku > strong {
-    color: #000;
-    font-weight: 700;
+.product-sku>strong {
+  color: #000;
+  font-weight: 700;
 }
 
 .woocommerce-tabs {
-    border-top: none;
-    padding-top: 0px;
+  border-top: none;
+  padding-top: 0px;
 }
 
-div.wd-additional-info-below-sku > div > div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
-    --content-align: left!important;
-    --text-align: left!important;
-    text-align: left!important;
+div.wd-additional-info-below-sku>div>div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
+  --content-align: left !important;
+  --text-align: left !important;
+  text-align: left !important;
 }
 
 .wd-nav.wd-style-underline-reverse>li>a {
-    padding-top: 5px!important;
+  padding-top: 5px !important;
 }
 
 .wd-nav.wd-style-underline-reverse>li>a>.nav-link-text:after {
-    top: -15px!important;
-    height: 5px;
-    color: var(--secondary-color);
+  top: -15px !important;
+  height: 5px;
+  color: var(--secondary-color);
 }
 
 .wd-nav[class*="wd-style-underline"] .nav-link-text {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
-.wd-nav[class*="wd-style-underline"]>li:is(:hover,.current-menu-item,.wd-active,.active)>a .nav-link-text:after {
-    width: 30%!important;
+.wd-nav[class*="wd-style-underline"]>li:is(:hover, .current-menu-item, .wd-active, .active)>a .nav-link-text:after {
+  width: 30% !important;
 }
 
 /* MENU */
-body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
+body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
   background-color: var(--secondary-color);
 }
 
-#menu-categorias > li > a > span {
-  color: var(--white-color)!important;
+#menu-categorias>li>a>span {
+  color: var(--white-color) !important;
 }
 
 @media (min-width: 1025px) {
-    .whb-header-bottom-inner {
-        height: 50px!important;
-        max-height: 81px;
-    }
+  .whb-header-bottom-inner {
+    height: 50px !important;
+    max-height: 81px;
+  }
 }
 
 .wd-nav {
-  --nav-gap: 19px!important;
+  --nav-gap: 19px !important;
 }
 
 /* FORCE REMOVE anything added after <a> (prevent duplicate chevrons) */
-.wd-nav > li.menu-item-has-children > a:after {
-    content: none !important;
-    background: none !important;
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important;
+.wd-nav>li.menu-item-has-children>a:after {
+  content: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
 /* the span after <a> (our replacement chevron) */
-.wd-nav > li.menu-item-has-children > a > .nav-link-text:after {
-    content: "" !important;
-    font-family: none !important;
+.wd-nav>li.menu-item-has-children>a>.nav-link-text:after {
+  content: "" !important;
+  font-family: none !important;
 
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7ZmlsbDogI2ZmZjt9CiAgICAgIC5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO30KICAgICAgLmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDouNzlweDt9CiAgICAgIC5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwcGF0aCk7fQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPjxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjEyLjciIGhlaWdodD0iMTIuNyIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+PGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI2LjM1IiBjeT0iNi4zNSIgcj0iNS45NSIvPjwvZz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMy4wNyA1LjczIDMuMDcgNi45NyA1LjczIDYuOTcgNS43MyA5LjYzIDYuOTcgOS42MyA2Ljk3IDYuOTcgOS42MyA2Ljk3IDkuNjMgNS43MyA2Ljk3IDUuNzMgNi45NyAzLjA3IDUuNzMgMy4wNyA1LjczIDUuNzMgMy4wNyA1LjczIi8+PC9zdmc+");
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmlld0JveD0iMCAwIDEyLjcgMTIuNyI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7ZmlsbDogI2ZmZjt9CiAgICAgIC5jbHMtMiwuY2xzLTN7ZmlsbDpub25lO30KICAgICAgLmNscy0ze3N0cm9rZTojZmZmO3N0cm9rZS13aWR0aDouNzlweDt9CiAgICAgIC5jbHMtNHtjbGlwLXBhdGg6dXJsKCNjbGlwcGF0aCk7fQogICAgPC9zdHlsZT4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcHBhdGgiPjxyZWN0IGNsYXNzPSJjbHMtMiIgd2lkdGg9IjEyLjciIGhlaWdodD0iMTIuNyIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxnIGNsYXNzPSJjbHMtNCI+PGNpcmNsZSBjbGFzcz0iY2xzLTMiIGN4PSI2LjM1IiBjeT0iNi4zNSIgcj0iNS45NSIvPjwvZz4KICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMy4wNyA1LjczIDMuMDcgNi45NyA1LjczIDYuOTcgNS43MyA5LjYzIDYuOTcgOS42MyA2Ljk3IDYuOTcgOS42MyA2Ljk3IDkuNjMgNS43MyA2Ljk3IDUuNzMgNi45NyAzLjA3IDUuNzMgMy4wNyA1LjczIDUuNzMgMy4wNyA1LjczIi8+PC9zdmc+");
 
-    background-size: 14px;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
 
-    width: 15px;
-    height: 15px;
+  width: 15px;
+  height: 15px;
 
-    display: inline-block;
-    margin-left: 4px;
-    transform: translateY(2px);
+  display: inline-block;
+  margin-left: 4px;
+  transform: translateY(2px);
 }
 
 /* Dropdown adjustments */
 .whb-header-bottom .wd-dropdown {
-    margin-top: 6.5px !important;
+  margin-top: 6.5px !important;
 }
 
 .wd-sub-menu li>a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-top: 2px!important;
-    padding-bottom: 2px!important;
-    color: var(--sub-menu-color);
-    font-size: 14px;
-    line-height: 1.3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  color: var(--sub-menu-color);
+  font-size: 14px;
+  line-height: 1.3;
 }
 
-.wd-sub-menu > li > a > .nav-link-text {
-    color: var(--primary-color) !important;
+.wd-sub-menu>li>a>.nav-link-text {
+  color: var(--primary-color) !important;
 }
 
 .wd-dropdown-menu.wd-dropdown {
@@ -336,7 +436,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* owl dots reset */
 .owl-dots {
-  margin-top: none!important;
+  margin-top: none !important;
 }
 
 /* =========================================================
@@ -346,29 +446,30 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* container das bolinhas */
 .wd-carousel .owl-dots,
 .owl-carousel .owl-dots {
-    display: flex !important;
-    gap: 0 !important;
-    justify-content: center;
-    align-items: center;
+  display: flex !important;
+  gap: 0 !important;
+  justify-content: center;
+  align-items: center;
 }
 
 /* estilo das bolinhas transformadas em "pills" */
 .wd-carousel .owl-dot span,
 .owl-carousel .owl-dot span {
-    width: 35px !important;
-    height: 6px !important;
-    border-radius: 10px !important;
-    background-color: #d9d9d9 !important; /* cinza claro */
-    transition: all 0.25s ease-in-out;
-    display: block;
-    border: none!important;
+  width: 35px !important;
+  height: 6px !important;
+  border-radius: 10px !important;
+  background-color: #d9d9d9 !important;
+  /* cinza claro */
+  transition: all 0.25s ease-in-out;
+  display: block;
+  border: none !important;
 }
 
 /* quando ativo */
 .wd-carousel .owl-dot.active span,
 .owl-carousel .owl-dot.active span {
-    background-color: var(--secondary-color) !important;
-    width: 35px !important;
+  background-color: var(--secondary-color) !important;
+  width: 35px !important;
 }
 
 /* =========================================================
@@ -380,23 +481,27 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 .wd-title-style-overlined .title {
-    position: relative;
-    padding-top: 20px;
-    margin-top: 0 !important;
-    border-top: none !important;
+  position: relative;
+  padding-top: 20px;
+  margin-top: 0 !important;
+  border-top: none !important;
 }
 
 .wd-title-style-overlined .title::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%); /* centraliza perfeitamente */
-    
-    width: 400px; /* ajuste o tamanho da linha */
-    height: 3px; /* espessura */
-    background-color: var(--el-title-color);
-    border-radius: 2px; /* opcional */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  /* centraliza perfeitamente */
+
+  width: 400px;
+  /* ajuste o tamanho da linha */
+  height: 3px;
+  /* espessura */
+  background-color: var(--el-title-color);
+  border-radius: 2px;
+  /* opcional */
 }
 
 /* =========================================================
@@ -404,11 +509,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
    Scoped styles: todos os estilos de "card" do related ficam aqui
    ========================================================= */
 
-.wd-related-products .wd-related-grid { 
-  display: flex; 
-  flex-wrap: wrap; 
-  gap: 18px; 
-  margin: 0 -10px; 
+.wd-related-products .wd-related-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0 -10px;
 }
 
 /* Each product card (scoped) */
@@ -428,7 +533,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   background: #ffffff;
   border-radius: 10px;
   padding: 18px;
-  border: 1px solid rgba(16,24,60,0.06);
+  border: 1px solid rgba(16, 24, 60, 0.06);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -437,10 +542,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Top: image area (scoped) */
 .wd-products-element .elements-grid .product-element-top,
-.wd-related-products .wd-related-grid .product-element-top { 
-  text-align: center; 
-  padding-bottom: 6px; 
+.wd-related-products .wd-related-grid .product-element-top {
+  text-align: center;
+  padding-bottom: 6px;
 }
+
 .wd-products-element .elements-grid .product-element-top .product-image-link img,
 .wd-related-products .wd-related-grid .product-element-top .product-image-link img {
   max-width: 100%;
@@ -454,13 +560,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-products-element .elements-grid .wd-entities-title,
 .pagination-pagination .product-grid-item .wd-entities-title,
 .owl-carousel .owl-item .wd-entities-title,
-.wd-related-products .wd-related-grid .wd-entities-title { 
-  font-size: 14px; 
-  margin: 0 0 10px; 
+.wd-related-products .wd-related-grid .wd-entities-title {
+  font-size: 14px;
+  margin: 0 0 10px;
   line-height: 1.2;
   color: #222;
   text-align: left;
 }
+
 .product-carrousel .owl-item .owl-carousel-item .wd-entities-title a,
 .wd-products-element .elements-grid .wd-entities-title a,
 .pagination-pagination .product-grid-item .wd-entities-title a,
@@ -496,7 +603,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom hr,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .sep-line {
   border: none;
-  border-top: 1px solid rgba(16,24,60,0.08);
+  border-top: 1px solid rgba(16, 24, 60, 0.08);
   margin: 10px 0;
 }
 
@@ -555,19 +662,20 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   flex: 0 0 auto;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
-.wd-products-element .elements-grid .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
-.pagination-pagination .product-grid-item > div > div.product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
+.pagination-pagination .product-grid-item>div>div.product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
 .wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
-  background: #f5c63b; /* amarelo */
-  color: var(--primary-color)!important;
+  background: #f5c63b;
+  /* amarelo */
+  color: var(--primary-color) !important;
   padding: 8px 12px;
   border-radius: 10px;
   font-weight: 700;
   display: inline-block;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.06) inset;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06) inset;
 }
 
 /* Add to cart / CTA button (blue) (scoped) */
@@ -583,8 +691,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .button,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn a.button,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace .button,
-.owl-carousel .owl-item .product-wrapper .product-element-bottom .add_to_cart_button
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
+.owl-carousel .owl-item .product-wrapper .product-element-bottom .add_to_cart_button .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .add_to_cart_button,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .button,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn a.button,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace .button {
@@ -602,84 +709,90 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn { 
-  justify-content: space-between; 
-  width: 100%; 
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn {
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Card footer spacing (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom,
-.wd-products-element .elements-grid .product-wrapper .product-element-bottom ,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
-  padding-top: 8px; 
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom {
+  padding-top: 8px;
 }
 
 /* Make rating stars slightly larger (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating { 
-  font-size: 18px; 
-  line-height: 1; 
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .star-rating {
+  font-size: 18px;
+  line-height: 1;
 }
 
 /* Ensure image area and bottom align nicely (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-top,
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom,
-.wd-products-element .elements-grid .product-wrapper .product-element-top, 
+.wd-products-element .elements-grid .product-wrapper .product-element-top,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-top,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-top,
-.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom { 
-  flex: 0 0 auto; 
-  margin-bottom: 0!important;
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom {
+  flex: 0 0 auto;
+  margin-bottom: 0 !important;
 }
 
 /* Responsive: 2 columns on tablet, 1 on mobile (scoped) */
 @media (max-width: 991px) {
+
   .wd-products-element .elements-grid .product,
   .wd-related-products .wd-related-grid .product,
-  .wd-related-products .wd-related-grid .product-grid-item.product { 
-    width: calc(50% - 20px); 
+  .wd-related-products .wd-related-grid .product-grid-item.product {
+    width: calc(50% - 20px);
   }
 }
+
 @media (max-width: 560px) {
+
   .wd-related-products .wd-related-grid .product,
-  .wd-related-products .wd-related-grid .product-grid-item.product { 
-    width: 100%; 
-    padding: 0 8px; 
+  .wd-related-products .wd-related-grid .product-grid-item.product {
+    width: 100%;
+    padding: 0 8px;
   }
 }
 
 /* Força tamanho coluna alternativa (se necessário) */
 @media (min-width: 1025px) {
-    .col-lg-4 {
-        flex: 0 0 33.333333%;
-        max-width: 23.333333%!important;
-    }
+  .col-lg-4 {
+    flex: 0 0 33.333333%;
+    max-width: 23.333333% !important;
+  }
 }
 
 /* Remove border das imgs (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .hover-img img,
-.wd-related-products .product-grid-item .hover-img img, 
+.wd-related-products .product-grid-item .hover-img img,
 .wd-related-products .product-grid-item .product-image-link img {
-  border: none!important;
+  border: none !important;
 }
 
 /* Container que ocupa a largura total do card (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row,
-.wd-products-element .elements-grid .product-cta .price-add-row, 
+.wd-products-element .elements-grid .product-cta .price-add-row,
 .pagination-pagination .product-grid-item .product-cta .price-add-row,
 .owl-carousel .owl-item .product-cta .price-add-row,
 .wd-related-products .product-cta .price-add-row {
   display: flex;
   width: 100%;
-  gap: 14px;              /* espaço entre preço e botão — ajusta à vontade */
-  align-items: stretch;   /* garante mesma altura */
+  gap: 14px;
+  /* espaço entre preço e botão — ajusta à vontade */
+  align-items: stretch;
+  /* garante mesma altura */
   justify-content: space-between;
-  padding: 0 0 18px;   /* mantém espaço inferior como no exemplo */
+  padding: 0 0 18px;
+  /* mantém espaço inferior como no exemplo */
   box-sizing: border-box;
 }
 
@@ -735,13 +848,15 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-related-products .product-cta .button-col .add_to_cart_button {
   width: 100%;
   height: 100%;
-  max-height: 56px;            /* controla altura máxima — ajusta se quiseres */
+  max-height: 56px;
+  /* controla altura máxima — ajusta se quiseres */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px 18px;
   border-radius: 12px;
-  background: #07143d;         /* cor escura do botão */
+  background: #07143d;
+  /* cor escura do botão */
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -760,6 +875,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Responsividade: em telas pequenas empilha verticalmente (scoped) */
 @media (max-width: 520px) {
+
   .product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row,
   .wd-products-element .elements-grid .product-cta .price-add-row,
   .pagination-pagination .product-grid-item .product-cta .price-add-row,
@@ -768,11 +884,13 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
     flex-direction: column;
     gap: 10px;
   }
-  .product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button
-  .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button,
+
+  .product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button,
   .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
   .owl-carousel .owl-item .button-col .add_to_cart_button,
-  .wd-related-products .product-cta .button-col .add_to_cart_button { max-height: none; }
+  .wd-related-products .product-cta .button-col .add_to_cart_button {
+    max-height: none;
+  }
 }
 
 /* Wrapper com as bordas (scoped) */
@@ -796,8 +914,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* Garante que as estrelas não fiquem grudadas (scoped) */
-.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .product-rating .star-rating
-.wd-products-element .elements-grid .product-wrapper .product-element-bottom .product-rating .star-rating,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .product-rating .star-rating .wd-products-element .elements-grid .product-wrapper .product-element-bottom .product-rating .star-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-rating .star-rating,
 .wd-related-products .product-rating .star-rating {
   margin: 0 auto;
@@ -816,8 +933,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .star-rating,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .woocommerce-product-rating,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .star-rating,
-.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating, 
-.wd-related-products .product-wrapper .product-element-bottom .star-rating, 
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .woocommerce-product-rating,
+.wd-related-products .product-wrapper .product-element-bottom .star-rating,
 .wd-related-products .product-wrapper .product-element-bottom .woocommerce-product-rating {
   margin: 0;
 }
@@ -833,7 +950,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* Pequenos ajustes finais */
 .wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
-    width: 30%!important;
+  width: 30% !important;
 }
 
 .product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button,
@@ -841,36 +958,41 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 .pagination-pagination .product-grid-item .product-cta .button-col .add_to_cart_button,
 .owl-carousel .owl-item .button-col .add_to_cart_button,
 .wd-related-products .product-cta .button-col .add_to_cart_button {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
 
-    /* Mantém mesmo alinhamento interno */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+  /* Mantém mesmo alinhamento interno */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-    height: auto !important; /* garante que não force altura exagerada */
-    min-height: 0 !important;
+  height: auto !important;
+  /* garante que não force altura exagerada */
+  min-height: 0 !important;
 }
 
 /* Restaurar underline como before/after controlável */
 /* garante que .nav-link-text é posicionável */
-.wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text {
-  position: relative; /* necessário para o ::after posicionado */
+.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text {
+  position: relative;
+  /* necessário para o ::after posicionado */
   display: inline-block;
 }
 
 /* pseudo-elemento (linha) — escondido por padrão */
-.wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
+.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after {
   content: "";
   position: absolute;
-  top: -15px;                     /* afasta a linha do texto — ajusta se precisa */
+  top: -15px;
+  /* afasta a linha do texto — ajusta se precisa */
   left: 15%;
   transform: translateX(-50%);
-  width: 0;                       /* começa fechado */
-  height: 3px;                    /* espessura da linha */
+  width: 0;
+  /* começa fechado */
+  height: 3px;
+  /* espessura da linha */
   background-color: var(--secondary-color);
   border-radius: 2px;
   opacity: 0;
@@ -880,67 +1002,79 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 }
 
 /* mostrar linha no hover */
-.wd-nav[class*="wd-style-underline"] > li:hover > a > .nav-link-text::after {
-  width: 30%;                     /* tamanho em hover — ajusta aqui */
+.wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
+  width: 30%;
+  /* tamanho em hover — ajusta aqui */
   opacity: 1;
 }
 
 /* mostrar linha no item ativo / atual */
-.wd-nav[class*="wd-style-underline"] > li.wd-active > a > .nav-link-text::after,
-.wd-nav[class*="wd-style-underline"] > li.current-menu-item > a > .nav-link-text::after,
-.wd-nav[class*="wd-style-underline"] > li.active > a > .nav-link-text::after {
-  width: 30%;                     /* tamanho do underline no estado ativo */
+.wd-nav[class*="wd-style-underline"]>li.wd-active>a>.nav-link-text::after,
+.wd-nav[class*="wd-style-underline"]>li.current-menu-item>a>.nav-link-text::after,
+.wd-nav[class*="wd-style-underline"]>li.active>a>.nav-link-text::after {
+  width: 30%;
+  /* tamanho do underline no estado ativo */
   opacity: 1;
 }
 
 /* opcional: tornar o hover da linha mais curto que o active (ex.: 22% hover, 30% active) */
-.wd-nav[class*="wd-style-underline"] > li:hover > a > .nav-link-text::after { width: 22%; }
-.wd-nav[class*="wd-style-underline"] > li.wd-active > a > .nav-link-text::after { width: 30%; }
+.wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
+  width: 22%;
+}
+
+.wd-nav[class*="wd-style-underline"]>li.wd-active>a>.nav-link-text::after {
+  width: 30%;
+}
 
 /* força remover qualquer regra anterior que adicionava ::after ao <a>:after em vez de ao .nav-link-text */
-.wd-nav > li.menu-item-has-children > a:after { content: none !important; display: none !important; }
+.wd-nav>li.menu-item-has-children>a:after {
+  content: none !important;
+  display: none !important;
+}
 
 /* Caso o tema tenha colocado width/height fixos noutros seletores, usa maior especificidade */
-.nav > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after,
-.menu > .wd-nav[class*="wd-style-underline"] > li > a > .nav-link-text::after {
+.nav>.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after,
+.menu>.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after {
   /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
 }
 
 /* MY ACCOUNT */
 
 .wd-my-account-links .wd-account-link {
-	margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .wd-account-anchor {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	color: #333; /* cor padrão do ícone/label (usa currentColor) */
-	text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  /* cor padrão do ícone/label (usa currentColor) */
+  text-decoration: none;
 }
 
 .wd-account-icon svg {
-	width: 22px;
-	height: 22px;
-	display: block;
-	vertical-align: middle;
-	/* fills do SVG foram substituídos para usar currentColor */
-	fill: currentColor;
-	transition: color .15s ease, transform .12s ease;
+  width: 22px;
+  height: 22px;
+  display: block;
+  vertical-align: middle;
+  /* fills do SVG foram substituídos para usar currentColor */
+  fill: currentColor;
+  transition: color .15s ease, transform .12s ease;
 }
 
 .wd-account-label {
-	font-size: 14px;
+  font-size: 14px;
 }
 
 .wd-account-anchor:hover,
 .wd-account-anchor:focus {
-	color: #f7a430; /* cor no hover — ajuste para a sua cor */
+  color: #f7a430;
+  /* cor no hover — ajuste para a sua cor */
 }
 
 .wd-account-anchor:hover .wd-account-icon svg {
-	transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 /* Container / layout */
@@ -949,7 +1083,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   align-items: center;
   gap: 8px;
   width: 100%;
-  max-width: 760px; /* ajuste: controla largura do searchbar */
+  max-width: 760px;
+  /* ajuste: controla largura do searchbar */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -957,24 +1092,29 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* campo de texto */
 .wd-header-search-form .searchform .s {
   flex: 1 1 auto;
-  border: 3px solid #49c7c9;        /* cor da borda principal (ajusta se quiser) */
-  border-right: none;               /* sem borda entre input e botão */
+  border: 3px solid #49c7c9;
+  /* cor da borda principal (ajusta se quiser) */
+  border-right: none;
+  /* sem borda entre input e botão */
   background: none;
   font-size: 15px;
   line-height: 1;
-  border-radius: 42px;              /* arredondado grande */
+  border-radius: 42px;
+  /* arredondado grande */
   outline: none;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
   -webkit-appearance: none;
   appearance: none;
   transition: box-shadow .12s ease, border-color .12s ease;
-  padding: 6px;                    /* espaço entre borda e conteúdo */
-  border: 4px solid #49c7c9;       /* borda contínua */      
+  padding: 6px;
+  /* espaço entre borda e conteúdo */
+  border: 4px solid #49c7c9;
+  /* borda contínua */
 }
 
 /* remove sombra e foco padrão; aplica borda de foco */
 .wd-header-search-form .searchform .s:focus {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   border-color: #2bb2b4;
 }
 
@@ -984,12 +1124,14 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
+  width: 25px;
+  height: 25x;
+  min-width: 25px;
   border-radius: 50%;
-  border: transparent;       /* mesma cor da borda do input */
-  background: transparent; /* leve gradiente */
+  border: transparent;
+  /* mesma cor da borda do input */
+  background: transparent;
+  /* leve gradiente */
   box-shadow: none;
   padding: 0;
   cursor: pointer;
@@ -1028,23 +1170,45 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* responsivo: reduz largura e botão em telas pequenas */
 @media (max-width: 900px) {
-  .wd-header-search-form .searchform { max-width: 520px; }
-  .wd-header-search-form .searchform .searchsubmit { width:46px; height:46px; }
-  .wd-header-search-form .searchform .s { padding:12px 14px; }
+  .wd-header-search-form .searchform {
+    max-width: 520px;
+  }
+
+  .wd-header-search-form .searchform .searchsubmit {
+    width: 46px;
+    height: 46px;
+  }
+
+  .wd-header-search-form .searchform .s {
+    padding: 12px 14px;
+  }
 }
 
 @media (max-width: 480px) {
-  .wd-header-search-form .searchform { max-width: 100%; padding: 0 12px; }
-  .wd-header-search-form .searchform .searchsubmit { width:42px; height:42px; }
-  .wd-header-search-form .searchform .s { padding:10px 12px; font-size:14px; }
+  .wd-header-search-form .searchform {
+    max-width: 100%;
+    padding: 0 12px;
+  }
+
+  .wd-header-search-form .searchform .searchsubmit {
+    width: 42px;
+    height: 42px;
+  }
+
+  .wd-header-search-form .searchform .s {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
 }
 
 /* ---- Substitui o ícone por SVG em base64, usando currentColor ---- */
 
 /* garante que o botão possa controlar a cor do SVG via color */
 .searchform .searchsubmit {
-  position: relative; /* mantém o posicionamento do pseudo-elemento */
-  color: #ffffff;     /* cor padrão do ícone (ajusta se quiser) */
+  position: relative;
+  /* mantém o posicionamento do pseudo-elemento */
+  color: #ffffff;
+  /* cor padrão do ícone (ajusta se quiser) */
 }
 
 /* remove o spinner antes se existir */
@@ -1054,7 +1218,7 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 
 /* :after com o seu SVG (base64) */
 .searchform .searchsubmit:after {
-  content: ""!important;
+  content: "" !important;
   display: inline-block;
   width: calc(var(--wd-form-height) / 2.3);
   height: calc(var(--wd-form-height) / 2.3);
@@ -1073,19 +1237,20 @@ body > div.website-wrapper > header > div > div.whb-row.whb-header-bottom.whb-st
 /* hover: altera a cor do botão (e do SVG, já que usa currentColor) */
 .searchform .searchsubmit:hover,
 .searchform .searchsubmit:focus {
-  color: #f7a430; /* cor no hover — ajusta para a que quiser */
+  color: #f7a430;
+  /* cor no hover — ajusta para a que quiser */
   transform: translateY(-2px);
 }
 
 /* caso seu botão use outline/focus visual */
 .searchform .searchsubmit:focus {
   outline: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle > div > div > div.whb-column.whb-col-center.whb-visible-lg > div.wd-search-form.wd-header-search-form.wd-display-form > form > button {
-  background-color: transparent!important;
-  border: transparent!important;
+body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-col-center.whb-visible-lg>div.wd-search-form.wd-header-search-form.wd-display-form>form>button {
+  background-color: transparent !important;
+  border: transparent !important;
 }
 
 .searchform[class*="wd-style-with-bg"] .searchsubmit:hover {
@@ -1099,9 +1264,11 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   gap: 10px;
   max-width: 760px;
   margin: 0 auto;
-  border: 1px solid #49c7c9;       /* borda contínua */
-  border-radius: 42px;             /* arco contínuo */
-  background:none;
+  border: 1px solid #49c7c9;
+  /* borda contínua */
+  border-radius: 42px;
+  /* arco contínuo */
+  background: none;
   box-sizing: border-box;
   position: relative;
 }
@@ -1122,43 +1289,53 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   height: 56px;
   min-width: 56px;
   border-radius: 50%;
-  border: none;               /* important: retirar border pra não quebrar o arco */
-  background: none;           /* cor do botão (interno) */
+  border: none;
+  /* important: retirar border pra não quebrar o arco */
+  background: none;
+  /* cor do botão (interno) */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06); /* opcional */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  /* opcional */
   margin-right: 0;
-  z-index: 2;                 /* garante que esteja acima da borda do wrapper */
+  z-index: 2;
+  /* garante que esteja acima da borda do wrapper */
   position: relative;
 }
 
 /* cria um ring teal atrás do botão alinhado com a borda do wrapper —
    isso dá o "bico" arredondado contínuo ao lado direito */
-.wd-header-search-form .searchform .searchsubmit::before{
+.wd-header-search-form .searchform .searchsubmit::before {
   content: "";
   position: absolute;
-  inset: -4px;               /* expande atrás do botão para cobrir borda do wrapper */
-  right: -4px;               /* ajusta para encaixar no canto direito */
-  width: calc(100% + 8px);   /* garante cobertura da borda */
+  inset: -4px;
+  /* expande atrás do botão para cobrir borda do wrapper */
+  right: -4px;
+  /* ajusta para encaixar no canto direito */
+  width: calc(100% + 8px);
+  /* garante cobertura da borda */
   height: calc(100% + 8px);
   border-radius: 50%;
   background: transparent;
-  box-shadow: 0 0 0 4px #49c7c9; /* ring que casa com a borda do wrapper */
-  z-index: -1;               /* por trás do botão, na mesma camada do wrapper */
+  box-shadow: 0 0 0 4px #49c7c9;
+  /* ring que casa com a borda do wrapper */
+  z-index: -1;
+  /* por trás do botão, na mesma camada do wrapper */
 }
 
 /* ícone dentro do :after (se usar data-uri) — ajusta cor via color */
 .wd-header-search-form .searchform .searchsubmit:after {
-  display:block;
-  width:18px;
-  height:18px;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:contain;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'><path d='M23.69 23.69l5.88 5.88M27.63 14.19c0 7.42-6.02 13.44-13.44 13.44S0.75 21.61 0.75 14.19 6.77 0.75 14.19 0.75s13.44 6.02 13.44 13.44Z' fill='none' stroke='%2329b0c2' stroke-width='1.5'/></svg>");
-  color: #29b0c2; /* cor do ícone */
+  color: #29b0c2;
+  /* cor do ícone */
 }
 
 /* Place this at the very end of your child style.css */
@@ -1171,7 +1348,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
   background-color: transparent !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
-  border: none !important;            /* se o wrapper já tem borda, o input não precisa */
+  border: none !important;
+  /* se o wrapper já tem borda, o input não precisa */
   outline: none !important;
 }
 
@@ -1201,8 +1379,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 
 /* 5) Se ainda existir CARD branco dentro do botão (algumas regras usam > span),
    força também esses elementos */
-.wd-header-search-form .searchform .searchsubmit > span,
-.wd-header-search-form .searchform .searchsubmit > i,
+.wd-header-search-form .searchform .searchsubmit>span,
+.wd-header-search-form .searchform .searchsubmit>i,
 .wd-header-search-form .searchform .searchsubmit .wd-tools-icon {
   background: transparent !important;
   box-shadow: none !important;
@@ -1219,7 +1397,8 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 /* mantém o fundo transparente, mas força a cor do ícone via color */
 .wd-header-search-form .searchform .searchsubmit {
   background: transparent !important;
-  color: #29b0c2 !important; /* stroke do SVG currentColor */
+  color: #29b0c2 !important;
+  /* stroke do SVG currentColor */
 }
 
 /* hover troca a cor se quiser */
@@ -1233,31 +1412,31 @@ body > div.website-wrapper > header > div > div.whb-row.whb-general-header.whb-s
 
 /* wrapper que agrupa brand name + title-row */
 .my-brand-wrapper {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 }
 
 /* nome da marca acima */
 .my-brand-name {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark-grey);
-    margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  margin-bottom: 0;
 }
 
 /* linha com title + logo ao lado */
 .my-title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 /* título ajustado para não quebrar o layout */
 .my-title-row .product-title {
-    flex: 1 1 auto;
-    margin: 0;
-    font-size: 1.3rem;
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 1.3rem;
 }
 
 div.product-excerpt {
@@ -1266,32 +1445,33 @@ div.product-excerpt {
 
 /* logo da brand */
 .my-brand-logo {
-    flex: 0 0 auto;
-    width: 100px;
-    height: 100px;
-    border-radius: 6px;
-    background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  flex: 0 0 auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .my-brand-logo img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* responsivo mobile */
 @media (max-width: 768px) {
-    .my-title-row {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-    .my-brand-logo {
-        width: 65px;
-        height: 65px;
-    }
+  .my-title-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .my-brand-logo {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .pagination-pagination {
@@ -1301,7 +1481,7 @@ div.product-excerpt {
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .product-brand,
 .pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .product-brand,
 .wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .product-brand {
-  margin-bottom: 0!important;
+  margin-bottom: 0 !important;
   text-align: left;
   text-transform: uppercase;
   font-weight: 900;
@@ -1316,7 +1496,8 @@ div.product-excerpt {
 /* Título do widget */
 .sidebar-container .widget-title {
   font-family: "Gotham Black", Arial, sans-serif;
-  color: #00a8c6; /* troca pela cor que você usa */
+  color: #00a8c6;
+  /* troca pela cor que você usa */
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1332,14 +1513,15 @@ div.product-excerpt {
 }
 
 /* Item principal */
-.sidebar-container .product-categories > li {
+.sidebar-container .product-categories>li {
   padding: 10px 0;
   border-bottom: none;
 }
 
 /* Link das categorias */
 .sidebar-container .product-categories a {
-  color: #0b2b55; /* texto azul escuro */
+  color: #0b2b55;
+  /* texto azul escuro */
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
@@ -1351,7 +1533,8 @@ div.product-excerpt {
 /* Sub-categorias */
 .sidebar-container .product-categories ul.children {
   margin: 8px 0 0 16px;
-  display: none; /* escondido até abrir */
+  display: none;
+  /* escondido até abrir */
 }
 
 .sidebar-container .product-categories ul.children li a {
@@ -1382,17 +1565,17 @@ div.product-excerpt {
 }
 
 /* Quando estiver expandido adiciona classe list-shown - mostramos filhos */
-.product-categories .list-shown > ul.children,
-.product-categories li.toggle-open > ul.children {
+.product-categories .list-shown>ul.children,
+.product-categories li.toggle-open>ul.children {
   display: block;
 }
 
 /* Linha pontilhada separadora */
-.sidebar-container .widget-area > .wd-widget + .wd-widget,
-.sidebar-container .wd-widget { 
+.sidebar-container .widget-area>.wd-widget+.wd-widget,
+.sidebar-container .wd-widget {
   padding-bottom: 18px;
   margin-bottom: 18px;
-  border-bottom: 1px dotted rgba(0,0,0,0.08);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.08);
 }
 
 /* Filtro por preço - botão */
@@ -1425,7 +1608,7 @@ div.product-excerpt {
   gap: 10px;
   align-items: center;
   padding: 12px 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.06);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
 }
 
 .sidebar-container .widget-product-img img {
@@ -1433,7 +1616,7 @@ div.product-excerpt {
   height: 48px;
   object-fit: cover;
   border-radius: 6px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .sidebar-container .widget-product-info .wd-entities-title {
@@ -1462,7 +1645,7 @@ div.product-excerpt {
 }
 
 /* Flex para colocar o toggle antes do texto */
-.widget_product_categories .product-categories > li {
+.widget_product_categories .product-categories>li {
   display: flex;
   align-items: center;
 }
@@ -1482,25 +1665,28 @@ div.product-excerpt {
   font-weight: 700;
 }
 
-.widget_product_categories .product-categories > li > a {
+.widget_product_categories .product-categories>li>a {
   order: 1;
 }
 
 /* Deixa o item em linha */
-.widget_product_categories .product-categories > li {
+.widget_product_categories .product-categories>li {
   display: flex;
   align-items: center;
 }
 
 /* Joga o toggle para antes do link */
-.widget_product_categories .product-categories > li > .wd-cats-toggle {
-  order: 0;              /* aparece primeiro */
-  margin-right: 10px;    /* espaçamento */
+.widget_product_categories .product-categories>li>.wd-cats-toggle {
+  order: 0;
+  /* aparece primeiro */
+  margin-right: 10px;
+  /* espaçamento */
 }
 
 /* Deixa o texto depois */
-.widget_product_categories .product-categories > li > a {
-  order: 1;              /* aparece depois */
+.widget_product_categories .product-categories>li>a {
+  order: 1;
+  /* aparece depois */
 }
 
 /* Ajuste visual do toggle */
@@ -1518,7 +1704,7 @@ div.product-excerpt {
 }
 
 /* 1) Faz o <li> um flex container — mantém estrutura DOM inalterada */
-.widget_product_categories .product-categories > li {
+.widget_product_categories .product-categories>li {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1526,8 +1712,9 @@ div.product-excerpt {
 }
 
 /* 2) Força o toggle (que no DOM vem depois) a aparecer antes do link */
-.widget_product_categories .product-categories > li > .wd-cats-toggle {
-  order: 0;              /* aparece visualmente primeiro */
+.widget_product_categories .product-categories>li>.wd-cats-toggle {
+  order: 0;
+  /* aparece visualmente primeiro */
   margin-right: 8px;
   width: 26px;
   height: 26px;
@@ -1536,48 +1723,53 @@ div.product-excerpt {
   justify-content: center;
   cursor: pointer;
   border-radius: 50%;
-  background: #07224a;   /* ajuste a cor se quiser */
+  background: #07224a;
+  /* ajuste a cor se quiser */
   color: #fff;
   font-weight: 700;
 }
 
 /* 3) O link da categoria aparece depois */
-.widget_product_categories .product-categories > li > a {
+.widget_product_categories .product-categories>li>a {
   order: 1;
-  display: inline-block; /* garante comportamento previsível */
+  display: inline-block;
+  /* garante comportamento previsível */
 }
 
 /* 4) Garante que a UL.children continue abaixo (ocupa 100% de largura)
       Em caso do <ul> aparecer inline por conta do flex, força o comportamento em bloco */
-.widget_product_categories .product-categories > li > .children {
+.widget_product_categories .product-categories>li>.children {
   order: 2;
   width: 100%;
   margin-top: 8px;
 }
 
 /* 5) Quando a sublista está escondida, mantém o fluxo (evita quebra de layout) */
-.widget_product_categories .product-categories > li > .children:not(.list-shown) {
+.widget_product_categories .product-categories>li>.children:not(.list-shown) {
   display: none;
 }
 
 /* 6) Estilização mínima do toggle para ficar bonito */
-.widget_product_categories .product-categories > li > .wd-cats-toggle::after {
+.widget_product_categories .product-categories>li>.wd-cats-toggle::after {
   content: '+';
   font-size: 14px;
   line-height: 1;
 }
-.product-categories li.toggle-open > .wd-cats-toggle::after,
+
+.product-categories li.toggle-open>.wd-cats-toggle::after,
 .product-categories li .wd-cats-toggle.toggle-active::after {
   content: '−';
 }
 
 /* 7) Mobile — se preferir esconder sidebar no mobile */
 @media (max-width: 991px) {
-  .sidebar-container.area-sidebar-shop { display: none; }
+  .sidebar-container.area-sidebar-shop {
+    display: none;
+  }
 }
 
 /* força o <li> a ser flex e com wrap para permitir a sublista abaixo */
-.widget_product_categories .product-categories > li {
+.widget_product_categories .product-categories>li {
   display: flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
@@ -1585,7 +1777,7 @@ div.product-excerpt {
 }
 
 /* toggle visualmente primeiro */
-.widget_product_categories .product-categories > li > .wd-cats-toggle {
+.widget_product_categories .product-categories>li>.wd-cats-toggle {
   order: 0 !important;
   margin-right: 10px !important;
   width: 26px !important;
@@ -1601,49 +1793,56 @@ div.product-excerpt {
 }
 
 /* link depois do toggle */
-.widget_product_categories .product-categories > li > a {
+.widget_product_categories .product-categories>li>a {
   order: 1 !important;
   display: inline-block !important;
   flex: 0 1 auto !important;
 }
 
 /* sublista fica abaixo e ocupa 100% */
-.widget_product_categories .product-categories > li > ul.children {
+.widget_product_categories .product-categories>li>ul.children {
   order: 2 !important;
   width: 100% !important;
   margin-top: 8px !important;
 }
 
 /* se o tema esconder a sublista com inline-style display:none, mantemos a regra */
-.widget_product_categories .product-categories > li > ul.children:not(.list-shown) {
+.widget_product_categories .product-categories>li>ul.children:not(.list-shown) {
   display: none !important;
 }
 
 /* símbolos + / − */
-.widget_product_categories .product-categories > li > .wd-cats-toggle::after { content: '+'; font-size: 14px; line-height:1; }
-.product-categories li.toggle-open > .wd-cats-toggle::after,
-.product-categories li .wd-cats-toggle.toggle-active::after { content: '−'; }
+.widget_product_categories .product-categories>li>.wd-cats-toggle::after {
+  content: '+';
+  font-size: 14px;
+  line-height: 1;
+}
+
+.product-categories li.toggle-open>.wd-cats-toggle::after,
+.product-categories li .wd-cats-toggle.toggle-active::after {
+  content: '−';
+}
 
 @media (min-width: 1025px) {
-    .products.wd-stretch-cont-lg .product {
-        display: flex;
-        flex-direction: column;
-        max-width: 294px;
-        width: 100%;
-    }
+  .products.wd-stretch-cont-lg .product {
+    display: flex;
+    flex-direction: column;
+    max-width: 294px;
+    width: 100%;
+  }
 }
 
 .product-carrousel .owl-item .owl-carousel-item .hover-img img,
 .product-carrousel .owl-item .owl-carousel-item .product-image-link img,
 .wd-products-element .elements-grid .hover-img img,
 .wd-products-element .elements-grid .product-image-link img,
-.pagination-pagination .product-grid-item .hover-img img, 
+.pagination-pagination .product-grid-item .hover-img img,
 .pagination-pagination .product-grid-item .product-image-link img {
-    width: 100%;
-    border-radius: 1px 1px 1px 1px;
-    -moz-border-radius: 1px 1px 1px 1px;
-    -webkit-border-radius: 1px 1px 1px 1px;
-    border: none!important;
+  width: 100%;
+  border-radius: 1px 1px 1px 1px;
+  -moz-border-radius: 1px 1px 1px 1px;
+  -webkit-border-radius: 1px 1px 1px 1px;
+  border: none !important;
 }
 
 /* ============================================================
@@ -1701,7 +1900,7 @@ div.product-excerpt {
   padding: 16px !important;
   background: #fff !important;
   border-radius: 10px !important;
-  border: 1px solid rgba(16,24,60,0.06) !important;
+  border: 1px solid rgba(16, 24, 60, 0.06) !important;
   gap: 8px !important;
 }
 
@@ -1715,6 +1914,7 @@ div.product-excerpt {
   align-items: center !important;
   justify-content: center !important;
 }
+
 .product-carrousel .owl-item .owl-carousel-item .product-image-link,
 .wd-products-element .product-image-link,
 .pagination-pagination .product-image-link {
@@ -1725,6 +1925,7 @@ div.product-excerpt {
   justify-content: center !important;
   overflow: hidden !important;
 }
+
 .product-carrousel .owl-item .owl-carousel-item .product-image-link img,
 .wd-products-element .product-image-link img,
 .pagination-pagination .product-image-link img {
@@ -1733,7 +1934,7 @@ div.product-excerpt {
 }
 
 /* TITLE */
-.product-carrousel .owl-item .owl-carousel-item  h3.wd-entities-title,
+.product-carrousel .owl-item .owl-carousel-item h3.wd-entities-title,
 .product-carrousel .owl-item .owl-carousel-item .wd-entities-title,
 .wd-products-element .elements-grid .wd-entities-title,
 .wd-products-element h3.wd-entities-title,
@@ -1774,10 +1975,11 @@ div.product-excerpt {
 .pagination-pagination .product-rating-wrapper {
   text-align: center !important;
   padding: 7px 0 !important;
-  border-top: 1px solid rgba(0,0,0,0.06) !important;
-  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
   margin: 0 !important;
 }
+
 .product-carrousel .star-rating,
 .wd-products-element .star-rating,
 .pagination-pagination .star-rating {
@@ -1837,12 +2039,14 @@ div.product-excerpt {
 
 /* MOBILE 2 COL */
 @media (max-width: 991px) {
+
   .product-carrousel .elements-grid.product,
   .wd-products-element .elements-grid.product,
   .pagination-pagination .product-grid-item.product {
     width: calc(50% - 16px) !important;
     max-width: calc(50% - 16px) !important;
   }
+
   .product-carrousel .product-image-link,
   .wd-products-element .product-image-link,
   .pagination-pagination .product-image-link {
@@ -1852,12 +2056,14 @@ div.product-excerpt {
 
 /* MOBILE 1 COL */
 @media (max-width: 520px) {
+
   .product-carrousel .elements-grid.product,
   .wd-products-element .elements-grid.product,
   .pagination-pagination .product-grid-item.product {
     width: 100% !important;
     max-width: 100% !important;
   }
+
   .product-carrousel .product-image-link,
   .wd-products-element .product-image-link,
   .pagination-pagination .product-image-link {
@@ -1879,7 +2085,8 @@ div.product-excerpt {
 .wd-products-element .elements-grid .products {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 24px !important; /* mantém gap consistente */
+  gap: 24px !important;
+  /* mantém gap consistente */
   align-items: stretch !important;
   box-sizing: border-box;
 }
@@ -1887,7 +2094,8 @@ div.product-excerpt {
 /* cada card ocupa 25% menos o gap */
 .wd-products-element .elements-grid .product,
 .wd-products-element .elements-grid .product-grid-item.product {
-  flex: 0 0 calc(25% - 18px) !important; /* ajuste o 18px se quiser maior/menor espaço entre cards */
+  flex: 0 0 calc(25% - 18px) !important;
+  /* ajuste o 18px se quiser maior/menor espaço entre cards */
   max-width: calc(25% - 18px) !important;
   box-sizing: border-box;
   margin: 0 !important;
@@ -1904,6 +2112,7 @@ div.product-excerpt {
 
 /* responsivo: 2 colunas tablet, 1 coluna mobile */
 @media (max-width: 991px) {
+
   .wd-products-element .elements-grid .product,
   .wd-products-element .elements-grid .product-grid-item.product {
     flex: 0 0 calc(50% - 12px) !important;
@@ -1912,6 +2121,7 @@ div.product-excerpt {
 }
 
 @media (max-width: 520px) {
+
   .wd-products-element .elements-grid .product,
   .wd-products-element .elements-grid .product-grid-item.product {
     flex: 0 0 100% !important;
@@ -1940,17 +2150,20 @@ div.product-excerpt {
   max-width: 25% !important;
   box-sizing: border-box;
   margin: 0 !important;
-  padding: 0 !important; /* padding interno vai pro wrapper abaixo */
+  padding: 0 !important;
+  /* padding interno vai pro wrapper abaixo */
 }
 
 /* Wrapper interno: dá espaçamento interno e borda sem afetar o grid */
 .pagination-pagination .wd-products-element .elements-grid .product-wrapper,
 .wd-products-element .elements-grid .product-wrapper {
-  margin: 12px !important;             /* cria "respiro" visual entre cards */
-  padding: 16px !important;            /* espaçamento dentro do card */
+  margin: 12px !important;
+  /* cria "respiro" visual entre cards */
+  padding: 16px !important;
+  /* espaçamento dentro do card */
   background: #fff !important;
   border-radius: 10px !important;
-  border: 1px solid rgba(16,24,60,0.06) !important;
+  border: 1px solid rgba(16, 24, 60, 0.06) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -1962,7 +2175,8 @@ div.product-excerpt {
 .pagination-pagination .wd-products-element .elements-grid .product-image-link,
 .wd-products-element .elements-grid .product-image-link {
   width: 100% !important;
-  height: 220px !important;   /* ajusta pra seu gosto */
+  height: 220px !important;
+  /* ajusta pra seu gosto */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2001,11 +2215,13 @@ div.product-excerpt {
 
 /* Responsivo: tablet 2 colunas, mobile 1 coluna */
 @media (max-width: 991px) {
+
   .pagination-pagination .wd-products-element .elements-grid .product,
   .wd-products-element .elements-grid .product {
     flex: 0 0 50% !important;
     max-width: 50% !important;
   }
+
   .pagination-pagination .wd-products-element .elements-grid .product-image-link,
   .wd-products-element .elements-grid .product-image-link {
     height: 180px !important;
@@ -2013,15 +2229,18 @@ div.product-excerpt {
 }
 
 @media (max-width: 520px) {
+
   .pagination-pagination .wd-products-element .elements-grid .product,
   .wd-products-element .elements-grid .product {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
+
   .pagination-pagination .wd-products-element .elements-grid .product-wrapper,
   .wd-products-element .elements-grid .product-wrapper {
     margin: 10px !important;
   }
+
   .pagination-pagination .wd-products-element .elements-grid .product-image-link,
   .wd-products-element .elements-grid .product-image-link {
     height: 160px !important;
@@ -2051,20 +2270,20 @@ nav[class*="-pagination"] li .page-numbers {
 }
 
 nav[class*="-pagination"] li .prev:before {
-    content: "\25c0";
-    font-family: "woodmart-font";
+  content: "\25c0";
+  font-family: "woodmart-font";
 }
 
- nav[class*="-pagination"] li .next:before {
-    font-size: 12px;
-    content: "\25b6";
-    font-family: "woodmart-font";
+nav[class*="-pagination"] li .next:before {
+  font-size: 12px;
+  content: "\25b6";
+  font-family: "woodmart-font";
 }
 
-nav[class*="-pagination"] li :is( .next, .prev) {
-    font-size: 0;
-    color: var(--secondary-color);
-    background: none;
+nav[class*="-pagination"] li :is(.next, .prev) {
+  font-size: 0;
+  color: var(--secondary-color);
+  background: none;
 }
 
 nav[class*="-pagination"] li .current {
@@ -2078,7 +2297,8 @@ nav[class*="-pagination"] li .current {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 10px; /* espaço entre os ícones */
+  gap: 10px;
+  /* espaço entre os ícones */
 }
 
 .social-list li {
@@ -2090,10 +2310,12 @@ nav[class*="-pagination"] li .current {
 
 .social-list li a {
   display: block;
-  width: 40px;   /* tamanho do círculo */
+  width: 40px;
+  /* tamanho do círculo */
   height: 40px;
   border-radius: 50%;
-  background: #bcbcbc; /* cor cinza do print */
+  background: #bcbcbc;
+  /* cor cinza do print */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2101,7 +2323,8 @@ nav[class*="-pagination"] li .current {
 }
 
 .social-list li a:hover {
-  background: #8f8f8f; /* hover opcional */
+  background: #8f8f8f;
+  /* hover opcional */
 }
 
 .social-list li img {
@@ -2110,7 +2333,7 @@ nav[class*="-pagination"] li .current {
   object-fit: contain;
 }
 
-.wd-related-products li, 
+.wd-related-products li,
 .product-carrousel li {
   list-style: none;
 }
@@ -2141,7 +2364,8 @@ nav[class*="-pagination"] li .current {
 .product-carrousel .owl-item .owl-carousel-item .product-image-link,
 .wd-products-element .product-image-link,
 .pagination-pagination .product-image-link {
-  height: 189px !important;   /* ajusta se quiser menor/maior */
+  height: 189px !important;
+  /* ajusta se quiser menor/maior */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2163,11 +2387,13 @@ nav[class*="-pagination"] li .current {
 .wd-products-element .wd-entities-title,
 .pagination-pagination .wd-entities-title {
   display: -webkit-box !important;
-  -webkit-line-clamp: 2 !important;      /* 2 linhas */
+  -webkit-line-clamp: 2 !important;
+  /* 2 linhas */
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
   line-height: 1.2 !important;
-  min-height: calc(1.2em * 2) !important; /* garante mesma altura (2 linhas) */
+  min-height: calc(1.2em * 2) !important;
+  /* garante mesma altura (2 linhas) */
   margin: 6px 0 8px !important;
 }
 
@@ -2195,16 +2421,18 @@ nav[class*="-pagination"] li .current {
 .product-carrousel .owl-item .owl-carousel-item .product-element-top,
 .wd-products-element .product-element-top,
 .pagination-pagination .product-element-top {
-  flex-direction: row-reverse!important;
+  flex-direction: row-reverse !important;
 }
 
 /* ===== Mover action buttons da direita para a esquerda mantendo hover ===== */
 
 /* Reposiciona quando o tema usa .wd-pos-r-* */
 .wd-buttons[class*="wd-pos-r"] {
-  inset-inline-end: auto !important;           /* remove lado direito */
-  inset-inline-start: var(--wd-btn-inset) !important; /* coloca à esquerda */
-  
+  inset-inline-end: auto !important;
+  /* remove lado direito */
+  inset-inline-start: var(--wd-btn-inset) !important;
+  /* coloca à esquerda */
+
   /* movimento para fora à ESQUERDA (como antes era para fora à direita) */
   transform: translateX(-20px) translateZ(0) !important;
 }
@@ -2212,8 +2440,8 @@ nav[class*="-pagination"] li .current {
 /* Topo à esquerda */
 .wd-buttons.wd-pos-r-t {
   top: 3px !important;
-  background: transparent!important;
-  box-shadow: none!important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Base à esquerda */
@@ -2225,48 +2453,52 @@ nav[class*="-pagination"] li .current {
 .wd-hover-buttons .wd-buttons[class*="wd-pos-r"] {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateX(0) translateZ(0) !important; /* entra suave pela esquerda */
+  transform: translateX(0) translateZ(0) !important;
+  /* entra suave pela esquerda */
 }
 
-td.product-remove a, .woocommerce-remove-coupon {
-    background: var(--grey);
-    border-radius: 50%;
+td.product-remove a,
+.woocommerce-remove-coupon {
+  background: var(--grey);
+  border-radius: 50%;
 }
 
 td.product-thumbnail img {
-    border: 1px solid var(--grey);
-    border-radius: 10px;
+  border: 1px solid var(--grey);
+  border-radius: 10px;
 }
 
 td.product-price>.amount {
-    color: var(--dark-grey);
-    background-color: var(--grey);
-    padding: 4px 12px;
-    border-radius: 5px;
+  color: var(--dark-grey);
+  background-color: var(--grey);
+  padding: 4px 12px;
+  border-radius: 5px;
 }
 
 /* container da célula */
 .product-subtotal {
   vertical-align: middle;
-  text-align: center!important;            /* centraliza conteúdo (badge + label) */
+  text-align: center !important;
+  /* centraliza conteúdo (badge + label) */
   padding: 20px 0;
-  width: 1px; /* evita forçar largura da coluna */
+  width: 1px;
+  /* evita forçar largura da coluna */
 }
- 
+
 /* badge arredondada com valor */
 .product-subtotal .woocommerce-Price-amount {
-    display: inline-block;
-    background: var(--primary-color);
-    color: #fff;
-    font-weight: 700;
-    font-family: "Open Sans", sans-serif;
-    border-radius: 5px;
-    padding: 7px 15px;
-    min-width: 80px;
-    text-align: center;
-    box-shadow: none;
-    line-height: 1;
-    font-size: 15px;
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 5px;
+  padding: 7px 15px;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: none;
+  line-height: 1;
+  font-size: 15px;
 }
 
 /* manter símbolo € junto e sem quebre de linha */
@@ -2276,16 +2508,17 @@ td.product-price>.amount {
 }
 
 /* label "com IVA" embaixo, discreta e em maiúsculas */
-.product-subtotal .tax_label, .product-subtotal small {
-    display: block;
-    margin-top: 6px;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-family: "Open Sans", sans-serif;
-    text-align: center;
+.product-subtotal .tax_label,
+.product-subtotal small {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
 }
 
 /* ajustar o símbolo de moeda (separação visual) */
@@ -2303,18 +2536,20 @@ td.product-price>.amount {
     border-radius: 12px;
   }
 
-  .product-subtotal .tax_label { font-size: 10px; }
+  .product-subtotal .tax_label {
+    font-size: 10px;
+  }
 }
 
 .cart_item div.quantity input[type="button"] {
-    padding: 0 5px;
-    min-width: 25px;
-    min-height: unset;
-    height: 26px;
-    border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
+  padding: 0 5px;
+  min-width: 25px;
+  min-height: unset;
+  height: 26px;
+  border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
 
-    background: var(--grey)!important;
-    box-shadow: none;
+  background: var(--grey) !important;
+  box-shadow: none;
 }
 
 .cart_item .quantity input.qty {
@@ -2322,13 +2557,13 @@ td.product-price>.amount {
 }
 
 .cart_item div.quantity input[type="button"] {
-    font-size: 14px !important;
-    color: var(--dark-grey)!important;
+  font-size: 14px !important;
+  color: var(--dark-grey) !important;
 }
 
-.cart_item div.quantity :is(input[type="number"],input[type="text"]) {
+.cart_item div.quantity :is(input[type="number"], input[type="text"]) {
   height: 26px;
-  color: var(--dark-grey)!important;
+  color: var(--dark-grey) !important;
   border-top: 1px solid var(--grey);
   border-bottom: 1px solid var(--grey);
 }
@@ -2341,8 +2576,8 @@ th.product-subtotal {
 }
 
 .cart-table-section table th {
-    padding: 15px 10px;
-    border-bottom: 3px solid var(--primary-color); 
+  padding: 15px 10px;
+  border-bottom: 3px solid var(--primary-color);
 }
 
 .cart-table-section input[type='text'] {
@@ -2350,7 +2585,7 @@ th.product-subtotal {
 }
 
 .wd-coupon-form .button[name="apply_coupon"] {
-  background-color: var(--secondary-color)!important;
+  background-color: var(--secondary-color) !important;
 }
 
 .cart-table-section>.cart .cart-actions>:is(.button) {
@@ -2359,19 +2594,19 @@ th.product-subtotal {
 
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner {
   background-color: var(--grey);
-  border: none!important;
+  border: none !important;
 }
 
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner .checkout-button {
   background-color: var(--black);
 }
 
-.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.cart-subtotal > td > small,
-.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.order-total > td > small > span,
-.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.order-total > td > small,
+.cart-totals-section.cart-collaterals>div>div>table>tbody>tr.cart-subtotal>td>small,
+.cart-totals-section.cart-collaterals>div>div>table>tbody>tr.order-total>td>small>span,
+.cart-totals-section.cart-collaterals>div>div>table>tbody>tr.order-total>td>small,
 .cart-content-wrapper tr.order-total strong .amount,
 .cart-totals-inner table .cart-subtotal .amount {
-  color: var(--black)!important;
+  color: var(--black) !important;
 }
 
 /* remove estilo padrão */
@@ -2389,14 +2624,16 @@ th.product-subtotal {
 
 /* estado selecionado com cor personalizada */
 .cart-content-wrapper input[type="radio"]:checked {
-  border-color: var(--black)!important; /* borda quando selecionado */
+  border-color: var(--black) !important;
+  /* borda quando selecionado */
 }
 
 .cart-content-wrapper input[type="radio"]:checked::before {
   content: "";
   width: 10px;
   height: 10px;
-  background: var(--black)!important; /* cor do "pontinho" interno */
+  background: var(--black) !important;
+  /* cor do "pontinho" interno */
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -2405,15 +2642,15 @@ th.product-subtotal {
 }
 
 .cart-totals-inner .shipping-calculator-button {
-    color: #fff!important;
-    font-weight: 600!important;
-    background-color: var(--black);
-    padding: 5px;
-    border-radius: 5px;
+  color: #fff !important;
+  font-weight: 600 !important;
+  background-color: var(--black);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .footer-container {
-    border-top: 3px solid var(--grey)!important;
+  border-top: 3px solid var(--grey) !important;
 }
 
 .wd-checkout-steps {
@@ -2429,23 +2666,23 @@ th.product-subtotal {
 }
 
 .cart-content-wrapper {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
-table > tbody > tr > td.product-subtotal {
+table>tbody>tr>td.product-subtotal {
   text-align: center;
 }
 
-.wd-tools-element:is(.wd-design-6,.wd-design-7,.wd-design-8) .wd-custom-icon {
-    min-width: auto;
-    max-width: 35px!important;
+.wd-tools-element:is(.wd-design-6, .wd-design-7, .wd-design-8) .wd-custom-icon {
+  min-width: auto;
+  max-width: 35px !important;
 }
 
 a.glink img {
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
 }
 
 .gtranslate_wrapper {
@@ -2456,22 +2693,22 @@ a.glink img {
 
 
 .wd-my-account-links {
-    --wd-col-lg: 6!important;
-    --wd-col-md: 3!important;
-    --wd-col-sm: 2!important;
-    --wd-gap-lg: 20px;
-    margin-top: 30px;
+  --wd-col-lg: 6 !important;
+  --wd-col-md: 3 !important;
+  --wd-col-sm: 2 !important;
+  --wd-gap-lg: 20px;
+  margin-top: 30px;
 }
 
 .wd-my-account-links a {
-  background-color: transparent!important;
-  border: none!important;
+  background-color: transparent !important;
+  border: none !important;
   box-shadow: none !important;
   text-transform: uppercase;
 }
 
 .wd-my-account-links a {
-    padding: 10px!important;
+  padding: 10px !important;
 }
 
 .wd-products-element .elements-grid .product-grid-item.product {
@@ -2482,13 +2719,13 @@ a.glink img {
   margin: 5px !important;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row, 
+.product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row,
 .wd-products-element .elements-grid .product-cta .price-add-row {
   padding: 0;
   padding-top: 0 !important;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom > div.product-cta-row > div > div > div.price-col > .woocommerce-Price-amount,
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
 .wd-products-element .woocommerce-Price-amount {
   padding: 8px 18px !important;
 }
@@ -2505,23 +2742,27 @@ a.glink img {
 
 /* Wrapper do brand + título: mesma altura em todos */
 .product-carrousel .product-brand-title-wrap {
-  min-height: 70px; /* ajusta conforme o teu layout */
+  min-height: 70px;
+  /* ajusta conforme o teu layout */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* deixa o título sempre encostado embaixo */
+  justify-content: flex-end;
+  /* deixa o título sempre encostado embaixo */
 }
 
 /* Título sem variação de altura */
 .product-carrousel .wd-entities-title {
-  min-height: 40px; /* ajusta para títulos de 1–2 linhas */
+  min-height: 40px;
+  /* ajusta para títulos de 1–2 linhas */
   display: flex;
   align-items: flex-end;
 }
 
 
 /* FORÇA o :before e mostra um box de debug — cole no final do CSS (custom CSS) */
-.wd-wishlist-icon > a::before {
-  content: "" !important;              /* força existir (substitui content:none) */
+.wd-wishlist-icon>a::before {
+  content: "" !important;
+  /* força existir (substitui content:none) */
   display: inline-block !important;
   width: 45px !important;
   height: 45px !important;
@@ -2538,11 +2779,11 @@ a.glink img {
 
   /* cor do ícone — currentColor dentro do SVG lê isso */
   color: #575756;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.wd-wishlist-icon > a.is-active::before,
-.wd-wishlist-icon > a.added::before {
+.wd-wishlist-icon>a.is-active::before,
+.wd-wishlist-icon>a.added::before {
   /* garante que o pseudo exista e tenha dimensões */
   content: "" !important;
   display: inline-block !important;
@@ -2560,7 +2801,8 @@ a.glink img {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 80% 80% !important;
-  color: inherit !important; /* opcional, evita conflito com currentColor */
+  color: inherit !important;
+  /* opcional, evita conflito com currentColor */
 }
 
 
@@ -2568,20 +2810,24 @@ a.glink img {
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 30px !important;               /* espaçamento entre cards */
-  margin: 0 -15px !important;         /* compensa padding interno, opcional */
+  gap: 30px !important;
+  /* espaçamento entre cards */
+  margin: 0 -15px !important;
+  /* compensa padding interno, opcional */
 }
 
 /* Cada item ocupa ~25% menos o gap */
-.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
-  flex: 0 0 calc(33.333% - 20px) !important; /* 25% minus half the gap */
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid>li.product-grid-item {
+  flex: 0 0 calc(33.333% - 20px) !important;
+  /* 25% minus half the gap */
   width: calc(33.333% - 20px) !important;
   max-width: calc(33.333% - 20px) !important;
-  box-sizing: border-box !important;         /* ajusta o espaçamento lateral interno */
+  box-sizing: border-box !important;
+  /* ajusta o espaçamento lateral interno */
 }
 
 /* Ajustes internos dos cards (garante que expansões não quebrem a linha) */
-.woocommerce-MyAccount-content .wd-products-holder.elements-grid > li .product-wrapper {
+.woocommerce-MyAccount-content .wd-products-holder.elements-grid>li .product-wrapper {
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
@@ -2590,13 +2836,14 @@ a.glink img {
 
 /* Responsivo: 2 por linha em tablet, 1 por linha em mobile */
 @media (max-width: 992px) {
-  .woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid>li.product-grid-item {
     flex: 0 0 calc(50% - 15px) !important;
     max-width: calc(50% - 15px) !important;
   }
 }
+
 @media (max-width: 480px) {
-  .woocommerce-MyAccount-content .wd-products-holder.elements-grid > li.product-grid-item {
+  .woocommerce-MyAccount-content .wd-products-holder.elements-grid>li.product-grid-item {
     flex: 0 0 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -2604,10 +2851,12 @@ a.glink img {
 }
 
 /* garante que o link principal fique acima do dropdown e receba pointer events */
-#menu-categorias > li.menu-item > a.woodmart-nav-link {
+#menu-categorias>li.menu-item>a.woodmart-nav-link {
   position: relative;
-  z-index: 9999;           /* fica por cima do dropdown */
-  pointer-events: auto;    /* garante que o link receba cliques */
+  z-index: 9999;
+  /* fica por cima do dropdown */
+  pointer-events: auto;
+  /* garante que o link receba cliques */
 }
 
 /* o dropdown fica por baixo (se necessário reduzir z-index) */
@@ -2634,14 +2883,18 @@ a.glink img {
   height: 110px !important;
   border-radius: 12px !important;
   box-sizing: border-box;
-  background-color: var(--grey, #e9e9e9) !important;   /* fundo cinza por default */
+  background-color: var(--grey, #e9e9e9) !important;
+  /* fundo cinza por default */
   background-repeat: no-repeat !important;
   background-position: center !important;
-  background-size: 80px 80px !important;             /* tamanho do ícone dentro do quadrado */
+  background-size: 80px 80px !important;
+  /* tamanho do ícone dentro do quadrado */
   transition: background-color .18s ease, transform .12s ease, box-shadow .18s ease, color .12s ease !important;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.06) !important;   /* sombra suave */
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06) !important;
+  /* sombra suave */
   padding: 0 !important;
-  color: var(--icon-color, #4fb7bd) !important;         /* controla o stroke do svg (currentColor) */
+  color: var(--icon-color, #4fb7bd) !important;
+  /* controla o stroke do svg (currentColor) */
 }
 
 /* SVG embutido (data-uri) usando stroke=currentColor — substitui a linha abaixo se usar arquivo externo */
@@ -2650,33 +2903,33 @@ a.glink img {
 }
 
 .wd-my-account-links .downloads-link a:before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/download2.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/download2.svg");
 }
 
 .wd-my-account-links .edit-address-link a:before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/address2.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/address2.svg");
 }
 
 .wd-my-account-links .edit-account-link a:before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/account2.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/account2.svg");
 }
 
 .wd-my-account-links .wt-smart-coupon-link a:before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/coupon2.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/coupon2.svg");
 }
 
 .wd-my-account-links .wishlist-link a:before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist2.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist2.svg");
 }
 
 .wd-my-account-links .wishlist-link a:hover::before {
-    background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist1.svg");
+  background-image: url("/wp-content/themes/woodmart-child/assets/icons/wishlist1.svg");
 }
 
 .wd-my-account-links .customer-logout-link a:before {
-    content: "\f137"!important;
-    color: #000!important;
-    padding: 30px !important;
+  content: "\f137" !important;
+  color: #000 !important;
+  padding: 30px !important;
 }
 
 .wd-my-account-links .orders-link a:hover::before,
@@ -2688,7 +2941,7 @@ a.glink img {
   background-color: var(--secondary-color) !important;
   color: #ffffff !important;
   transform: translateY(-6px) !important;
-  box-shadow: 0 18px 36px rgba(0,0,0,0.12) !important;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12) !important;
 }
 
 .wd-my-account-links .orders-link a .nav-label,
@@ -2710,63 +2963,81 @@ a.glink img {
   pointer-events: auto !important;
 }
 
-@media (max-width: 768px){
-  .wd-my-account-links { gap: 28px; }
+@media (max-width: 768px) {
+  .wd-my-account-links {
+    gap: 28px;
+  }
+
   .wd-my-account-links .orders-link a::before,
-  .wd-my-account-links a::before { width: 90px !important; height: 90px !important; background-size: 40px 40px !important; }
-  .wd-my-account-links { justify-content: flex-start; padding-left: 20px; }
+  .wd-my-account-links a::before {
+    width: 90px !important;
+    height: 90px !important;
+    background-size: 40px 40px !important;
+  }
+
+  .wd-my-account-links {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
 }
 
 
 /* ---------- layout: label numa row separada + opções embaixo ---------- */
 /* garante que a nova tabela continue responsiva */
-table.variations { width:100%; border-collapse:collapse; }
+table.variations {
+  width: 100%;
+  border-collapse: collapse;
+}
 
 /* nova linha de label (estilo parecido com o resto) */
 table.variations tr.size-label-row th {
-  text-align:left;
+  text-align: left;
   padding: 10px 0 6px;
-  font-weight:700;
+  font-weight: 700;
   font-size: 1rem;
   vertical-align: middle;
   border: none;
 }
 
 /* linha das opções */
-table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
+table.variations tr.size-options-row td {
+  padding: 6px 0 20px;
+  border: none;
+}
 
 /* container das opções — ocupar toda a largura disponível */
 .variations .size-options {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /* esconder select original (mantemos para WooCommerce) */
 .variations .size-converter-select {
-  position:absolute !important;
-  left:-9999px !important;
-  width:1px !important;
-  height:1px !important;
-  overflow:hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 
 /* o "quadrado" visual que contém o texto */
 .variations .size-label {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  user-select:none;
-  border-radius:10px;
-  overflow:hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  overflow: hidden;
   border: 2px solid #0b2450;
-  background:#fff;
-  min-width:84px;
-  height:52px;               /* altura fixa para ficar "quadrado" visual */
-  padding:0 12px;
-  box-sizing:border-box;
+  background: #fff;
+  min-width: 84px;
+  height: 52px;
+  /* altura fixa para ficar "quadrado" visual */
+  padding: 0 12px;
+  box-sizing: border-box;
   border-radius: 0;
 }
 
@@ -2779,40 +3050,50 @@ table.variations tr.size-options-row td { padding: 6px 0 20px; border: none; }
 
 /* o texto fica dentro do quadrado e centralizado vertical/horizontalmente */
 .variations .size-label span {
-  display:block;
-  width:100%;
-  text-align:center;
-  line-height:1;
-  font-weight:700;
-  color:#0b2450;
-  font-size:14px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  font-weight: 700;
+  color: #0b2450;
+  font-size: 14px;
 }
 
 /* estado selecionado */
 .variations .size-label.is-checked {
-  background:#0b2450;
-  color:#fff;
-  border-color:#0b2450;
+  background: #0b2450;
+  color: #fff;
+  border-color: #0b2450;
 }
-.variations .size-label.is-checked span { color:#fff; }
+
+.variations .size-label.is-checked span {
+  color: #fff;
+}
 
 /* hover */
-.variations .size-label:hover { transform: translateY(-2px); transition: transform .06s; }
+.variations .size-label:hover {
+  transform: translateY(-2px);
+  transition: transform .06s;
+}
 
 /* responsivo: reduzir altura em telas pequenas */
-@media (max-width:480px){
-  .variations .size-label { min-width:66px; height:44px; font-size:14px; }
+@media (max-width:480px) {
+  .variations .size-label {
+    min-width: 66px;
+    height: 44px;
+    font-size: 14px;
+  }
 }
 
 table.variations label:after {
-  content: ""!important;
+  content: "" !important;
 }
 
-div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table > tbody > tr.size-options-row > th {
+div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>table>tbody>tr.size-options-row>th {
   display: none;
 }
 
-div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > table {
+div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>table {
   margin: 0;
   padding: 0;
 }
@@ -2832,28 +3113,28 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
 
 /* container das opções (flex) */
 .wd-variations-boxes .size-options {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 /* quadrado */
 .wd-variations-boxes .size-label {
-  display:inline-flex;
+  display: inline-flex;
   flex-direction: column;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  user-select:none;
-  border-radius:10px;
-  overflow:hidden;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  overflow: hidden;
   border: 2px solid #0b2450;
-  background:#fff;
-  min-width:84px;
-  height:52px;
-  padding:0 12px;
-  box-sizing:border-box;
+  background: #fff;
+  min-width: 84px;
+  height: 52px;
+  padding: 0 12px;
+  box-sizing: border-box;
   border-radius: 0;
 }
 
@@ -2866,43 +3147,50 @@ div.col-lg-6.wd-product-summary-col > div > div.wd-add-to-cart-wrap > form > tab
 
 /* texto dentro do quadrado */
 .wd-variations-boxes .size-label span {
-  display:block;
-  width:100%;
-  text-align:center;
-  line-height:1;
-  font-weight:700;
-  color:#0b2450;
-  font-size:16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  font-weight: 700;
+  color: #0b2450;
+  font-size: 16px;
 }
 
 /* selecionado */
 .wd-variations-boxes .size-label.is-checked {
-  background:#0b2450;
-  color:#fff;
-  border-color:#0b2450;
+  background: #0b2450;
+  color: #fff;
+  border-color: #0b2450;
 }
-.wd-variations-boxes .size-label.is-checked span { color:#fff; }
+
+.wd-variations-boxes .size-label.is-checked span {
+  color: #fff;
+}
 
 /* reset/link limpar alinhado à direita do container */
 .wd-variations-boxes .reset-wrapper {
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  margin-left:12px;
-  flex:1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 12px;
+  flex: 1 1 100%;
 }
 
 /* responsivo */
-@media (max-width:480px){
-  .wd-variations-boxes .size-label { min-width:66px; height:44px; font-size:14px; }
+@media (max-width:480px) {
+  .wd-variations-boxes .size-label {
+    min-width: 66px;
+    height: 44px;
+    font-size: 14px;
+  }
 }
 
 .wpb_content_element,
 .vc_column_container>.vc_column-inner,
 .section-title {
-  margin: 0!important;
+  margin: 0 !important;
 }
 
 .wpb_content_element {
-  margin-bottom: 10px!important;
+  margin-bottom: 10px !important;
 }
