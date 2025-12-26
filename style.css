@@ -3194,3 +3194,7 @@ div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>table {
 .wpb_content_element {
   margin-bottom: 10px !important;
 }
+
+.whb-color-light .wd-header-text {
+  font-size: 12px;
+}
