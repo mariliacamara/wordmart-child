@@ -1285,9 +1285,9 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
 
 /* botão circular POSICIONADO DENTRO do wrapper; sem borda para não criar overlap */
 .wd-header-search-form .searchform .searchsubmit {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
   border-radius: 50%;
   border: none;
   /* important: retirar border pra não quebrar o arco */
