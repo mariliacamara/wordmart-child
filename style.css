@@ -406,6 +406,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 
   display: inline-block;
   margin-left: 4px;
+  margin-top: 1px;
   transform: translateY(2px);
 }
 
@@ -3216,4 +3217,8 @@ div>div>div.vc_row.wpb_row.vc_row-fluid.product-box.vc_custom_1766789518074.vc_r
 
 .folheto {
   padding-top: 20px;
+}
+
+.wd-nav-main>li>a {
+  height: 0 !important;
 }
