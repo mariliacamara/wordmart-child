@@ -833,6 +833,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 
 .wd-related-products .product-cta .price-add-row {
   gap: 5px;
+  padding: 0;
 }
 
 /* Cada coluna ocupa metade (mesma proporção) (scoped) */
