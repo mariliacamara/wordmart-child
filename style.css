@@ -518,10 +518,46 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 /* Each product card (scoped) */
 .wd-related-products .wd-related-grid .product,
 .wd-related-products .wd-related-grid .product-grid-item.product {
-  width: calc(25% - 20px);
+  width: calc(20% - 4px);
   box-sizing: border-box;
   padding: 0 10px;
 }
+
+/* Desktop grande – 5 colunas */
+@media (min-width: 1200px) {
+  .wd-related-products .wd-related-grid .product {
+    width: calc(20% - 4px);
+  }
+}
+
+/* Desktop / laptop – 4 colunas */
+@media (max-width: 1199px) {
+  .wd-related-products .wd-related-grid .product {
+    width: calc(25% - 4px);
+  }
+}
+
+/* Tablet landscape – 3 colunas */
+@media (max-width: 991px) {
+  .wd-related-products .wd-related-grid .product {
+    width: calc(33.333% - 4px);
+  }
+}
+
+/* Tablet / mobile grande – 2 colunas */
+@media (max-width: 767px) {
+  .wd-related-products .wd-related-grid .product {
+    width: calc(50% - 4px);
+  }
+}
+
+/* Mobile pequeno – 1 coluna */
+@media (max-width: 479px) {
+  .wd-related-products .wd-related-grid .product {
+    width: 100%;
+  }
+}
+
 
 /* Card inner wrapper (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper,
