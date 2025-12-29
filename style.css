@@ -3337,3 +3337,7 @@ form.cart div.quantity {
   display: flex;
   align-items: flex-start;
 }
+
+.related-products {
+  margin-bottom: 10px;
+}
