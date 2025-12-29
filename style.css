@@ -597,7 +597,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 .owl-carousel .owl-item .wd-entities-title,
 .wd-related-products .wd-related-grid .wd-entities-title {
   font-size: 14px;
-  margin: 0 0 10px;
+  margin: 0;
   line-height: 1.2;
   color: #222;
   text-align: left;
