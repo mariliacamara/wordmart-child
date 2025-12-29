@@ -220,7 +220,7 @@ License:    GNU General Public License v2 or later
 
 /* Tabs / description */
 .woocommerce-tabs {
-  margin-top: 30px;
+  margin-top: 20px;
   border-top: 1px solid #e6e6e6;
   padding-top: 20px;
 }
@@ -3242,8 +3242,8 @@ div.wd-product-top.container > div > div.col-lg-6.wd-product-summary-col > div >
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 2px dotted var(--light-grey);
-  padding-bottom: 1px;
+  border-bottom: 2px dotted var(--grey);
+  padding-bottom: 5px;
 }
 
 .woocommerce .product_title {
