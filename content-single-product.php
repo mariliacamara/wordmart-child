@@ -139,8 +139,6 @@ global $product;
             echo wc_get_rating_html( $avg );
             if ( $count > 0 ) {
                 echo '<span class="count">(' . $count . ')</span>';
-            } else {
-                echo '<span class="count no-reviews">Sem avaliações</span>';
             }
             echo '</div>';
             ?>
