@@ -165,15 +165,24 @@ global $product;
           <!-- Variations placeholder -->
           <div class="wd-variations-boxes"></div>
 
-          <!-- META (apenas SKU — sem categorias, sem stock) -->
+          <!-- META (SKU + Categoria) -->
           <div class="wd-product-meta">
             <?php
             $sku = $product->get_sku();
+
             if ( $sku ) {
                 echo '<div class="product-sku"><strong>REF:</strong> ' . esc_html( $sku ) . '</div>';
             }
+
+            // categorias do produto
+            $categories = wc_get_product_category_list( $product->get_id(), ', ' );
+
+            if ( $categories ) {
+                echo '<div class="product-category"><strong>Categoria:</strong> ' . $categories . '</div>';
+            }
             ?>
           </div>
+
 
           <!-- Informação adicional -->
           <div class="wd-additional-info-below-sku">
