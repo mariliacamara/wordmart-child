@@ -3254,3 +3254,7 @@ form.cart div.quantity {
   height: 30px;
   display: flex !important;
 }
+
+.woocommerce :is( .btn, .button, button, [type="submit"], [type="button"]) {
+  height: 30px;
+}
