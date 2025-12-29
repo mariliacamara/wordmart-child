@@ -272,7 +272,7 @@ License:    GNU General Public License v2 or later
 }
 
 .my-rating-force {
-  margin: 8px 0 14px;
+  margin: 5px 0 14px;
   display: flex;
   align-items: center;
 }
