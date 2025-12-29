@@ -181,7 +181,7 @@ License:    GNU General Public License v2 or later
 .woocommerce .quantity input.qty {
   width: 56px;
   text-align: center;
-  padding: 8px;
+  padding: 0;
   border-radius: 6px;
   border: 1px solid #ddd;
 }
@@ -195,6 +195,10 @@ License:    GNU General Public License v2 or later
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
+}
+
+div.quantity :is(input[type="number"],input[type="text"]) {
+  height: 30px;
 }
 
 /* Variation select to look boxed (basic) */
@@ -306,7 +310,7 @@ p.stock {
   font-size: 14px;
   border: none !important;
   color: #fff !important;
-  width: 30px !important;
+  width: 10px !important;
   font-weight: 900;
 }
 
