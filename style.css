@@ -3242,4 +3242,9 @@ div.wd-product-top.container > div > div.col-lg-6.wd-product-summary-col > div >
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+  border-bottom: 2px dotted ;
+}
+
+.woocommerce .product_title {
+  font-size: 14px;
 }
