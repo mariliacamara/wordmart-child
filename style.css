@@ -3242,7 +3242,8 @@ div.wd-product-top.container > div > div.col-lg-6.wd-product-summary-col > div >
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 2px dotted ;
+  border-bottom: 2px dotted var(--light-grey);
+  padding-bottom: 1px;
 }
 
 .woocommerce .product_title {
