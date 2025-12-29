@@ -197,7 +197,7 @@ global $product;
     <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
     <div class="wd-related-grid">
         <?php
-        $related_ids = wc_get_related_products( $product->get_id(), 4 );
+        $related_ids = wc_get_related_products( $product->get_id(), 5 );
         if ( ! empty( $related_ids ) ) {
             $args = array(
                 'post_type' => 'product',
