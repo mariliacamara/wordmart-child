@@ -3256,5 +3256,5 @@ form.cart div.quantity {
 }
 
 .woocommerce :is( .btn, .button, button, [type="submit"], [type="button"]) {
-  height: 30px !important;
+  min-height: 30px !important;
 }
