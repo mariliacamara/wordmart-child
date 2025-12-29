@@ -190,8 +190,8 @@ License:    GNU General Public License v2 or later
 .woocommerce .single_add_to_cart_button {
   background: #072052;
   color: #fff;
-  padding: 12px 20px;
-  border-radius: 10px;
+  padding: 2px 20px;
+  border-radius: 5px;
   border: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -3248,4 +3248,9 @@ div.wd-product-top.container > div > div.col-lg-6.wd-product-summary-col > div >
 
 .woocommerce .product_title {
   font-size: 14px;
+}
+
+form.cart div.quantity {
+  height: 30px;
+  display: flex !important;
 }
