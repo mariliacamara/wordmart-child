@@ -3231,5 +3231,5 @@ div>div>div.vc_row.wpb_row.vc_row-fluid.product-box.vc_custom_1766789518074.vc_r
 .woocommerce div.quantity :is(input[type="number"],input[type="text"])
 .woocommerce div.quantity input[type="button"]
 .woocommerce div.quantity :is(input[type="number"],input[type="text"]) {
-  height: 30px!important;
+  height: 30px !important;
 }
