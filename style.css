@@ -3341,3 +3341,8 @@ form.cart div.quantity {
 .related-products {
   margin-bottom: 10px;
 }
+
+.price-col {
+  min-width: 76px;
+  width: 100%;
+}
