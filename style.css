@@ -198,11 +198,6 @@ License:    GNU General Public License v2 or later
   font-size: 14px;
 }
 
-.woocommerce div.quantity input[type="button"]
-.woocommerce div.quantity :is(input[type="number"],input[type="text"]) {
-  height: 30px!important;
-}
-
 /* Variation select to look boxed (basic) */
 .variations {
   margin-top: 12px;
@@ -3231,4 +3226,9 @@ div>div>div.vc_row.wpb_row.vc_row-fluid.product-box.vc_custom_1766789518074.vc_r
     padding-top: 10px;
     min-height: 50vh;
     background-color: var(--wd-main-bgcolor);
+}
+
+.woocommerce div.quantity input[type="button"]
+.woocommerce div.quantity :is(input[type="number"],input[type="text"]) {
+  height: 30px!important;
 }
