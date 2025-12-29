@@ -198,7 +198,7 @@ License:    GNU General Public License v2 or later
 }
 
 div.quantity :is(input[type="number"],input[type="text"]) {
-  height: 30px;
+  height: 30px!important;
 }
 
 /* Variation select to look boxed (basic) */
