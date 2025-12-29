@@ -3258,3 +3258,7 @@ form.cart div.quantity {
 .woocommerce :is( .btn, .button, button, [type="submit"], [type="button"]) {
   min-height: 30px !important;
 }
+
+.woocommerce .slick-track {
+  width: 100%!important;
+}
