@@ -3262,3 +3262,30 @@ form.cart div.quantity {
 .woocommerce .slick-track {
   width: 100%!important;
 }
+
+.woocommerce .slick-initialized .slick-slide {
+  width: 300px!important;
+}
+
+.cr-reviews-grid .cr-review-card .top-row .reviewer .reviewer-name, .cr-reviews-slider .cr-review-card .top-row .reviewer .reviewer-name,
+.cr-reviews-grid .cr-review-card .top-row .reviewer .reviewer-verified, .cr-reviews-slider .cr-review-card .top-row .reviewer .reviewer-verified {
+    font-size: 14px;
+}
+
+.cr-reviews-grid .cr-review-card .crstar-rating-svg .cr-rating-icon-base .cr-rating-icon-bg, .cr-reviews-grid .cr-review-card .crstar-rating-svg .cr-rating-icon-frnt .cr-rating-icon, .cr-reviews-slider .cr-review-card .crstar-rating-svg .cr-rating-icon-base .cr-rating-icon-bg, .cr-reviews-slider .cr-review-card .crstar-rating-svg .cr-rating-icon-frnt .cr-rating-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.cr-reviews-slider .cr-review-card .rating-row {
+    padding: 10px 0 10px 0;
+    justify-content: center;
+}
+
+.cr-reviews-slider .cr-review-card .middle-row, .cr-reviews-slider .cr-review-card .cr-incentivized-row {
+    padding: 0 0 0 15px;
+}
+
+.cr-reviews-grid .cr-review-card .review-product .product-title, .cr-reviews-slider .cr-review-card .review-product .product-title {
+  font-size: 14px;
+}
