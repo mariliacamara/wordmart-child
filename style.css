@@ -3222,3 +3222,10 @@ div>div>div.vc_row.wpb_row.vc_row-fluid.product-box.vc_custom_1766789518074.vc_r
 .wd-nav-main>li>a {
   height: 0 !important;
 }
+
+.main-page-wrapper {
+    margin-top: -40px;
+    padding-top: 10px;
+    min-height: 50vh;
+    background-color: var(--wd-main-bgcolor);
+}
