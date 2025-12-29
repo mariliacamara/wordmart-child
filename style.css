@@ -831,6 +831,10 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   box-sizing: border-box;
 }
 
+.wd-related-products .product-cta .price-add-row {
+  gap: 5px;
+}
+
 /* Cada coluna ocupa metade (mesma proporção) (scoped) */
 /* .wd-related-products .product-cta .price-col,
 .wd-related-products .product-cta .button-col {
@@ -854,7 +858,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   background: #fec917;
   color: #07143d;
   font-weight: 700;
-  padding: 7px 25px;
+  padding: 5px 15px;
   border-radius: 6px;
   font-size: 0.8rem;
   min-width: 0;
