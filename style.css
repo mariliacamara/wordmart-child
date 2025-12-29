@@ -137,7 +137,7 @@ License:    GNU General Public License v2 or later
 }
 
 .product-title {
-  font-size: 28px;
+  font-size: 20px;
   margin: 0 0 10px;
 }
 
@@ -145,10 +145,10 @@ License:    GNU General Public License v2 or later
 .wd-price-pill .price {
   background: #f8c83b;
   display: inline-block;
-  padding: 10px 18px;
-  border-radius: 12px;
+  padding: 1px 10px;
+  border-radius: 5px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 14px;
   color: #111;
 }
 
@@ -302,7 +302,7 @@ p.stock {
 }
 
 .woocommerce .quantity input.qty {
-  font-size: 25px;
+  font-size: 14px;
   border: none !important;
   color: #fff !important;
   width: 30px !important;
@@ -311,11 +311,11 @@ p.stock {
 
 div.quantity input[type="button"] {
   border: none !important;
-  font-size: 25px !important;
+  font-size: 14px !important;
 }
 
 div.quantity input[type="button"] {
-  font-size: 25px !important;
+  font-size: 14px !important;
   color: #fff !important;
 }
 
