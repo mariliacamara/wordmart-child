@@ -3330,3 +3330,10 @@ form.cart div.quantity {
 .cr-reviews-grid .cr-review-card .review-product .product-title, .cr-reviews-slider .cr-review-card .review-product .product-title {
   font-size: 14px;
 }
+
+.wd-related-products .wd-entities-title {
+  min-height: 48px; /* ajuste fino */
+  line-height: 1.2;
+  display: flex;
+  align-items: flex-start;
+}
