@@ -3310,8 +3310,8 @@ form.cart div.quantity {
 }
 
 :is(.checkout_coupon,.login.hidden-form) {
-  max-width: 581px;
-  width: 100%;
+  max-width: 581px!important;
+  width: 100% !important;
 }
 
 .checkout_coupon .button {
