@@ -3346,3 +3346,14 @@ form.cart div.quantity {
   min-width: 76px;
   display: flex;
 }
+
+.cat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* garante que os filhos (subcategorias) quebrem linha */
+.cat-item > .children {
+  flex-basis: 100%;
+}
