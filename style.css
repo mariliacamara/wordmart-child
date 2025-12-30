@@ -3322,3 +3322,7 @@ form.cart div.quantity {
 :is(.woocommerce-form-coupon-toggle,.woocommerce-form-login-toggle)>div>a {
   color: var(--primary-color)!important;
 }
+
+.newsletter-title {
+  margin-bottom: 5px;
+}
