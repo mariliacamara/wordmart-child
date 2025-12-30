@@ -3249,6 +3249,8 @@ form.cart div.quantity {
 
 .widget_product_categories .wd-cats-toggle {
   position: relative!important;
+  inset-inline-end: 0!important;
+  top: 0 !important;
 }
 
 /* Item da categoria */
