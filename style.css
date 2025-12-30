@@ -3195,8 +3195,8 @@ form.cart div.quantity {
 /* toggle visualmente primeiro */
 .widget_product_categories .product-categories>li>.wd-cats-toggle {
   order: 0 !important;
-  width: 26px !important;
-  height: 26px !important;
+  width: 18px !important;
+  height:18px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -3231,11 +3231,13 @@ form.cart div.quantity {
   content: '+';
   font-size: 14px;
   line-height: 1;
+  margin-top: -4px;
 }
 
 .product-categories li.toggle-open>.wd-cats-toggle::after,
 .product-categories li .wd-cats-toggle.toggle-active::after {
   content: '−';
+  margin-top: -4px;
 }
 
 @media (min-width: 1025px) {
