@@ -2423,9 +2423,12 @@ a.glink img {
   width: 100%;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button,
-.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
+.product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button {
   padding: 9px 17px !important;
+}
+
+.wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button {
+  padding: 9px 11px !important;
 }
 
 .wd-action-btn {
