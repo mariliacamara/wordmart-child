@@ -3306,3 +3306,6 @@ form.cart div.quantity {
   gap: 5px;
 }
 
+.woocommerce-mini-cart__buttons .checkout {
+  background-color: var(--primary-color);
+}
