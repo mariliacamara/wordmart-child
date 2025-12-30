@@ -3335,3 +3335,7 @@ form.cart div.quantity {
 body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nth-child(1) > div {
   margin: 0!important;
 }
+
+.footer-container {
+  margin-top: 10px!important;
+}
