@@ -3327,6 +3327,7 @@ form.cart div.quantity {
   margin-bottom: 5px;
 }
 
-#WOODMART_Widget_Sorting > h5 {
+#WOODMART_Widget_Sorting > h5,
+#WOODMART_Widget_Price_Filter > h5 {
   color: var(--primary-color);
 }
