@@ -511,16 +511,15 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 .wd-related-products .wd-related-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
   margin: 0 -10px;
 }
 
 /* Each product card (scoped) */
 .wd-related-products .wd-related-grid .product,
 .wd-related-products .wd-related-grid .product-grid-item.product {
-  width: calc(20% - 4px);
+  width: calc(20% - 8px);
   box-sizing: border-box;
-  padding: 0 10px;
 }
 
 /* Desktop grande – 5 colunas */
