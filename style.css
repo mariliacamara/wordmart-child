@@ -3303,8 +3303,17 @@ form.cart div.quantity {
   gap: 5px;
 }
 
-.checkout_coupon .button,
+
 .popup-added_to_cart .view-cart,
 .woocommerce-mini-cart__buttons .checkout {
   background-color: var(--primary-color)!important;
+}
+
+:is(.checkout_coupon,.login.hidden-form) {
+  max-width: 581px;
+  width: 100%;
+}
+
+.checkout_coupon .button {
+  height: 100%;
 }
