@@ -3307,5 +3307,5 @@ form.cart div.quantity {
 }
 
 .woocommerce-mini-cart__buttons .checkout {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color)!important;
 }
