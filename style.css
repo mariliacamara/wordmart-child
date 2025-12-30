@@ -2412,10 +2412,6 @@ a.glink img {
   max-width: 20% !important;
 }
 
-.wd-products-element .elements-grid .product-wrapper {
-  margin: 5px !important;
-}
-
 .product-carrousel .owl-item .owl-carousel-item .product-cta .price-add-row,
 .wd-products-element .elements-grid .product-cta .price-add-row {
   padding: 0;
@@ -2508,7 +2504,7 @@ a.glink img {
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 30px !important;
+  gap: 10px !important;
   /* espaçamento entre cards */
   margin: 0 -15px !important;
   /* compensa padding interno, opcional */
@@ -2516,10 +2512,10 @@ a.glink img {
 
 /* Cada item ocupa ~25% menos o gap */
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid>li.product-grid-item {
-  flex: 0 0 calc(33.333% - 20px) !important;
+  flex: 0 0 calc(25% - 4px) !important;
   /* 25% minus half the gap */
-  width: calc(33.333% - 20px) !important;
-  max-width: calc(33.333% - 20px) !important;
+  width: calc(25% - 4px) !important;
+  max-width: calc(25% - 4px) !important;
   box-sizing: border-box !important;
   /* ajusta o espaçamento lateral interno */
 }
