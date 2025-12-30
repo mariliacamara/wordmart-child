@@ -3161,35 +3161,6 @@ form.cart div.quantity {
   }
 }
 
-.widget_product_categories .wd-cats-toggle {
-  order: 0;
-  margin-right: 10px;
-  width: 26px;
-  height: 26px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 50%;
-  background: #07224a;
-  color: #fff;
-  font-weight: 700;
-}
-
-/* Ajuste visual do toggle */
-.widget_product_categories .wd-cats-toggle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: #07224a;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 /* 5) Quando a sublista está escondida, mantém o fluxo (evita quebra de layout) */
 .widget_product_categories .product-categories>li>.children:not(.list-shown) {
   display: none;
