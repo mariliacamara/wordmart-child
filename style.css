@@ -1854,7 +1854,6 @@ div.product-excerpt {
 /* Wrapper interno: dá espaçamento interno e borda sem afetar o grid */
 .pagination-pagination .wd-products-element .elements-grid .product-wrapper,
 .wd-products-element .elements-grid .product-wrapper {
-  margin: 12px !important;
   /* cria "respiro" visual entre cards */
   padding: 16px !important;
   /* espaçamento dentro do card */
