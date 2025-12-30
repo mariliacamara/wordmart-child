@@ -3359,5 +3359,5 @@ form.cart div.quantity {
 }
 
 .widget_product_categories .wd-cats-toggle {
-  position: relative;
+  position: relative!important;
 }
