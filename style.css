@@ -3072,7 +3072,6 @@ form.cart div.quantity {
   font-size: 14px;
   line-height: 26px;
   text-align: center;
-  margin-left: 8px;
   cursor: pointer;
   vertical-align: middle;
 }
@@ -3196,7 +3195,6 @@ form.cart div.quantity {
 /* toggle visualmente primeiro */
 .widget_product_categories .product-categories>li>.wd-cats-toggle {
   order: 0 !important;
-  margin-right: 10px !important;
   width: 26px !important;
   height: 26px !important;
   display: inline-flex !important;
