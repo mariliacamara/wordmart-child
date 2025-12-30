@@ -3011,12 +3011,10 @@ form.cart div.quantity {
 
 /* Título do widget */
 .sidebar-container .widget-title {
-  font-family: "Gotham Black", Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
   color: #00a8c6;
-  /* troca pela cor que você usa */
   font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 1px;
   margin: 0 0 18px;
 }
 
