@@ -3189,7 +3189,7 @@ form.cart div.quantity {
   display: flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: 8px !important;
+  gap: 0 !important;
 }
 
 /* toggle visualmente primeiro */
