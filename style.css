@@ -3142,6 +3142,7 @@ form.cart div.quantity {
   margin-bottom: 6px;
 }
 
+.cart-info span.quantity,
 .sidebar-container .widget-product-info .price {
   display: inline-block;
   background: #ffd85a;
@@ -3304,3 +3305,4 @@ form.cart div.quantity {
   align-items: center!important;
   gap: 5px;
 }
+
