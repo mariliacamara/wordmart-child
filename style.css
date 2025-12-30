@@ -3331,3 +3331,7 @@ form.cart div.quantity {
 #WOODMART_Widget_Price_Filter > h5 {
   color: var(--primary-color);
 }
+
+body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nth-child(1) > div {
+  margin: 0!important;
+}
