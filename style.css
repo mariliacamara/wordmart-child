@@ -3302,6 +3302,6 @@ form.cart div.quantity {
 .cat-item > .children li {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: center!important;
   gap: 5px;
 }
