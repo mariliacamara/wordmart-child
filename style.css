@@ -3049,7 +3049,6 @@ form.cart div.quantity {
 
 /* Sub-categorias */
 .sidebar-container .product-categories ul.children {
-  margin: 8px 0 0 16px;
   display: none;
   /* escondido até abrir */
 }
