@@ -3347,17 +3347,50 @@ form.cart div.quantity {
   display: flex;
 }
 
-.cat-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* garante que os filhos (subcategorias) quebrem linha */
-.cat-item > .children {
-  flex-basis: 100%;
-}
+/* === CATEGORIAS: toggle + texto na mesma linha === */
 
 .widget_product_categories .wd-cats-toggle {
   position: relative!important;
+}
+
+/* Item da categoria */
+.cat-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 6px 0;
+}
+
+/* Ícone de expandir (+ / -) */
+.cat-item > .wd-cats-toggle {
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+/* Link da categoria */
+.cat-item > a {
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* Subcategorias SEMPRE abaixo */
+.cat-item > .children {
+  width: 100%;
+  margin-top: 6px;
+  padding-left: 18px; /* recuo visual */
+}
+
+/* Mantém comportamento do Woodmart */
+.cat-item > .children.list-shown {
+  display: block;
+}
+
+/* Remove possíveis estilos herdados que quebram layout */
+.cat-item > .children li {
+  display: block;
+}
+
+/* Ajuste fino opcional */
+.cat-item.current-cat > a {
+  font-weight: 600;
 }
