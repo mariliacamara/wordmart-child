@@ -3254,6 +3254,8 @@ form.cart div.quantity {
   position: relative!important;
   inset-inline-end: 0!important;
   top: 0 !important;
+  width: 18px!important;
+  height: 18px!important;
 }
 
 /* Item da categoria */
@@ -3295,4 +3297,11 @@ form.cart div.quantity {
 /* Ajuste fino opcional */
 .cat-item.current-cat > a {
   font-weight: 600;
+}
+
+.cat-item > .children li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
