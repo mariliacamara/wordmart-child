@@ -3317,3 +3317,7 @@ form.cart div.quantity {
 .checkout_coupon .button {
   height: 100%;
 }
+
+:is(.woocommerce-form-coupon-toggle,.woocommerce-form-login-toggle)>div>a {
+  color: var(--primary-color)
+}
