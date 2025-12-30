@@ -2503,10 +2503,8 @@ a.glink img {
 .woocommerce-MyAccount-content .wd-products-holder.elements-grid {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 10px !important;
-  /* espaçamento entre cards */
-  margin: 0 -15px !important;
-  /* compensa padding interno, opcional */
+  gap: 5px !important;
+  margin: 0 !important;
 }
 
 /* Cada item ocupa ~25% menos o gap */
