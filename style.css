@@ -366,6 +366,9 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 
 #menu-categorias>li>a>span {
   color: var(--white-color) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 @media (min-width: 1025px) {
@@ -404,7 +407,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 
   display: inline-block;
   margin-left: 4px;
-  margin-top: 1px;
+  margin-top: -4px;
   transform: translateY(2px);
 }
 
