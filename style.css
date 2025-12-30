@@ -828,7 +828,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   align-items: stretch;
   /* garante mesma altura */
   justify-content: space-between;
-  padding: 0 0 18px;
+  padding: 0;
   /* mantém espaço inferior como no exemplo */
   box-sizing: border-box;
 }
