@@ -3357,3 +3357,7 @@ form.cart div.quantity {
 .cat-item > .children {
   flex-basis: 100%;
 }
+
+.widget_product_categories .wd-cats-toggle {
+  position: relative;
+}
