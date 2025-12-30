@@ -3189,7 +3189,7 @@ form.cart div.quantity {
   display: flex !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-  gap: 0 !important;
+  gap: 5px !important;
 }
 
 /* toggle visualmente primeiro */
@@ -3264,7 +3264,6 @@ form.cart div.quantity {
 /* Ícone de expandir (+ / -) */
 .cat-item > .wd-cats-toggle {
   flex-shrink: 0;
-  margin-right: 8px;
 }
 
 /* Link da categoria */
