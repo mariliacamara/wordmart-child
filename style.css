@@ -2768,6 +2768,7 @@ a.glink img {
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
 .wd-products-element .woocommerce-Price-amount {
   padding: 8px 15px !important;
+  width: 100%;
 }
 
 .product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button,
