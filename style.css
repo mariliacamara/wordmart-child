@@ -3146,11 +3146,11 @@ form.cart div.quantity {
 .sidebar-container .widget-product-info .price {
   display: inline-block;
   background: #ffd85a;
-  color: #111;
+  color: #111!important;
   padding: 4px 8px;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 13px!important;
 }
 
 /* Responsivo - esconde sidebar em telas pequenas (opcional) */
