@@ -3343,3 +3343,125 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
 .footer-container {
   margin-top: 15px!important;
 }
+
+
+/* =========================
+   MOBILE FOOTER STYLES
+   ========================= */
+@media (max-width: 768px) {
+
+  /* General footer spacing */
+  .footer-container {
+    padding: 30px 15px 20px;
+    text-align: left;
+  }
+
+  .main-footer {
+    padding: 0;
+  }
+
+  /* Stack all columns */
+  .footer-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-column {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Logo */
+  .footer-column-1 figure {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-column-1 img {
+    max-width: 220px;
+    height: auto;
+  }
+
+  /* Titles */
+  .footer-widget .widget-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  /* Text */
+  .footer-widget p,
+  .footer-widget li,
+  .footer-widget a {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Newsletter */
+  .footer-column-2 {
+    text-align: left;
+  }
+
+  .footer-column-2 p {
+    margin-bottom: 12px;
+  }
+
+  .footer-column-2 input[type="email"] {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .footer-column-2 button {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  /* Menus */
+  .footer-widget ul.menu {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .footer-widget ul.menu li {
+    margin-bottom: 8px;
+  }
+
+  /* Social icons */
+  .social-list {
+    display: flex;
+    gap: 14px;
+    padding-left: 0;
+  }
+
+  .social-list li {
+    list-style: none;
+  }
+
+  .social-list img {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Payment banner */
+  .footer-column-6 figure {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer-column-6 img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Copyright */
+  .copyrights-wrapper {
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .copyrights-wrapper .col-left {
+    text-align: center;
+  }
+}
