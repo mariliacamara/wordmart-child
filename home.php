@@ -45,8 +45,6 @@ get_header();
 
 								<div class="wd-post-content article-body-container">
 
-									<div class="wd-post-content article-body-container">
-
                   <div class="wd-post-cat wd-style-with-bg meta-post-categories">
                     <?php the_category(', '); ?>
                   </div>
@@ -55,15 +53,28 @@ get_header();
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                   </h3>
 
+                  <div class="wd-post-meta">
+                    <div class="wd-post-author">
+                      <span>Publicado por</span>
+                      <?php echo get_avatar(get_the_author_meta('ID'), 18); ?>
+                      <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author">
+                        <?php the_author(); ?>
+                      </a>
+                    </div>
+
+                    <div class="wd-modified-date">
+                      <time class="updated" datetime="<?php echo get_the_modified_date('c'); ?>">
+                        <?php echo get_the_modified_date(); ?>
+                      </time>
+                    </div>
+                  </div>
+
                   <div class="wd-post-excerpt entry-content">
                     <?php the_excerpt(); ?>
                   </div>
 
-                  <div class="wd-post-read-more wd-style-link read-more-section">
-                    <a href="<?php the_permalink(); ?>">Continuar a ler</a>
-                  </div>
+                </div>
 
-								</div>
 							</div>
 						</article>
 
