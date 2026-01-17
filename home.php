@@ -45,21 +45,23 @@ get_header();
 
 								<div class="wd-post-content article-body-container">
 
-									<div class="wd-post-cat wd-style-with-bg meta-post-categories">
-										<?php the_category(', '); ?>
-									</div>
+									<div class="wd-post-content article-body-container">
 
-									<h3 class="wd-post-title wd-entities-title title post-title">
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</h3>
+                  <div class="wd-post-cat wd-style-with-bg meta-post-categories">
+                    <?php the_category(', '); ?>
+                  </div>
 
-									<div class="wd-post-excerpt entry-content">
-										<?php the_excerpt(); ?>
-									</div>
+                  <h3 class="wd-post-title wd-entities-title title post-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  </h3>
 
-									<div class="wd-post-read-more wd-style-link read-more-section">
-										<a href="<?php the_permalink(); ?>">Continuar a ler</a>
-									</div>
+                  <div class="wd-post-excerpt entry-content">
+                    <?php the_excerpt(); ?>
+                  </div>
+
+                  <div class="wd-post-read-more wd-style-link read-more-section">
+                    <a href="<?php the_permalink(); ?>">Continuar a ler</a>
+                  </div>
 
 								</div>
 							</div>
