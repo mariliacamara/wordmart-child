@@ -22,9 +22,7 @@ get_header();
 
       <?php if ($query->have_posts()) : ?>
 
-        <div class="wd-row blog-grid"
-          style="--wd-col-lg:3;--wd-col-md:3;--wd-col-sm:1;--wd-gap-lg:20px;--wd-gap-sm:10px;">
-
+        <div class="wd-row wd-grid blog-holder blog-loop" style="--wd-col-lg:3;--wd-col-md:3;--wd-col-sm:1;--wd-gap-lg:20px;--wd-gap-sm:10px;">
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
             <article <?php post_class('wd-col wd-post blog-design-masonry blog-post-loop blog-style-bg wd-add-shadow'); ?>>
