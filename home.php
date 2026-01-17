@@ -25,7 +25,7 @@ get_header();
         <div class="wd-row wd-grid blog-holder blog-loop" style="--wd-col-lg:3;--wd-col-md:3;--wd-col-sm:1;--wd-gap-lg:20px;--wd-gap-sm:10px;">
           <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-            <article <?php post_class('wd-col wd-post blog-design-masonry blog-post-loop blog-style-bg wd-add-shadow'); ?>>
+            <article <?php post_class('wd-col wd-post blog-post-loop blog-design-default'); ?>>
 
               <div class="post-inner">
 
@@ -34,36 +34,39 @@ get_header();
                     <a href="<?php the_permalink(); ?>">
                       <?php the_post_thumbnail('large'); ?>
                     </a>
+
+                    <div class="post-category">
+                      <?php the_category(', '); ?>
+                    </div>
                   </div>
                 <?php endif; ?>
 
                 <div class="entry-content">
 
                   <div class="entry-meta">
-                    <span class="posted-on">
-                      <?php echo get_the_date(); ?>
-                    </span>
+                    <span class="posted-on"><?php echo get_the_date(); ?></span>
                   </div>
 
                   <h3 class="entry-title">
-                    <a href="<?php the_permalink(); ?>">
-                      <?php the_title(); ?>
-                    </a>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                   </h3>
 
                   <div class="entry-excerpt">
                     <?php the_excerpt(); ?>
                   </div>
 
-                  <a class="btn btn-style-link btn-color-primary" href="<?php the_permalink(); ?>">
-                    Continuar lendo
-                  </a>
+                  <div class="entry-footer">
+                    <a class="btn btn-style-link btn-color-primary" href="<?php the_permalink(); ?>">
+                      CONTINUAR LENDO
+                    </a>
+                  </div>
 
                 </div>
 
               </div>
 
             </article>
+
 
           <?php endwhile; ?>
 
