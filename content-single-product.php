@@ -183,14 +183,15 @@ global $product;
 
 
           <!-- Informação adicional -->
-          <div class="wd-additional-info-below-sku">
-             <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
-          </div>
-
         </div>
       </div>
 
     </div> <!-- .row -->
+    <div class="row wd-product-main">
+      <div class="wd-additional-info-below-sku">
+        <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
+      </div>
+    </div>
   </div> <!-- .wd-product-top -->
 
   <section class="related-products wd-related-products container">
