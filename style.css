@@ -3345,6 +3345,14 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
   margin-top: 15px!important;
 }
 
+.woocommerce-form-row label {
+  color: var(--black)!important;
+}
+
+.woocommerce-form-row input {
+  border: 1px solid var(--secondary-color)!important;
+}
+
 
 /* =========================
    MOBILE FOOTER STYLES
@@ -3467,10 +3475,6 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
   }
 }
 
-.woocommerce-form-row label {
-  color: var(--black)!important;
-}
-
-.woocommerce-form-row input {
-  border: 1px solid var(--secondary-color)!important;
+div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
+  background-color: var(--primary-color);
 }
