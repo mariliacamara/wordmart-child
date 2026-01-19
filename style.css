@@ -2292,6 +2292,7 @@ th.product-subtotal {
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner {
   background-color: var(--grey);
   border: none !important;
+  color: var(--black);
 }
 
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner .checkout-button {
