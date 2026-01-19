@@ -3345,7 +3345,7 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
   margin-top: 15px!important;
 }
 
-.wpb_text_column label,
+.wpcf7-form > p > label,
 .woocommerce-form-row label {
   color: var(--black)!important;
 }
