@@ -3131,7 +3131,7 @@ form.cart div.quantity {
 .sidebar-container .widget-product-img img {
   width: 48px;
   height: 48px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -3220,7 +3220,6 @@ form.cart div.quantity {
 .widget_product_categories .product-categories>li>ul.children {
   order: 2 !important;
   width: 100% !important;
-  margin-top: 8px !important;
 }
 
 /* se o tema esconder a sublista com inline-style display:none, mantemos a regra */
@@ -3492,4 +3491,9 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   .copyrights-wrapper .col-left {
     text-align: center;
   }
+}
+
+.categories-accordion-on .widget_product_categories .product-categories li + li {
+  padding: 0;
+  padding-top: 5px;
 }
