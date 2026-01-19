@@ -3351,6 +3351,7 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
 }
 
 .wpcf7-form-control-wrap input,
+.wpcf7-form-control-wrap textarea,
 .woocommerce-form-row input {
   border: 1px solid var(--secondary-color)!important;
 }
