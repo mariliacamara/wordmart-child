@@ -337,7 +337,8 @@ div.product-excerpt {
 }
 
 .wd-additional-info-below-sku {
-  margin-top: 20px;
+  margin-top: 0px;
+  padding-left: 20px;
 }
 
 div.wd-additional-info-below-sku>div>div.wd-nav-wrapper.wd-nav-tabs-wrapper.text-center {
