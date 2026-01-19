@@ -3481,5 +3481,6 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 
 .show-password-input {
   background-color: var(--secondary-color);
-  color: var(--white)
+  color: var(--white-color);
+  border-radius: 0 5px 5px 0;
 }
