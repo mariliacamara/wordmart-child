@@ -3526,3 +3526,7 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 .popup-added_to_cart .view-cart {
   background-color: var(--primary-color)!important;
 }
+
+.woocommerce-tabs .cr-reviews-slider {
+  margin: 0!important;
+}
