@@ -3345,6 +3345,7 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
   margin-top: 15px!important;
 }
 
+.wpb_text_column label,
 .woocommerce-form-row label {
   color: var(--black)!important;
 }
@@ -3352,6 +3353,16 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
 .wpcf7-form-control-wrap input,
 .woocommerce-form-row input {
   border: 1px solid var(--secondary-color)!important;
+}
+
+div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
+  background-color: var(--primary-color);
+}
+
+.show-password-input {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 0 5px 5px 0;
 }
 
 
@@ -3474,14 +3485,4 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
   .copyrights-wrapper .col-left {
     text-align: center;
   }
-}
-
-div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
-  background-color: var(--primary-color);
-}
-
-.show-password-input {
-  background-color: var(--secondary-color);
-  color: var(--white-color);
-  border-radius: 0 5px 5px 0;
 }
