@@ -3514,6 +3514,8 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   background-color: var(--secondary-color)!important;
   padding: 12px 20px;
   border-radius: 5px;
+  color: var(--white-color);
+  border: 0;
 }
 
 .popup-added_to_cart .view-cart {
