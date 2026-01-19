@@ -3466,3 +3466,7 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
     text-align: center;
   }
 }
+
+.woocommerce-form-row label {
+  color: var(--black)!important;
+}
