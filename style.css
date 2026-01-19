@@ -3478,3 +3478,8 @@ body > div.website-wrapper > div > div > div > div > div.shop-loop-head > div:nt
 div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   background-color: var(--primary-color);
 }
+
+.show-password-input {
+  background-color: var(--secondary-color);
+  color: var(--white)
+}
