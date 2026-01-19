@@ -2296,7 +2296,8 @@ th.product-subtotal {
   color: var(--black);
 }
 
-div > div > div > div.cart-totals-section.cart-collaterals > div > div > table > tbody > tr.cart-subtotal > th,
+div > div > div > div.cart-totals-section.cart-collaterals > div > div > table > tbody > tr > th,
+#shipping_method > li > label,
 .cart-totals-inner>h2 {
   color: var(--black)!important;
 }
