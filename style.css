@@ -3365,6 +3365,11 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   border-radius: 0 5px 5px 0;
 }
 
+.hidden-fields-container {
+  border: none!important;
+  border-top: 1px dotted var(--dark-grey)!important;
+}
+
 
 /* =========================
    MOBILE FOOTER STYLES
