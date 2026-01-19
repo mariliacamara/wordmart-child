@@ -100,9 +100,10 @@ License:    GNU General Public License v2 or later
   color: var(--white-color) !important;
 }
 
-/* .woocommerce-account .page-title {
+.wd-empty-page-text,
+.woocommerce-account .page-title {
   display: none !important;
-} */
+}
 
 .woocommerce-MyAccount-content>p {
   margin-bottom: 0.5px;
