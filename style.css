@@ -1050,18 +1050,16 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 }
 
 /* mostrar linha no hover */
-.wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
+/* .wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
   width: 30%;
-  /* tamanho em hover — ajusta aqui */
   opacity: 1;
-}
+} */
 
 /* mostrar linha no item ativo / atual */
 .wd-nav[class*="wd-style-underline"]>li.wd-active>a>.nav-link-text::after,
 .wd-nav[class*="wd-style-underline"]>li.current-menu-item>a>.nav-link-text::after,
 .wd-nav[class*="wd-style-underline"]>li.active>a>.nav-link-text::after {
   width: 30%;
-  /* tamanho do underline no estado ativo */
   opacity: 1;
 }
 
