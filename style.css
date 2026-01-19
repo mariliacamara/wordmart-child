@@ -2296,6 +2296,10 @@ th.product-subtotal {
   color: var(--black);
 }
 
+.cart-totals-inner>h2 {
+  color: var(--black)!important;
+}
+
 .cart-content-wrapper>.cart-totals-section .cart-totals-inner .checkout-button {
   background-color: var(--black);
 }
