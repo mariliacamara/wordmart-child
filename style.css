@@ -3511,9 +3511,9 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 }
 
 .popup-added_to_cart .btn {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color)!important;
 }
 
 .popup-added_to_cart .view-cart {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color)!important;
 }
