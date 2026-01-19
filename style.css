@@ -3264,7 +3264,11 @@ form.cart div.quantity {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 6px 0;
+  padding: 0;
+}
+
+.cat-item + .cat-item {
+  padding-top: 6px;
 }
 
 /* Ícone de expandir (+ / -) */
@@ -3491,9 +3495,4 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   .copyrights-wrapper .col-left {
     text-align: center;
   }
-}
-
-.categories-accordion-on .widget_product_categories .product-categories li + li {
-  padding: 0;
-  padding-top: 5px;
 }
