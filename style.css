@@ -3509,3 +3509,11 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   text-transform: uppercase;
   color: var(--primary-color);
 }
+
+.popup-added_to_cart .btn {
+  background-color: var(--secondary-color);
+}
+
+.popup-added_to_cart .view-cart {
+  background-color: var(--primary-color);
+}
