@@ -3530,3 +3530,7 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 .woocommerce-tabs .cr-reviews-slider {
   margin: 0!important;
 }
+
+.woocommerce-tabs .cr-reviews-slider .cr-review-card {
+  padding: 0;
+}
