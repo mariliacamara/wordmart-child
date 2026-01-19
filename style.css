@@ -3504,3 +3504,8 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
     text-align: center;
   }
 }
+
+.popup-added_to_cart h3 {
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
