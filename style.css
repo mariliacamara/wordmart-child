@@ -3240,6 +3240,7 @@ form.cart div.quantity {
 }
 
 /* símbolos + / − */
+.widget_product_categories .wd-cats-toggle:after,
 .widget_product_categories .product-categories>li>.wd-cats-toggle::after {
   content: '+';
   font-size: 14px;
