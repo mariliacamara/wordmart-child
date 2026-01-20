@@ -2559,7 +2559,7 @@ a.glink img {
 /* garante que o link principal fique acima do dropdown e receba pointer events */
 #menu-categorias>li.menu-item>a.woodmart-nav-link {
   position: relative;
-  z-index: 9999;
+  z-index: 999;
   /* fica por cima do dropdown */
   pointer-events: auto;
   /* garante que o link receba cliques */
