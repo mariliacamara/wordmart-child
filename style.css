@@ -3541,38 +3541,35 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
   z-index: 10000;
 }
 
-/* Alinha texto das categorias com/sem parent (reserva espaço do toggle) */
-.widget_product_categories .product-categories li,
-.widget_product_categories .product-categories li > a {
-  line-height: 1.3;
-}
-
+/* Alinha categorias com e sem filhos */
 .widget_product_categories .product-categories li {
   display: flex;
   align-items: center;
-  gap: 10px;              /* espaço entre ícone e texto */
+  gap: 8px; /* espaço entre ícone e texto */
 }
 
-/* O toggle (quando existe) vira uma "coluna" fixa */
+/* Toggle (+ / -) com tamanho fixo */
 .widget_product_categories .product-categories .wd-cats-toggle {
-  flex: 0 0 26px;         /* largura fixa do ícone */
-  width: 26px;
-  height: 26px;
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Quando NÃO é parent, cria um "espaço fantasma" do mesmo tamanho */
-.widget_product_categories .product-categories li:not(.cat-parent)::before {
+/* Espaço fantasma para categorias SEM filhos */
+.widget_product_categories
+.product-categories
+li:not(.cat-parent)::before {
   content: "";
-  flex: 0 0 26px;
-  width: 26px;
-  height: 26px;
+  flex: 0 0 15px;
+  width: 15px;
+  height: 15px;
 }
 
-/* Link ocupa o resto e fica alinhado */
+/* Texto sempre alinhado */
 .widget_product_categories .product-categories li > a {
-  flex: 1 1 auto;
+  flex: 1;
   display: block;
 }
