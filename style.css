@@ -3532,3 +3532,10 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 .woocommerce-tabs .cr-reviews-slider .cr-review-card {
   padding: 0;
 }
+
+.whb-col-right .wd-dropdown-menu.wd-design-default, 
+.wd-dropdown-search-cat, .whb-col-right .wd-search-dropdown, 
+.whb-col-right .wd-dropdown-cart, .whb-col-right .wd-dropdown-register, 
+.wd-products-nav .wd-dropdown {
+  z-index: 1000;
+}
