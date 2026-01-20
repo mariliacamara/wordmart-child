@@ -3552,8 +3552,8 @@ div.woocommerce > div > div.woocommerce-MyAccount-content > form > button {
 /* Toggle (+ / -) com tamanho fixo */
 .widget_product_categories .product-categories .wd-cats-toggle {
   flex: 0 0 15px;
-  width: 15px;
-  height: 15px;
+  width: 15px!important;
+  height: 15px!important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
