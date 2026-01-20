@@ -3067,6 +3067,7 @@ form.cart div.quantity {
   font-size: 13px;
   color: #666;
   text-transform: none;
+  padding: 0!important;
 }
 
 /* Toggle + / ▼ */
