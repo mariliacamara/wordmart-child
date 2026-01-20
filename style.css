@@ -3575,38 +3575,3 @@ li:not(.cat-parent)::before {
   display: block;
 }
 
-/* Container do label */
-.product-labels.labels-rectangular {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  z-index: 5;
-}
-
-/* Label de desconto em formato triangular */
-.product-labels.labels-rectangular .onsale.product-label {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 70px;
-  height: 70px;
-
-  background: #e11c1c; /* vermelho */
-  color: #fff;
-
-  font-weight: 700;
-  font-size: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: translate(35%, -35%) rotate(45deg);
-  transform-origin: top right;
-
-  border-radius: 0;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
