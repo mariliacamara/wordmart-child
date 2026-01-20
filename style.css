@@ -398,7 +398,6 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 }
 
 /* the span after <a> (our replacement chevron) */
-.widget_product_categories .wd-cats-toggle:after,
 .wd-nav>li.menu-item-has-children>a>.nav-link-text:after {
   content: "" !important;
   font-family: none !important;
