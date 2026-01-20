@@ -3595,7 +3595,7 @@ li:not(.cat-parent)::before {
 .product-grid-item .product-labels.labels-rectangular .onsale.product-label{
   position: absolute !important;
   top: 0 !important;
-  right: 0 !important;
+  right: -97px !important;
 
   width: 72px !important;
   height: 72px !important;
