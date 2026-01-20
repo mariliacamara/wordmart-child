@@ -191,3 +191,11 @@ function zincomed_override_categories_script() {
     <?php
 }
 add_action('wp_footer', 'zincomed_override_categories_script', 9999);
+
+add_filter( 'woocommerce_product_add_to_cart_text', function() {
+  return 'COMPRAR';
+});
+
+add_filter( 'woocommerce_product_single_add_to_cart_text', function() {
+  return 'COMPRAR';
+});
