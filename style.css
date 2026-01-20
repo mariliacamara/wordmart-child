@@ -3216,7 +3216,7 @@ form.cart div.quantity {
   cursor: pointer !important;
   border-radius: 50% !important;
   background: var(--grey)!important;
-  color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
   font-weight: 700 !important;
 }
 
