@@ -3208,8 +3208,8 @@ form.cart div.quantity {
 /* toggle visualmente primeiro */
 .widget_product_categories .product-categories>li>.wd-cats-toggle {
   order: 0 !important;
-  width: 18px !important;
-  height:18px !important;
+  width: 15px !important;
+  height: 15px !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
