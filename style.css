@@ -3076,8 +3076,8 @@ form.cart div.quantity {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #07224a;
-  color: #fff;
+  background: var(--grey);
+  color: var(--primary-color);
   font-size: 14px;
   line-height: 26px;
   text-align: center;
