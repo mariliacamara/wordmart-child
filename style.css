@@ -3575,18 +3575,14 @@ li:not(.cat-parent)::before {
   display: block;
 }
 
-/* 1) Garante que o card seja o "referencial" do absolute */
-.product-grid-item .product-wrapper,
-.product-grid-item .product-element-top {
+/* garante o contexto */
+.product-grid-item .product-element-top,
+.product-grid-item .product-wrapper {
   position: relative !important;
-}
-
-/* 2) Coloca o container do label no canto e evita corte */
-.product-grid-item .product-element-top {
   overflow: visible !important;
 }
 
-/* 3) Posiciona o wrapper do label */
+/* container do label no canto */
 .product-grid-item .product-labels.labels-rectangular {
   position: absolute !important;
   top: 0 !important;
@@ -3595,30 +3591,28 @@ li:not(.cat-parent)::before {
   pointer-events: none;
 }
 
-/* 4) Transforma o próprio span em triângulo */
-.product-grid-item .product-labels.labels-rectangular .onsale.product-label {
+/* triangulo no canto superior DIREITO */
+.product-grid-item .product-labels.labels-rectangular .onsale.product-label{
   position: absolute !important;
   top: 0 !important;
   right: 0 !important;
 
-  width: 64px !important;
-  height: 64px !important;
-
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: flex-end !important;
-
-  padding: 8px 8px 0 0 !important;
+  width: 72px !important;
+  height: 72px !important;
 
   background: #e11c1c !important;
   color: #fff !important;
 
   font-weight: 800 !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   line-height: 1 !important;
 
-  border-radius: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
 
-  /* Triângulo */
+  padding: 10px 12px 0 0 !important;
+
+  /* Triângulo “canto direito” */
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
 }
