@@ -3215,8 +3215,8 @@ form.cart div.quantity {
   justify-content: center !important;
   cursor: pointer !important;
   border-radius: 50% !important;
-  background: #07224a !important;
-  color: #fff !important;
+  background: var(--grey)!important;
+  color: var(--secondary-color) !important;
   font-weight: 700 !important;
 }
 
