@@ -315,6 +315,7 @@ div.product-excerpt {
   font-size: 1rem;
 }
 
+.wd-product-meta > string,
 .product-sku>strong {
   color: var(--secondary-color);
   font-weight: 700;
