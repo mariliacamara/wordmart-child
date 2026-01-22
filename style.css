@@ -3686,3 +3686,7 @@ li:not(.cat-parent)::before {
     flex-wrap: wrap;
   }
 }
+
+:is(.register,.login) .button {
+  background-color: var(--primary-color);
+}
