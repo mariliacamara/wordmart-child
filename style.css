@@ -219,17 +219,6 @@ License:    GNU General Public License v2 or later
   margin-bottom: 6px;
 }
 
-/* Tabs / description */
-.woocommerce-tabs {
-  margin-top: 20px;
-  border-top: 1px solid #e6e6e6;
-  padding-top: 20px;
-}
-
-.woocommerce-tabs .panel {
-  padding-top: 15px;
-}
-
 /* Related products full width placeholder */
 .related-and-upsells {
   margin-top: 40px;
@@ -329,11 +318,6 @@ div.product-excerpt {
 .product-sku>strong {
   color: #000;
   font-weight: 700;
-}
-
-.woocommerce-tabs {
-  border-top: none;
-  padding-top: 0px;
 }
 
 .wd-additional-info-below-sku {
