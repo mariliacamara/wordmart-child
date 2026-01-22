@@ -3564,3 +3564,7 @@ li:not(.cat-parent)::before {
         font-size: 24px;
     }
 }
+
+.product-tabs-inner {
+  padding-bottom: 20px;
+}
