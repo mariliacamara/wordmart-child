@@ -1366,6 +1366,7 @@ div.product-excerpt {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--grey);
 }
 
 .my-brand-logo img {
