@@ -3568,3 +3568,7 @@ li:not(.cat-parent)::before {
 .product-tabs-inner {
   padding-bottom: 20px;
 }
+
+.mfp-move-horizontal.mfp-ready .mfp-with-anim {
+  border-radius: 10px;
+}
