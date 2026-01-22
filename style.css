@@ -316,7 +316,7 @@ div.product-excerpt {
 }
 
 .product-sku>strong {
-  color: #000;
+  color: var(--secondary-color);
   font-weight: 700;
 }
 
