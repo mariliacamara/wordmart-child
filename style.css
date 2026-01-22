@@ -3692,5 +3692,5 @@ li:not(.cat-parent)::before {
 }
 
 .show-password-input {
-  color: var(--white-color)
+  color: var(--white-color)!important;
 }
