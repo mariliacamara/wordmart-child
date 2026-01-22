@@ -187,12 +187,13 @@ global $product;
       </div>
 
     </div> <!-- .row -->
-    <div class="row wd-product-main">
-      <div class="wd-additional-info-below-sku">
-        <?php do_action( 'woocommerce_after_single_product_summary' ); ?>
-      </div>
-    </div>
   </div> <!-- .wd-product-top -->
+
+  <section class="product-tabs-wrapper">
+    <div class="container product-tabs-inner">
+      <?php woocommerce_output_product_data_tabs(); ?>
+    </div>
+  </section>
 
   <section class="related-products wd-related-products container">
     <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
