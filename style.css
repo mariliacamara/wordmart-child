@@ -3557,3 +3557,9 @@ li:not(.cat-parent)::before {
 .show-password-input {
   color: var(--white-color)!important;
 }
+
+@media (min-width: 1025px) {
+    .title-size-default .title {
+        font-size: 24px;
+    }
+}
