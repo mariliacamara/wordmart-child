@@ -3690,3 +3690,7 @@ li:not(.cat-parent)::before {
 :is(.register,.login) .button {
   background-color: var(--primary-color);
 }
+
+.show-password-input {
+  color: var(--white-color)
+}
