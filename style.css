@@ -181,7 +181,6 @@ License:    GNU General Public License v2 or later
 }
 
 .woocommerce .quantity input.qty {
-  width: 56px;
   text-align: center;
   padding: 0;
   border-radius: 6px;
@@ -297,7 +296,8 @@ p.stock {
   font-size: 14px;
   border: none !important;
   color: #fff !important;
-  width: 32px !important;
+  width: 100%!important;
+  max-height: 35px;
   font-weight: 900;
 }
 
