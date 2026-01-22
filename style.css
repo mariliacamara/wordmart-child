@@ -924,9 +924,6 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
    ========================================================= */
 
 /* Pequenos ajustes finais */
-.wd-nav[class*="wd-style-underline"]>li>a .nav-link-text:after {
-  width: 30% !important;
-}
 
 .product-carrousel .owl-item .owl-carousel-item .product-cta .button-col .add_to_cart_button,
 .wd-products-element .elements-grid .product-cta .button-col .add_to_cart_button,
@@ -948,67 +945,9 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   min-height: 0 !important;
 }
 
-/* Restaurar underline como before/after controlável */
-/* garante que .nav-link-text é posicionável */
-.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text {
-  position: relative;
-  /* necessário para o ::after posicionado */
-  display: inline-block;
-}
-
 /* pseudo-elemento (linha) — escondido por padrão */
 .wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after {
-  content: "";
-  position: absolute;
-  top: -15px;
-  /* afasta a linha do texto — ajusta se precisa */
-  left: 15%;
-  transform: translateX(-50%);
-  width: 0;
-  /* começa fechado */
-  height: 3px;
-  /* espessura da linha */
   background-color: var(--secondary-color);
-  border-radius: 2px;
-  opacity: 0;
-  transition: width .22s ease, opacity .22s ease;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* mostrar linha no hover */
-/* .wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
-  width: 30%;
-  opacity: 1;
-} */
-
-/* mostrar linha no item ativo / atual */
-.wd-nav[class*="wd-style-underline"]>li.wd-active>a>.nav-link-text::after,
-.wd-nav[class*="wd-style-underline"]>li.current-menu-item>a>.nav-link-text::after,
-.wd-nav[class*="wd-style-underline"]>li.active>a>.nav-link-text::after {
-  width: 30%;
-  opacity: 1;
-}
-
-/* opcional: tornar o hover da linha mais curto que o active (ex.: 22% hover, 30% active) */
-.wd-nav[class*="wd-style-underline"]>li:hover>a>.nav-link-text::after {
-  width: 22%;
-}
-
-.wd-nav[class*="wd-style-underline"]>li.wd-active>a>.nav-link-text::after {
-  width: 30%;
-}
-
-/* força remover qualquer regra anterior que adicionava ::after ao <a>:after em vez de ao .nav-link-text */
-.wd-nav>li.menu-item-has-children>a:after {
-  content: none !important;
-  display: none !important;
-}
-
-/* Caso o tema tenha colocado width/height fixos noutros seletores, usa maior especificidade */
-.nav>.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after,
-.menu>.wd-nav[class*="wd-style-underline"]>li>a>.nav-link-text::after {
-  /* fallback, nada aqui necessário — apenas exemplo de maior especificidade se necessário */
 }
 
 /* MY ACCOUNT */
@@ -2849,10 +2788,6 @@ div>div>div.vc_row.wpb_row.vc_row-fluid.product-box.vc_custom_1766789518074.vc_r
 
 .folheto {
   padding-top: 20px;
-}
-
-.wd-nav-main>li>a {
-  height: 0 !important;
 }
 
 .main-page-wrapper {
