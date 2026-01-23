@@ -3478,6 +3478,7 @@ li:not(.cat-parent)::before {
 
   /* Triângulo “canto direito” */
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
+  border-radius: 0 8px;
 }
 
 
