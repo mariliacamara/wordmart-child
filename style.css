@@ -3474,7 +3474,7 @@ li:not(.cat-parent)::before {
   align-items: flex-start !important;
   justify-content: flex-end !important;
 
-  padding: 10px 12px 0 0 !important;
+  padding: 10px 7px 0 0 !important;
 
   /* Triângulo “canto direito” */
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
