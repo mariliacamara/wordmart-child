@@ -1578,7 +1578,7 @@ div.product-excerpt {
 .pagination-pagination .woocommerce-Price-amount {
   background: #fec917 !important;
   color: #07143d !important;
-  padding: 8px 30px !important;
+  padding: 7px 30px !important;
   border-radius: 8px !important;
   font-weight: 900 !important;
   box-shadow: none !important;
@@ -3600,7 +3600,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   text-decoration: line-through;
   opacity: 0.9;
   background-color: transparent!important;
-  padding: 0!important;
+  padding: 7px 0!important;
 }
 
 div.product-cta-price {
