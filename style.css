@@ -3573,3 +3573,8 @@ li:not(.cat-parent)::before {
 .mfp-move-horizontal.mfp-ready .mfp-with-anim {
   border-radius: 10px;
 }
+
+div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div > div {
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+}
