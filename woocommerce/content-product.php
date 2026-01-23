@@ -1,13 +1,12 @@
 <?php
 /**
- * Conteúdo do produto na listagem — com contador de quantidade
+ * Conteúdo do produto na listagem — com contador de quantidade (somente simple)
  * Caminho: wp-content/themes/woodmart-child/woocommerce/content-product.php
  */
 defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-// Safety
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
@@ -25,9 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			</div>
 
 			<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="product-image-link">
-				<?php
-				do_action( 'woocommerce_before_shop_loop_item_title' );
-				?>
+				<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 			</a>
 
 			<?php
@@ -43,7 +40,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<div class="product-brand-title-wrap">
 				<?php
 				$brand_name = '';
-				$attr = function_exists( 'woodmart_get_opt' ) ? woodmart_get_opt( 'brands_attribute' ) : '';
+				$attr       = function_exists( 'woodmart_get_opt' ) ? woodmart_get_opt( 'brands_attribute' ) : '';
 
 				if ( $attr ) {
 					$terms = wc_get_product_terms( $product->get_id(), $attr, [ 'fields' => 'all' ] );
@@ -83,78 +80,100 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 				</div>
 			</div>
 
-			<!-- PRICE + QTY + CTA -->
-			<!-- PRICE + ADD (Woodmart style qty) -->
-            <div class="product-cta-row">
-            <div class="product-cta">
-                <div class="product-cta-price">
-                    <?php
-                        // preço
-                        echo $product->get_price_html();
+			<!-- PRICE + CTA -->
+			<div class="product-cta-row">
+				<div class="product-cta">
 
-                        // qty limits
-                        $min = $product->get_min_purchase_quantity();
-                        $max = $product->get_max_purchase_quantity();
+					<div class="product-cta-price">
+						<?php echo $product->get_price_html(); ?>
+					</div>
 
-                        // id único pro label
-                        $qty_id = 'quantity_' . wp_unique_id();
-                    ?>
-                </div>
+					<?php if ( $product->is_type( 'variable' ) ) : ?>
 
-                <div class="wd-add-btn wd-add-btn-replace">
+						<!-- VARIABLE: igual ao original (sem qty, só ver opções) -->
+						<div class="wd-add-btn wd-add-btn-replace">
+							<?php
+							echo apply_filters(
+								'woocommerce_loop_add_to_cart_link',
+								sprintf(
+									'<a href="%s" data-quantity="1" class="button product_type_variable add_to_cart_button add-to-cart-loop" %s><span>%s</span></a>',
+									esc_url( get_permalink( $product->get_id() ) ),
+									wc_implode_html_attributes( array(
+										'data-product_id'  => $product->get_id(),
+										'data-product_sku' => $product->get_sku(),
+										'aria-label'       => $product->add_to_cart_description(),
+										'rel'              => 'nofollow',
+									) ),
+									esc_html__( 'Ver opções', 'woocommerce' )
+								),
+								$product,
+								$product->get_id()
+							);
+							?>
+						</div>
 
-                <div class="quantity">
-                    <input type="button" value="-" class="minus btn" aria-label="<?php esc_attr_e( 'Decrease quantity', 'woodmart' ); ?>">
+					<?php else : ?>
 
-                    <label class="screen-reader-text" for="<?php echo esc_attr( $qty_id ); ?>">
-                    <?php echo esc_html( sprintf( __( 'Quantidade de %s', 'woocommerce' ), $product->get_name() ) ); ?>
-                    </label>
+						<!-- SIMPLE (e outros compráveis sem variação): qty + add -->
+						<?php
+						$min    = $product->get_min_purchase_quantity();
+						$max    = $product->get_max_purchase_quantity();
+						$qty_id = 'quantity_' . wp_unique_id();
+						?>
 
-                    <input
-                    type="number"
-                    id="<?php echo esc_attr( $qty_id ); ?>"
-                    class="input-text qty text"
-                    value="<?php echo esc_attr( $min ); ?>"
-                    aria-label="<?php esc_attr_e( 'Quantidade do produto', 'woocommerce' ); ?>"
-                    min="<?php echo esc_attr( $min ); ?>"
-                    <?php if ( $max ) : ?>
-                        max="<?php echo esc_attr( $max ); ?>"
-                    <?php endif; ?>
-                    name="quantity"
-                    step="1"
-                    inputmode="numeric"
-                    autocomplete="off"
-                    >
+						<div class="wd-add-btn wd-add-btn-replace">
 
-                    <input type="button" value="+" class="plus btn" aria-label="<?php esc_attr_e( 'Increase quantity', 'woodmart' ); ?>">
-                </div>
+							<div class="quantity">
+								<input type="button" value="-" class="minus btn" aria-label="<?php esc_attr_e( 'Decrease quantity', 'woodmart' ); ?>">
 
-                <?php
-                // botão add to cart no estilo do tema (classe add-to-cart-loop é importante)
-                echo apply_filters(
-                    'woocommerce_loop_add_to_cart_link',
-                    sprintf(
-                    '<a href="%s" data-quantity="%s" class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop" %s><span>%s</span></a>',
-                    esc_url( $product->add_to_cart_url() ),
-                    esc_attr( $min ),
-                    esc_attr( $product->get_type() ),
-                    wc_implode_html_attributes( array(
-                        'data-product_id'  => $product->get_id(),
-                        'data-product_sku' => $product->get_sku(),
-                        'aria-label'       => $product->add_to_cart_description(),
-                        'rel'              => 'nofollow',
-                    ) ),
-                    esc_html__( 'Adicionar', 'woocommerce' )
-                    ),
-                    $product,
-                    $product->get_id()
-                );
-                ?>
+								<label class="screen-reader-text" for="<?php echo esc_attr( $qty_id ); ?>">
+									<?php echo esc_html( sprintf( __( 'Quantidade de %s', 'woocommerce' ), $product->get_name() ) ); ?>
+								</label>
 
-                </div>
-            </div>
-            </div>
+								<input
+									type="number"
+									id="<?php echo esc_attr( $qty_id ); ?>"
+									class="input-text qty text"
+									value="<?php echo esc_attr( $min ); ?>"
+									aria-label="<?php esc_attr_e( 'Quantidade do produto', 'woocommerce' ); ?>"
+									min="<?php echo esc_attr( $min ); ?>"
+									<?php if ( $max ) : ?>max="<?php echo esc_attr( $max ); ?>"<?php endif; ?>
+									name="quantity"
+									step="1"
+									inputmode="numeric"
+									autocomplete="off"
+								>
 
+								<input type="button" value="+" class="plus btn" aria-label="<?php esc_attr_e( 'Increase quantity', 'woodmart' ); ?>">
+							</div>
+
+							<?php
+							echo apply_filters(
+								'woocommerce_loop_add_to_cart_link',
+								sprintf(
+									'<a href="%s" data-quantity="%s" class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop" %s><span>%s</span></a>',
+									esc_url( $product->add_to_cart_url() ),
+									esc_attr( $min ),
+									esc_attr( $product->get_type() ),
+									wc_implode_html_attributes( array(
+										'data-product_id'  => $product->get_id(),
+										'data-product_sku' => $product->get_sku(),
+										'aria-label'       => $product->add_to_cart_description(),
+										'rel'              => 'nofollow',
+									) ),
+									esc_html__( 'Adicionar', 'woocommerce' )
+								),
+								$product,
+								$product->get_id()
+							);
+							?>
+
+						</div>
+
+					<?php endif; ?>
+
+				</div>
+			</div>
 
 		</div>
 	</div>
