@@ -3669,9 +3669,12 @@ li.product-grid-item:not(.quick-shop-shown) .quick-shop-wrapper,
   display: none !important;
 }
 
-li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace,
+
 li.product-grid-item.outofstock .wd-add-btn.wd-add-btn-replace {
   justify-content: flex-end!important;
 }
 
+li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
+  justify-content: center!important;
+}
 
