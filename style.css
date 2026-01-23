@@ -3591,6 +3591,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
 div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div > del {
   background-color: transparent!important;
   text-decoration: none;     
+  padding: 0;
 }
 
 div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div> del > span {
@@ -3600,4 +3601,11 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   text-decoration: line-through;
   opacity: 0.9;
   background-color: transparent!important;
+}
+
+div.product-cta-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
