@@ -3671,7 +3671,7 @@ li.product-grid-item:not(.quick-shop-shown) .quick-shop-wrapper,
 
 li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace,
 li.product-grid-item.outofstock .wd-add-btn.wd-add-btn-replace {
-  align-self: flex-end;
+  justify-content: flex-end!important;
 }
 
 
