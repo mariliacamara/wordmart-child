@@ -3610,3 +3610,7 @@ div.product-cta-price {
   justify-content: center;
   gap: 8px;
 }
+
+body.page-id-267 h1 {
+  display: none;
+}
