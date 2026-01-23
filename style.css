@@ -3593,10 +3593,11 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   text-decoration: none;     
 }
 
-.product-cta-row del span {
+div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > del > span {
   color: #9ca3af;          
   font-size: 0.85rem;
   font-weight: 500;
   text-decoration: line-through;
   opacity: 0.9;
+  background-color: transparent!important;
 }
