@@ -3664,6 +3664,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   max-height: 30px;
 }
 
+li.product-grid-item:not(.quick-shop-shown) .quick-shop-wrapper,
 .wd-product:not(.quick-shop-shown) .quick-shop-wrapper {
   display: none !important;
 }
