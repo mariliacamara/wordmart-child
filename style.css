@@ -3593,6 +3593,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
 }
 
 .product-cta-row del span {
+  background-color: transparent;
   color: #9ca3af;          
   font-size: 0.85rem;
   font-weight: 500;
