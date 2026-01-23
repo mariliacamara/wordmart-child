@@ -3601,6 +3601,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   text-decoration: line-through;
   opacity: 0.9;
   background-color: transparent!important;
+  padding: 0!important;
 }
 
 div.product-cta-price {
