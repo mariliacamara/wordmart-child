@@ -304,11 +304,8 @@ p.stock {
 div.quantity input[type="button"] {
   border: none !important;
   font-size: 14px !important;
-}
-
-div.quantity input[type="button"] {
-  font-size: 14px !important;
   color: #fff !important;
+  height: 30px!important;
 }
 
 div.product-excerpt {
