@@ -3655,3 +3655,6 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   height: 30px;
 }
 
+div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div.wd-add-btn.wd-add-btn-replace > a {
+  max-height: 30px;
+}
