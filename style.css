@@ -3611,7 +3611,7 @@ div.product-cta-price {
   gap: 8px;
 }
 
-body.blog h1,
+body.blog .page-title,
 body.page-id-267 h1 {
   display: none;
 }
