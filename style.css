@@ -3581,8 +3581,8 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
 
 .product.wd-hover-standard .wd-add-btn div.quantity :is(input[type="button"],input[type="number"],input[type="text"]) {
   border: 0;
-  border-left: 1px solid var(---grey);
-  border-right: 1px solid var(---grey);
+  border-left: 1px solid var(---grey)!important;
+  border-right: 1px solid var(---grey)!important;
   color: var(--dark-grey) !important;
 }
 
