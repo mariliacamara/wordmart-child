@@ -3581,6 +3581,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   border-left: 1px solid var(---grey)!important;
   border-right: 1px solid var(---grey)!important;
   color: var(--dark-grey) !important;
+  height: 30px;
 }
 
 /* PROMO preço riscado */
@@ -3652,3 +3653,4 @@ div.wd-variations-boxes > div.size-options > label > small {
 div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div.wd-add-btn.wd-add-btn-replace > div {
   height: 30px;
 }
+
