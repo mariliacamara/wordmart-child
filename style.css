@@ -3612,3 +3612,6 @@ body.blog .page-title,
 body.page-id-267 h1 {
   display: none;
 }
+div.wd-variations-boxes > div.size-options > label > small {
+  color: var(--primary-color);
+}
