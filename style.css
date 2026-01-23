@@ -3590,7 +3590,7 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
 div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div > del {
   background-color: transparent!important;
   text-decoration: none;     
-  padding: 0!important;
+  padding: 7px 0!important;
 }
 
 div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > div> del > span {
