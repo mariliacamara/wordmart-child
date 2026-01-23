@@ -3583,4 +3583,5 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   border: 0;
   border-left: 1px solid var(--grey);
   border-right: 1px solid var(--grey);
+  color: var(--grey) !important;
 }
