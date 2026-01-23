@@ -3669,13 +3669,9 @@ li.product-grid-item:not(.quick-shop-shown) .quick-shop-wrapper,
   display: none !important;
 }
 
-li.product-grid-item.product-type-variable .product-cta,
-li.product-grid-item.outofstock .product-cta {
-  display: flex;
-  align-items: center;
+li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace,
+li.product-grid-item.outofstock .wd-add-btn.wd-add-btn-replace {
+  align-self: flex-end;
 }
 
-li.product-grid-item.product-type-variable .wd-add-btn,
-li.product-grid-item.outofstock .wd-add-btn {
-  margin-left: auto;
-}
+
