@@ -2,13 +2,13 @@ document.addEventListener("click", (e) => {
   const close = e.target.closest(".quick-shop-close a");
   if (!close) return;
 
-  const product = close.closest(".wd-product");
-  if (!product) return;
+  const item = close.closest("li.product-grid-item");
+  if (!item) return;
 
-  // remove estado do quick shop
-  product.classList.remove("quick-shop-shown", "quick-shop-loaded");
+  // remove estados
+  item.classList.remove("quick-shop-shown", "quick-shop-loaded");
 
-  // remove o wrapper injetado (evita lixo visual)
-  const qs = product.querySelector(".quick-shop-wrapper");
+  // remove wrapper injetado
+  const qs = item.querySelector(".quick-shop-wrapper");
   if (qs) qs.remove();
 });

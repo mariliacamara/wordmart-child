@@ -207,17 +207,12 @@ add_filter('woocommerce_product_add_to_cart_text', function ($text, $product) {
   return $text;
 }, 20, 2);
 
-document.addEventListener("click", (e) => {
-  const close = e.target.closest(".quick-shop-close a");
-  if (!close) return;
-
-  const item = close.closest("li.product-grid-item");
-  if (!item) return;
-
-  // remove estados
-  item.classList.remove("quick-shop-shown", "quick-shop-loaded");
-
-  // remove wrapper injetado
-  const qs = item.querySelector(".quick-shop-wrapper");
-  if (qs) qs.remove();
-});
+add_action( 'wp_enqueue_scripts', function () {
+  wp_enqueue_script(
+    'woodmart-quickshop-fix',
+    get_stylesheet_directory_uri() . '/assets/js/quickshop-fix.js',
+    array(), // sem dependência
+    '1.0',
+    true // footer
+  );
+}, 20 );
