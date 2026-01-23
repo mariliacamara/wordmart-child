@@ -87,17 +87,19 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			<!-- PRICE + ADD (Woodmart style qty) -->
             <div class="product-cta-row">
             <div class="product-cta">
-                <?php
-                // preço
-                echo $product->get_price_html();
+                <div class="product-cta-price">
+                    <?php
+                        // preço
+                        echo $product->get_price_html();
 
-                // qty limits
-                $min = $product->get_min_purchase_quantity();
-                $max = $product->get_max_purchase_quantity();
+                        // qty limits
+                        $min = $product->get_min_purchase_quantity();
+                        $max = $product->get_max_purchase_quantity();
 
-                // id único pro label
-                $qty_id = 'quantity_' . wp_unique_id();
-                ?>
+                        // id único pro label
+                        $qty_id = 'quantity_' . wp_unique_id();
+                    ?>
+                </div>
 
                 <div class="wd-add-btn wd-add-btn-replace">
 
