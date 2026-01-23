@@ -211,8 +211,8 @@ add_action( 'wp_enqueue_scripts', function () {
   wp_enqueue_script(
     'woodmart-quickshop-fix',
     get_stylesheet_directory_uri() . '/assets/js/quickshop-fix.js',
-    array(), // sem dependência
+    array(), 
     '1.0',
-    true // footer
+    true
   );
 }, 20 );
