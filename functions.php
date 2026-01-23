@@ -199,3 +199,10 @@ add_filter( 'woocommerce_product_add_to_cart_text', function() {
 add_filter( 'woocommerce_product_single_add_to_cart_text', function() {
   return 'COMPRAR';
 });
+
+add_filter('woocommerce_product_add_to_cart_text', function ($text, $product) {
+  if ( $product && $product->is_type('variable') ) {
+    return __('Ver opções', 'woocommerce');
+  }
+  return $text;
+}, 20, 2);
