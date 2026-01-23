@@ -3585,3 +3585,21 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
   border-right: 1px solid var(---grey);
   color: var(--dark-grey) !important;
 }
+
+/* PROMO preço riscado */
+
+.product-cta-row del {
+  margin-right: 6px;
+}
+
+.product-cta-row del span {
+  color: #9ca3af;          
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: line-through;
+  opacity: 0.9;
+}
+
+.product-cta-row del {
+  text-decoration: none;     
+}
