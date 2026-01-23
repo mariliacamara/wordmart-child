@@ -3588,9 +3588,8 @@ div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > 
 
 /* PROMO preço riscado */
 
-.product-cta-row del {
-  margin-right: 6px;
-  background-color: transparent;
+div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-cta-row > div > del {
+  background-color: transparent!important;
   text-decoration: none;     
 }
 
