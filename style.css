@@ -3736,6 +3736,9 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
   border-radius: 0 8px;
 
   z-index: 1000;
+
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
 
 /* Botão SEM STOCK centralizado e “bonito” */
