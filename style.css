@@ -3114,7 +3114,8 @@ form.cart div.quantity {
   content: '+' !important;
   font-size: 14px;
   line-height: 1;
-  margin-top: -4px;
+  margin-top: -2px;
+  margin-left: 1px;
 }
 
 .product-categories li.toggle-open>.wd-cats-toggle::after,
@@ -3757,5 +3758,5 @@ li.product-grid-item.is-outofstock .oos-badge-text {
 }
 
 .widget_product_categories .product-categories li.current-cat>a {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
