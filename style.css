@@ -3705,17 +3705,6 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
   position: relative;
 }
 
-/* Título no topo do card, central e sem empurrar imagem */
-.product-grid-item.is-outofstock .product-element-bottom::before {
-  content: "Produto Indisponível";
-  display: block;
-  text-align: center;
-  font-weight: 700;
-  font-size: 22px;
-  line-height: 1.1;
-  margin: 10px 0 6px;
-}
-
 /* Ancorar ribbon no canto da IMAGEM */
 .product-grid-item.is-outofstock .product-element-top {
   position: relative;
