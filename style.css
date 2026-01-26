@@ -3710,98 +3710,50 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
   position: relative;
 }
 
-.product-grid-item.is-outofstock .oos-ribbon {
-  position: absolute !important;
-  top: 0 !important;
-  right: 2px !important;
+.
 
-  width: 72px !important;
-  height: 72px !important;
-
-  background: #000 !important;
-  color: #fff !important;
-
-  font-weight: 800 !important;
-  font-size: 12px !important;
-  line-height: 1 !important;
-
-  display: flex !important;
-  align-items: flex-start !important;
-  justify-content: flex-end !important;
-
-  padding: 10px 7px 0 0 !important;
-
-  /* Triângulo “canto direito” */
-  clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
-  border-radius: 0 8px;
-
-  z-index: 1000;
-
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-}
-
-/* Botão SEM STOCK centralizado e “bonito” */
-.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace {
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-}
-
-.product-grid-item.is-outofstock .oos-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 140px;
-  height: 42px;
-  padding: 0 18px;
-  border-radius: 10px;
-  background: #000;
-  color: #fff;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-/* Evita qualquer “click” no bloco de CTA */
-.product-grid-item.is-outofstock .oos-btn {
-  pointer-events: none;
-}
-
-/* o card inteiro vira a âncora */
+/* ancora no card e corta o excesso */
 li.product-grid-item.is-outofstock {
   position: relative;
 }
 
-/* corta qualquer coisa que “saia” do card */
 li.product-grid-item.is-outofstock .product-wrapper {
   position: relative;
   overflow: hidden;
 }
 
-/* faixa diagonal no canto superior direito do CARD */
-li.product-grid-item.is-outofstock .oos-ribbon {
+/* container do badge */
+li.product-grid-item.is-outofstock .oos-badge {
   position: absolute;
-  top: 12px;
-  right: -52px;
-  /* encaixe */
+  top: 0;
+  right: 0;
+  width: 86px;
+  height: 86px;
   z-index: 9999;
+  pointer-events: none;
+}
 
+/* fundo em triângulo */
+li.product-grid-item.is-outofstock .oos-badge-bg {
+  position: absolute;
+  inset: 0;
   background: #000;
-  color: #fff;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
 
+/* texto separado, diagonal "\" */
+li.product-grid-item.is-outofstock .oos-badge-text {
+  position: absolute;
+  top: 18px;
+  right: -10px;
+
+  transform: rotate(-45deg);
+  transform-origin: top right;
+
+  color: #fff;
   font-weight: 900;
   font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
-  line-height: 1;
-
-  padding: 6px 64px;
-  /* comprimento da faixa */
-
-  transform: rotate(-45deg);
-  /* "\" */
-  transform-origin: center;
-
-  border-radius: 0;
-  box-shadow: none;
+  white-space: nowrap;
 }
