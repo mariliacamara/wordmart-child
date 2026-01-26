@@ -3766,3 +3766,38 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
 .product-grid-item.is-outofstock .oos-btn {
   pointer-events: none;
 }
+
+/* âncora */
+.product-grid-item.is-outofstock .product-element-top {
+  position: relative;
+}
+
+/* Triângulo */
+.product-grid-item.is-outofstock .oos-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72px;
+  height: 72px;
+  background: #000;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 1000;
+}
+
+/* Texto na diagonal "\" dentro do triângulo */
+.product-grid-item.is-outofstock .oos-ribbon::after {
+  content: "INDISPONÍVEL";
+  position: absolute;
+  top: 16px;
+  right: -6px;
+
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: #fff;
+  text-transform: uppercase;
+
+  transform: rotate(-45deg);
+  transform-origin: top right;
+  white-space: nowrap;
+}
