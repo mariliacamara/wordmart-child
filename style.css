@@ -3691,3 +3691,73 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
 .woocommerce-cart .page-title {
   display: none;
 }
+
+/* ===== OOS: limpa bagunça do tema/plugin ===== */
+.product-grid-item.is-outofstock .product-labels,
+.product-grid-item.is-outofstock .product-label.out-of-stock,
+.product-grid-item.is-outofstock span.wcosm_soldout,
+.product-grid-item.is-outofstock .product-element-top style {
+  display: none !important;
+}
+
+/* Garante âncora do ribbon */
+.product-grid-item.is-outofstock .product-wrapper {
+  position: relative;
+}
+
+/* Título no topo do card, central e sem empurrar imagem */
+.product-grid-item.is-outofstock .product-element-bottom::before {
+  content: "Produto Indisponível";
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  margin: 10px 0 6px;
+}
+
+/* Ancorar ribbon no canto da IMAGEM */
+.product-grid-item.is-outofstock .product-element-top {
+  position: relative;
+}
+
+.product-grid-item.is-outofstock .oos-ribbon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  padding: 5px 12px;
+  background: #000;
+  color: #fff;
+  transform: rotate(45deg);
+  transform-origin: top right;
+}
+
+/* Botão SEM STOCK centralizado e “bonito” */
+.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.product-grid-item.is-outofstock .oos-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Evita qualquer “click” no bloco de CTA */
+.product-grid-item.is-outofstock .oos-btn {
+  pointer-events: none;
+}
