@@ -3711,18 +3711,29 @@ li.product-grid-item.product-type-variable .wd-add-btn.wd-add-btn-replace {
 }
 
 .product-grid-item.is-outofstock .oos-ribbon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 9;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  padding: 5px 12px;
-  background: #000;
-  color: #fff;
-  transform: rotate(45deg);
-  transform-origin: top right;
+  position: absolute !important;
+  top: 0 !important;
+  right: -97px !important;
+
+  width: 72px !important;
+  height: 72px !important;
+
+  background: #000 !important;
+  color: #fff !important;
+
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+
+  padding: 10px 7px 0 0 !important;
+
+  /* Triângulo “canto direito” */
+  clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
+  border-radius: 0 8px;
 }
 
 /* Botão SEM STOCK centralizado e “bonito” */
