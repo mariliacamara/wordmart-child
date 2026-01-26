@@ -24,7 +24,7 @@ $is_oos = ! $product->is_in_stock();
 
 			<?php if ( $is_oos ) : ?>
 				<div class="oos-badge" aria-hidden="true">
-					<span class="oos-corner"></span>
+					<span class="oos-corner	"></span>
 					<span class="oos-text">INDISPONÍVEL</span>
 				</div>
 			<?php endif; ?>
