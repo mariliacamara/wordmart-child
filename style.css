@@ -3755,3 +3755,7 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   text-transform: uppercase;
   white-space: nowrap;
 }
+
+.widget_product_categories .product-categories li.current-cat>a {
+  color: var(--primary-color);
+}
