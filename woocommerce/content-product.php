@@ -23,7 +23,6 @@ $is_oos = ! $product->is_in_stock();
 		<div class="product-element-top wd-quick-shop">
 
 			<?php if ( $is_oos ) : ?>
-				<div class="oos-title">Produto Indisponível</div>
 				<span class="oos-ribbon">INDISPONÍVEL</span>
 			<?php endif; ?>
 
