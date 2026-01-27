@@ -3760,3 +3760,7 @@ li.product-grid-item.is-outofstock .oos-badge-text {
 .widget_product_categories .product-categories li.current-cat>a {
   color: var(--primary-color) !important;
 }
+
+.is-outofstock .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn {
+  justify-content: center !important;
+}
