@@ -1,150 +1,84 @@
 <?php
 /**
- * Order details
+ * Order Item Details
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/order/order-details.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/order/order-details-item.php.
  *
- * @see     https://woocommerce.com/document/template-structure/
+ * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 10.1.0
- *
- * @var bool $show_downloads Controls whether the downloads table should be rendered.
+ * @version 5.2.0
  */
 
-// phpcs:disable WooCommerce.Commenting.CommentHooks.MissingHookComment
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-defined( 'ABSPATH' ) || exit;
-
-$order = wc_get_order( $order_id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-
-if ( ! $order ) {
+if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 	return;
 }
-
-$order_items        = $order->get_items( apply_filters( 'woocommerce_purchase_order_item_types', 'line_item' ) );
-$show_purchase_note = $order->has_status( apply_filters( 'woocommerce_purchase_note_order_statuses', array( 'completed', 'processing' ) ) );
-$downloads          = $order->get_downloadable_items();
-$actions            = array_filter(
-	wc_get_account_orders_actions( $order ),
-	function ( $key ) {
-		return 'view' !== $key;
-	},
-	ARRAY_FILTER_USE_KEY
-);
-
-// We make sure the order belongs to the user. This will also be true if the user is a guest, and the order belongs to a guest (userID === 0).
-$show_customer_details = $order->get_user_id() === get_current_user_id();
-
-if ( $show_downloads ) {
-	wc_get_template(
-		'order/order-downloads.php',
-		array(
-			'downloads'  => $downloads,
-			'show_title' => true,
-		)
-	);
-}
 ?>
-<section class="woocommerce-order-details">
-	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
+<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'woocommerce-table__line-item order_item', $item, $order ) ); ?>">
 
-	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
+	<td class="woocommerce-table__product-name product-name">
+		<?php
+		$is_visible        = $product && $product->is_visible();
+		$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
 
-	<table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
+		echo wp_kses_post(
+			apply_filters(
+				'woocommerce_order_item_name',
+				$product_permalink
+					? sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), esc_html( $item->get_name() ) )
+					: esc_html( $item->get_name() ),
+				$item,
+				$is_visible
+			)
+		);
 
-		<thead>
-			<tr>
-				<th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-qty product-qty"><?php esc_html_e( 'Qty', 'woocommerce' ); ?></th>
-				<th class="woocommerce-table__product-table product-total"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			</tr>
-		</thead>
+		// Mantém a lógica de qty/refund porque vamos mostrar isso na coluna "Qtd".
+		$qty          = $item->get_quantity();
+		$refunded_qty = $order->get_qty_refunded_for_item( $item_id );
 
-		<tbody>
-			<?php
-			do_action( 'woocommerce_order_details_before_order_table_items', $order );
+		if ( $refunded_qty ) {
+			$qty_display = '<del>' . esc_html( $qty ) . '</del> <ins>' . esc_html( $qty - ( $refunded_qty * -1 ) ) . '</ins>';
+		} else {
+			$qty_display = esc_html( $qty );
+		}
 
-			foreach ( $order_items as $item_id => $item ) {
-				$product = $item->get_product();
+		// IMPORTANTE: removido o "× qty" do nome, porque agora existe coluna própria.
+		// echo apply_filters( 'woocommerce_order_item_quantity_html', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $qty_display ) . '</strong>', $item );
 
-				// IMPORTANTE:
-				// Seu order-details-item.php PRECISA renderizar 3 <td> (nome / qtd / total).
-				// A gente não mata infos extras; elas ficam dentro do <td class="product-name"> como já é.
-				wc_get_template(
-					'order/order-details-item.php',
-					array(
-						'order'              => $order,
-						'item_id'            => $item_id,
-						'item'               => $item,
-						'show_purchase_note' => $show_purchase_note,
-						'purchase_note'      => $product ? $product->get_purchase_note() : '',
-						'product'            => $product,
-					)
-				);
-			}
+		do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
 
-			do_action( 'woocommerce_order_details_after_order_table_items', $order );
-			?>
-		</tbody>
+		wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
-		<?php if ( ! empty( $actions ) ) : ?>
-			<tfoot>
-				<tr>
-					<th class="order-actions--heading" colspan="2"><?php esc_html_e( 'Actions', 'woocommerce' ); ?>:</th>
-					<td>
-						<?php
-						$wp_button_class = wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '';
-						foreach ( $actions as $key => $action ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-							if ( empty( $action['aria-label'] ) ) {
-								/* translators: %1$s Action name, %2$s Order number. */
-								$action_aria_label = sprintf( __( '%1$s order number %2$s', 'woocommerce' ), $action['name'], $order->get_order_number() );
-							} else {
-								$action_aria_label = $action['aria-label'];
-							}
+		do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
+		?>
+	</td>
 
-							echo '<a href="' . esc_url( $action['url'] ) . '" class="woocommerce-button' . esc_attr( $wp_button_class ) . ' button ' . sanitize_html_class( $key ) . ' order-actions-button" aria-label="' . esc_attr( $action_aria_label ) . '">' . esc_html( $action['name'] ) . '</a>';
-							unset( $action_aria_label );
-						}
-						?>
-					</td>
-				</tr>
-			</tfoot>
-		<?php endif; ?>
+	<td class="woocommerce-table__product-qty product-qty">
+		<?php
+		// Mostra qty (com del/ins quando tem refund) e mantém filtro original do Woo.
+		echo apply_filters(
+			'woocommerce_order_item_quantity_html',
+			$qty_display,
+			$item
+		); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		?>
+	</td>
 
-		<tfoot>
-			<?php foreach ( $order->get_order_item_totals() as $key => $total ) : ?>
-				<tr>
-					<th scope="row" colspan="2"><?php echo esc_html( $total['label'] ); ?></th>
-					<td><?php echo wp_kses_post( $total['value'] ); ?></td>
-				</tr>
-			<?php endforeach; ?>
+	<td class="woocommerce-table__product-total product-total">
+		<?php echo $order->get_formatted_line_subtotal( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	</td>
 
-			<?php if ( $order->get_customer_note() ) : ?>
-				<tr>
-					<th colspan="2"><?php esc_html_e( 'Note:', 'woocommerce' ); ?></th>
-					<td>
-						<?php
-						$customer_note = wc_wptexturize_order_note( $order->get_customer_note() );
-						echo wp_kses( nl2br( $customer_note ), array( 'br' => array() ) );
-						?>
-					</td>
-				</tr>
-			<?php endif; ?>
-		</tfoot>
-	</table>
+</tr>
 
-	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
-</section>
+<?php if ( $show_purchase_note && $purchase_note ) : ?>
 
-<?php
-/**
- * Action hook fired after the order details.
- *
- * @since 4.4.0
- * @param WC_Order $order Order data.
- */
-do_action( 'woocommerce_after_order_details', $order );
+<tr class="woocommerce-table__product-purchase-note product-purchase-note">
+	<td colspan="3">
+		<?php echo wpautop( do_shortcode( wp_kses_post( $purchase_note ) ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	</td>
+</tr>
 
-if ( $show_customer_details ) {
-	wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
-}
+<?php endif; ?>
