@@ -34,6 +34,16 @@ $is_oos = ! $product->is_in_stock();
 				<?php do_action( 'woodmart_product_action_buttons' ); ?>
 			</div>
 
+			<?php
+				$price = (float) $product->get_price();
+
+				if ( $price > 48.90 ) : ?>
+					<div class="price-badge">
+						<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/postes-gratis.svg' ); ?>
+					</div>
+			<?php endif; ?>
+
+
 			<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="product-image-link">
 				<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
 			</a>
