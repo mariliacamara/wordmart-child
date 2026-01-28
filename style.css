@@ -3801,7 +3801,6 @@ li.product-grid-item.is-outofstock .oos-badge-text {
 
 /* Garante largura igual ao botão */
 .product-grid-item.is-outofstock .wd-add-btn-replace .oos-btn {
-  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
