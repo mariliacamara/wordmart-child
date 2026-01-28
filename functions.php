@@ -216,3 +216,5 @@ add_action( 'wp_enqueue_scripts', function () {
     true
   );
 }, 20 );
+
+echo apply_filters( 'woocommerce_order_item_name', $product_name . '&nbsp;<strong class="product-quantity">&times;&nbsp;' . $item->get_quantity() . '</strong>', $item, $is_visible );
