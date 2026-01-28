@@ -39,7 +39,7 @@ $is_oos = ! $product->is_in_stock();
 
 				if ( $price > 48.90 ) : ?>
 					<div class="price-badge">
-						<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/postes-gratis.svg' ); ?>
+						<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
 					</div>
 			<?php endif; ?>
 
