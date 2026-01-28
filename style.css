@@ -3838,6 +3838,7 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   border: 1px solid var(--secondary-color)
 }
 
+.woocommerce-checkout-review-order-table :is(th, td),
 th.product-name,
 th.product-price,
 th.product-quantity,
