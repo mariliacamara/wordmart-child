@@ -26,7 +26,7 @@ $is_oos = ! $product->is_in_stock();
 				<div class="oos-svg-badge" aria-hidden="true">
 					<?php
 						echo file_get_contents(
-							get_stylesheet_directory() . '/assets/icons/indisponivel.svg'
+							get_stylesheet_directory() . '/assets/icons/outofstock.svg'
 						);
 					?>
 				</div>
