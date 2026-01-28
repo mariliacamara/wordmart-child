@@ -23,11 +23,15 @@ $is_oos = ! $product->is_in_stock();
 		<div class="product-element-top wd-quick-shop">
 
 			<?php if ( $is_oos ) : ?>
-				<div class="oos-badge" aria-hidden="true">
-					<span class="oos-corner	"></span>
-					<span class="oos-text">INDISPONÍVEL</span>
+				<div class="oos-svg-badge" aria-hidden="true">
+					<?php
+						echo file_get_contents(
+							get_stylesheet_directory() . '/assets/icons/indisponivel.svg'
+						);
+					?>
 				</div>
 			<?php endif; ?>
+
 
 
 			<div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">

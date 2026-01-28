@@ -3945,3 +3945,37 @@ h3.wc-bacs-bank-details-account-name {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mata TODAS as flags antigas de out of stock */
+.product-grid-item.is-outofstock .oos-badge,
+.product-grid-item.is-outofstock .product-label.out-of-stock,
+.product-grid-item.is-outofstock .wcosm_soldout {
+  display: none !important;
+}
+
+.product-element-top {
+  position: relative;
+}
+
+/* Novo badge SVG */
+.oos-svg-badge {
+  position: absolute;
+  top: 10px;
+  /* muda se quiser */
+  left: 10px;
+  /* ou right/bottom */
+  z-index: 30;
+
+  width: 110px;
+  /* ajusta conforme o SVG */
+  height: auto;
+
+  pointer-events: none;
+  /* não atrapalha clique */
+}
+
+.oos-svg-badge svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
