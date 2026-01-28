@@ -102,8 +102,11 @@ $is_oos = ! $product->is_in_stock();
 					<?php if ( $is_oos ) : ?>
 
 						<div class="wd-add-btn wd-add-btn-replace">
-							<span class="button oos-btn" aria-disabled="true">SEM STOCK</span>
+							<a class="button add-to-cart-loop oos-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">
+								<span>SEM STOCK</span>
+							</a>
 						</div>
+
 
 					<?php else : ?>
 

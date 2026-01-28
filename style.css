@@ -3793,30 +3793,16 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   cursor: not-allowed;
 }
 
-/* Garante que o slot do CTA é consistente */
-.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace {
-  width: 100%;
+/* Desativa interação (mas mantém o estilo do botão do tema) */
+.product-grid-item.is-outofstock .oos-btn.is-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
 }
 
-/* Faz o "SEM STOCK" ter o mesmo box do botão "Adicionar" */
-.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace .oos-btn {
+/* Garante largura igual ao botão */
+.product-grid-item.is-outofstock .wd-add-btn-replace .oos-btn {
+  width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  width: 100%;
-  min-height: var(--btn-height, 40px);
-  /* fallback */
-  padding: 0 16px;
-
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* Se o tema usa altura via line-height no botão, copia o padrão */
-.product-grid-item .wd-add-btn.wd-add-btn-replace a.button,
-.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace .oos-btn {
-  min-height: 40px;
-  border-radius: 6px;
-  /* se quiser igual */
 }
