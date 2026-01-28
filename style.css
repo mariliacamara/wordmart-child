@@ -3837,3 +3837,10 @@ li.product-grid-item.is-outofstock .oos-badge-text {
 .woocommerce-checkout select {
   border: 1px solid var(--secondary-color)
 }
+
+th.product-name,
+th.product-price,
+th.product-quantity,
+th.product-subtotal {
+  color: var(--black)
+}
