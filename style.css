@@ -4001,6 +4001,8 @@ h3.wc-bacs-bank-details-account-name {
   pointer-events: none !important;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%);
+
+  background-color: var(--black)
 }
 
 /* SVG preencher o quadrado certinho */
