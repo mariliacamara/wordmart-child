@@ -217,7 +217,12 @@ add_action( 'wp_enqueue_scripts', function () {
   );
 }, 20 );
 
+add_filter( 'woocommerce_my_account_my_orders_actions', function ( $actions, $order ) {
 
+	if ( isset( $actions['pay'] ) ) {
+		$actions['pay']['name'] = __( 'Mudar forma de pagamento', 'woocommerce' );
+	}
 
+	return $actions;
 
-
+}, 10, 2 );
