@@ -3805,3 +3805,17 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   align-items: center;
   justify-content: center;
 }
+
+/* Centraliza o botão dentro do slot do CTA */
+.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace {
+  display: flex;
+  justify-content: center;
+}
+
+/* Botão SEM STOCK do tamanho do texto */
+.product-grid-item.is-outofstock .wd-add-btn.wd-add-btn-replace .oos-btn {
+  width: auto !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
