@@ -3820,3 +3820,7 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   align-items: center;
   justify-content: center;
 }
+
+.woocommerce-checkout label {
+  color: var(--black);
+}
