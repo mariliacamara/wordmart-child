@@ -35,13 +35,14 @@ $is_oos = ! $product->is_in_stock();
 			</div>
 
 			<?php
-				$price = (float) $product->get_price();
+			$price = (float) $product->get_price();
 
-				if ( $price > 48.90 ) : ?>
-					<div class="price-badge">
-						<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
-					</div>
+			if ( $price > 48.90 ) : ?>
+				<div class="price-badge" aria-label="Envio grátis" data-tooltip="Portes grátis">
+					<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
+				</div>
 			<?php endif; ?>
+
 
 
 			<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="product-image-link">
@@ -190,3 +191,4 @@ $is_oos = ! $product->is_in_stock();
 		</div>
 	</div>
 </li>
+
