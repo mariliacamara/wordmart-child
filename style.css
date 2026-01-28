@@ -3979,3 +3979,31 @@ h3.wc-bacs-bank-details-account-name {
   height: auto;
   display: block;
 }
+
+/* o wrapper da imagem precisa ser referência */
+.product-grid-item.is-outofstock .product-element-top.wd-quick-shop {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* selo no canto superior direito */
+.product-grid-item.is-outofstock .oos-svg-badge {
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  left: auto !important;
+  bottom: auto !important;
+
+  width: 72px !important;
+  height: 72px !important;
+
+  z-index: 9999 !important;
+  pointer-events: none !important;
+}
+
+/* SVG preencher o quadrado certinho */
+.product-grid-item.is-outofstock .oos-svg-badge svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
