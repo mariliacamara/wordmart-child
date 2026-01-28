@@ -3999,6 +3999,8 @@ h3.wc-bacs-bank-details-account-name {
 
   z-index: 9999 !important;
   pointer-events: none !important;
+
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
 }
 
 /* SVG preencher o quadrado certinho */
