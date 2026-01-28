@@ -3621,6 +3621,7 @@ div.product-cta-price {
   min-height: 29px;
 }
 
+body.page-id-10 .page-title,
 body.blog .page-title,
 body.page-id-267 h1 {
   display: none;
