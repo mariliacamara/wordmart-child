@@ -3838,10 +3838,12 @@ li.product-grid-item.is-outofstock .oos-badge-text {
   border: 1px solid var(--secondary-color)
 }
 
+.woocommerce-table--order-details :is(th, td),
 .woocommerce-checkout-review-order-table :is(th, td),
 th.product-name,
 th.product-price,
 th.product-quantity,
-th.product-subtotal {
+th.product-subtotal,
+h3.wc-bacs-bank-details-account-name {
   color: var(--black)
 }
