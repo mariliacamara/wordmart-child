@@ -3824,3 +3824,16 @@ li.product-grid-item.is-outofstock .oos-badge-text {
 .woocommerce-checkout label {
   color: var(--black);
 }
+
+.woocommerce-checkout input[type='email'],
+.woocommerce-checkout input[type='date'],
+.woocommerce-checkout input[type='search'],
+.woocommerce-checkout input[type='number'],
+.woocommerce-checkout input[type='text'],
+.woocommerce-checkout input[type='tel'],
+.woocommerce-checkout input[type='url'],
+.woocommerce-checkout input[type='password'],
+.woocommerce-checkout textarea,
+.woocommerce-checkout select {
+  border: 1px solid var(--secondary-color)
+}
