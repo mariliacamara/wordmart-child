@@ -3852,94 +3852,100 @@ h3.wc-bacs-bank-details-account-name {
   position: relative;
 }
 
-/* Portes grátis: nunca pode ser cortado */
-.product-grid-item .price-badge {
-  clip-path: none !important;
-  -webkit-clip-path: none !important;
-  mask: none !important;
-  -webkit-mask: none !important;
+.price-badge {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  z-index: 20;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 20;
 
-  overflow: visible !important;
-
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
+  width: 36px;
+  height: 36px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  cursor: help;
 }
 
-/* garante que o svg não extrapola */
-.product-grid-item .price-badge svg {
+.price-badge svg {
   width: 100%;
   height: 100%;
-  display: block;
-}
-
-
-
-
-/* Mata TODAS as flags antigas de out of stock */
-.product-grid-item.is-outofstock .oos-badge,
-.product-grid-item.is-outofstock .product-label.out-of-stock,
-.product-grid-item.is-outofstock .wcosm_soldout {
-  display: none !important;
 }
 
 .product-element-top {
   position: relative;
 }
 
-/* Novo badge SVG */
-.oos-svg-badge {
+.price-badge {
   position: absolute;
-  top: 10px;
-  /* muda se quiser */
-  left: 10px;
-  /* ou right/bottom */
-  z-index: 30;
+  bottom: 8px;
+  left: 8px;
+  z-index: 20;
 
-  width: 110px;
-  /* ajusta conforme o SVG */
-  height: auto;
+  width: 36px;
+  height: 36px;
 
-  pointer-events: none;
-  /* não atrapalha clique */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: help;
 }
 
-.oos-svg-badge svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Wrapper referência */
-.product-grid-item.is-outofstock .product-element-top.wd-quick-shop {
-  position: relative;
-  overflow: visible;
-}
-
-/* Triângulo no canto superior direito (só indisponível) */
-.product-grid-item.is-outofstock .oos-svg-badge {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  width: 72px;
-  height: 72px;
-
-  z-index: 9999;
-  pointer-events: none;
-
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  border-radius: 0 10px;
-
-  background: var(--black);
-}
-
-.product-grid-item.is-outofstock .oos-svg-badge svg {
+.price-badge svg {
   width: 100%;
   height: 100%;
-  display: block;
+}
+
+/* Tooltip */
+.price-badge::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  background: rgba(10, 18, 48, 0.95);
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .15s ease, transform .15s ease;
+
+  pointer-events: none;
+}
+
+.price-badge::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  bottom: calc(100% + 2px);
+
+  border: 6px solid transparent;
+  border-top-color: rgba(10, 18, 48, 0.95);
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity .15s ease, transform .15s ease;
+
+  pointer-events: none;
+}
+
+.price-badge:hover::after,
+.price-badge:hover::before {
+  opacity: 1;
+  transform: translateY(0);
 }
