@@ -4049,6 +4049,10 @@ h3.wc-bacs-bank-details-account-name {
   border: none;
 }
 
+.woocommerce-variation-add-to-cart {
+  background-color: transparent;
+}
+
 div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div>div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-disabled>div {
   background-color: var(--secondary-color);
 }
