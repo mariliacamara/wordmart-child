@@ -2807,7 +2807,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 .wd-product-meta {
   display: flex;
   gap: 12px;
-  align-items: center;
+  flex-direction: column;
   flex-wrap: wrap;
   border-bottom: 2px dotted var(--grey);
   padding-bottom: 5px;
