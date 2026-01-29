@@ -4047,3 +4047,7 @@ h3.wc-bacs-bank-details-account-name {
 .single-product form.cart input.qty {
   border: none;
 }
+
+div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
+  background-color: var(--grey);
+}
