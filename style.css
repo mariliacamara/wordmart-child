@@ -3949,3 +3949,92 @@ h3.wc-bacs-bank-details-account-name {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
+/* Mata TODAS as flags antigas de out of stock */
+.product-grid-item.is-outofstock .oos-badge,
+.product-grid-item.is-outofstock .product-label.out-of-stock,
+.product-grid-item.is-outofstock .wcosm_soldout {
+  display: none !important;
+}
+
+.product-element-top {
+  position: relative;
+}
+
+/* Novo badge SVG */
+.oos-svg-badge {
+  position: absolute;
+  top: 10px;
+  /* muda se quiser */
+  left: 10px;
+  /* ou right/bottom */
+  z-index: 30;
+
+  width: 110px;
+  /* ajusta conforme o SVG */
+  height: auto;
+
+  pointer-events: none;
+  /* não atrapalha clique */
+}
+
+.oos-svg-badge svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Wrapper referência */
+.product-grid-item.is-outofstock .product-element-top.wd-quick-shop {
+  position: relative;
+  overflow: visible;
+}
+
+/* Triângulo no canto superior direito (só indisponível) */
+.product-grid-item.is-outofstock .oos-svg-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 72px;
+  height: 72px;
+
+  z-index: 9999;
+  pointer-events: none;
+
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  border-radius: 0 10px;
+
+  background: var(--black);
+}
+
+.product-grid-item.is-outofstock .oos-svg-badge svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.free-shipping-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  background: #2bb3c0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 20;
+}
+
+.free-shipping-badge svg {
+  width: 70%;
+  height: auto;
+}
