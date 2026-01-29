@@ -4019,10 +4019,10 @@ h3.wc-bacs-bank-details-account-name {
 .free-shipping-badge {
   position: absolute;
   bottom: 8px;
-  left: 8px;
+  left: 0;
 
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
 
   border-radius: 50%;
   background: #2bb3c0;
@@ -4035,6 +4035,6 @@ h3.wc-bacs-bank-details-account-name {
 }
 
 .free-shipping-badge svg {
-  width: 70%;
+  width: 100%;
   height: auto;
 }
