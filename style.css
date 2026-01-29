@@ -635,7 +635,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
 .pagination-pagination .product-grid-item>div>div.product-element-bottom>div.product-cta-row>div>div>div.price-col>.woocommerce-Price-amount,
 .pagination-pagination .product-grid-item .woocommerce-Price-amount,
 .owl-carousel .owl-item .woocommerce-Price-amount,
-.wd-related-products .wd-related-grid .product-wrapper .price .woocommerce-Price-amount {
+.wd-related-products .product-cta-price .woocommerce-Price-amount {
   background: #f5c63b;
   /* amarelo */
   color: var(--primary-color) !important;
@@ -645,6 +645,8 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   display: inline-block;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06) inset;
 }
+
+
 
 /* Add to cart / CTA button (blue) (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .add_to_cart_button,
