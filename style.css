@@ -4067,7 +4067,7 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
 .related-products .wd-related-grid .wd-add-btn-replace .quantity .minus,
 .related-products .wd-related-grid .wd-add-btn-replace .quantity .plus,
 .related-products .wd-related-grid a.add-to-cart-loop.button {
-  height: 42px;
+  height: 30px;
 }
 
 /* garantir que os controles fiquem centralizados */
@@ -4079,8 +4079,8 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
 /* botões +/- */
 .related-products .wd-related-grid .wd-add-btn-replace .quantity .minus,
 .related-products .wd-related-grid .wd-add-btn-replace .quantity .plus {
-  width: 42px;
-  line-height: 42px;
+  width: 30px;
+  line-height: 30px;
   padding: 0;
 }
 
@@ -4088,7 +4088,7 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
 .related-products .wd-related-grid .wd-add-btn-replace .quantity .qty {
   width: 64px;
   /* ajusta se quiser */
-  line-height: 42px;
+  line-height: 30px;
   padding: 0 8px;
   margin: 0;
 }
@@ -4098,7 +4098,7 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 42px;
+  line-height: 30px;
   /* mata diferença de line-height do tema */
   padding: 0 14px;
   margin: 0;
