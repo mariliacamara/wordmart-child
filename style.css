@@ -2111,7 +2111,7 @@ td.product-price>.amount {
   padding: 0 5px;
   min-width: 25px;
   min-height: unset;
-  height: 26px;
+  height: 26px !important;
   border: var(--wd-form-brd-width) solid var(--wd-form-brd-color);
 
   background: var(--grey) !important;
@@ -4050,4 +4050,5 @@ h3.wc-bacs-bank-details-account-name {
 
 div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
   background-color: var(--grey);
+  display: unset !important
 }
