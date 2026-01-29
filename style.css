@@ -4116,3 +4116,7 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
 div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-variations-boxes>div.size-options>label.size-label.is-checked>small {
   color: var(--white-color)
 }
+
+div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div>div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled>div {
+  background-color: var(--secondary-color) !important;
+}
