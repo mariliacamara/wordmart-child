@@ -3669,6 +3669,7 @@ div.owl-stage-outer>div>div>div>li>div>div.product-element-bottom>div.product-ct
   height: 30px;
 }
 
+
 div.owl-stage-outer>div>div>div>li>div>div.product-element-bottom>div.product-cta-row>div>div.wd-add-btn.wd-add-btn-replace>div:hover {
   color: var(--white-color);
 }
@@ -4051,4 +4052,55 @@ h3.wc-bacs-bank-details-account-name {
 div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
   background-color: var(--grey);
   display: unset !important
+}
+
+/* RELATED: alinhar qty + botão na mesma altura */
+.related-products .wd-related-grid .wd-add-btn.wd-add-btn-replace {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* define uma altura única */
+.related-products .wd-related-grid .wd-add-btn-replace .quantity,
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .qty,
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .minus,
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .plus,
+.related-products .wd-related-grid a.add-to-cart-loop.button {
+  height: 42px;
+}
+
+/* garantir que os controles fiquem centralizados */
+.related-products .wd-related-grid .wd-add-btn-replace .quantity {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* botões +/- */
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .minus,
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .plus {
+  width: 42px;
+  line-height: 42px;
+  padding: 0;
+}
+
+/* input number */
+.related-products .wd-related-grid .wd-add-btn-replace .quantity .qty {
+  width: 64px;
+  /* ajusta se quiser */
+  line-height: 42px;
+  padding: 0 8px;
+  margin: 0;
+}
+
+/* botão "Adicionar" */
+.related-products .wd-related-grid a.add-to-cart-loop.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 42px;
+  /* mata diferença de line-height do tema */
+  padding: 0 14px;
+  margin: 0;
+  white-space: nowrap;
 }
