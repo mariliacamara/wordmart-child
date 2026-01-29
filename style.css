@@ -3852,26 +3852,31 @@ h3.wc-bacs-bank-details-account-name {
   position: relative;
 }
 
-.price-badge {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  z-index: 20;
+/* Portes grátis: nunca pode ser cortado */
+.product-grid-item .price-badge {
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  mask: none !important;
+  -webkit-mask: none !important;
 
-  width: 36px;
-  height: 36px;
+  overflow: visible !important;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  cursor: help;
 }
 
-.price-badge svg {
+/* garante que o svg não extrapola */
+.product-grid-item .price-badge svg {
   width: 100%;
   height: 100%;
+  display: block;
 }
+
 
 
 
