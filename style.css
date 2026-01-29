@@ -3989,8 +3989,8 @@ h3.wc-bacs-bank-details-account-name {
 /* selo no canto superior direito */
 .product-grid-item.is-outofstock .oos-svg-badge {
   position: absolute !important;
-  top: 8px !important;
-  right: 8px !important;
+  top: 0 !important;
+  right: 0 !important;
   left: auto !important;
   bottom: auto !important;
 
@@ -4002,7 +4002,8 @@ h3.wc-bacs-bank-details-account-name {
 
   clip-path: polygon(100% 0, 0 0, 100% 100%);
 
-  background-color: var(--black)
+  background-color: var(--black);
+  border-radius: 0 10px;
 }
 
 /* SVG preencher o quadrado certinho */
