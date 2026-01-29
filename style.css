@@ -286,13 +286,13 @@ p.stock {
   display: none
 }
 
-body.single-product>.woocommerce .quantity {
+div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div {
   background: #29b0c2;
   border-radius: 5px;
   display: unset !important;
 }
 
-body.single-product .woocommerce .quantity input.qty {
+div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div {
   font-size: 14px;
   border: none !important;
   color: #fff !important;
