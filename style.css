@@ -4040,5 +4040,6 @@ h3.wc-bacs-bank-details-account-name {
 .woocommerce .quantity {
   background-color: none;
   border: 1px solid var(--dark-grey);
+  border-radius: 5px;
   display: flex !important;
 }
