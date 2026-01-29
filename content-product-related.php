@@ -18,9 +18,26 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
     <!-- TOP: imagem e quick actions -->
     <div class="product-element-top wd-quick-shop">
+      <?php if ( $is_oos ) : ?>
+				<div class="oos-svg-badge" aria-hidden="true">
+					<?php
+						echo file_get_contents(
+							get_stylesheet_directory() . '/assets/icons/outofstock.svg'
+						);
+					?>
+				</div>
+			<?php endif; ?>
       <div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
         <?php do_action( 'woodmart_product_action_buttons' ); ?>
       </div>
+      <?php
+			$price = (float) $product->get_price();
+
+			if ( $price > 48.90 ) : ?>
+				<div class="price-badge free-shipping-badge" aria-label="Envio grátis" data-tooltip="Portes grátis">
+					<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
+				</div>
+			<?php endif; ?>
       <a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link">
         <?php
         /**
