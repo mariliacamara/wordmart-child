@@ -299,6 +299,8 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   font-weight: 900;
 }
 
+
+
 div.quantity input[type="button"] {
   border: none !important;
   font-size: 14px !important;
@@ -4040,4 +4042,8 @@ h3.wc-bacs-bank-details-account-name {
   border: 1px solid var(--grey);
   border-radius: 5px;
   display: flex !important;
+}
+
+.single-product form.cart input.qty {
+  border: none;
 }
