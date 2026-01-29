@@ -301,7 +301,7 @@ p.stock {
   font-weight: 900;
 }
 
-.shop-content-area .woocommerce .quantity {
+.shop-content-area>.woocommerce .quantity {
   background-color: none;
   border: 1px solid var(--dark-grey);
   display: flex !important;
