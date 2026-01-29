@@ -3873,53 +3873,7 @@ h3.wc-bacs-bank-details-account-name {
   height: 100%;
 }
 
-/* Tooltip */
-.price-badge::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  left: 0;
-  bottom: calc(100% + 8px);
 
-  padding: 6px 10px;
-  border-radius: 8px;
-
-  background: rgba(10, 18, 48, 0.95);
-  color: #fff;
-
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-
-  white-space: nowrap;
-
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .15s ease, transform .15s ease;
-
-  pointer-events: none;
-}
-
-.price-badge::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  bottom: calc(100% + 2px);
-
-  border: 6px solid transparent;
-  border-top-color: rgba(10, 18, 48, 0.95);
-
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .15s ease, transform .15s ease;
-
-  pointer-events: none;
-}
-
-.price-badge:hover::after,
-.price-badge:hover::before {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Mata TODAS as flags antigas de out of stock */
 .product-grid-item.is-outofstock .oos-badge,
