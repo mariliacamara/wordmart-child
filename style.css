@@ -2037,7 +2037,7 @@ td.product-thumbnail img {
 td.product-price>.amount {
   color: var(--dark-grey);
   background-color: var(--grey);
-  padding: 4px 12px;
+  padding: 7px 12px;
   border-radius: 5px;
 }
 
