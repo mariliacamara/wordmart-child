@@ -3963,28 +3963,26 @@ h3.wc-bacs-bank-details-account-name {
   position: relative;
 }
 
-/* Novo badge SVG */
 .oos-svg-badge {
   position: absolute;
-  top: 10px;
-  /* muda se quiser */
-  left: 10px;
-  /* ou right/bottom */
+  top: 0;
+  right: 0;
+
+  width: 72px;
+  height: 72px;
+
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
   z-index: 30;
 
-  width: 110px;
-  /* ajusta conforme o SVG */
-  height: auto;
-
   pointer-events: none;
-  /* não atrapalha clique */
 }
 
 .oos-svg-badge svg {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
 }
+
 
 /* Wrapper referência */
 .product-grid-item.is-outofstock .product-element-top.wd-quick-shop {
