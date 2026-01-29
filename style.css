@@ -304,6 +304,7 @@ p.stock {
 .shop-content-area .woocommerce .quantity {
   background-color: none;
   border: 1px solid var(--dark-grey);
+  display: flex !important;
 }
 
 div.quantity input[type="button"] {
