@@ -301,6 +301,11 @@ p.stock {
   font-weight: 900;
 }
 
+.shop-content-area .woocommerce .quantity {
+  background-color: none;
+  border: 1px solid var(--dark-grey);
+}
+
 div.quantity input[type="button"] {
   border: none !important;
   font-size: 14px !important;
