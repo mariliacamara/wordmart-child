@@ -286,13 +286,13 @@ p.stock {
   display: none
 }
 
-.woocommerce .quantity {
+body.single-product>.woocommerce .quantity {
   background: #29b0c2;
   border-radius: 5px;
   display: unset !important;
 }
 
-.woocommerce .quantity input.qty {
+body.single-product .woocommerce .quantity input.qty {
   font-size: 14px;
   border: none !important;
   color: #fff !important;
@@ -4037,7 +4037,7 @@ h3.wc-bacs-bank-details-account-name {
   height: auto;
 }
 
-.shop-content-area>.woocommerce .quantity {
+.woocommerce .quantity {
   background-color: none;
   border: 1px solid var(--dark-grey);
   display: flex !important;
