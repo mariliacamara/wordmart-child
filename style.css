@@ -2128,8 +2128,8 @@ td.product-price>.amount {
 }
 
 .cart_item div.quantity :is(input[type="number"], input[type="text"]) {
-  width: 15% !important;
-  height: 30px;
+  width: 30% !important;
+  height: 26px;
   color: var(--dark-grey) !important;
   border-radius: 0 !important;
   background-color: var(--grey) !important;
