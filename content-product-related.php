@@ -7,12 +7,14 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 
 if ( empty( $product ) || ! $product->is_visible() ) {
-    return;
+  return;
 }
 
-// Mantemos classes do tema no container
+$is_oos = ! $product->is_in_stock();
 ?>
-<li <?php wc_product_class( 'product-grid-item product wd-hover-standard', $product ); ?> data-id="<?php echo esc_attr( $product->get_id() ); ?>">
+
+<li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
+  data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 
   <div class="product-wrapper">
 
@@ -136,40 +138,90 @@ if ( empty( $product ) || ! $product->is_visible() ) {
       </div>
 
       <!-- Price + CTA -->
-      <div class="product-cta-row">
-        <div class="product-cta">
-        <?php
-        echo '<div class="price-add-row">';
+    <div class="product-cta-row">
+      <div class="product-cta">
 
-        // Preço
-        echo '<div class="price-col">';
-        echo $product->get_price_html();
-        echo '</div>';
-
-        // Botão adicionar ao carrinho
-        echo '<div class="button-col">';
-        echo apply_filters(
-            'woocommerce_loop_add_to_cart_link',
-            sprintf(
-                '<a href="%s" data-quantity="1" class="button add_to_cart_button ajax_add_to_cart" %s>%s</a>',
-                esc_url( $product->add_to_cart_url() ),
-                wc_implode_html_attributes( array(
-                    'data-product_id'  => $product->get_id(),
-                    'data-product_sku' => $product->get_sku(),
-                    'aria-label'       => $product->add_to_cart_description(),
-                    'rel'              => 'nofollow',
-                ) ),
-                esc_html__( 'ADICIONAR', 'woocommerce' )
-            ),
-            $product,
-            $product->get_id()
-        );
-        echo '</div>';
-
-        echo '</div>'; // .price-add-row
-        ?>
+        <div class="product-cta-price">
+          <?php echo $product->get_price_html(); ?>
         </div>
+
+        <?php if ( $is_oos ) : ?>
+
+          <div class="wd-add-btn wd-add-btn-replace">
+            <a class="button add-to-cart-loop oos-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">
+              <span>SEM STOCK</span>
+            </a>
+          </div>
+
+        <?php else : ?>
+
+          <?php if ( $product->is_type( 'variable' ) ) : ?>
+
+            <div class="wd-add-btn wd-add-btn-replace">
+              <?php woocommerce_template_loop_add_to_cart(); ?>
+            </div>
+
+          <?php else : ?>
+
+            <?php
+              $min    = $product->get_min_purchase_quantity();
+              $max    = $product->get_max_purchase_quantity();
+              $qty_id = 'quantity_' . wp_unique_id();
+            ?>
+
+            <div class="wd-add-btn wd-add-btn-replace">
+              <div class="quantity">
+                <input type="button" value="-" class="minus btn" aria-label="Decrease quantity">
+
+                <label class="screen-reader-text" for="<?php echo esc_attr( $qty_id ); ?>">
+                  <?php echo esc_html( sprintf( __( 'Quantidade de %s', 'woocommerce' ), $product->get_name() ) ); ?>
+                </label>
+
+                <input
+                  type="number"
+                  id="<?php echo esc_attr( $qty_id ); ?>"
+                  class="input-text qty text"
+                  value="<?php echo esc_attr( $min ); ?>"
+                  min="<?php echo esc_attr( $min ); ?>"
+                  <?php if ( $max ) : ?>max="<?php echo esc_attr( $max ); ?>"<?php endif; ?>
+                  name="quantity"
+                  step="1"
+                  inputmode="numeric"
+                  autocomplete="off"
+                >
+
+                <input type="button" value="+" class="plus btn" aria-label="Increase quantity">
+              </div>
+
+              <?php
+                echo apply_filters(
+                  'woocommerce_loop_add_to_cart_link',
+                  sprintf(
+                    '<a href="%s" data-quantity="%s" class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop" %s><span>%s</span></a>',
+                    esc_url( $product->add_to_cart_url() ),
+                    esc_attr( $min ),
+                    esc_attr( $product->get_type() ),
+                    wc_implode_html_attributes( array(
+                      'data-product_id'  => $product->get_id(),
+                      'data-product_sku' => $product->get_sku(),
+                      'aria-label'       => $product->add_to_cart_description(),
+                      'rel'              => 'nofollow',
+                    ) ),
+                    esc_html__( 'Adicionar', 'woocommerce' )
+                  ),
+                  $product,
+                  $product->get_id()
+                );
+              ?>
+            </div>
+
+          <?php endif; ?>
+
+        <?php endif; ?>
+
       </div>
+    </div>
+
 
     </div> <!-- .product-element-bottom -->
 
