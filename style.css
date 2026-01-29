@@ -4112,3 +4112,7 @@ div>div>div>form>div>table>tbody>tr>td.product-quantity>div {
   margin: 0;
   white-space: nowrap;
 }
+
+div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-variations-boxes>div.size-options>label.size-label.is-checked>small {
+  color: var(--white-color)
+}
