@@ -4134,7 +4134,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 }
 
 .wd-event-hover:hover>.wd-dropdown>div {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 @media (min-width: 1025px) {
