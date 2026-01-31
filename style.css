@@ -4127,3 +4127,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 .site-content p {
   font-size: 1rem;
 }
+
+.wd-event-hover:hover>.wd-dropdown {
+  background-color: var(--white-color);
+}
