@@ -4122,3 +4122,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div>div.woocommerce-variation-add-to-cart.variations_button.woocommerce-variation-add-to-cart-enabled>div {
   background-color: var(--secondary-color) !important;
 }
+
+.site-content p {
+  font-size: 1rem;
+}
