@@ -2771,6 +2771,7 @@ div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>table {
 .nav-link-text,
 .whb-color-light .wd-header-text {
   font-size: 12px !important;
+  color: var(--white-color);
 }
 
 div.wd-search-form.wd-header-search-form.wd-display-form.whb-9x1ytaxq7aphtb3npidp>form>button {
