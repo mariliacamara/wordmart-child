@@ -4129,5 +4129,6 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 }
 
 .wd-event-hover:hover>.wd-dropdown {
+  margin-top: 0;
   background-color: var(--white-color);
 }
