@@ -4132,3 +4132,9 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   margin-top: 0;
   background-color: var(--white-color);
 }
+
+@media (min-width: 1025px) {
+  .title-size-default .title {
+    font-size: 48px;
+  }
+}
