@@ -4133,9 +4133,20 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   background-color: var(--white-color);
 }
 
-.wd-sub-menu {
-  margin-top: 20px;
+.wd-dropdown-menu {
+  position: relative;
 }
+
+.wd-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  /* altura do gap */
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 
 @media (min-width: 1025px) {
   .title-size-default .title {
