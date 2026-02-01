@@ -4133,11 +4133,11 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   background-color: var(--white-color);
 }
 
-.wd-dropdown-menu {
+li>.wd-dropdown-menu {
   position: relative;
 }
 
-.wd-dropdown-menu::before {
+li>.wd-dropdown-menu::before {
   content: "";
   position: absolute;
   top: -12px;
