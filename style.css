@@ -4193,8 +4193,14 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   -webkit-line-clamp: 3;
   /* número de linhas */
   -webkit-box-orient: vertical;
+  margin-top: 10px;
 }
 
 .wpb-js-composer .blog-post-loop:not([class*="col-"]) {
   margin-bottom: 0;
+}
+
+.wd-post-cat {
+  display: inline-flex;
+  width: fit-content;
 }
