@@ -4128,26 +4128,6 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   font-size: 1rem;
 }
 
-.wd-event-hover:hover>.wd-dropdown {
-  margin-top: 0 !important;
-  background-color: var(--white-color);
-}
-
-li>.wd-dropdown-menu {
-  position: relative;
-}
-
-li>.wd-dropdown-menu::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  /* altura do gap */
-  left: 0;
-  right: 0;
-  height: 12px;
-}
-
-
 @media (min-width: 1025px) {
   .title-size-default .title {
     font-size: 48px !important;
