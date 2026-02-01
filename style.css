@@ -4143,7 +4143,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   position: relative;
 }
 
-#menu-navegacao-superior>li>div>div::before {
+#menu-navegacao-superior>li>div>div:before {
   content: "";
   position: absolute;
   top: -12px;
