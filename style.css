@@ -4133,7 +4133,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   background-color: var(--white-color);
 }
 
-.wd-event-hover:hover>.wd-dropdown>div {
+.wd-sub-menu {
   margin-top: 20px;
 }
 
