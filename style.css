@@ -4138,3 +4138,17 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
     font-size: 48px !important;
   }
 }
+
+#menu-navegacao-superior>li>div>div {
+  position: relative;
+}
+
+#menu-navegacao-superior>li>div>div::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  /* altura do gap */
+  left: 0;
+  right: 0;
+  height: 12px;
+}
