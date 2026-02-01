@@ -4194,3 +4194,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   /* número de linhas */
   -webkit-box-orient: vertical;
 }
+
+.wpb-js-composer .blog-post-loop:not([class*="col-"]) {
+  margin-bottom: 0;
+}
