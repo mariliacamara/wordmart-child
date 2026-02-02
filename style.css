@@ -4214,3 +4214,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   max-width: 100% !important;
   width: 100% !important;
 }
+
+td.woocommerce-table__product-qty.product-qty {
+  text-align: center;
+}
