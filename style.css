@@ -4259,3 +4259,7 @@ td.woocommerce-table__product-qty.product-qty {
   padding-top: 14px;
   padding-bottom: 14px;
 }
+
+#menu-navegacao-superior ul.wd-sub-menu a {
+  color: red !important;
+}
