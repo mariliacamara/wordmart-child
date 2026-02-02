@@ -4205,3 +4205,7 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
   width: fit-content;
   align-self: center;
 }
+
+.blog-design-masonry .post-title {
+  margin-top: 10px;
+}
