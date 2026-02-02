@@ -4249,3 +4249,7 @@ td.woocommerce-table__product-qty.product-qty {
 .wd-dropdown-menu.wd-design-aside .wd-wp-menu>.sub-sub-menu>li {
   margin-bottom: 5px !important;
 }
+
+.whb-full-width .wd-dropdown-menu.wd-design-aside>.container {
+  max-width: clamp(var(--wd-container-w), 68%, 100%) !important;
+}
