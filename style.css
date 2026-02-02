@@ -4220,3 +4220,28 @@ td.woocommerce-table__product-qty.product-qty {
   position: relative !important;
   left: 0 !important;
 }
+
+/* Fecha sub-sub-menu sem ocupar espaço */
+.wd-sub-menu .menu-item-has-children>.wd-dropdown-menu {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: max-height .2s ease, opacity .15s ease;
+}
+
+/* Abre quando o item está aberto (classe do WoodMart) */
+.wd-sub-menu .menu-item-has-children.wd-opened>.wd-dropdown-menu,
+.wd-sub-menu .menu-item-has-children:hover>.wd-dropdown-menu {
+  max-height: 600px !important;
+  /* ajusta se precisar */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Opcional: dá um recuo nos itens do nível 2 */
+.wd-sub-menu .menu-item-has-children>.wd-dropdown-menu .sub-sub-menu {
+  padding-left: 14px;
+}
