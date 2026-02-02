@@ -4253,3 +4253,9 @@ td.woocommerce-table__product-qty.product-qty {
 .whb-full-width .wd-dropdown-menu.wd-design-aside>.container {
   max-width: clamp(var(--wd-container-w), 68%, 100%) !important;
 }
+
+/* Só nos mega dropdowns do menu principal */
+.wd-header-main-nav .menu-mega-dropdown>.wd-dropdown-menu>.container {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
