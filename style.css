@@ -4285,3 +4285,21 @@ td.woocommerce-table__product-qty.product-qty {
 #menu-navegacao-superior>li.item-level-0 {
   padding: 0 !important;
 }
+
+/* a barra/nav fica acima */
+.whb-header-bottom,
+.wd-header-main-nav {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* cada item do menu acima também */
+#menu-navegacao-superior>li.item-level-0 {
+  position: relative !important;
+  z-index: 1100 !important;
+}
+
+#menu-navegacao-superior>li.item-level-0>a {
+  position: relative !important;
+  z-index: 1200 !important;
+}
