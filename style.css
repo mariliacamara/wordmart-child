@@ -4258,6 +4258,7 @@ td.woocommerce-table__product-qty.product-qty {
 #menu-navegacao-superior>li.menu-mega-dropdown>.wd-dropdown-menu {
   background: #fff !important;
   pointer-events: auto !important;
+  height: 80vh !important;
 }
 
 /* Agora sim cria o espaço em cima */
