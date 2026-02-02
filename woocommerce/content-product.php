@@ -167,9 +167,16 @@ $is_oos = ! $product->is_in_stock();
 								echo apply_filters(
 									'woocommerce_loop_add_to_cart_link',
 									sprintf(
-										'<a href="%s" data-quantity="%s" class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop" %s><span>%s</span></a>',
+										'<a href="%s"
+												data-quantity="%s"
+												data-qty-target="#%s"
+												class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop"
+												%s>
+												<span>%s</span>
+										</a>',
 										esc_url( $product->add_to_cart_url() ),
 										esc_attr( $min ),
+										esc_attr( $qty_id ), // 👈 AQUI entra o data-qty-target
 										esc_attr( $product->get_type() ),
 										wc_implode_html_attributes( array(
 											'data-product_id'  => $product->get_id(),

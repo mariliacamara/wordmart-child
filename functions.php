@@ -226,3 +226,16 @@ add_filter( 'woocommerce_my_account_my_orders_actions', function ( $actions, $or
 	return $actions;
 
 }, 10, 2 );
+
+add_action( 'wp_enqueue_scripts', function () {
+  // garante que só rode no front
+  if ( is_admin() ) return;
+
+  wp_enqueue_script(
+    'woodmart-child-loop-qty',
+    get_stylesheet_directory_uri() . '/assets/js/loop-qty.js',
+    array(), // sem dependência
+    '1.0.0',
+    true // footer
+  );
+}, 20 );
