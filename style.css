@@ -4281,3 +4281,7 @@ td.woocommerce-table__product-qty.product-qty {
 #menu-navegacao-superior>li.item-level-0 {
   pointer-events: auto !important;
 }
+
+#menu-navegacao-superior>li.item-level-0 {
+  padding: 0 !important;
+}
