@@ -3617,9 +3617,9 @@ div.owl-stage-outer>div>div>div>li>div>div.product-element-bottom>div.product-ct
 }
 
 div.product-cta-price {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
   gap: 8px;
   min-height: 29px;
 }
