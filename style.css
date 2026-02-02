@@ -4265,3 +4265,18 @@ td.woocommerce-table__product-qty.product-qty {
 #menu-navegacao-superior>li.menu-mega-dropdown>.wd-dropdown-menu>.container {
   padding-top: 16px !important;
 }
+
+/* Aumenta a área de hover/click do item principal */
+#menu-navegacao-superior>li.item-level-0>a.woodmart-nav-link {
+  display: flex !important;
+  align-items: center !important;
+  height: 48px !important;
+  /* ajusta */
+  padding: 0 14px !important;
+  /* ajusta */
+}
+
+/* garante que o texto não “encolha” a área */
+#menu-navegacao-superior>li.item-level-0>a .nav-link-text {
+  display: inline-block !important;
+}
