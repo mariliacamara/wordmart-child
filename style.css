@@ -4254,7 +4254,8 @@ td.woocommerce-table__product-qty.product-qty {
   max-width: clamp(var(--wd-container-w), 68%, 100%) !important;
 }
 
-.wd-header-main-nav .menu-mega-dropdown>.wd-dropdown-menu {
+/* Quando houver algum item aberto dentro desse dropdown */
+.wd-header-main-nav .menu-mega-dropdown>.wd-dropdown-menu:has(.wd-opened) {
   padding-top: 14px;
   padding-bottom: 14px;
 }
