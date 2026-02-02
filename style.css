@@ -4215,3 +4215,8 @@ div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-
 td.woocommerce-table__product-qty.product-qty {
   text-align: center;
 }
+
+.wd-dropdown-menu.wd-design-aside .wd-dropdown {
+  position: relative !important;
+  top: 0 !important;
+}
