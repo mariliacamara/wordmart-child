@@ -4242,7 +4242,8 @@ td.woocommerce-table__product-qty.product-qty {
 }
 
 .wd-dropdown-menu.wd-design-aside .wd-wp-menu>.sub-sub-menu {
-  padding-bottom: 10px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important
 }
 
 .wd-dropdown-menu.wd-design-aside .wd-wp-menu>.sub-sub-menu>li {
