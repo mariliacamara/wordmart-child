@@ -4039,7 +4039,7 @@ h3.wc-bacs-bank-details-account-name {
   background-color: none;
   border: 1px solid var(--grey);
   border-radius: 5px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: 8px;
   width: fit-content;
