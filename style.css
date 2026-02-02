@@ -4245,3 +4245,8 @@ td.woocommerce-table__product-qty.product-qty {
 .wd-sub-menu .menu-item-has-children>.wd-dropdown-menu .sub-sub-menu {
   padding-left: 14px;
 }
+
+#menu-navegacao-superior>li>div>div {
+  display: flex;
+  flex-direction: column;
+}
