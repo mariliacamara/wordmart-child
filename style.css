@@ -4365,7 +4365,7 @@ table.variations {
   align-items: stretch !important;
   border: 1px solid rgba(0, 0, 0, .12) !important;
   background: #fff !important;
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   overflow: hidden !important;
   margin: 0 !important;
 }
