@@ -4331,9 +4331,8 @@ td.woocommerce-table__product-qty.product-qty {
 
 /* Botão embaixo, full width */
 .woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
-  width: 100% !important;
+  width: fit-content !important;
   margin: 0 !important;
-  min-height: 44px !important;
 }
 
 /* Mata qualquer absolute que cause sobreposição */
