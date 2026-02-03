@@ -4395,9 +4395,10 @@ table.variations {
 
 /* botão COMPRAR igual ao “ADICIONAR” do card (azul, arredondado, height) */
 .wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
-  height: 30px !important;
+  min-height: auto;
+  max-height: 30px !important;
   padding: 0 15px !important;
-  border-radius: 10px !important;
+  border-radius: 5px !important;
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: .02em !important;
