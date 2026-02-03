@@ -4387,7 +4387,7 @@ table.variations {
 /* input do número */
 .wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity input.qty {
   width: 48px !important;
-  height: 40px !important;
+  height: 30px !important;
   border: 0 !important;
   text-align: center !important;
   padding: 0 !important;
