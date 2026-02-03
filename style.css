@@ -4453,3 +4453,21 @@ table.variations {
   display: inline-block;
   line-height: 1;
 }
+
+/* Reset geral */
+.price ins .woocommerce-Price-amount {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Só aplica o destaque se existir preço antigo */
+.price:has(del) ins .woocommerce-Price-amount {
+  background: #f5c400;
+  color: #000;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  line-height: 1;
+}
