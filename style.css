@@ -4424,7 +4424,7 @@ p.price {
 /* 3) PREÇO ANTIGO (DEL) */
 p.price del,
 p.price del .woocommerce-Price-amount.amount {
-  color: #000 !important;
+  color: var(--dark-grey) !important;
   font-weight: 600 !important;
   opacity: 1 !important;
 }
