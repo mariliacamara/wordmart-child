@@ -4466,15 +4466,14 @@ p.price del~ins .woocommerce-Price-amount.amount {
   /* não atrapalha zoom/click */
 }
 
-/* Estilo da tag (igual card) */
 .wd-product-gallery .product-labels .onsale.product-label {
+  position: relative !important;
   background: #e40000 !important;
-  /* ajusta pra sua cor */
   color: #fff !important;
   font-weight: 800 !important;
-  padding: 8px 12px !important;
-  border-radius: 8px !important;
-  /* se quiser reto, coloca 0 */
+  padding: 10px 12px !important;
   line-height: 1 !important;
-  display: inline-block !important;
+  border-radius: 0 !important;
+
+  clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
 }
