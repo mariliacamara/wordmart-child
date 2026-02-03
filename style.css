@@ -4341,3 +4341,11 @@ td.woocommerce-table__product-qty.product-qty {
 .woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
   position: static !important;
 }
+
+table.variations {
+  margin-top: 0;
+}
+
+.quick-shop-wrapper .quick-shop-form {
+  padding: 25px 10px 0 10px !important;
+}
