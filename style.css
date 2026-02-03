@@ -4436,6 +4436,7 @@ p.price ins {
 
 /* 5) APLICA O PILL AMARELO SOMENTE QUANDO HÁ DESCONTO
    (usa irmão geral: del ~ ins, mais robusto que del + ins) */
+div.wd-product-top.container>div>div.wd-product-summary-col>div>div.wd-price-pill>p>span,
 p.price del~ins .woocommerce-Price-amount.amount {
   background: #f5c400 !important;
   color: #000 !important;
