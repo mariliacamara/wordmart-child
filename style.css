@@ -4519,6 +4519,7 @@ p.price del~ins .woocommerce-Price-amount.amount {
 }
 
 /* some com o texto "Indisponível" solto no single */
+.single-product .product-label.out-of-stock,
 .single-product .stock.out-of-stock,
 .single-product p.stock.out-of-stock {
   display: none !important;
