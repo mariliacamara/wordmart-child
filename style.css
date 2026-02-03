@@ -4450,3 +4450,31 @@ p.price del~ins .woocommerce-Price-amount.amount {
 .wd-nav-tabs .wd-tabs-title {
   color: var(--dark-grey) !important;
 }
+
+/* O pai precisa ser "referência" pro absolute */
+.wd-product-gallery .woocommerce-product-gallery {
+  position: relative !important;
+}
+
+/* Cola a tag em cima da imagem (canto superior direito) */
+.wd-product-gallery .product-labels {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  z-index: 50 !important;
+  pointer-events: none !important;
+  /* não atrapalha zoom/click */
+}
+
+/* Estilo da tag (igual card) */
+.wd-product-gallery .product-labels .onsale.product-label {
+  background: #e40000 !important;
+  /* ajusta pra sua cor */
+  color: #fff !important;
+  font-weight: 800 !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  /* se quiser reto, coloca 0 */
+  line-height: 1 !important;
+  display: inline-block !important;
+}
