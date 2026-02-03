@@ -4493,34 +4493,31 @@ p.price del~ins .woocommerce-Price-amount.amount {
   border-radius: 0 8px !important;
 }
 
-/* ===== SINGLE: OOS ribbon na imagem ===== */
+/* ===== SINGLE PRODUCT – OOS SVG BADGE ===== */
 
-/* referência pra badge ficar "em cima" */
-.wd-product-gallery {
-  position: relative !important;
+/* referência para o absolute */
+.single-product .wd-product-gallery {
+  position: relative;
 }
 
-/* badge no canto */
-.wd-product-gallery .oos-svg-badge {
-  position: absolute !important;
-  top: 0 !important;
-  right: 0 !important;
-  z-index: 60 !important;
-  pointer-events: none !important;
+/* mesma badge do loop */
+.single-product .wd-product-gallery .oos-svg-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 72px;
+  height: 72px;
+
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  z-index: 30;
+
+  pointer-events: none;
 }
 
-/* garante que o SVG se comporte como no card */
-.wd-product-gallery .oos-svg-badge svg {
-  display: block !important;
-  width: 90px !important;
-  /* ajusta se quiser */
-  height: 90px !important;
-  /* ajusta se quiser */
-}
-
-/* some com o texto "Indisponível" solto no single */
-.single-product .product-label.out-of-stock,
-.single-product .stock.out-of-stock,
-.single-product p.stock.out-of-stock {
-  display: none !important;
+/* SVG intacto */
+.single-product .wd-product-gallery .oos-svg-badge svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
