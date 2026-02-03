@@ -142,18 +142,6 @@ License:    GNU General Public License v2 or later
   margin: 0 0 10px;
 }
 
-/* Price pill */
-.wd-price-pill .price {
-  background: #f8c83b;
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 5px;
-  font-weight: 700;
-  font-size: 14px;
-  color: #111;
-  margin-bottom: 5px;
-}
-
 /* Rating */
 .wd-rating {
   margin: 8px 0 10px;
