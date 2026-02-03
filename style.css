@@ -4417,57 +4417,43 @@ table.variations {
   cursor: not-allowed !important;
 }
 
-/* Wrapper do preço */
-.price {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* 1) ZERA QUALQUER FUNDO/PILL QUE O TEMA APLICA NO PREÇO */
+p.price .woocommerce-Price-amount.amount,
+p.price .amount {
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline !important;
 }
 
-/* Preço antigo */
-.price del {
-  color: #1f3aa6;
-  /* azul */
-  font-weight: 600;
-  opacity: 1;
+/* 2) LAYOUT */
+p.price {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
-.price del .woocommerce-Price-amount {
-  color: inherit;
+/* 3) PREÇO ANTIGO (DEL) */
+p.price del,
+p.price del .woocommerce-Price-amount.amount {
+  color: #1f3aa6 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
 }
 
-/* Remove estilo padrão do <ins> */
-.price ins {
-  text-decoration: none;
+/* 4) REMOVE ESTILO PADRÃO DO INS */
+p.price ins {
+  text-decoration: none !important;
 }
 
-/* Preço novo (destaque amarelo) */
-.price ins .woocommerce-Price-amount {
-  background: #f5c400;
-  /* amarelo */
-  color: #000;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  /* pill */
-  display: inline-block;
-  line-height: 1;
-}
-
-/* Reset geral */
-.price ins .woocommerce-Price-amount {
-  background: none;
-  padding: 0;
-  border-radius: 0;
-}
-
-/* Só aplica o destaque se existir preço antigo */
-.price:has(del) ins .woocommerce-Price-amount {
-  background: #f5c400;
-  color: #000;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  display: inline-block;
-  line-height: 1;
+/* 5) APLICA O PILL AMARELO SOMENTE QUANDO HÁ DESCONTO
+   (usa irmão geral: del ~ ins, mais robusto que del + ins) */
+p.price del~ins .woocommerce-Price-amount.amount {
+  background: #f5c400 !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  display: inline-block !important;
+  line-height: 1 !important;
 }
