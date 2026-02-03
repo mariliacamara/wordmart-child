@@ -4451,29 +4451,44 @@ p.price del~ins .woocommerce-Price-amount.amount {
   color: var(--dark-grey) !important;
 }
 
-/* O pai precisa ser "referência" pro absolute */
+/* ===== SINGLE PRODUCT (galeria) ===== */
+
+/* container do label no canto */
 .wd-product-gallery .woocommerce-product-gallery {
   position: relative !important;
+  /* referência pro absolute */
 }
 
-/* Cola a tag em cima da imagem (canto superior direito) */
-.wd-product-gallery .product-labels {
+.wd-product-gallery .product-labels.labels-rectangular {
   position: absolute !important;
-  top: 12px !important;
-  right: 12px !important;
+  top: 0 !important;
+  right: 0 !important;
   z-index: 50 !important;
   pointer-events: none !important;
-  /* não atrapalha zoom/click */
 }
 
-.wd-product-gallery .product-labels .onsale.product-label {
-  position: relative !important;
-  background: #e40000 !important;
+/* triângulo no canto superior DIREITO */
+.wd-product-gallery .product-labels.labels-rectangular .onsale.product-label {
+  position: absolute !important;
+  top: 0 !important;
+  right: -97px !important;
+
+  width: 72px !important;
+  height: 72px !important;
+
+  background: #e11c1c !important;
   color: #fff !important;
+
   font-weight: 800 !important;
-  padding: 10px 12px !important;
+  font-size: 16px !important;
   line-height: 1 !important;
-  border-radius: 0 !important;
+
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-end !important;
+
+  padding: 10px 7px 0 0 !important;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
+  border-radius: 0 8px !important;
 }
