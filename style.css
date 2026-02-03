@@ -4471,7 +4471,7 @@ p.price del~ins .woocommerce-Price-amount.amount {
 .wd-product-gallery .product-labels.labels-rectangular .onsale.product-label {
   position: absolute !important;
   top: 0 !important;
-  right: -97px !important;
+  right: 20px !important;
 
   width: 72px !important;
   height: 72px !important;
