@@ -4306,3 +4306,38 @@ td.woocommerce-table__product-qty.product-qty {
 .wd-sub-menu li {
   padding-bottom: 5px;
 }
+
+/* Qty em cima, botão embaixo */
+.woocommerce-variation-add-to-cart.variations_button {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+/* Quantity ocupa 100% */
+.woocommerce-variation-add-to-cart.variations_button .quantity {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  display: flex !important;
+}
+
+/* Input e + - alinhados */
+.woocommerce-variation-add-to-cart.variations_button .quantity input,
+.woocommerce-variation-add-to-cart.variations_button .quantity .minus,
+.woocommerce-variation-add-to-cart.variations_button .quantity .plus {
+  height: 44px !important;
+}
+
+/* Botão embaixo, full width */
+.woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
+  width: 100% !important;
+  margin: 0 !important;
+  min-height: 44px !important;
+}
+
+/* Mata qualquer absolute que cause sobreposição */
+.woocommerce-variation-add-to-cart.variations_button .quantity,
+.woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
+  position: static !important;
+}
