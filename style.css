@@ -4365,7 +4365,7 @@ table.variations {
   align-items: stretch !important;
   border: 1px solid rgba(0, 0, 0, .12) !important;
   background: #fff !important;
-  color: var(--dark-grey);
+  color: var(--dark-grey) !important;
   border-radius: 5px !important;
   overflow: hidden !important;
   margin: 0 !important;
@@ -4379,7 +4379,7 @@ table.variations {
   height: 30px !important;
   border: 0 !important;
   background: transparent !important;
-  color: #111 !important;
+  color: var(--dark-grey) !important;
   font-weight: 700 !important;
   padding: 0 !important;
 }
@@ -4393,6 +4393,7 @@ table.variations {
   padding: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
+  color: var(--dark-grey) !important;
 }
 
 /* botão COMPRAR igual ao “ADICIONAR” do card (azul, arredondado, height) */
