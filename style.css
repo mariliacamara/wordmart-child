@@ -4355,8 +4355,8 @@ table.variations {
 /* wrapper */
 .wd-quick-shop .woocommerce-variation-add-to-cart.variations_button {
   display: flex !important;
-  align-items: stretch !important;
-  gap: 10px !important;
+  align-items: center !important;
+  gap: 5px !important;
 }
 
 /* caixa do quantity (igual “card normal”: branco + borda + arredondado) */
