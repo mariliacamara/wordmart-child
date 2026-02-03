@@ -4445,3 +4445,7 @@ p.price del~ins .woocommerce-Price-amount.amount {
   display: inline-block !important;
   line-height: 1 !important;
 }
+
+#tab-title-description>a>span {
+  color: var(--dark-grey);
+}
