@@ -4440,8 +4440,8 @@ p.price del~ins .woocommerce-Price-amount.amount {
   background: #f5c400 !important;
   color: #000 !important;
   font-weight: 700 !important;
-  padding: 4px 10px !important;
-  border-radius: 999px !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
   display: inline-block !important;
   line-height: 1 !important;
 }
