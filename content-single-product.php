@@ -24,6 +24,12 @@ global $product;
       <div class="col-lg-6 wd-product-gallery-col">
         <div class="wd-product-gallery">
           <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
+
+          <?php if ( ! $product->is_in_stock() ) : ?>
+            <div class="oos-svg-badge" aria-hidden="true">
+              <?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/outofstock.svg' ); ?>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
 

@@ -4492,3 +4492,34 @@ p.price del~ins .woocommerce-Price-amount.amount {
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
   border-radius: 0 8px !important;
 }
+
+/* ===== SINGLE: OOS ribbon na imagem ===== */
+
+/* referência pra badge ficar "em cima" */
+.wd-product-gallery {
+  position: relative !important;
+}
+
+/* badge no canto */
+.wd-product-gallery .oos-svg-badge {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 60 !important;
+  pointer-events: none !important;
+}
+
+/* garante que o SVG se comporte como no card */
+.wd-product-gallery .oos-svg-badge svg {
+  display: block !important;
+  width: 90px !important;
+  /* ajusta se quiser */
+  height: 90px !important;
+  /* ajusta se quiser */
+}
+
+/* some com o texto "Indisponível" solto no single */
+.single-product .stock.out-of-stock,
+.single-product p.stock.out-of-stock {
+  display: none !important;
+}
