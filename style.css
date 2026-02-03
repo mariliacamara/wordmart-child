@@ -4403,6 +4403,7 @@ table.variations {
   letter-spacing: .02em !important;
   margin: 0 !important;
   flex: 1 1 auto !important;
+  font-size: 12px;
 }
 
 /* estado desabilitado no mesmo estilo */
