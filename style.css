@@ -4473,8 +4473,8 @@ p.price del~ins .woocommerce-Price-amount.amount {
   top: 0 !important;
   right: 20px !important;
 
-  width: 72px !important;
-  height: 72px !important;
+  width: 100px !important;
+  height: 100px !important;
 
   background: #e11c1c !important;
   color: #fff !important;
@@ -4487,7 +4487,7 @@ p.price del~ins .woocommerce-Price-amount.amount {
   align-items: flex-start !important;
   justify-content: flex-end !important;
 
-  padding: 10px 7px 0 0 !important;
+  padding: 20px 15px 0 0 !important;
 
   clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
   border-radius: 0 8px !important;
