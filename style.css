@@ -4375,8 +4375,8 @@ table.variations {
 /* botões +/- */
 .wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity .minus,
 .wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity .plus {
-  width: 40px !important;
-  height: 40px !important;
+  width: 30px !important;
+  height: 30px !important;
   border: 0 !important;
   background: transparent !important;
   color: #111 !important;
