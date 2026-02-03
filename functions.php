@@ -9,24 +9,23 @@ if ( ! function_exists( 'b7ectg_theme_enqueue_styles' ) ) {
     }
 }
 
-/**
- * Ensure child CSS loads AFTER Woodmart and all other theme styles.
- */
-add_action( 'wp_enqueue_scripts', function() {
+add_action('wp_enqueue_scripts', function () {
+  // parent
+  wp_enqueue_style(
+    'woodmart-parent',
+    get_template_directory_uri() . '/style.css',
+    [],
+    wp_get_theme(get_template())->get('Version')
+  );
 
-    // Remove any previously enqueued child style (like the generator's)
-    wp_dequeue_style( 'child-style' );
-    wp_deregister_style( 'child-style' );
-
-    // Re-register LAST
-    wp_enqueue_style(
-        'child-final-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array('woodmart-style'), // garante que vem DEPOIS do Woodmart
-        filemtime( get_stylesheet_directory() . '/style.css' )
-    );
-
-}, 999 ); // prioridade altíssima para sair por último
+  // child (depois do parent)
+  wp_enqueue_style(
+    'woodmart-child',
+    get_stylesheet_directory_uri() . '/style.css',
+    ['woodmart-parent'],
+    wp_get_theme()->get('Version')
+  );
+}, 20);
 
 /* Unregistered Widgets */
 if ( ! function_exists( 'b7ectg_unregister_widget' ) ) {
