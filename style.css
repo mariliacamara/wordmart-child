@@ -348,7 +348,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   padding-top: 2px !important;
   padding-bottom: 2px !important;
   color: var(--sub-menu-color);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.3;
 }
 
@@ -4301,4 +4301,8 @@ td.woocommerce-table__product-qty.product-qty {
 #menu-navegacao-superior>li.item-level-0>a {
   position: relative !important;
   z-index: 1200 !important;
+}
+
+.wd-sub-menu li {
+  padding-bottom: 5px;
 }
