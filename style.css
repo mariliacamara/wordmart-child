@@ -4521,3 +4521,11 @@ p.price del~ins .woocommerce-Price-amount.amount {
   height: 100%;
   display: block;
 }
+
+/* remove qualquer label de stock do tema no single */
+.single-product .product-label.out-of-stock,
+.single-product .wcosm_soldout,
+.single-product .stock.out-of-stock,
+.single-product p.stock.out-of-stock {
+  display: none !important;
+}
