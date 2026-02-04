@@ -4546,4 +4546,44 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     justify-content: center;
     gap: 5px !important;
   }
+
+  .product-carrousel .owl-item .owl-carousel-item .product-image-link,
+  .wd-products-element .product-image-link,
+  .pagination-pagination .product-image-link {
+    height: 120px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .product-carrousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    /* evita bloquear swipe */
+  }
+
+  .product-carrousel .owl-nav .owl-prev,
+  .product-carrousel .owl-nav .owl-next {
+    pointer-events: all;
+    width: 36px;
+    height: 36px;
+    background: #20b7c9;
+    /* ajusta se quiser */
+    border-radius: 4px;
+  }
+
+  .product-carrousel .owl-nav .owl-prev {
+    margin-left: 8px;
+  }
+
+  .product-carrousel .owl-nav .owl-next {
+    margin-right: 8px;
+  }
 }
