@@ -4561,6 +4561,21 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     position: relative;
   }
 
+
+  .wd-btn-arrow::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  .owl-next.wd-btn-arrow::after {
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 22px solid #20b7c9;
+    /* cor da seta */
+  }
+
   .product-carrousel .owl-nav {
     position: absolute;
     top: 50%;
