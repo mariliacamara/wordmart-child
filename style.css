@@ -4557,33 +4557,31 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     overflow: hidden !important;
   }
 
+  .product-carrousel {
+    position: relative;
+  }
+
   .product-carrousel .owl-nav {
     position: absolute;
     top: 50%;
-    left: 0;
     width: 100%;
     transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
     pointer-events: none;
-    /* evita bloquear swipe */
+    z-index: 20;
   }
 
-  .product-carrousel .owl-nav .owl-prev,
-  .product-carrousel .owl-nav .owl-next {
+  .product-carrousel .wd-btn-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     pointer-events: all;
-    width: 36px;
-    height: 36px;
-    background: #20b7c9;
-    /* ajusta se quiser */
-    border-radius: 4px;
   }
 
-  .product-carrousel .owl-nav .owl-prev {
-    margin-left: 8px;
+  .product-carrousel .owl-prev {
+    left: 8px;
   }
 
-  .product-carrousel .owl-nav .owl-next {
-    margin-right: 8px;
+  .product-carrousel .owl-next {
+    right: 8px;
   }
 }
