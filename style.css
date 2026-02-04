@@ -4536,3 +4536,25 @@ p.price del~ins .woocommerce-Price-amount.amount {
 body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-mobile-left.whb-hidden-lg>div>a>span.wd-tools-icon {
   color: var(--secondary-color);
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wd-add-btn.wd-add-btn-replace {
+    display: flex;
+    flex-direction: column;
+    /* um embaixo do outro */
+    align-items: center;
+    /* centralizado */
+    justify-content: center;
+    gap: 8px;
+    /* espaço entre eles */
+    width: 100%;
+  }
+
+  .wd-add-btn.wd-add-btn-replace>* {
+    width: 100%;
+    max-width: 280px;
+    /* opcional, pra não ficar gigante */
+    text-align: center;
+  }
+}
