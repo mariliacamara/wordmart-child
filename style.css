@@ -4569,7 +4569,16 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     height: 0;
   }
 
+  .owl-prev.wd-btn-arrow::after {
+    content: "";
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 22px solid #20b7c9;
+    /* cor da seta */
+  }
+
   .owl-next.wd-btn-arrow::after {
+    content: "";
     border-top: 16px solid transparent;
     border-bottom: 16px solid transparent;
     border-left: 22px solid #20b7c9;
