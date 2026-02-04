@@ -4610,6 +4610,6 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   }
 
   .section-title::before {
-    height: 10px;
+    height: 10px !important;
   }
 }
