@@ -4771,4 +4771,9 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .nav-link-text {
     color: var(--black);
   }
+
+  .wd-product-main {
+    margin: 0;
+    padding: 0 10px;
+  }
 }
