@@ -4549,6 +4549,14 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     transform: none;
   }
 
+  .wd-add-btn.wd-add-btn-replace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px !important;
+  }
+
   .product-carrousel .owl-item .owl-carousel-item .product-image-link,
   .wd-products-element .product-image-link,
   .pagination-pagination .product-image-link {
