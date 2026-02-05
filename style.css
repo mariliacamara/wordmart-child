@@ -4781,11 +4781,30 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     color: var(--primary-color)
   }
 
-  #tab-additional_information>div>table>tbody>tr.woocommerce-product-attributes-item.woocommerce-product-attributes-item--weight>th>span {
+  #tab-additional_information>div>table>tbody>tr>th>span {
     color: var(--black) !important
   }
 
   .product-tabs-wrapper {
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid var(--dark-grey);
+  }
+
+  .wd-related-products h2 {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  @media (max-width: 768px) {
+    .wd-related-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 12px !important;
+    }
+
+    .wd-related-grid>li.product-grid-item {
+      width: auto !important;
+      max-width: none !important;
+      margin: 0 !important;
+    }
   }
 }
