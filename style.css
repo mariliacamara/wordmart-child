@@ -4715,4 +4715,9 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .wd-my-account-links .orders-link a::before {
     margin: 0 auto 10px;
   }
+
+  .wd-my-account-links {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
 }
