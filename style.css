@@ -4626,3 +4626,93 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     margin: 0;
   }
 }
+
+/* MOBILE: search igual à imagem */
+@media (max-width: 768px) {
+
+  /* container */
+  .wd-header-search-form-mobile {
+    width: 100%;
+  }
+
+  /* form como “pílula” */
+  .wd-header-search-form-mobile form.searchform {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    border: 2px solid #20b7c9;
+    border-radius: 999px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 62px 0 22px;
+    /* espaço pra lupa à direita */
+    box-sizing: border-box;
+  }
+
+  /* input */
+  .wd-header-search-form-mobile form.searchform input.s {
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    text-transform: uppercase;
+  }
+
+  .wd-header-search-form-mobile form.searchform input.s::placeholder {
+    color: #b7b7b7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* botão lupa: círculo na direita */
+  .wd-header-search-form-mobile form.searchform button.searchsubmit {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #20b7c9;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  /* some o texto “Procurar” */
+  .wd-header-search-form-mobile form.searchform button.searchsubmit span {
+    display: none !important;
+  }
+
+  /* desenha a lupa (CSS) */
+  .wd-header-search-form-mobile form.searchform button.searchsubmit::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-55%, -55%);
+    width: 14px;
+    height: 14px;
+    border: 2px solid #20b7c9;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+  .wd-header-search-form-mobile form.searchform button.searchsubmit::after {
+    content: "";
+    position: absolute;
+    left: 57%;
+    top: 57%;
+    width: 10px;
+    height: 2px;
+    background: #20b7c9;
+    transform: rotate(45deg);
+    border-radius: 2px;
+  }
+}
