@@ -4669,24 +4669,4 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
-
-  /* botão lupa: círculo na direita */
-  .wd-header-search-form-mobile form.searchform button.searchsubmit {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    border: 2px solid #20b7c9;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-  }
-
-  /* some o texto “Procurar” */
-  .wd-header-search-form-mobile form.searchform button.searchsubmit span {
-    display: none !important;
-  }
 }
