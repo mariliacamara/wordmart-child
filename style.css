@@ -4689,30 +4689,4 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   .wd-header-search-form-mobile form.searchform button.searchsubmit span {
     display: none !important;
   }
-
-  /* desenha a lupa (CSS) */
-  .wd-header-search-form-mobile form.searchform button.searchsubmit::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 48%;
-    transform: translate(-55%, -55%);
-    width: 14px;
-    height: 14px;
-    border: 2px solid #20b7c9;
-    border-radius: 50%;
-    box-sizing: border-box;
-  }
-
-  .wd-header-search-form-mobile form.searchform button.searchsubmit::after {
-    content: "";
-    position: absolute;
-    left: 57%;
-    top: 57%;
-    width: 10px;
-    height: 2px;
-    background: #20b7c9;
-    transform: rotate(45deg);
-    border-radius: 2px;
-  }
 }
