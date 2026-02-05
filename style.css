@@ -4759,4 +4759,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   body>div.website-wrapper>div>div>div>div>div.shop-loop-head>div:nth-child(1)>p {
     display: none !important;
   }
+
+  .wd-action-btn.wd-style-text>a {
+    color: var(--dark-grey);
+  }
 }
