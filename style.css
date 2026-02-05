@@ -4721,3 +4721,20 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     padding-left: 0;
   }
 }
+
+/* MOBILE: 2 cards por linha (override do @media max-width: 520px que estava forçando 1 col) */
+@media (max-width: 520px) {
+  .pagination-pagination .products {
+    gap: 12px !important;
+  }
+
+  .pagination-pagination .products .product-grid-item.product,
+  .pagination-pagination .woocommerce ul.products li.product {
+    flex: 0 0 calc(50% - 6px) !important;
+    max-width: calc(50% - 6px) !important;
+    width: calc(50% - 6px) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
