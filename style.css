@@ -4763,4 +4763,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .wd-action-btn.wd-style-text>a {
     color: var(--dark-grey);
   }
+
+  body:not(.home):not(.front-page) .whb-header {
+    margin-bottom: 26px;
+  }
 }
