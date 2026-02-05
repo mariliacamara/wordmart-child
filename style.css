@@ -4767,4 +4767,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   body:not(.home):not(.front-page) .whb-header {
     margin-bottom: 26px;
   }
+
+  .nav-link-text {
+    color: var(--black);
+  }
 }
