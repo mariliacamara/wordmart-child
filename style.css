@@ -4700,7 +4700,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   }
 
   .wd-my-account-links .customer-logout-link a:before {
-    padding: 22px;
+    padding: 22px !important;
+    font-size: 30px !important;
   }
 
   .wd-my-account-links .orders-link a {
@@ -4714,5 +4715,4 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .wd-my-account-links .orders-link a::before {
     margin: 0 auto 10px;
   }
-
 }
