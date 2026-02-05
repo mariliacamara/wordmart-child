@@ -4688,4 +4688,8 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
 fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 </svg>");
   }
+
+  .wd-my-account-links a {
+    text-align: center;
+  }
 }
