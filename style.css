@@ -4630,6 +4630,10 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
 /* MOBILE: search igual à imagem */
 @media (max-width: 768px) {
 
+  body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row.whb-with-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle {
+    background-color: var(--white-color);
+  }
+
   /* container */
   .wd-header-search-form-mobile {
     width: 100%;
@@ -4639,7 +4643,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   .wd-header-search-form-mobile form.searchform {
     position: relative;
     width: 100%;
-    height: 56px;
+    height: 40px;
     border: 2px solid #20b7c9;
     border-radius: 999px;
     background: #fff;
