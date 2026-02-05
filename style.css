@@ -4698,4 +4698,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     margin: 0 auto 10px;
     /* centro horizontal + espaçamento */
   }
+
+  .wd-my-account-links .customer-logout-link a:before {
+    padding: 22px;
+  }
 }
