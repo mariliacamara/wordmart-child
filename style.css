@@ -4692,4 +4692,10 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .wd-my-account-links a {
     text-align: center;
   }
+
+  .wd-my-account-links a::before {
+    display: block;
+    margin: 0 auto 10px;
+    /* centro horizontal + espaçamento */
+  }
 }
