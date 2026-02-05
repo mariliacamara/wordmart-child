@@ -4738,3 +4738,21 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     box-sizing: border-box !important;
   }
 }
+
+/* MOBILE: força 2 cards por linha */
+@media (max-width: 768px) {
+
+  /* teu wrapper exato */
+  .products.elements-grid.wd-products-holder {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  /* cada card */
+  .products.elements-grid.wd-products-holder>li.product-grid-item {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+}
