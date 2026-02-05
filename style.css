@@ -4780,4 +4780,12 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
   .wd-accordion-title-text {
     color: var(--primary-color)
   }
+
+  #tab-additional_information>div>table>tbody>tr.woocommerce-product-attributes-item.woocommerce-product-attributes-item--weight>th>span {
+    color: var(--black) !important
+  }
+
+  .product-tabs-wrapper {
+    border-bottom: 1px solid var(--black);
+  }
 }
