@@ -4776,4 +4776,8 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     margin: 0;
     padding: 0 20px;
   }
+
+  .wd-accordion-title-text {
+    color: var(--primary-color)
+  }
 }
