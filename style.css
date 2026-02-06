@@ -4808,3 +4808,7 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     }
   }
 }
+
+#woocommerce_product_categories-2>ul>li.cat-item.cat-item-15 {
+  display: none;
+}
