@@ -4806,16 +4806,23 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     margin: 0 !important;
   }
 
-  .product-carrousel .owl-item .owl-carousel-item .woocommerce-Price-amount,
-  .product-carrousel .owl-item .owl-carousel-item .product-cta .price,
-  .wd-products-element .elements-grid .woocommerce-Price-amount,
-  .wd-products-element .elements-grid .product-cta .price-col .price,
-  .pagination-pagination .product-grid-item .woocommerce-Price-amount,
-  .pagination-pagination .product-grid-item .product-cta .price-col .price,
-  .owl-carousel .owl-item .woocommerce-Price-amount,
-  .wd-related-products .product-cta .price-col .price,
-  .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
-    font-size: 10px;
+  .product-grid-item .product-labels.labels-rectangular .onsale.product-label {
+    position: absolute !important;
+    top: 0 !important;
+    right: -68px !important;
+    width: 66px !important;
+    height: 66px !important;
+    background: #e11c1c !important;
+    color: #fff !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    padding: 15px 5px 0 0 !important;
+    clip-path: polygon(100% 0, 0 0, 100% 100%) !important;
+    border-radius: 0 8px;
   }
 }
 
@@ -4825,4 +4832,56 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 
 body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.whb-with-bg.whb-without-border.whb-color-light.whb-flex-flex-middle>div>div>div.whb-column.whb-col-mobile.whb-hidden-lg>div:nth-child(1) {
   font-size: 8px !important
+}
+
+@media (max-width: 768px) {
+
+  /* Faz todos os cards esticarem igual dentro do carousel */
+  .owl-carousel .owl-item,
+  .owl-carousel .owl-item .slide-product,
+  .owl-carousel .owl-item .owl-carousel-item {
+    height: 100%;
+  }
+
+  .owl-carousel li.product-grid-item {
+    height: 100%;
+  }
+
+  .owl-carousel li.product-grid-item .product-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .owl-carousel li.product-grid-item .product-element-bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Joga o bloco de preço/CTA sempre pro fundo do card */
+  .owl-carousel li.product-grid-item .product-cta-row {
+    margin-top: auto;
+  }
+
+  /* Reserva espaço mesmo quando não tem preço (oos) */
+  .owl-carousel li.product-grid-item .product-cta-price {
+    min-height: 22px;
+    /* ajusta se teu preço for maior */
+  }
+
+  /* Reserva a mesma “altura de CTA” pros cards com 1 botão (oos/variable) */
+  .owl-carousel li.product-grid-item.product-type-variable .wd-add-btn,
+  .owl-carousel li.product-grid-item.is-outofstock .wd-add-btn {
+    min-height: 78px;
+    /* equivalente ao bloco quantity+botão dos simples */
+    display: flex;
+    align-items: flex-end;
+  }
+
+  /* Faz o botão único ficar colado embaixo */
+  .owl-carousel li.product-grid-item.product-type-variable .wd-add-btn>a,
+  .owl-carousel li.product-grid-item.is-outofstock .wd-add-btn>a {
+    margin-top: auto;
+  }
 }
