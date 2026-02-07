@@ -4794,23 +4794,33 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
     font-size: 18px;
   }
 
-  @media (max-width: 768px) {
-    .wd-related-grid {
-      display: grid !important;
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      gap: 12px !important;
-    }
+  .wd-related-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
 
-    .wd-related-grid>li.product-grid-item {
-      width: auto !important;
-      max-width: none !important;
-      margin: 0 !important;
-    }
+  .wd-related-grid>li.product-grid-item {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  .product-carrousel .owl-item .owl-carousel-item .woocommerce-Price-amount,
+  .product-carrousel .owl-item .owl-carousel-item .product-cta .price,
+  .wd-products-element .elements-grid .woocommerce-Price-amount,
+  .wd-products-element .elements-grid .product-cta .price-col .price,
+  .pagination-pagination .product-grid-item .woocommerce-Price-amount,
+  .pagination-pagination .product-grid-item .product-cta .price-col .price,
+  .owl-carousel .owl-item .woocommerce-Price-amount,
+  .wd-related-products .product-cta .price-col .price,
+  .wd-related-products .product-cta .price-col .woocommerce-Price-amount {
+    font-size: 10px;
   }
 }
 
 #woocommerce_product_categories-2>ul>li.cat-item.cat-item-15 {
-  display: none;
+  display: none !important;
 }
 
 body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.whb-with-bg.whb-without-border.whb-color-light.whb-flex-flex-middle>div>div>div.whb-column.whb-col-mobile.whb-hidden-lg>div:nth-child(1) {
