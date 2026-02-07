@@ -4812,3 +4812,7 @@ fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 #woocommerce_product_categories-2>ul>li.cat-item.cat-item-15 {
   display: none;
 }
+
+body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.whb-with-bg.whb-without-border.whb-color-light.whb-flex-flex-middle>div>div>div.whb-column.whb-col-mobile.whb-hidden-lg>div:nth-child(1) {
+  font-size: 8px !important
+}
