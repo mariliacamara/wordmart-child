@@ -1,229 +1,92 @@
 <?php
 /**
- * content-product-related-custom.php
- * Template custom usado APENAS no bloco related products
+ * Related Products - Carousel (Woodmart-style)
+ * Child override: woocommerce/single-product/related.php
  */
 defined( 'ABSPATH' ) || exit;
+
 global $product;
 
-if ( empty( $product ) || ! $product->is_visible() ) {
-  return;
+if ( empty( $product ) ) {
+	return;
+}
+
+// Quantos produtos buscar (total no carrossel)
+$limit = 12;
+
+// Pega IDs de produtos relacionados
+$related_ids = wc_get_related_products( $product->get_id(), $limit );
+
+if ( empty( $related_ids ) ) {
+	return;
+}
+
+// Converte em objetos WC_Product válidos e visíveis
+$related_products = array();
+
+foreach ( $related_ids as $rid ) {
+	$p = wc_get_product( $rid );
+	if ( $p && $p->is_visible() ) {
+		$related_products[] = $p;
+	}
+}
+
+if ( empty( $related_products ) ) {
+	return;
 }
 
 $is_oos = ! $product->is_in_stock();
+
+// ID único pro container (não conflitar com outros carrosseis)
+$carousel_id = 'carousel-related-' . wp_unique_id();
 ?>
 
-<li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
-  data-id="<?php echo esc_attr( $product->get_id() ); ?>">
+<section class="related products wd-related-products">
+	<h2 class="wd-related-title">
+		<?php echo esc_html__( 'Produtos relacionados', 'woocommerce' ); ?>
+	</h2>
 
-  <div class="product-wrapper">
+	<div
+		id="<?php echo esc_attr( $carousel_id ); ?>"
+		class="wd-carousel-container wd-quantity-enabled slider-type-product products wd-carousel-spacing-10 title-line-one"
+		data-owl-carousel=""
+		data-wrap="no"
+		data-hide_pagination_control="no"
+		data-hide_prev_next_buttons="no"
+		data-desktop="5"
+		data-tablet_landscape="4"
+		data-tablet="3"
+		data-mobile="2"
+	>
+		<div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 product-carrousel">
 
-    <!-- TOP: imagem e quick actions -->
-    <div class="product-element-top wd-quick-shop">
-      <?php if ( $is_oos ) : ?>
-				<div class="oos-svg-badge" aria-hidden="true">
+			<?php foreach ( $related_products as $related_product ) : ?>
+				<?php
+					// Set global post context pro template funcionar certinho
+					$GLOBALS['post'] = get_post( $related_product->get_id() );
+					setup_postdata( $GLOBALS['post'] );
+				?>
+
+				<div class="slide-product owl-carousel-item">
 					<?php
-						echo file_get_contents(
-							get_stylesheet_directory() . '/assets/icons/outofstock.svg'
+						/**
+						 * Usa o teu template custom do related.
+						 * Coloca esse arquivo em:
+						 * /wp-content/themes/woodmart-child/woocommerce/content-product-related-custom.php
+						 */
+						wc_get_template(
+							'content-product-related-custom.php',
+							array( 'product' => $related_product ),
+							'',
+							get_stylesheet_directory() . '/woocommerce/'
 						);
 					?>
 				</div>
-			<?php endif; ?>
-      <div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
-        <?php do_action( 'woodmart_product_action_buttons' ); ?>
-      </div>
-      <?php
-			$price = (float) $product->get_price();
 
-			if ( $price > 48.90 ) : ?>
-				<div class="price-badge free-shipping-badge" aria-label="Envio grátis" data-tooltip="Portes grátis">
-					<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
-				</div>
-			<?php endif; ?>
-      <a href="<?php echo esc_url( get_permalink() ); ?>" class="product-image-link">
-        <?php
-        /**
-         * Hook woocommerce_before_shop_loop_item_title.
-         *
-         * @hooked woodmart_template_loop_product_thumbnails_gallery - 5
-         * @hooked woocommerce_show_product_loop_sale_flash - 10
-         * @hooked woodmart_template_loop_product_thumbnail - 10
-         */
-        do_action( 'woocommerce_before_shop_loop_item_title' );
-        ?>
-      </a>
+			<?php endforeach; ?>
 
-      <?php
-      if ( 'no' === woodmart_loop_prop( 'grid_gallery' ) || ! woodmart_loop_prop( 'grid_gallery' ) ) {
-        woodmart_hover_image();
-      }
-      ?>
-    </div>
+			<?php wp_reset_postdata(); ?>
 
-    <!-- BOTTOM: conteúdo do card -->
-    <div class="product-element-bottom">
-      <div class="product-brand-title-wrap">
-
-        <!-- Brand (taxonomy attribute -> term name + logo OR fallback _brand_name) -->
-        <?php
-        $brand_name = '';
-        $brand_logo = '';
-
-        $attr = function_exists( 'woodmart_get_opt' ) ? woodmart_get_opt( 'brands_attribute' ) : '';
-
-        if ( $attr ) {
-            $terms = wc_get_product_terms( $product->get_id(), $attr, array( 'fields' => 'all' ) );
-            if ( ! is_wp_error( $terms ) && ! empty( $terms ) ) {
-                $term = $terms[0];
-                $brand_name = $term->name;
-
-                // tentar meta image / image_id / thumbnail_id
-                $meta_image = get_term_meta( $term->term_id, 'image', true );
-                $meta_image_id = get_term_meta( $term->term_id, 'image_id', true );
-                $meta_thumb = get_term_meta( $term->term_id, 'thumbnail_id', true );
-
-                if ( $meta_image ) {
-                    if ( is_array( $meta_image ) && ! empty( $meta_image['id'] ) ) {
-                        $brand_logo = wp_get_attachment_image_url( intval( $meta_image['id'] ), 'full' );
-                    } elseif ( is_numeric( $meta_image ) ) {
-                        $brand_logo = wp_get_attachment_image_url( intval( $meta_image ), 'full' );
-                    } else {
-                        $brand_logo = esc_url_raw( $meta_image );
-                    }
-                }
-
-                if ( ! $brand_logo && $meta_image_id && is_numeric( $meta_image_id ) ) {
-                    $brand_logo = wp_get_attachment_image_url( intval( $meta_image_id ), 'full' );
-                }
-
-                if ( ! $brand_logo && $meta_thumb && is_numeric( $meta_thumb ) ) {
-                    $brand_logo = wp_get_attachment_image_url( intval( $meta_thumb ), 'full' );
-                }
-            }
-        }
-
-        // fallback para meta antiga do produto
-        if ( empty( $brand_name ) ) {
-            $meta_brand = get_post_meta( $product->get_id(), '_brand_name', true );
-            if ( $meta_brand ) {
-                $brand_name = $meta_brand;
-            }
-        }
-        ?>
-
-        <div class="product-brand">
-          <?php if ( $brand_name ) : ?>
-            <span class="product-brand-name"><?php echo esc_html( $brand_name ); ?></span>
-          <?php endif; ?>
-        </div>
-
-        <!-- Título -->
-        <h3 class="wd-entities-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-      </div>
-
-
-      <!-- Rating (usa HTML padrão do Woo) -->
-      <div class="product-rating-wrapper">
-          <div class="product-rating">
-              <?php
-              $rating = $product->get_average_rating();
-
-              if ( ! $rating || $rating == 0 ) {
-                  echo '<div class="star-rating" role="img" aria-label="0 de 5"><span style="width:0%"></span></div>';
-              } else {
-                  echo wc_get_rating_html( $rating );
-              }
-              ?>
-          </div>
-      </div>
-
-      <!-- Price + CTA -->
-    <div class="product-cta-row">
-      <div class="product-cta">
-
-        <div class="product-cta-price">
-          <?php echo $product->get_price_html(); ?>
-        </div>
-
-        <?php if ( $is_oos ) : ?>
-
-          <div class="wd-add-btn wd-add-btn-replace">
-            <a class="button add-to-cart-loop oos-btn is-disabled" href="#" aria-disabled="true" tabindex="-1">
-              <span>SEM STOCK</span>
-            </a>
-          </div>
-
-        <?php else : ?>
-
-          <?php if ( $product->is_type( 'variable' ) ) : ?>
-
-            <div class="wd-add-btn wd-add-btn-replace">
-              <?php woocommerce_template_loop_add_to_cart(); ?>
-            </div>
-
-          <?php else : ?>
-
-            <?php
-              $min    = $product->get_min_purchase_quantity();
-              $max    = $product->get_max_purchase_quantity();
-              $qty_id = 'quantity_' . wp_unique_id();
-            ?>
-
-            <div class="wd-add-btn wd-add-btn-replace">
-              <div class="quantity">
-                <input type="button" value="-" class="minus btn" aria-label="Decrease quantity">
-
-                <label class="screen-reader-text" for="<?php echo esc_attr( $qty_id ); ?>">
-                  <?php echo esc_html( sprintf( __( 'Quantidade de %s', 'woocommerce' ), $product->get_name() ) ); ?>
-                </label>
-
-                <input
-                  type="number"
-                  id="<?php echo esc_attr( $qty_id ); ?>"
-                  class="input-text qty text"
-                  value="<?php echo esc_attr( $min ); ?>"
-                  min="<?php echo esc_attr( $min ); ?>"
-                  <?php if ( $max ) : ?>max="<?php echo esc_attr( $max ); ?>"<?php endif; ?>
-                  name="quantity"
-                  step="1"
-                  inputmode="numeric"
-                  autocomplete="off"
-                >
-
-                <input type="button" value="+" class="plus btn" aria-label="Increase quantity">
-              </div>
-
-              <?php
-                echo apply_filters(
-                  'woocommerce_loop_add_to_cart_link',
-                  sprintf(
-                    '<a href="%s" data-quantity="%s" class="button product_type_%s add_to_cart_button ajax_add_to_cart add-to-cart-loop" %s><span>%s</span></a>',
-                    esc_url( $product->add_to_cart_url() ),
-                    esc_attr( $min ),
-                    esc_attr( $product->get_type() ),
-                    wc_implode_html_attributes( array(
-                      'data-product_id'  => $product->get_id(),
-                      'data-product_sku' => $product->get_sku(),
-                      'aria-label'       => $product->add_to_cart_description(),
-                      'rel'              => 'nofollow',
-                    ) ),
-                    esc_html__( 'Adicionar', 'woocommerce' )
-                  ),
-                  $product,
-                  $product->get_id()
-                );
-              ?>
-            </div>
-
-          <?php endif; ?>
-
-        <?php endif; ?>
-
-      </div>
-    </div>
-
-
-    </div> <!-- .product-element-bottom -->
-
-  </div> <!-- .product-wrapper -->
-</li>
+		</div>
+	</div>
+</section>
