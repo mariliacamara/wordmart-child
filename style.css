@@ -4885,3 +4885,39 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
     margin-top: auto;
   }
 }
+
+/* Box das opções no mobile */
+@media (max-width: 768px) {
+
+  .product-grid-item .variations_form,
+  .product-grid-item .woocommerce-variation-add-to-cart {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* container */
+  .product-grid-item .variations_button {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px;
+    padding: 10px !important;
+  }
+
+  /* select de atributos */
+  .product-grid-item .variations select {
+    width: 100% !important;
+    font-size: 14px;
+  }
+
+  /* quantidade */
+  .product-grid-item .quantity {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  /* botão */
+  .product-grid-item .single_add_to_cart_button {
+    width: 100% !important;
+  }
+}
