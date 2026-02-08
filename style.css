@@ -2081,7 +2081,7 @@ td.product-price>.amount {
 @media (max-width: 420px) {
   .product-subtotal .woocommerce-Price-amount {
     padding: 8px 14px;
-    min-width: 64px;
+    width: fit-content;
     font-size: 16px;
     border-radius: 12px;
   }
@@ -4922,7 +4922,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   }
 
   body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-mobile-center.whb-hidden-lg>div>a>img {
-    max-width: 130px !important;
+    max-width: 100px !important;
   }
 
   body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-mobile-right.whb-hidden-lg>div.wd-header-my-account.wd-tools-element.wd-event-hover.wd-design-7.wd-account-style-text.whb-5wb5e34ek6n1w9k7brjz {
