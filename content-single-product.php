@@ -202,26 +202,57 @@ global $product;
   </section>
 
   <section class="related-products wd-related-products container">
-    <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
-    <div class="wd-related-grid">
-        <?php
-        $related_ids = wc_get_related_products( $product->get_id(), 5 );
-        if ( ! empty( $related_ids ) ) {
-            $args = array(
-                'post_type' => 'product',
-                'post__in'  => $related_ids,
-                'orderby'   => 'post__in'
-            );
-            $loop = new WP_Query( $args );
-            while ( $loop->have_posts() ) {
-                $loop->the_post();
-                wc_get_template_part( 'content', 'product-related' );
-            }
-            wp_reset_postdata();
-        }
-        ?>
+  <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
+
+  <?php
+  $limit = 12;
+  $related_ids = wc_get_related_products( $product->get_id(), $limit );
+
+  if ( ! empty( $related_ids ) ) :
+
+    $carousel_id = 'carousel-related-' . wp_unique_id();
+
+    $args = array(
+      'post_type'      => 'product',
+      'post__in'       => $related_ids,
+      'orderby'        => 'post__in',
+      'posts_per_page' => $limit,
+    );
+
+    $loop = new WP_Query( $args );
+  ?>
+
+  <div
+    id="<?php echo esc_attr( $carousel_id ); ?>"
+    class="wd-carousel-container wd-quantity-enabled slider-type-product products wd-carousel-spacing-10 title-line-one"
+    data-owl-carousel=""
+    data-wrap="no"
+    data-hide_pagination_control="no"
+    data-hide_prev_next_buttons="no"
+    data-desktop="5"
+    data-tablet_landscape="4"
+    data-tablet="3"
+    data-mobile="2"
+  >
+    <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 product-carrousel">
+
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+        <div class="slide-product owl-carousel-item">
+          <?php
+            // usa teu template de card (o mesmo que você já chama hoje)
+            wc_get_template_part( 'content', 'product-related' );
+          ?>
+        </div>
+      <?php endwhile; ?>
+
+      <?php wp_reset_postdata(); ?>
+
     </div>
-  </section>
+  </div>
+
+  <?php endif; ?>
+</section>
+
 
 </div>
 
