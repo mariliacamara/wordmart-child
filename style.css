@@ -4920,4 +4920,8 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   .product-grid-item .single_add_to_cart_button {
     width: 100% !important;
   }
+
+  body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-mobile-center.whb-hidden-lg>div>a>img {
+    max-width: 150px !important;
+  }
 }
