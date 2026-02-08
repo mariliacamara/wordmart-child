@@ -10,6 +10,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
   return;
 }
 
+$is_oos = ! $product->is_in_stock();
+
 
 ?>
 
