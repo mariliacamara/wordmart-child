@@ -30,3 +30,21 @@
     woodmartThemeModule.$document.on('wdShopPageInit wdBackHistory', moveCatToggles);
   }
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .querySelectorAll('td.product-subtotal span.woocommerce-Price-amount.amount[style]')
+    .forEach((el) => {
+      el.style.removeProperty("display");
+      el.style.removeProperty("width");
+      el.style.display = "inline";
+      el.style.width = "auto";
+    });
+
+  document
+    .querySelectorAll("td.product-subtotal small.tax_label")
+    .forEach((el) => {
+      el.style.display = "inline";
+      el.style.margin = "0";
+    });
+});
