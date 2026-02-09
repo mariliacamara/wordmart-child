@@ -203,7 +203,7 @@ $is_oos = ! $product->is_in_stock();
                       'aria-label'       => $product->add_to_cart_description(),
                       'rel'              => 'nofollow',
                     ) ),
-                    esc_html__( 'Adicionar', 'woocommerce' )
+                    esc_html__( 'Comprar', 'woocommerce' )
                   ),
                   $product,
                   $product->get_id()

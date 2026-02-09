@@ -240,7 +240,6 @@ global $product;
           <div class="owl-item active" style="width: 238.4px;">
             <div class="slide-product owl-carousel-item">
               <?php
-                // usa teu template de card (o mesmo que você já chama hoje)
                 wc_get_template_part( 'content', 'product-related' );
               ?>
             </div>
