@@ -4304,8 +4304,7 @@ td.woocommerce-table__product-qty.product-qty {
 
 /* Quantity ocupa 100% */
 .woocommerce-variation-add-to-cart.variations_button .quantity {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: fit-content;
   margin: 0 !important;
   display: flex !important;
 }
