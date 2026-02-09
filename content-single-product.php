@@ -235,15 +235,18 @@ global $product;
     data-mobile="2"
   >
     <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 product-carrousel">
-
-      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <div class="slide-product owl-carousel-item">
-          <?php
-            // usa teu template de card (o mesmo que você já chama hoje)
-            wc_get_template_part( 'content', 'product-related' );
-          ?>
-        </div>
-      <?php endwhile; ?>
+      <div class="owl-stage-outer">
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+          <div class="owl-item active" style="width: 238.4px;">
+            <div class="slide-product owl-carousel-item">
+              <?php
+                // usa teu template de card (o mesmo que você já chama hoje)
+                wc_get_template_part( 'content', 'product-related' );
+              ?>
+            </div>
+          </div>
+        <?php endwhile; ?>
+      </div>
 
       <?php wp_reset_postdata(); ?>
 
