@@ -234,7 +234,7 @@ global $product;
     data-tablet="3"
     data-mobile="2"
   >
-    <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 product-carrousel">
+    <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 owl-loaded owl-drag product-carrousel">
       <div class="owl-stage-outer">
         <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
           <div class="owl-item active" style="width: 238.4px;">
