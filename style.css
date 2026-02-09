@@ -4931,11 +4931,22 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   }
 }
 
-/* nada invisível intercepta clique */
-.wd-variations-boxes::before,
-.wd-variations-boxes::after {
-  pointer-events: none !important;
+/* garante que as opções fiquem acima do botão */
+.wd-variations-boxes,
+.wd-variations-boxes .size-options,
+.wd-variations-boxes .size-label {
+  position: relative;
+  z-index: 20;
 }
+
+/* e garante que o botão não esteja com z-index maior */
+.wd-add-to-cart-wrap,
+.single_add_to_cart_button,
+.variations_button {
+  position: relative;
+  z-index: 5;
+}
+
 
 
 .searchform .searchsubmit:after {
