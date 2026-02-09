@@ -4951,8 +4951,9 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   max-height: 32px;
 }
 
-/* aplica em todos EXCETO variável */
-body:not(.product-type-variable) .wd-add-to-cart-wrap>form>div {
+/* Só produtos NÃO variáveis */
+body:not(.product-type-variable) .wd-add-to-cart-wrap form .single_add_to_cart_button,
+body:not(.product-type-variable) .wd-add-to-cart-wrap form .quantity {
   background-color: var(--secondary-color);
 }
 
