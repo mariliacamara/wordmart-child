@@ -4934,13 +4934,22 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
     color: var(--white-color)
   }
 
-  td.product-subtotal .woocommerce-Price-amount {
-    display: inline !important;
-    width: auto !important;
-  }
-
   td.product-subtotal {
-    white-space: nowrap;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: baseline !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
   }
 
+  td.product-subtotal>span.woocommerce-Price-amount.amount {
+    display: inline-block !important;
+    width: auto !important;
+    float: none !important;
+  }
+
+  td.product-subtotal>small.tax_label {
+    display: inline-block !important;
+    margin: 0 !important;
+  }
 }
