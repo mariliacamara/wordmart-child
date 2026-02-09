@@ -4961,3 +4961,14 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
     width: auto !important;
   }
 }
+
+@media (max-width: 768.98px) {
+  .woocommerce-cart-form__contents td.product-subtotal {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+  }
+
+  .woocommerce-cart-form__contents td.product-subtotal:before {
+    flex: 0 0 100% !important;
+  }
+}
