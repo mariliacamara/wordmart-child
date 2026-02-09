@@ -4939,36 +4939,23 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
 
 @media (max-width: 768.98px) {
 
-  /* não deixa o label (td:before) roubar espaço no Subtotal */
-  .woocommerce-cart-form__contents td.product-subtotal:before {
-    flex: 0 0 auto !important;
-    margin-bottom: 0 !important;
-    padding-right: 8px;
-  }
-
-  /* garante que valor + (com IVA) fiquem lado a lado */
+  /* faz o subtotal virar horizontal */
   .woocommerce-cart-form__contents td.product-subtotal {
-    display: flex !important;
-    align-items: baseline !important;
+    flex-direction: row !important;
+    align-items: center !important;
     justify-content: flex-end !important;
     gap: 6px;
-    white-space: nowrap;
   }
 
-  .woocommerce-cart-form__contents td.product-subtotal .woocommerce-Price-amount,
-  .woocommerce-cart-form__contents td.product-subtotal .tax_label {
+  /* tira a quebra do preço */
+  .woocommerce-cart-form__contents td.product-subtotal .woocommerce-Price-amount {
     display: inline !important;
     width: auto !important;
   }
-}
 
-@media (max-width: 768.98px) {
-  .woocommerce-cart-form__contents td.product-subtotal {
-    flex-wrap: wrap !important;
-    white-space: normal !important;
-  }
-
-  .woocommerce-cart-form__contents td.product-subtotal:before {
-    flex: 0 0 100% !important;
+  /* tira a quebra do IVA */
+  .woocommerce-cart-form__contents td.product-subtotal .tax_label {
+    display: inline !important;
+    margin: 0 !important;
   }
 }
