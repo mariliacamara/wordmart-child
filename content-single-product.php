@@ -205,7 +205,7 @@ global $product;
   <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
 
   <?php
-  $limit = 12;
+  $limit = 5;
   $related_ids = wc_get_related_products( $product->get_id(), $limit );
 
   if ( ! empty( $related_ids ) ) :
