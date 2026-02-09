@@ -4299,7 +4299,7 @@ td.woocommerce-table__product-qty.product-qty {
 /* Qty em cima, botão embaixo */
 .woocommerce-variation-add-to-cart.variations_button {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: row !important;
   gap: 10px !important;
 }
 
