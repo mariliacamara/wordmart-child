@@ -29,21 +29,6 @@ License:    GNU General Public License v2 or later
    (Impede que os estilos de related products afetem o slider)
    ========================================================= */
 
-/* Força que os estilos dos related se apliquem apenas dentro do container */
-.wd-related-products .wd-related-grid .product,
-.wd-related-products .wd-related-grid .product-grid-item.product,
-.wd-related-products .wd-related-grid .product-wrapper,
-.wd-related-products .wd-related-grid .product-element-top,
-.wd-related-products .wd-related-grid .product-element-bottom,
-.wd-related-products .wd-related-grid .product-cta,
-.wd-related-products .wd-related-grid .price,
-.wd-related-products .wd-related-grid .wd-add-btn,
-.wd-related-products .wd-related-grid .wd-add-btn-replace,
-.wd-related-products .wd-related-grid .product-rating-wrapper,
-.wd-related-products .wd-related-grid .product-image-link img {
-  /* namespace: estilos aplicáveis apenas ao related */
-}
-
 /* Reset visual para o OwlCarousel / sliders — evita override dos novos estilos */
 .owl-carousel .product-grid-item.product,
 .slide-product .product-grid-item.product,
@@ -4976,6 +4961,9 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   pointer-events: auto;
 }
 
+#carousel-related-1>div>div>div>div>li>div>div.product-element-bottom>div.product-cta-row>div>div.wd-add-btn.wd-add-btn-replace>a {
+  max-height: 32px;
+}
 
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
