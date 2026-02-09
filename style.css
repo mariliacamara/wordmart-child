@@ -4912,38 +4912,38 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
 }
 
 /* 1) Empurra tudo das variações pra cima de QUALQUER coisa do add-to-cart */
-.wd-variations-boxes,
-.wd-variations-boxes *,
-.quantity {
+.single-product .wd-variations-boxes,
+.single-product .wd-variations-boxes *,
+.single-product .quantity {
   position: relative;
   z-index: 50;
 }
 
 /* 2) Garante que o bloco inteiro de compra (qty + botão) fique abaixo */
-.wd-add-to-cart-wrap,
-.wd-add-to-cart-wrap *,
-.single_variation_wrap,
-.variations_button,
-.cart {
+.single-product .wd-add-to-cart-wrap,
+.single-product .wd-add-to-cart-wrap *,
+.single-product .single_variation_wrap,
+.single-product .variations_button,
+.single-product .cart {
   position: relative;
   z-index: 10;
 }
 
 /* 3) Mata hitbox gigante que alguns temas criam */
-.variations_button,
-.cart,
-.single_variation_wrap {
+.single-product .variations_button,
+.single-product .cart,
+.single-product .single_variation_wrap {
   height: auto !important;
   min-height: 0 !important;
 }
 
 /* 4) Evita que algum overlay invisível roube hover/click */
-.wd-add-to-cart-wrap::before,
-.wd-add-to-cart-wrap::after,
-.variations_button::before,
-.variations_button::after,
-.cart::before,
-.cart::after {
+.single-product .wd-add-to-cart-wrap::before,
+.single-product .wd-add-to-cart-wrap::after,
+.single-product .variations_button::before,
+.single-product .variations_button::after,
+.single-product .cart::before,
+.single-product .cart::after {
   content: none !important;
 }
 
