@@ -4309,7 +4309,7 @@ td.woocommerce-table__product-qty.product-qty {
 .woocommerce-variation-add-to-cart.variations_button .quantity input,
 .woocommerce-variation-add-to-cart.variations_button .quantity .minus,
 .woocommerce-variation-add-to-cart.variations_button .quantity .plus {
-  height: 44px !important;
+  height: 30px !important;
 }
 
 /* Botão embaixo, full width */
