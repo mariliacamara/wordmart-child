@@ -4962,6 +4962,20 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   content: none !important;
 }
 
+/* desliga qualquer máscara/overlay do card quando estiver mexendo nas opções */
+.product-grid-item .wd-hover-mask,
+.product-grid-item .wd-quick-shop,
+.product-grid-item .wd-buttons {
+  pointer-events: none;
+}
+
+/* mas mantém o botão e qty clicáveis */
+.product-grid-item .single_add_to_cart_button,
+.product-grid-item .quantity,
+.product-grid-item .quantity * {
+  pointer-events: auto;
+}
+
 
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
