@@ -236,15 +236,17 @@ global $product;
   >
     <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 owl-loaded owl-drag product-carrousel">
       <div class="owl-stage-outer">
-        <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-          <div class="owl-item active" style="width: 238.4px;">
-            <div class="slide-product owl-carousel-item">
-              <?php
-                wc_get_template_part( 'content', 'product-related' );
-              ?>
+        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 1202px;">
+          <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+            <div class="owl-item active" style="width: 238.4px;">
+              <div class="slide-product owl-carousel-item">
+                <?php
+                  wc_get_template_part( 'content', 'product-related' );
+                ?>
+              </div>
             </div>
-          </div>
-        <?php endwhile; ?>
+          <?php endwhile; ?>
+        </div>
       </div>
 
       <?php wp_reset_postdata(); ?>
