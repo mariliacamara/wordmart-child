@@ -4934,11 +4934,13 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
     color: var(--white-color)
   }
 
-  @media (max-width: 768px) {
-    td.product-subtotal .woocommerce-Price-amount {
-      display: inline !important;
-      width: auto !important;
-    }
+  td.product-subtotal .woocommerce-Price-amount {
+    display: inline !important;
+    width: auto !important;
+  }
+
+  td.product-subtotal {
+    white-space: nowrap;
   }
 
 }
