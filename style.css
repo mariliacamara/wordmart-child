@@ -4931,15 +4931,11 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   }
 }
 
-@media (hover: none) {
-
-  .single_add_to_cart_button:hover,
-  .single_add_to_cart_button:focus {
-    box-shadow: none !important;
-    outline: none !important;
-  }
+/* nada invisível intercepta clique */
+.wd-variations-boxes::before,
+.wd-variations-boxes::after {
+  pointer-events: none !important;
 }
-
 
 
 .searchform .searchsubmit:after {
