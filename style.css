@@ -4936,26 +4936,3 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
 
 
 }
-
-@media (max-width: 768.98px) {
-
-  /* faz o subtotal virar horizontal */
-  .woocommerce-cart-form__contents td.product-subtotal {
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 6px;
-  }
-
-  /* tira a quebra do preço */
-  .woocommerce-cart-form__contents td.product-subtotal .woocommerce-Price-amount {
-    display: inline !important;
-    width: auto !important;
-  }
-
-  /* tira a quebra do IVA */
-  .woocommerce-cart-form__contents td.product-subtotal .tax_label {
-    display: inline !important;
-    margin: 0 !important;
-  }
-}
