@@ -4951,9 +4951,11 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   max-height: 32px;
 }
 
-div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div {
+/* aplica em todos EXCETO variável */
+body:not(.product-type-variable) .wd-add-to-cart-wrap>form>div {
   background-color: var(--secondary-color);
 }
+
 
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
