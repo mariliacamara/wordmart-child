@@ -4933,4 +4933,12 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-row.whb-without-bg.whb-border-fullwidth.whb-color-dark.whb-flex-flex-middle>div>div>div.whb-column.whb-mobile-right.whb-hidden-lg>div.wd-header-my-account.wd-tools-element.wd-event-hover.wd-design-7.wd-account-style-text.whb-5wb5e34ek6n1w9k7brjz>a>span.wd-tools-text {
     color: var(--white-color)
   }
+
+  @media (max-width: 768px) {
+    td.product-subtotal .woocommerce-Price-amount {
+      display: inline !important;
+      width: auto !important;
+    }
+  }
+
 }
