@@ -4926,25 +4926,40 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   }
 }
 
-/* garante que as opções fiquem acima do botão */
+/* 1) Empurra tudo das variações pra cima de QUALQUER coisa do add-to-cart */
 .wd-variations-boxes,
-.wd-variations-boxes .size-options,
-.wd-variations-boxes .size-label {
+.wd-variations-boxes * {
   position: relative;
-  z-index: 20;
+  z-index: 50;
 }
 
-/* e garante que o botão não esteja com z-index maior */
+/* 2) Garante que o bloco inteiro de compra (qty + botão) fique abaixo */
 .wd-add-to-cart-wrap,
-.single_add_to_cart_button,
-.variations_button {
+.wd-add-to-cart-wrap *,
+.single_variation_wrap,
+.variations_button,
+.cart,
+.quantity {
   position: relative;
-  z-index: 5;
+  z-index: 10;
 }
 
-div.wd-product-top.container>div>div.col-lg-6.wd-product-summary-col>div>div.wd-add-to-cart-wrap>form>div>div.woocommerce-variation.single_variation.wd-show {
-  display: none !important;
-  background-color: var(--white-color) !important;
+/* 3) Mata hitbox gigante que alguns temas criam */
+.variations_button,
+.cart,
+.single_variation_wrap {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* 4) Evita que algum overlay invisível roube hover/click */
+.wd-add-to-cart-wrap::before,
+.wd-add-to-cart-wrap::after,
+.variations_button::before,
+.variations_button::after,
+.cart::before,
+.cart::after {
+  content: none !important;
 }
 
 .searchform .searchsubmit:after {
