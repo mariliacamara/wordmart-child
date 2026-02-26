@@ -34,16 +34,21 @@
       e.stopPropagation();
       if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
 
-      const min = input.min !== '' ? parseFloat(input.min) : 1;
-      const max = input.max !== '' ? parseFloat(input.max) : Infinity;
-      const step = (input.step && input.step !== 'any') ? parseFloat(input.step) : 1;
+      const minAttr = input.getAttribute('min');
+      const min = minAttr && minAttr !== '' ? Math.max(1, parseFloat(minAttr)) : 1;
+      const maxAttr = input.getAttribute('max');
+      const max = maxAttr && maxAttr !== '' ? parseFloat(maxAttr) : Infinity;
+      const stepAttr = input.getAttribute('step');
+      const step = stepAttr && stepAttr !== 'any' && stepAttr !== '' ? parseFloat(stepAttr) : 1;
 
       let val = input.value !== '' ? parseFloat(input.value) : min;
-      if (Number.isNaN(val)) val = min;
+      if (Number.isNaN(val) || val < 1) val = min;
 
       const isPlus = btn.classList.contains('plus');
       val = isPlus ? val + step : val - step;
       
+      // Garante que nunca fica abaixo de 1
+      if (val < 1) val = 1;
       if (val < min) val = min;
       if (val > max) val = max;
 
