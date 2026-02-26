@@ -4923,20 +4923,29 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
 
 /* 1) Empurra tudo das variações pra cima de QUALQUER coisa do add-to-cart */
 .single-product .wd-variations-boxes,
-.single-product .wd-variations-boxes *,
-.single-product .quantity {
+.single-product .wd-variations-boxes * {
   position: relative;
   z-index: 50;
 }
 
-/* 2) Garante que o bloco inteiro de compra (qty + botão) fique abaixo */
+/* 2) Garante que o bloco inteiro de compra (qty + botão) fique abaixo das variações mas acima do resto */
 .single-product .wd-add-to-cart-wrap,
-.single-product .wd-add-to-cart-wrap *,
 .single-product .single_variation_wrap,
 .single-product .variations_button,
 .single-product .cart {
   position: relative;
-  z-index: 10;
+  z-index: 40;
+}
+
+/* 3) Garante que quantity e seus botões fiquem clicáveis */
+.single-product .quantity,
+.single-product .quantity *,
+.single-product .quantity .plus,
+.single-product .quantity .minus,
+.single-product .quantity input.qty {
+  position: relative;
+  z-index: 60 !important;
+  pointer-events: auto !important;
 }
 
 /* 3) Mata hitbox gigante que alguns temas criam */
