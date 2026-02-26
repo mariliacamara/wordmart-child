@@ -229,21 +229,24 @@ add_filter( 'woocommerce_my_account_my_orders_actions', function ( $actions, $or
 add_action( 'wp_enqueue_scripts', function () {
   if ( is_admin() ) return;
 
-  wp_enqueue_script(
-    'woodmart-child-loop-qty',
-    get_stylesheet_directory_uri() . '/assets/js/loop-qty.js',
-    array( 'jquery' ),
-    '1.0.1',
-    true
-  );
+  // Script para loop de produtos (não carrega no carrinho/checkout)
+  if ( ! is_cart() && ! is_checkout() ) {
+    wp_enqueue_script(
+      'woodmart-child-loop-qty',
+      get_stylesheet_directory_uri() . '/assets/js/loop-qty.js',
+      array( 'jquery' ),
+      '1.0.1',
+      true
+    );
+  }
 
-  // Script para botões +/- na página de produto único
+  // Script para botões +/- APENAS na página de produto único
   if ( is_product() ) {
     wp_enqueue_script(
       'woodmart-child-single-product-qty',
       get_stylesheet_directory_uri() . '/assets/js/single-product-qty.js',
       array(),
-      '1.0.0',
+      '1.0.1',
       true
     );
   }

@@ -40,8 +40,8 @@
         $button.attr('data-quantity', qty).data('quantity', qty);
       });
 
-      // Botões + e - (se tu usa)
-      $(document).on('click', '.quantity .plus, .quantity .minus', function () {
+      // Botões + e - APENAS em cards de produtos (não no carrinho)
+      $(document).on('click', 'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus', function () {
         const $wrap = $(this).closest('.quantity');
         const $input = $wrap.find('input.qty');
         if (!$input.length) return;
