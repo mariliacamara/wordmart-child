@@ -3,8 +3,16 @@
 
   console.log('🔧 Single Product Qty Script Loaded');
 
+  // Flag para evitar execução múltipla
+  let initialized = false;
+
   // Aguarda o DOM estar pronto
   function init() {
+    if (initialized) {
+      console.log('🔧 Already initialized, skipping');
+      return;
+    }
+    
     console.log('🔧 Init function called');
 
     // Verifica se os botões existem
@@ -14,6 +22,13 @@
     console.log('🔧 Plus buttons found:', plusButtons.length);
     console.log('🔧 Minus buttons found:', minusButtons.length);
 
+    if (plusButtons.length === 0 && minusButtons.length === 0) {
+      console.log('🔧 No buttons found yet, will retry');
+      return; // Não marca como initialized para tentar novamente
+    }
+
+    initialized = true;
+
     // Remove qualquer pointer-events: none que possa estar bloqueando
     document.querySelectorAll('.quantity, .quantity *, .single_add_to_cart_button, .cart').forEach(el => {
       el.style.pointerEvents = 'auto';
@@ -22,29 +37,16 @@
 
     // 2) Implementa + e - de forma universal
     function onQtyClick(e) {
-      console.log('🔧 Click detected on:', e.target, 'classList:', e.target.classList);
-      
       const btn = e.target.closest('.plus, .minus');
-      if (!btn) {
-        console.log('🔧 Not a plus/minus button');
-        return;
-      }
+      if (!btn) return;
 
-      console.log('🔧 Button found:', btn.className);
+      console.log('🔧 Button clicked:', btn.className);
 
       const qtyWrap = btn.closest('.quantity');
-      if (!qtyWrap) {
-        console.log('🔧 No quantity wrapper found');
-        return;
-      }
+      if (!qtyWrap) return;
 
       const input = qtyWrap.querySelector('input.qty, input[type="number"]');
-      if (!input) {
-        console.log('🔧 No input found');
-        return;
-      }
-
-      console.log('🔧 Input found, current value:', input.value);
+      if (!input) return;
 
       e.preventDefault();
       e.stopPropagation();
@@ -63,57 +65,48 @@
       if (val < min) val = min;
       if (val > max) val = max;
 
-      console.log('🔧 New value:', val);
+      console.log('🔧 Updating value from', input.value, 'to', val);
 
       input.value = String(val);
       input.dispatchEvent(new Event('input', { bubbles: true }));
       input.dispatchEvent(new Event('change', { bubbles: true }));
-      
-      console.log('🔧 Value updated successfully');
     }
 
-    // Adiciona listeners DIRETAMENTE nos botões (mais agressivo)
+    // Adiciona listeners DIRETAMENTE nos botões (apenas click)
     plusButtons.forEach(btn => {
-      console.log('🔧 Adding direct listener to plus button');
-      btn.addEventListener('click', onQtyClick, true);
-      btn.addEventListener('mousedown', onQtyClick, true);
-      btn.addEventListener('pointerdown', onQtyClick, true);
+      if (!btn.hasAttribute('data-qty-listener')) {
+        btn.setAttribute('data-qty-listener', 'true');
+        btn.addEventListener('click', onQtyClick, true);
+        console.log('🔧 Listener added to plus button');
+      }
     });
 
     minusButtons.forEach(btn => {
-      console.log('🔧 Adding direct listener to minus button');
-      btn.addEventListener('click', onQtyClick, true);
-      btn.addEventListener('mousedown', onQtyClick, true);
-      btn.addEventListener('pointerdown', onQtyClick, true);
+      if (!btn.hasAttribute('data-qty-listener')) {
+        btn.setAttribute('data-qty-listener', 'true');
+        btn.addEventListener('click', onQtyClick, true);
+        console.log('🔧 Listener added to minus button');
+      }
     });
 
-    // Também adiciona no document como fallback
-    document.addEventListener('click', onQtyClick, true);
-    document.addEventListener('mousedown', onQtyClick, true);
-    document.addEventListener('pointerdown', onQtyClick, true);
-    
-    console.log('🔧 All listeners added');
+    console.log('🔧 All listeners added successfully');
 
     // Observer para botões que possam ser adicionados dinamicamente
     const observer = new MutationObserver(() => {
-      const newPlus = document.querySelectorAll('.quantity .plus:not([data-listener])');
-      const newMinus = document.querySelectorAll('.quantity .minus:not([data-listener])');
+      const newPlus = document.querySelectorAll('.quantity .plus:not([data-qty-listener])');
+      const newMinus = document.querySelectorAll('.quantity .minus:not([data-qty-listener])');
       
       if (newPlus.length > 0 || newMinus.length > 0) {
-        console.log('🔧 New buttons detected, adding listeners');
+        console.log('🔧 New buttons detected');
         
         newPlus.forEach(btn => {
-          btn.setAttribute('data-listener', 'true');
+          btn.setAttribute('data-qty-listener', 'true');
           btn.addEventListener('click', onQtyClick, true);
-          btn.addEventListener('mousedown', onQtyClick, true);
-          btn.addEventListener('pointerdown', onQtyClick, true);
         });
         
         newMinus.forEach(btn => {
-          btn.setAttribute('data-listener', 'true');
+          btn.setAttribute('data-qty-listener', 'true');
           btn.addEventListener('click', onQtyClick, true);
-          btn.addEventListener('mousedown', onQtyClick, true);
-          btn.addEventListener('pointerdown', onQtyClick, true);
         });
       }
     });
@@ -129,9 +122,9 @@
     init();
   }
 
-  // Também tenta executar após um delay (caso o WooCommerce adicione os botões depois)
-  setTimeout(init, 1000);
-  setTimeout(init, 2000);
+  // Tenta novamente após delays (caso os botões sejam adicionados depois)
+  setTimeout(init, 500);
+  setTimeout(init, 1500);
 })();
 
 // Made with Bob
