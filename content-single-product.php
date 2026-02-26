@@ -528,7 +528,9 @@ global $product;
   const relatedSection = document.querySelector('.related-products');
 
   if (relatedSection) {
-    relatedSection.addEventListener('click', onQtyClick, true);
+    ['pointerdown','mousedown','touchstart','click'].forEach(evt => {
+      relatedSection.addEventListener(evt, stopOwlSteal, true);
+    });
   }
 })();
 </script>
