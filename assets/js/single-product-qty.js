@@ -14,30 +14,15 @@
     console.log('🔧 Plus buttons found:', plusButtons.length);
     console.log('🔧 Minus buttons found:', minusButtons.length);
 
-    // 1) Não deixa o Owl "capturar" cliques/drag quando for em quantity
-    function stopOwlSteal(e) {
-      const el = e.target;
-      if (!el) return;
-
-      // tudo que deve continuar clicável dentro do carousel
-      const clickable = el.closest(
-        '.quantity, .quantity .plus, .quantity .minus, input.qty, input[type="number"], button, a'
-      );
-
-      if (clickable) {
-        e.stopPropagation();
-        if (typeof e.stopImmediatePropagation === 'function') e.stopImmediatePropagation();
-      }
-    }
-
-    // captura bem cedo
-    ['pointerdown','mousedown','touchstart','click'].forEach(evt => {
-      document.addEventListener(evt, stopOwlSteal, true);
+    // Remove qualquer pointer-events: none que possa estar bloqueando
+    document.querySelectorAll('.quantity, .quantity *, .single_add_to_cart_button, .cart').forEach(el => {
+      el.style.pointerEvents = 'auto';
     });
+    console.log('🔧 Pointer events forced to auto');
 
     // 2) Implementa + e - de forma universal
     function onQtyClick(e) {
-      console.log('🔧 Click detected on:', e.target);
+      console.log('🔧 Click detected on:', e.target, 'classList:', e.target.classList);
       
       const btn = e.target.closest('.plus, .minus');
       if (!btn) {
@@ -87,17 +72,54 @@
       console.log('🔧 Value updated successfully');
     }
 
-    // Adiciona os event listeners para os botões +/-
-    document.addEventListener('click', onQtyClick, true);
-    console.log('🔧 Click listener added');
+    // Adiciona listeners DIRETAMENTE nos botões (mais agressivo)
+    plusButtons.forEach(btn => {
+      console.log('🔧 Adding direct listener to plus button');
+      btn.addEventListener('click', onQtyClick, true);
+      btn.addEventListener('mousedown', onQtyClick, true);
+      btn.addEventListener('pointerdown', onQtyClick, true);
+    });
 
-    const relatedSection = document.querySelector('.related-products');
-    if (relatedSection) {
-      ['pointerdown','mousedown','touchstart','click'].forEach(evt => {
-        relatedSection.addEventListener(evt, stopOwlSteal, true);
-      });
-      console.log('🔧 Related section listeners added');
-    }
+    minusButtons.forEach(btn => {
+      console.log('🔧 Adding direct listener to minus button');
+      btn.addEventListener('click', onQtyClick, true);
+      btn.addEventListener('mousedown', onQtyClick, true);
+      btn.addEventListener('pointerdown', onQtyClick, true);
+    });
+
+    // Também adiciona no document como fallback
+    document.addEventListener('click', onQtyClick, true);
+    document.addEventListener('mousedown', onQtyClick, true);
+    document.addEventListener('pointerdown', onQtyClick, true);
+    
+    console.log('🔧 All listeners added');
+
+    // Observer para botões que possam ser adicionados dinamicamente
+    const observer = new MutationObserver(() => {
+      const newPlus = document.querySelectorAll('.quantity .plus:not([data-listener])');
+      const newMinus = document.querySelectorAll('.quantity .minus:not([data-listener])');
+      
+      if (newPlus.length > 0 || newMinus.length > 0) {
+        console.log('🔧 New buttons detected, adding listeners');
+        
+        newPlus.forEach(btn => {
+          btn.setAttribute('data-listener', 'true');
+          btn.addEventListener('click', onQtyClick, true);
+          btn.addEventListener('mousedown', onQtyClick, true);
+          btn.addEventListener('pointerdown', onQtyClick, true);
+        });
+        
+        newMinus.forEach(btn => {
+          btn.setAttribute('data-listener', 'true');
+          btn.addEventListener('click', onQtyClick, true);
+          btn.addEventListener('mousedown', onQtyClick, true);
+          btn.addEventListener('pointerdown', onQtyClick, true);
+        });
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+    console.log('🔧 Mutation observer started');
   }
 
   // Executa quando DOM estiver pronto
@@ -106,6 +128,10 @@
   } else {
     init();
   }
+
+  // Também tenta executar após um delay (caso o WooCommerce adicione os botões depois)
+  setTimeout(init, 1000);
+  setTimeout(init, 2000);
 })();
 
 // Made with Bob
