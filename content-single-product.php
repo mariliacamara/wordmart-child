@@ -525,6 +525,11 @@ global $product;
     input.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
+  // Adiciona os event listeners para os botões +/-
+  ['click', 'pointerdown', 'mousedown', 'touchstart'].forEach(evt => {
+    document.addEventListener(evt, onQtyClick, true);
+  });
+
   const relatedSection = document.querySelector('.related-products');
 
   if (relatedSection) {
