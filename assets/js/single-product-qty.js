@@ -1,13 +1,20 @@
 (function () {
   'use strict';
 
+  // Não executa no carrinho ou checkout
+  if (document.body.classList.contains('woocommerce-cart') ||
+      document.body.classList.contains('woocommerce-checkout')) {
+    return;
+  }
+
   let initialized = false;
 
   function init() {
     if (initialized) return;
 
-    const plusButtons = document.querySelectorAll('.quantity .plus');
-    const minusButtons = document.querySelectorAll('.quantity .minus');
+    // Só pega botões que NÃO estão no carrinho
+    const plusButtons = document.querySelectorAll('.single-product .quantity .plus, .related-products .quantity .plus');
+    const minusButtons = document.querySelectorAll('.single-product .quantity .minus, .related-products .quantity .minus');
 
     if (plusButtons.length === 0 && minusButtons.length === 0) {
       return;
@@ -72,8 +79,8 @@
     });
 
     const observer = new MutationObserver(() => {
-      const newPlus = document.querySelectorAll('.quantity .plus:not([data-qty-listener])');
-      const newMinus = document.querySelectorAll('.quantity .minus:not([data-qty-listener])');
+      const newPlus = document.querySelectorAll('.single-product .quantity .plus:not([data-qty-listener]), .related-products .quantity .plus:not([data-qty-listener])');
+      const newMinus = document.querySelectorAll('.single-product .quantity .minus:not([data-qty-listener]), .related-products .quantity .minus:not([data-qty-listener])');
       
       if (newPlus.length > 0 || newMinus.length > 0) {
         newPlus.forEach(btn => {
