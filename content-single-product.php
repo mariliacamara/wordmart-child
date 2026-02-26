@@ -525,6 +525,10 @@ global $product;
     input.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
-  document.addEventListener('click', onQtyClick, true);
+  const relatedSection = document.querySelector('.related-products');
+
+  if (relatedSection) {
+    relatedSection.addEventListener('click', onQtyClick, true);
+  }
 })();
 </script>
