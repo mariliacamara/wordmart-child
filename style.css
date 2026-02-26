@@ -4909,6 +4909,15 @@ body>div.website-wrapper>header>div>div.whb-row.whb-top-bar.whb-not-sticky-row.w
   div>div>div>form>div>table>tbody>tr.woocommerce-cart-form__cart-item.cart_item>td.product-subtotal>small {
     white-space: nowrap;
   }
+
+  .product-carrousel .woocommerce-Price-amount, .wd-products-element .woocommerce-Price-amount, .pagination-pagination .woocommerce-Price-amount {
+      background: #fec917 !important;
+      color: #07143d !important;
+      padding: 5px 20px !important;
+      border-radius: 8px !important;
+      font-weight: 900 !important;
+      box-shadow: none !important;
+  }
 }
 
 /* 1) Empurra tudo das variações pra cima de QUALQUER coisa do add-to-cart */
@@ -4972,3 +4981,4 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
 fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 </svg>");
 }
+
