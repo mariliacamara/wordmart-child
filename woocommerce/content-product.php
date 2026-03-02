@@ -126,9 +126,11 @@ $is_oos = ! $product->is_in_stock();
 					<?php else : ?>
 
 						<?php if ( $product->is_type( 'variable' ) ) : ?>
-
+	
 							<div class="wd-add-btn wd-add-btn-replace">
-								<?php woocommerce_template_loop_add_to_cart(); ?>
+								<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="button product_type_variable">
+									<span><?php echo esc_html__( 'Ver opções', 'woocommerce' ); ?></span>
+								</a>
 							</div>
 
 						<?php else : ?>
