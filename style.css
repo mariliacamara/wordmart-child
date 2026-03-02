@@ -4999,7 +4999,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   z-index: 9999;
 }
 
-.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .button, .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn a.button, .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn-replace .product_type_variable {
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn-replace .product_type_variable {
   padding: 6px 10px!important;
   font-size: 12px;
 }
