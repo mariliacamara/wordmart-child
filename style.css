@@ -3083,6 +3083,16 @@ form.cart div.quantity {
   margin-left: 1px;
 }
 
+/* Mac/MacBook: ajuste fino do alinhamento */
+body.is-mac .widget_product_categories .wd-cats-toggle:after,
+body.is-mac .widget_product_categories .product-categories>li>.wd-cats-toggle::after {
+  content: '+' !important;
+  font-size: 14px;
+  line-height: 1;
+  margin-top: -4px;
+  margin-left: 0px;
+}
+
 .product-categories li.toggle-open>.wd-cats-toggle::after,
 .product-categories li .wd-cats-toggle.toggle-active::after {
   content: '−';

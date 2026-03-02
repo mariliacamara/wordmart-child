@@ -191,6 +191,28 @@ function zincomed_override_categories_script() {
 }
 add_action('wp_footer', 'zincomed_override_categories_script', 9999);
 
+// Detecta Mac e adiciona classe no body para ajustes de CSS
+add_action('wp_head', function () {
+  ?>
+  <script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var isMac = ua.indexOf('Macintosh') !== -1 || ua.indexOf('Mac OS X') !== -1;
+    if (isMac) {
+      document.documentElement.classList.add('is-mac');
+      if (document.body) {
+        document.body.classList.add('is-mac');
+      } else {
+        document.addEventListener('DOMContentLoaded', function () {
+          document.body.classList.add('is-mac');
+        });
+      }
+    }
+  })();
+  </script>
+  <?php
+}, 1);
+
 // Esconde o campo de quantidade quando só há 1 unidade disponível
 add_filter( 'woocommerce_quantity_input_args', function( $args, $product ) {
   if ( $product && $product->managing_stock() && $product->get_stock_quantity() <= 1 ) {
