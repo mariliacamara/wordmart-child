@@ -47,14 +47,17 @@
         if (!$input.length) return;
 
         const step = parseInt($input.attr('step') || '1', 10);
-        const min  = parseInt($input.attr('min') || '1', 10);
+        const minAttr = parseInt($input.attr('min') || '1', 10);
+        const min  = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
         const maxAttr = $input.attr('max');
         const max  = maxAttr ? parseInt(maxAttr, 10) : null;
 
         let val = parseInt($input.val() || String(min), 10);
-        if (!Number.isFinite(val)) val = min;
+        if (!Number.isFinite(val) || val < 1) val = min;
 
         val = $(this).hasClass('plus') ? val + step : val - step;
+        // Garante que nunca fica abaixo de 1
+        if (val < 1) val = 1;
         if (val < min) val = min;
         if (max !== null && val > max) val = max;
 
