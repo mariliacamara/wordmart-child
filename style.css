@@ -4013,6 +4013,11 @@ h3.wc-bacs-bank-details-account-name {
   width: fit-content;
 }
 
+/* Esconde quantity quando só há 1 unidade disponível */
+.wd-add-to-cart-wrap.hide-quantity .quantity {
+  display: none !important;
+}
+
 .single-product form.cart input.qty {
   border: none;
 }

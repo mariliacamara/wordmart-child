@@ -162,7 +162,15 @@ global $product;
           </div>
 
           <!-- ADD TO CART -->
-          <div class="wd-add-to-cart-wrap">
+          <div class="wd-add-to-cart-wrap<?php
+            // Esconde quantity se só há 1 unidade disponível
+            $stock_qty = $product->get_stock_quantity();
+            $manages_stock = $product->managing_stock();
+            $max_qty = $manages_stock ? intval( $stock_qty ) : null;
+            if ( $max_qty !== null && $max_qty <= 1 ) {
+              echo ' hide-quantity';
+            }
+          ?>">
             <?php woocommerce_template_single_add_to_cart(); ?>
           </div>
 
