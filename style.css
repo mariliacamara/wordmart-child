@@ -637,6 +637,26 @@ body>div.website-wrapper>header>div>div.whb-row.whb-header-bottom.whb-sticky-row
   box-shadow: none !important;
 }
 
+/* Botão "Ver opções" (product_type_variable) — override do estilo genérico .button */
+.product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn-replace a.product_type_variable,
+.wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn-replace a.product_type_variable,
+.pagination-pagination .product-grid-item .product-wrapper .product-element-bottom .wd-add-btn-replace a.product_type_variable,
+.wd-related-products .wd-related-grid .product-wrapper .product-element-bottom .wd-add-btn-replace a.product_type_variable {
+  background: #08103a !important;
+  color: #fff !important;
+  padding: 6px 10px !important;
+  border-radius: 5px !important;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  border: none !important;
+  box-shadow: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 /* Button + price alignment: price left, btn right (scoped) */
 .product-carrousel .owl-item .owl-carousel-item .product-wrapper .product-element-bottom .wd-add-btn,
 .wd-products-element .elements-grid .product-wrapper .product-element-bottom .wd-add-btn,
