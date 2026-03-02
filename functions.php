@@ -191,6 +191,23 @@ function zincomed_override_categories_script() {
 }
 add_action('wp_footer', 'zincomed_override_categories_script', 9999);
 
+// Esconde o campo de quantidade quando só há 1 unidade disponível
+add_filter( 'woocommerce_quantity_input_args', function( $args, $product ) {
+  if ( $product && $product->managing_stock() && $product->get_stock_quantity() <= 1 ) {
+    $args['min_value'] = 1;
+    $args['max_value'] = 1;
+    $args['input_value'] = 1;
+  }
+  return $args;
+}, 10, 2 );
+
+add_filter( 'woocommerce_is_sold_individually', function( $sold_individually, $product ) {
+  if ( $product && $product->managing_stock() && $product->get_stock_quantity() <= 1 ) {
+    return true;
+  }
+  return $sold_individually;
+}, 10, 2 );
+
 add_filter( 'woocommerce_product_add_to_cart_text', function() {
   return 'COMPRAR';
 });
