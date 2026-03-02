@@ -4999,7 +4999,7 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   z-index: 9999;
 }
 
-div.product-element-bottom > div.product-cta-row > div > div.wd-add-btn.wd-add-btn-replace {
+div.product-element-bottom > div.product-cta-row > div > div.wd-add-btn.wd-add-btn-replace:has(> a.product_type_variable) {
   padding: 6px 10px!important;
   font-size: 12px;
 }
