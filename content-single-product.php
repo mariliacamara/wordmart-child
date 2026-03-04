@@ -112,16 +112,12 @@ global $product;
               </div>
 
               <?php
-                    $brand_link = '';
+              $brand_link = '';
 
-                    if ( $brand_term && isset( $brand_term->term_id ) ) {
-                        $brand_link = get_term_link( $brand_term );
-                        if ( is_wp_error( $brand_link ) ) {
-                            $brand_link = '';
-                        }
-                    }
-                    ?>
-
+              if ( $brand_term && isset( $brand_term->slug ) ) {
+                  $brand_link = home_url( '/loja/?filter_marca=' . $brand_term->slug );
+              }
+              ?>
               <?php if ( $brand_logo_url ) : ?>
               <div class="my-brand-logo">
                 <?php if ( $brand_link ) : ?>
