@@ -1,68 +1,74 @@
 (function () {
-  // Pega a qty do card do botão clicado
+
   function getQtyFromCard(buttonEl) {
-    const card = buttonEl.closest('li.product, li.product-grid-item');
+    const card = buttonEl.closest('li.product, li.product-grid-item, .product-wrapper');
     if (!card) return 1;
 
-    const input = card.querySelector('input.qty, input.input-text.qty');
+    const input = card.querySelector('input.qty');
     if (!input) return 1;
 
     const qty = parseInt(input.value, 10);
     return Number.isFinite(qty) && qty > 0 ? qty : 1;
   }
 
-  // 1) Atualiza data-quantity no clique (fallback)
-  document.addEventListener(
-    'click',
-    (e) => {
-      const btn = e.target.closest('a.ajax_add_to_cart.add-to-cart-loop');
-      if (!btn) return;
-
-      const qty = getQtyFromCard(btn);
-      btn.setAttribute('data-quantity', String(qty));
-    },
-    true // capture = garante que roda antes de outros handlers
-  );
-
-  // 2) Hook oficial do WooCommerce (o que realmente resolve)
   if (window.jQuery) {
     jQuery(function ($) {
-      $(document.body).on('adding_to_cart', function (e, $button, data) {
-        // só nos botões do teu loop
-        if (!$button || !$button.hasClass('add-to-cart-loop')) return;
 
-        const qty = getQtyFromCard($button.get(0));
+      // 🔥 Intercepta clique no botão AJAX (archive page)
+      $(document).on('click', 'a.ajax_add_to_cart.add-to-cart-loop', function () {
+        const $button = $(this);
+        const qty = getQtyFromCard(this);
 
-        // injeta no payload do ajax (isso é o pulo do gato)
-        data.quantity = qty;
-
-        // e mantém o atributo coerente
+        // Atualiza data-quantity
         $button.attr('data-quantity', qty).data('quantity', qty);
+
+        // 🔥 Força quantity na URL (fallback total)
+        const href = $button.attr('href');
+        if (href) {
+          try {
+            const url = new URL(href, window.location.origin);
+            url.searchParams.set('quantity', qty);
+            $button.attr('href', url.toString());
+          } catch (e) {
+            console.warn('Erro ao ajustar URL de add-to-cart', e);
+          }
+        }
       });
 
-      // Botões + e - APENAS em cards de produtos (não no carrinho)
-      $(document).on('click', 'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus', function () {
-        const $wrap = $(this).closest('.quantity');
-        const $input = $wrap.find('input.qty');
-        if (!$input.length) return;
+      // 🔥 Controle robusto dos botões + e − (somente archive)
+      $(document).on(
+        'click',
+        'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus',
+        function () {
 
-        const step = parseInt($input.attr('step') || '1', 10);
-        const minAttr = parseInt($input.attr('min') || '1', 10);
-        const min  = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
-        const maxAttr = $input.attr('max');
-        const max  = maxAttr ? parseInt(maxAttr, 10) : null;
+          const $wrap = $(this).closest('.quantity');
+          const $input = $wrap.find('input.qty');
+          if (!$input.length) return;
 
-        let val = parseInt($input.val() || String(min), 10);
-        if (!Number.isFinite(val) || val < 1) val = min;
+          const step = parseInt($input.attr('step') || '1', 10);
+          const minAttr = parseInt($input.attr('min') || '1', 10);
+          const min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
+          const maxAttr = $input.attr('max');
+          const max = maxAttr && maxAttr !== '-1' ? parseInt(maxAttr, 10) : null;
 
-        val = $(this).hasClass('plus') ? val + step : val - step;
-        // Garante que nunca fica abaixo de 1
-        if (val < 1) val = 1;
-        if (val < min) val = min;
-        if (max !== null && val > max) val = max;
+          let val = parseInt($input.val() || String(min), 10);
+          if (!Number.isFinite(val) || val < 1) val = min;
 
-        $input.val(val).trigger('change');
-      });
+          if ($(this).hasClass('plus')) {
+            val += step;
+          } else {
+            val -= step;
+          }
+
+          if (val < 1) val = 1;
+          if (val < min) val = min;
+          if (max !== null && val > max) val = max;
+
+          $input.val(val).trigger('change');
+        }
+      );
+
     });
   }
+
 })();
