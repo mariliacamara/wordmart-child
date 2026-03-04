@@ -15,9 +15,10 @@
       return Number.isFinite(qty) && qty > 0 ? qty : 1;
     }
 
+    // 🔥 AJAX add to cart
     $(document).on('click', 'a.ajax_add_to_cart.add-to-cart-loop', function (e) {
 
-      e.preventDefault(); // 🔥 Cancela o comportamento do tema
+      e.preventDefault();
 
       const $button = $(this);
       const productId = $button.data('product_id');
@@ -44,7 +45,6 @@
             return;
           }
 
-          // Atualiza fragments (mini cart)
           if (response.fragments) {
             $.each(response.fragments, function (key, value) {
               $(key).replaceWith(value);
@@ -59,6 +59,46 @@
       });
 
     });
+
+    // 🔥 AQUI ENTRA A CORREÇÃO DO PLUS / MINUS
+    $(document).on(
+      'click',
+      'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus',
+      function () {
+
+        const $wrap = $(this).closest('.quantity');
+        const $input = $wrap.find('input.qty');
+        if (!$input.length) return;
+
+        const step = parseInt($input.attr('step') || '1', 10);
+        const minAttr = parseInt($input.attr('min') || '1', 10);
+        const min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
+
+        let maxAttr = $input.attr('max');
+        let max = null;
+
+        if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
+          max = parseInt(maxAttr, 10);
+        }
+
+        let val = parseInt($input.val(), 10);
+
+        if (!Number.isFinite(val) || val < min) {
+          val = min;
+        }
+
+        if ($(this).hasClass('plus')) {
+          val += step;
+        } else {
+          val -= step;
+        }
+
+        if (val < min) val = min;
+        if (max !== null && val > max) val = max;
+
+        $input.val(val).trigger('change');
+      }
+    );
 
   });
 
