@@ -61,44 +61,33 @@
     });
 
     // 🔥 AQUI ENTRA A CORREÇÃO DO PLUS / MINUS
-    $(document).on(
-      'click',
-      'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus',
-      function () {
+    // 🔥 Corrige valor sempre que mudar
+        $(document).on('change input', 'li.product input.qty, li.product-grid-item input.qty', function () {
 
-        const $wrap = $(this).closest('.quantity');
-        const $input = $wrap.find('input.qty');
-        if (!$input.length) return;
+          const $input = $(this);
 
-        const step = parseInt($input.attr('step') || '1', 10);
-        const minAttr = parseInt($input.attr('min') || '1', 10);
-        const min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
+          let val = parseInt($input.val(), 10);
+          let minAttr = parseInt($input.attr('min') || '1', 10);
+          let min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
 
-        let maxAttr = $input.attr('max');
-        let max = null;
+          let maxAttr = $input.attr('max');
+          let max = null;
 
-        if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
-          max = parseInt(maxAttr, 10);
-        }
+          // ignora max="-1"
+          if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
+            max = parseInt(maxAttr, 10);
+          }
 
-        let val = parseInt($input.val(), 10);
+          if (!Number.isFinite(val) || val < min) {
+            val = min;
+          }
 
-        if (!Number.isFinite(val) || val < min) {
-          val = min;
-        }
+          if (max !== null && val > max) {
+            val = max;
+          }
 
-        if ($(this).hasClass('plus')) {
-          val += step;
-        } else {
-          val -= step;
-        }
-
-        if (val < min) val = min;
-        if (max !== null && val > max) val = max;
-
-        $input.val(val).trigger('change');
-      }
-    );
+          $input.val(val);
+        });
 
   });
 
