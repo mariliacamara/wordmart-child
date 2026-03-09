@@ -21,11 +21,12 @@
   }
 
   document.addEventListener('click', function (e) {
-
     const btn = e.target.closest('.wd-wishlist-remove');
     if (!btn) return;
 
     e.preventDefault();
+    e.stopPropagation();
+    if (e.stopImmediatePropagation) e.stopImmediatePropagation();
 
     const productId = btn.dataset.productId;
     if (!productId) return;
@@ -39,12 +40,12 @@
       product_id: productId
     });
 
-    // remove só o card da tela
+    // remove só o card clicado
     if (card) {
       card.remove();
     }
 
-  });
+  }, true);
 
   document.addEventListener('click', function (e) {
 
