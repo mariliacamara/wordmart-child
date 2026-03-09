@@ -61,15 +61,9 @@
     });
 
     // 🔥 AQUI ENTRA A CORREÇÃO DO PLUS / MINUS
-    // 🔥 Corrige valor sempre que mudar
-    $(document).on('change input', 'input.qty', function () {
+    $(document).on('change input', 'li.product input.qty, li.product-grid-item input.qty', function () {
 
       const $input = $(this);
-
-      // não interferir no carrinho nem checkout
-      if ($input.closest('.woocommerce-cart, .woocommerce-checkout').length) {
-        return;
-      }
 
       let val = parseInt($input.val(), 10);
       let minAttr = parseInt($input.attr('min') || '1', 10);
@@ -91,7 +85,6 @@
       }
 
       $input.val(val);
-
     });
 
   });
