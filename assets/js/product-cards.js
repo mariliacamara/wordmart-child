@@ -20,6 +20,30 @@
 
   }
 
+  function injectWishlistRemove() {
+
+    if (!location.pathname.includes('wishlist')) return;
+
+    document.querySelectorAll('li.product-grid-item').forEach(card => {
+
+      if (card.querySelector('.wd-wishlist-remove')) return;
+
+      const id = card.dataset.id;
+      if (!id) return;
+
+      const btn = document.createElement('a');
+
+      btn.className = 'wd-wishlist-remove';
+      btn.href = '?remove_from_wishlist=' + id;
+      btn.textContent = '×';
+      btn.setAttribute('aria-label','Remover da wishlist');
+
+      card.prepend(btn);
+
+    });
+
+  }
+
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('.wd-wishlist-remove');
     if (!btn) return;
@@ -60,7 +84,10 @@
     patchCards();
   }
 
-  const mo = new MutationObserver(patchCards);
+  const mo = new MutationObserver(() => {
+    patchCards();
+    injectWishlistRemove();
+  });
   mo.observe(document.body, { childList: true, subtree: true });
 
 })();
