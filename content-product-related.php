@@ -18,7 +18,7 @@ $is_oos = ! $product->is_in_stock();
   data-id="<?php echo esc_attr( $product->get_id() ); ?>">
   <div class="product-wrapper">
         <!-- TOP: imagem e quick actions -->
-    <div class="product-element-top wd-quick-shop">
+    <div class="product-element-top">
       <?php if ( $is_oos ) : ?>
 				<div class="oos-svg-badge" aria-hidden="true">
           	<?php

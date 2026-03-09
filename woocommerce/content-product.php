@@ -20,7 +20,7 @@ $is_oos = ! $product->is_in_stock();
 	<div class="product-wrapper">
 
 		<!-- TOP -->
-		<div class="product-element-top wd-quick-shop">
+		<div class="product-element-top">
 
 			<?php if ( $is_oos ) : ?>
 				<div class="oos-svg-badge" aria-hidden="true">
@@ -204,54 +204,3 @@ $is_oos = ! $product->is_in_stock();
 		</div>
 	</div>
 </li>
-
-<script>
-(function () {
-  const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
-
-  function patchCards() {
-    if (!isMobile()) return;
-
-    // 1) Desativar quick shop no clique (impede o modal)
-    document.addEventListener('click', function (e) {
-      const card = e.target.closest('li.product-grid-item');
-      if (!card) return;
-
-      // se é variável e clicou em botão/cta, manda pra página do produto
-      if (card.classList.contains('product-type-variable')) {
-        const btn = e.target.closest('.wd-add-btn, .add_to_cart_button, .wd-add-btn-replace, a.button');
-        if (!btn) return;
-
-        const link = card.querySelector('a.woocommerce-LoopProduct-link, a.product-link, a[href*="/produto/"]');
-        const href = link ? link.getAttribute('href') : null;
-        if (!href) return;
-
-        e.preventDefault();
-        e.stopPropagation();
-        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
-
-        window.location.href = href;
-      }
-    }, true);
-
-    // 2) Tira classes/atributos que chamam quick shop em cards
-    document.querySelectorAll('li.product-grid-item').forEach(card => {
-      card.classList.remove('wd-quick-shop'); // alguns layouts usam isso no wrapper
-      card.querySelectorAll('[data-quick-shop], [data-quick-view], .wd-quick-view').forEach(el => {
-        el.removeAttribute('data-quick-shop');
-        el.removeAttribute('data-quick-view');
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', patchCards);
-  } else {
-    patchCards();
-  }
-
-  // se o owl/tema re-renderizar cards
-  const mo = new MutationObserver(() => patchCards());
-  mo.observe(document.body, { childList: true, subtree: true });
-})();
-</script>
