@@ -32,16 +32,17 @@
 
     const card = btn.closest('li.product, li.product-grid-item');
 
-    jQuery.post(woodmart_settings.ajaxurl, {
+    const ajaxurl = window.woodmart_settings?.ajaxurl || wc_add_to_cart_params?.ajax_url;
+
+    jQuery.post(ajaxurl, {
       action: 'woodmart_remove_from_wishlist',
       product_id: productId
-    }, function () {
-
-      if (card) {
-        card.remove();
-      }
-
     });
+
+    // remove só o card da tela
+    if (card) {
+      card.remove();
+    }
 
   });
 
