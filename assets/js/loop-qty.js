@@ -64,35 +64,35 @@
     // 🔥 Corrige valor sempre que mudar
     $(document).on('change input', 'input.qty', function () {
 
-  const $input = $(this);
+      const $input = $(this);
 
-  // não mexer no cart ou checkout
-  if ($input.closest('.woocommerce-cart, .woocommerce-checkout').length) {
-    return;
-  }
+      // não interferir no carrinho nem checkout
+      if ($input.closest('.woocommerce-cart, .woocommerce-checkout').length) {
+        return;
+      }
 
-  let val = parseInt($input.val(), 10);
-  let minAttr = parseInt($input.attr('min') || '1', 10);
-  let min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
+      let val = parseInt($input.val(), 10);
+      let minAttr = parseInt($input.attr('min') || '1', 10);
+      let min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
 
-  let maxAttr = $input.attr('max');
-  let max = null;
+      let maxAttr = $input.attr('max');
+      let max = null;
 
-  if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
-    max = parseInt(maxAttr, 10);
-  }
+      if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
+        max = parseInt(maxAttr, 10);
+      }
 
-  if (!Number.isFinite(val) || val < min) {
-    val = min;
-  }
+      if (!Number.isFinite(val) || val < min) {
+        val = min;
+      }
 
-  if (max !== null && val > max) {
-    val = max;
-  }
+      if (max !== null && val > max) {
+        val = max;
+      }
 
-  $input.val(val);
+      $input.val(val);
 
-});
+    });
 
   });
 
