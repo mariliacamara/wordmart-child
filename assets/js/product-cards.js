@@ -22,6 +22,31 @@
 
   document.addEventListener('click', function (e) {
 
+    const btn = e.target.closest('.wd-wishlist-remove');
+    if (!btn) return;
+
+    e.preventDefault();
+
+    const productId = btn.dataset.productId;
+    if (!productId) return;
+
+    const card = btn.closest('li.product, li.product-grid-item');
+
+    jQuery.post(woodmart_settings.ajaxurl, {
+      action: 'woodmart_remove_from_wishlist',
+      product_id: productId
+    }, function () {
+
+      if (card) {
+        card.remove();
+      }
+
+    });
+
+  });
+
+  document.addEventListener('click', function (e) {
+
     const card = e.target.closest('li.product-grid-item');
     if (!card) return;
 
