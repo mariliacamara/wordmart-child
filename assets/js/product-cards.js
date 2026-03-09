@@ -44,6 +44,34 @@
 
   }
 
+  document.addEventListener('click', function (e) {
+
+  const btn = e.target.closest('.wd-wishlist-remove');
+  if (!btn) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+  if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+
+  const card = btn.closest('li.product, li.product-grid-item');
+  const productId = btn.dataset.productId;
+
+  const ajaxurl = window.woodmart_settings?.ajaxurl || wc_add_to_cart_params?.ajax_url;
+
+  jQuery.post(ajaxurl, {
+    action: 'yith_wcwl_remove_from_wishlist',
+    product_id: productId
+  }).done(function () {
+
+    // remove somente depois do servidor confirmar
+    if (card) {
+      card.remove();
+    }
+
+  });
+
+}, true);
+
   // document.addEventListener('click', function (e) {
   //   const btn = e.target.closest('.wd-wishlist-remove');
   //   if (!btn) return;
