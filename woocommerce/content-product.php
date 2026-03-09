@@ -22,10 +22,10 @@ $is_oos = ! $product->is_in_stock();
 		<div class="wd-wishlist-product-actions">
 			<button
 				class="wd-wishlist-remove"
-				data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
+				data-key="<?php echo esc_attr( $wishlist_item->ID ); ?>"
 				aria-label="Remover da wishlist"
 			>
-				×
+				× Remover
 			</button>
 		</div>
 
