@@ -35,7 +35,7 @@
 
       btn.className = 'wd-wishlist-remove';
       btn.href = '?remove_from_wishlist=' + id;
-      btn.textContent = '×';
+      btn.textContent = '× Remover';
       btn.setAttribute('aria-label','Remover da wishlist');
 
       card.prepend(btn);
@@ -44,16 +44,16 @@
 
   }
 
-  document.addEventListener('click', function (e) {
-    const btn = e.target.closest('.wd-wishlist-remove');
-    if (!btn) return;
+  // document.addEventListener('click', function (e) {
+  //   const btn = e.target.closest('.wd-wishlist-remove');
+  //   if (!btn) return;
 
-    const card = btn.closest('li.product, li.product-grid-item');
+  //   const card = btn.closest('li.product, li.product-grid-item');
 
-    if (card) {
-      card.remove();
-    }
-  });
+  //   if (card) {
+  //     card.remove();
+  //   }
+  // });
 
   document.addEventListener('click', function (e) {
 
