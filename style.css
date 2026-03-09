@@ -2113,7 +2113,7 @@ td.product-price>.amount {
 
 .cart_item div.quantity :is(input[type="number"], input[type="text"]) {
   width: 30% !important;
-  height: 26px;
+  height: 30px;
   color: var(--dark-grey) !important;
   border-radius: 0 !important;
   background-color: var(--grey) !important;
@@ -5024,8 +5024,8 @@ body>div.website-wrapper>header>div>div.whb-row.whb-general-header.whb-sticky-ro
   font-size: 12px;
 }
 
-body > div.website-wrapper > div > div.page-title.page-title-default.title-size-default.title-design-default.color-scheme-default {
-  display: none;
+tr.woocommerce-cart-form__cart-item.cart_item > td.product-quantity > div {
+  display: unset!important;
 }
 
 .searchform .searchsubmit:after {
@@ -5035,3 +5035,4 @@ body > div.website-wrapper > div > div.page-title.page-title-default.title-size-
 fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 </svg>");
 }
+

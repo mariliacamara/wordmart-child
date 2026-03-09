@@ -1,68 +1,94 @@
 (function () {
-  // Pega a qty do card do botão clicado
-  function getQtyFromCard(buttonEl) {
-    const card = buttonEl.closest('li.product, li.product-grid-item');
-    if (!card) return 1;
 
-    const input = card.querySelector('input.qty, input.input-text.qty');
-    if (!input) return 1;
+  if (!window.jQuery) return;
 
-    const qty = parseInt(input.value, 10);
-    return Number.isFinite(qty) && qty > 0 ? qty : 1;
-  }
+  jQuery(function ($) {
 
-  // 1) Atualiza data-quantity no clique (fallback)
-  document.addEventListener(
-    'click',
-    (e) => {
-      const btn = e.target.closest('a.ajax_add_to_cart.add-to-cart-loop');
-      if (!btn) return;
+    function getQtyFromCard(buttonEl) {
+      const card = buttonEl.closest('li.product, li.product-grid-item');
+      if (!card) return 1;
 
-      const qty = getQtyFromCard(btn);
-      btn.setAttribute('data-quantity', String(qty));
-    },
-    true // capture = garante que roda antes de outros handlers
-  );
+      const input = card.querySelector('input.qty');
+      if (!input) return 1;
 
-  // 2) Hook oficial do WooCommerce (o que realmente resolve)
-  if (window.jQuery) {
-    jQuery(function ($) {
-      $(document.body).on('adding_to_cart', function (e, $button, data) {
-        // só nos botões do teu loop
-        if (!$button || !$button.hasClass('add-to-cart-loop')) return;
+      const qty = parseInt(input.value, 10);
+      return Number.isFinite(qty) && qty > 0 ? qty : 1;
+    }
 
-        const qty = getQtyFromCard($button.get(0));
+    // 🔥 AJAX add to cart
+    $(document).on('click', 'a.ajax_add_to_cart.add-to-cart-loop', function (e) {
 
-        // injeta no payload do ajax (isso é o pulo do gato)
-        data.quantity = qty;
+      e.preventDefault();
 
-        // e mantém o atributo coerente
-        $button.attr('data-quantity', qty).data('quantity', qty);
+      const $button = $(this);
+      const productId = $button.data('product_id');
+      const qty = getQtyFromCard(this);
+
+      if (!productId) return;
+
+      $button.addClass('loading');
+
+      $.ajax({
+        type: 'POST',
+        url: wc_add_to_cart_params.ajax_url,
+        data: {
+          action: 'woocommerce_ajax_add_to_cart',
+          product_id: productId,
+          quantity: qty
+        },
+        success: function (response) {
+
+          if (!response) return;
+
+          if (response.error && response.product_url) {
+            window.location = response.product_url;
+            return;
+          }
+
+          if (response.fragments) {
+            $.each(response.fragments, function (key, value) {
+              $(key).replaceWith(value);
+            });
+          }
+
+          $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $button]);
+        },
+        complete: function () {
+          $button.removeClass('loading');
+        }
       });
 
-      // Botões + e - APENAS em cards de produtos (não no carrinho)
-      $(document).on('click', 'li.product .quantity .plus, li.product .quantity .minus, li.product-grid-item .quantity .plus, li.product-grid-item .quantity .minus', function () {
-        const $wrap = $(this).closest('.quantity');
-        const $input = $wrap.find('input.qty');
-        if (!$input.length) return;
-
-        const step = parseInt($input.attr('step') || '1', 10);
-        const minAttr = parseInt($input.attr('min') || '1', 10);
-        const min  = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
-        const maxAttr = $input.attr('max');
-        const max  = maxAttr ? parseInt(maxAttr, 10) : null;
-
-        let val = parseInt($input.val() || String(min), 10);
-        if (!Number.isFinite(val) || val < 1) val = min;
-
-        val = $(this).hasClass('plus') ? val + step : val - step;
-        // Garante que nunca fica abaixo de 1
-        if (val < 1) val = 1;
-        if (val < min) val = min;
-        if (max !== null && val > max) val = max;
-
-        $input.val(val).trigger('change');
-      });
     });
-  }
+
+    // 🔥 AQUI ENTRA A CORREÇÃO DO PLUS / MINUS
+    // 🔥 Corrige valor sempre que mudar
+        $(document).on('change input', 'li.product input.qty, li.product-grid-item input.qty', function () {
+
+          const $input = $(this);
+
+          let val = parseInt($input.val(), 10);
+          let minAttr = parseInt($input.attr('min') || '1', 10);
+          let min = Math.max(1, isNaN(minAttr) ? 1 : minAttr);
+
+          let maxAttr = $input.attr('max');
+          let max = null;
+
+          // ignora max="-1"
+          if (maxAttr && maxAttr !== '-1' && !isNaN(parseInt(maxAttr, 10))) {
+            max = parseInt(maxAttr, 10);
+          }
+
+          if (!Number.isFinite(val) || val < min) {
+            val = min;
+          }
+
+          if (max !== null && val > max) {
+            val = max;
+          }
+
+          $input.val(val);
+        });
+
+  });
+
 })();

@@ -8,11 +8,11 @@ global $product;
   <!-- Breadcrumb -->
   <div class="wd-breadcrumbs-wrap container">
     <?php if ( function_exists( 'woodmart_current_breadcrumbs' ) ) : ?>
-      <div class="wd-breadcrumbs">
-        <?php woodmart_current_breadcrumbs( 'shop' ); ?>
-      </div>
+    <div class="wd-breadcrumbs">
+      <?php woodmart_current_breadcrumbs( 'shop' ); ?>
+    </div>
     <?php else : ?>
-      <?php woocommerce_breadcrumb(); ?>
+    <?php woocommerce_breadcrumb(); ?>
     <?php endif; ?>
   </div>
 
@@ -26,9 +26,9 @@ global $product;
           <?php do_action( 'woocommerce_before_single_product_summary' ); ?>
 
           <?php if ( ! $product->is_in_stock() ) : ?>
-            <div class="oos-svg-badge" aria-hidden="true">
-              <?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/outofstock.svg' ); ?>
-            </div>
+          <div class="oos-svg-badge" aria-hidden="true">
+            <?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/outofstock.svg' ); ?>
+          </div>
           <?php endif; ?>
         </div>
       </div>
@@ -100,29 +100,42 @@ global $product;
             }
             ?>
 
-            <?php if ( $brand_term ) : ?>
-              <div class="my-brand-wrapper">
+          <?php if ( $brand_term ) : ?>
+          <div class="my-brand-wrapper">
 
-                <div class="my-title-row">
-                  <div>
-                    <div class="my-brand-name">
-                      <?php echo esc_html( $brand_term->name ); ?>
-                    </div>
-                    <h1 class="product-title"><?php the_title(); ?></h1>
-                  </div>
-
-                  <?php if ( $brand_logo_url ) : ?>
-                    <div class="my-brand-logo">
-                      <a href="<?php echo esc_url( get_term_link( $brand_term ) ); ?>" aria-label="<?php echo esc_attr( $brand_term->name ); ?>">
-                        <img src="<?php echo esc_url( $brand_logo_url ); ?>" alt="<?php echo esc_attr( $brand_term->name ); ?>">
-                      </a>
-                    </div>
-                  <?php endif; ?>
+            <div class="my-title-row">
+              <div>
+                <div class="my-brand-name">
+                  <?php echo esc_html( $brand_term->name ); ?>
                 </div>
+                <h1 class="product-title"><?php the_title(); ?></h1>
               </div>
-            <?php else : ?>
-              <h1 class="product-title"><?php the_title(); ?></h1>
-            <?php endif; ?>
+
+              <?php
+              $brand_link = '';
+
+              if ( $brand_term && isset( $brand_term->slug ) ) {
+                  $brand_link = home_url( '/loja/?filter_marca=' . $brand_term->slug );
+              }
+              ?>
+              <?php if ( $brand_logo_url ) : ?>
+              <div class="my-brand-logo">
+                <?php if ( $brand_link ) : ?>
+                <a href="<?php echo esc_url( $brand_link ); ?>"
+                  aria-label="<?php echo esc_attr( $brand_term->name ); ?>">
+                  <img src="<?php echo esc_url( $brand_logo_url ); ?>"
+                    alt="<?php echo esc_attr( $brand_term->name ); ?>">
+                </a>
+                <?php else : ?>
+                <img src="<?php echo esc_url( $brand_logo_url ); ?>" alt="<?php echo esc_attr( $brand_term->name ); ?>">
+                <?php endif; ?>
+              </div>
+              <?php endif; ?>
+            </div>
+          </div>
+          <?php else : ?>
+          <h1 class="product-title"><?php the_title(); ?></h1>
+          <?php endif; ?>
 
 
           <!-- Excerpt -->
@@ -210,9 +223,9 @@ global $product;
   </section>
 
   <section class="related-products wd-related-products container">
-  <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
+    <h2 class="wd-related-title">PRODUTOS RELACIONADOS</h2>
 
-  <?php
+    <?php
   $limit = 5;
   $related_ids = wc_get_related_products( $product->get_id(), $limit );
 
@@ -230,22 +243,15 @@ global $product;
     $loop = new WP_Query( $args );
   ?>
 
-  <div
-    id="<?php echo esc_attr( $carousel_id ); ?>"
-    class="wd-carousel-container wd-quantity-enabled slider-type-product products wd-carousel-spacing-10 title-line-one"
-    data-owl-carousel=""
-    data-wrap="no"
-    data-hide_pagination_control="no"
-    data-hide_prev_next_buttons="no"
-    data-desktop="5"
-    data-tablet_landscape="4"
-    data-tablet="3"
-    data-mobile="2"
-  >
-    <div class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 owl-loaded owl-drag product-carrousel">
-      <div class="owl-stage-outer">
-        <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 1202px;">
-          <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    <div id="<?php echo esc_attr( $carousel_id ); ?>"
+      class="wd-carousel-container wd-quantity-enabled slider-type-product products wd-carousel-spacing-10 title-line-one"
+      data-owl-carousel="" data-wrap="no" data-hide_pagination_control="no" data-hide_prev_next_buttons="no"
+      data-desktop="5" data-tablet_landscape="4" data-tablet="3" data-mobile="2">
+      <div
+        class="owl-carousel wd-owl owl-items-lg-5 owl-items-md-4 owl-items-sm-3 owl-items-xs-2 owl-loaded owl-drag product-carrousel">
+        <div class="owl-stage-outer">
+          <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all; width: 1202px;">
+            <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
             <div class="owl-item active" style="width: 238.4px;">
               <div class="slide-product owl-carousel-item">
                 <?php
@@ -253,23 +259,23 @@ global $product;
                 ?>
               </div>
             </div>
-          <?php endwhile; ?>
+            <?php endwhile; ?>
+          </div>
         </div>
+
+        <?php wp_reset_postdata(); ?>
+
       </div>
-
-      <?php wp_reset_postdata(); ?>
-
     </div>
-  </div>
 
-  <?php endif; ?>
-</section>
+    <?php endif; ?>
+  </section>
 
 
 </div>
 
 <script>
-(function () {
+(function() {
   const SELECT_SELECTOR = 'select#pa_tamanho, select[name="attribute_pa_tamanho"]';
   const FORM_SELECTOR = 'form.variations_form';
 
@@ -282,7 +288,8 @@ global $product;
 
   function getVariationsData(form) {
     if (!form) return null;
-    const raw = form.getAttribute('data-product_variations') || form.dataset.productVariations || form.dataset.product_variations;
+    const raw = form.getAttribute('data-product_variations') || form.dataset.productVariations || form.dataset
+      .product_variations;
     if (!raw) return null;
     try {
       // raw pode estar JSON-escaped (com &quot;), tentar unescape
@@ -321,7 +328,8 @@ global $product;
         const found = variations.find(v => {
           if (!v.attributes) return false;
           // várias formas de key; preferimos attribute_pa_tamanho
-          return v.attributes['attribute_pa_tamanho'] === val || v.attributes['attribute_tamanho'] === val || v.attributes['attribute_pa_tamanho'] === val.replace(/\s+/g, '-');
+          return v.attributes['attribute_pa_tamanho'] === val || v.attributes['attribute_tamanho'] === val ||
+            v.attributes['attribute_pa_tamanho'] === val.replace(/\s+/g, '-');
         });
         if (found) {
           // price_html sometimes like '<span class="price">3.57€</span>'
@@ -370,10 +378,12 @@ global $product;
       label.appendChild(priceEl);
       container.appendChild(label);
 
-      label.addEventListener('click', function () {
+      label.addEventListener('click', function() {
         if (!input.checked) input.checked = true;
         select.value = val;
-        const evt = new Event('change', { bubbles: true });
+        const evt = new Event('change', {
+          bubbles: true
+        });
         select.dispatchEvent(evt);
 
         container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
@@ -387,7 +397,7 @@ global $product;
   function placeBelowAddToCart(select) {
     const form = document.querySelector(FORM_SELECTOR);
     const variationsData = getVariationsData(form);
-    const targetBox = document.querySelector('.wd-variations-boxes') || (function () {
+    const targetBox = document.querySelector('.wd-variations-boxes') || (function() {
       const addWrap = document.querySelector('.wd-add-to-cart-wrap');
       if (addWrap && addWrap.parentNode) {
         const fallback = document.createElement('div');
@@ -420,7 +430,7 @@ global $product;
     if (resetOriginal) {
       const clone = resetOriginal.cloneNode(true);
       clone.style.visibility = resetOriginal.style.visibility || 'hidden';
-      clone.addEventListener('click', function () {
+      clone.addEventListener('click', function() {
         setTimeout(() => {
           container.querySelectorAll('.size-label').forEach(l => l.classList.remove('is-checked'));
         }, 50);
@@ -438,7 +448,7 @@ global $product;
     if (origTr) origTr.style.display = 'none';
 
     // sincronia quando select muda (por WooCommerce)
-    select.addEventListener('change', function () {
+    select.addEventListener('change', function() {
       const v = select.value;
       container.querySelectorAll('.size-label').forEach(l => {
         const inp = l.querySelector('input');
@@ -476,7 +486,9 @@ global $product;
       placeBelowAddToCart(sel);
     }
   });
-  mo.observe(root, { childList: true, subtree: true });
+  mo.observe(root, {
+    childList: true,
+    subtree: true
+  });
 })();
-
 </script>
