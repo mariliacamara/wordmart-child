@@ -28,19 +28,18 @@
     e.stopPropagation();
     if (e.stopImmediatePropagation) e.stopImmediatePropagation();
 
-    const productId = btn.dataset.productId;
-    if (!productId) return;
+    const rowId = btn.dataset.rowId || btn.dataset.key;
+    if (!rowId) return;
 
     const card = btn.closest('li.product, li.product-grid-item');
 
     const ajaxurl = window.woodmart_settings?.ajaxurl || wc_add_to_cart_params?.ajax_url;
 
     jQuery.post(ajaxurl, {
-      action: 'woodmart_remove_from_wishlist',
-      product_id: productId
+      action: 'yith_wcwl_remove_from_wishlist',
+      remove_from_wishlist: rowId
     });
 
-    // remove só o card clicado
     if (card) {
       card.remove();
     }
