@@ -34,7 +34,7 @@ $is_oos = ! $product->is_in_stock();
       <?php
 			$price = (float) $product->get_price();
 
-			if ( $price > 48.90 ) : ?>
+			if ( $price > 64.00 ) : ?>
 				<div class="price-badge free-shipping-badge" aria-label="Envio grátis" data-tooltip="Portes grátis">
           <?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
 				</div>
