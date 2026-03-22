@@ -185,6 +185,16 @@ global $product;
             }
           ?>">
             <?php woocommerce_template_single_add_to_cart(); ?>
+
+            <?php
+            $stock_qty = $product->get_stock_quantity();
+            $manages_stock = $product->managing_stock();
+
+            if ( $manages_stock && $stock_qty !== null && $stock_qty <= 3 && $stock_qty > 0 ) : ?>
+              <div class="low-stock-warning">
+                Baixo stock
+              </div>
+            <?php endif; ?>
           </div>
 
           <!-- Variations placeholder -->
