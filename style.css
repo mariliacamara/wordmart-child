@@ -4958,7 +4958,7 @@ body > div.website-wrapper > div > div.page-title.page-title-default.title-size-
   display: none;
 }
 
-body.home > div > div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-brand-title-wrap > div > span {
+.home .product-brand-name {
   display: none;
 }
 
