@@ -3979,13 +3979,6 @@ h3.wc-bacs-bank-details-account-name {
   display: block;
 }
 
-
-/* Wrapper referência */
-.product-grid-item.is-outofstock .product-element-top.wd-quick-shop {
-  position: relative;
-  overflow: visible;
-}
-
 /* Triângulo no canto superior direito (só indisponível) */
 .product-grid-item.is-outofstock .oos-svg-badge {
   position: absolute;
@@ -4351,73 +4344,6 @@ table.variations {
 
 .quick-shop-wrapper .quick-shop-form {
   padding: 10px 10px 0 10px !important;
-}
-
-/* ===== Quick shop: deixar qty + botão igual ao card ===== */
-
-/* wrapper */
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button {
-  display: flex !important;
-  align-items: center !important;
-  gap: 5px !important;
-}
-
-/* caixa do quantity (igual “card normal”: branco + borda + arredondado) */
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity {
-  display: inline-flex !important;
-  align-items: stretch !important;
-  border: 1px solid rgba(0, 0, 0, .12) !important;
-  background: #fff !important;
-  color: var(--dark-grey) !important;
-  border-radius: 5px !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  width: fit-content !important;
-}
-
-/* botões +/- */
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity .minus,
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity .plus {
-  width: 30px !important;
-  height: 30px !important;
-  border: 0 !important;
-  background: transparent !important;
-  color: var(--dark-grey) !important;
-  font-weight: 700 !important;
-  padding: 0 !important;
-}
-
-/* input do número */
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .quantity input.qty {
-  width: 48px !important;
-  height: 30px !important;
-  border: 0 !important;
-  text-align: center !important;
-  padding: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  color: var(--dark-grey) !important;
-}
-
-/* botão COMPRAR igual ao “ADICIONAR” do card (azul, arredondado, height) */
-.wd-quick-shop .woocommerce-variation-add-to-cart.variations_button .single_add_to_cart_button {
-  min-height: auto;
-  max-height: 30px !important;
-  padding: 0 15px !important;
-  border-radius: 5px !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  letter-spacing: .02em !important;
-  margin: 0 !important;
-  flex: 1 1 auto !important;
-  font-size: 12px;
-}
-
-/* estado desabilitado no mesmo estilo */
-.wd-quick-shop .woocommerce-variation-add-to-cart-disabled .single_add_to_cart_button,
-.wd-quick-shop .single_add_to_cart_button.disabled {
-  opacity: .6 !important;
-  cursor: not-allowed !important;
 }
 
 /* 1) ZERA QUALQUER FUNDO/PILL QUE O TEMA APLICA NO PREÇO */
@@ -5029,6 +4955,10 @@ tr.woocommerce-cart-form__cart-item.cart_item > td.product-quantity > div {
 }
 
 body > div.website-wrapper > div > div.page-title.page-title-default.title-size-default.title-design-default.color-scheme-default {
+  display: none;
+}
+
+body.home > div > div.owl-stage-outer > div > div > div > li > div > div.product-element-bottom > div.product-brand-title-wrap > div > span {
   display: none;
 }
 
