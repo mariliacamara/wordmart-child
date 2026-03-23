@@ -303,44 +303,26 @@ add_action( 'wp_enqueue_scripts', function() {
 
 }, 20 );
 
-add_filter('woocommerce_package_rates', 'hide_transportadora_when_free', 10, 2);
+add_filter('woocommerce_package_rates', 'custom_hide_transportadora_when_free', 100, 2);
 
-function hide_transportadora_when_free($rates, $package) {
-    $has_free_shipping = false;
+function custom_hide_transportadora_when_free($rates, $package) {
+    $has_free = false;
 
-    // Verifica se tem envio grátis
+    // Detecta frete grátis (price = 0)
     foreach ($rates as $rate) {
-        if ($rate->method_id === 'free_shipping') {
-            $has_free_shipping = true;
+        if ((float) $rate->cost === 0) {
+            $has_free = true;
             break;
         }
     }
 
-    // Se tiver envio grátis, remove transportadora
-    if ($has_free_shipping) {
+    if ($has_free) {
         foreach ($rates as $rate_id => $rate) {
-            // AJUSTA AQUI se necessário
-            if (
-                $rate->label === 'Envio Via Transportadora' 
-                || $rate->method_id === 'flat_rate'
-                || str_contains(strtolower($rate->label), 'transportadora')
-            ) {
+            if (stripos($rate->label, 'transportadora') !== false) {
                 unset($rates[$rate_id]);
             }
         }
     }
 
     return $rates;
-}
-
-add_filter('woocommerce_shipping_chosen_method', 'force_free_shipping_default', 10, 3);
-
-function force_free_shipping_default($chosen_method, $available_methods, $package) {
-    foreach ($available_methods as $method_id => $method) {
-        if ($method->method_id === 'free_shipping') {
-            return $method_id; // força seleção do envio grátis
-        }
-    }
-
-    return $chosen_method;
 }
