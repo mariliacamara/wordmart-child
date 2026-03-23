@@ -247,8 +247,8 @@ add_filter('woocommerce_product_add_to_cart_text', function ($text, $product) {
 
 add_action( 'wp_enqueue_scripts', function () {
   wp_enqueue_script(
-    'woodmart-quickshop-fix',
-    get_stylesheet_directory_uri() . '/assets/js/quickshop-fix.js',
+    'woodmart-autoupdate-cart',
+    get_stylesheet_directory_uri() . '/assets/js/autoupdate-cart.js',
     array(), 
     '1.0',
     true
