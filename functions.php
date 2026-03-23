@@ -302,3 +302,45 @@ add_action( 'wp_enqueue_scripts', function() {
 	);
 
 }, 20 );
+
+add_filter('woocommerce_package_rates', 'hide_transportadora_when_free', 10, 2);
+
+function hide_transportadora_when_free($rates, $package) {
+    $has_free_shipping = false;
+
+    // Verifica se tem envio grátis
+    foreach ($rates as $rate) {
+        if ($rate->method_id === 'free_shipping') {
+            $has_free_shipping = true;
+            break;
+        }
+    }
+
+    // Se tiver envio grátis, remove transportadora
+    if ($has_free_shipping) {
+        foreach ($rates as $rate_id => $rate) {
+            // AJUSTA AQUI se necessário
+            if (
+                $rate->label === 'Envio Via Transportadora' 
+                || $rate->method_id === 'flat_rate'
+                || str_contains(strtolower($rate->label), 'transportadora')
+            ) {
+                unset($rates[$rate_id]);
+            }
+        }
+    }
+
+    return $rates;
+}
+
+add_filter('woocommerce_shipping_chosen_method', 'force_free_shipping_default', 10, 3);
+
+function force_free_shipping_default($chosen_method, $available_methods, $package) {
+    foreach ($available_methods as $method_id => $method) {
+        if ($method->method_id === 'free_shipping') {
+            return $method_id; // força seleção do envio grátis
+        }
+    }
+
+    return $chosen_method;
+}
