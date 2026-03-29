@@ -21,7 +21,7 @@ $is_oos = ! $product->is_in_stock();
 	<?php if ( is_page('wishlist') ) : ?>
 		<a
 			href="#"
-			class="wd-wishlist-remove"
+			class="custom-wishlist-remove"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
 		>
 			× Remover
