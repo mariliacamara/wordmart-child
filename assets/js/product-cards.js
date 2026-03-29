@@ -36,13 +36,19 @@ document.addEventListener("click", function(e) {
     e.preventDefault();
 
     const productId = btn.dataset.productId;
+    const wrapper = document.querySelector(".wd-wishlist-content");
 
     fetch(`/wishlist/?remove_from_wishlist=${productId}`, {
         credentials: "same-origin"
     }).then(() => {
 
-        // dispara refresh do woodmart
-        document.body.dispatchEvent(new CustomEvent("wdWishlistRefresh"));
+        fetch('/wp-admin/admin-ajax.php?action=woodmart_refresh_wishlist', {
+            credentials: "same-origin"
+        })
+        .then(r => r.text())
+        .then(html => {
+            wrapper.innerHTML = html;
+        });
 
     });
 });

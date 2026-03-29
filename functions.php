@@ -326,3 +326,11 @@ function custom_hide_transportadora_when_free($rates, $package) {
 
     return $rates;
 }
+
+add_action('wp_ajax_woodmart_refresh_wishlist', 'refresh_woodmart_wishlist');
+add_action('wp_ajax_nopriv_woodmart_refresh_wishlist', 'refresh_woodmart_wishlist');
+
+function refresh_woodmart_wishlist() {
+    echo do_shortcode('[woodmart_wishlist]');
+    wp_die();
+}
