@@ -19,13 +19,7 @@ $is_oos = ! $product->is_in_stock();
 	data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 
 	<?php if ( is_page('wishlist') ) : ?>
-		<a
-			href="#"
-			class="custom-wishlist-remove"
-			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
-		>
-			× Remover
-		</a>
+		<?php do_action( 'woodmart_wishlist_remove_btn', $product->get_id() ); ?>
 	<?php endif; ?>
 
 	<div class="product-wrapper">
