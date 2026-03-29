@@ -17,12 +17,12 @@ $is_oos = ! $product->is_in_stock();
 <li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
 	data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 
-	<?php if ( is_page('wishlist') ) : ?>
+	<?php if ( is_page('wishlist') && isset( $wishlist_item_id ) ) : ?>
 		<a
-			href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product->get_id() ) ); ?>"
-			class="remove remove_from_wishlist"
+			href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $wishlist_item_id ) ); ?>"
+			class="remove_from_wishlist"
+			data-row-id="<?php echo esc_attr( $wishlist_item_id ); ?>"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
-			data-title="<?php esc_attr_e( 'Remover da wishlist', 'woocommerce' ); ?>"
 		>
 			× Remover
 		</a>
