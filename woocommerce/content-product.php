@@ -17,9 +17,9 @@ $is_oos = ! $product->is_in_stock();
 
 <li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?> data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 	<!-- WISHLIST -->
-	<?php if ( is_wc_endpoint_url('wishlist') ) : ?>
+	<?php if ( in_array( 'woodmart-wishlist', get_body_class() ) ) : ?>
 		<a
-			href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product->get_id(), wc_get_page_permalink('wishlist') ) ); ?>"
+			href="#"
 			class="wd-wishlist-remove"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
 		>
