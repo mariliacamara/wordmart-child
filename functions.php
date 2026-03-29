@@ -327,10 +327,10 @@ function custom_hide_transportadora_when_free($rates, $package) {
     return $rates;
 }
 
-add_action('wp_ajax_woodmart_refresh_wishlist', 'refresh_woodmart_wishlist');
-add_action('wp_ajax_nopriv_woodmart_refresh_wishlist', 'refresh_woodmart_wishlist');
+add_filter('body_class', function($classes) {
+  if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'wishlist') !== false) {
+    $classes[] = 'is-wishlist-page';
+  }
 
-function refresh_woodmart_wishlist() {
-    echo do_shortcode('[woodmart_wishlist]');
-    wp_die();
-}
+  return $classes;
+});
