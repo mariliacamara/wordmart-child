@@ -6,6 +6,7 @@
 defined( 'ABSPATH' ) || exit;
 
 global $product;
+global $wd_wishlist_loop;
 
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
