@@ -52,10 +52,61 @@ document.addEventListener('click', function (e) {
   e.stopPropagation();
   if (e.stopImmediatePropagation) e.stopImmediatePropagation();
 
-  // Simplesmente redireciona para a URL de remoção
-  window.location.href = btn.href;
+  const card = btn.closest('li.product, li.product-grid-item');
+  const productId = card?.dataset.id || btn.getAttribute('data-product-id');
+
+  if (!productId) {
+    console.error('Product ID not found');
+    return;
+  }
+
+  // Woodmart usa seu próprio sistema de wishlist
+  const ajaxurl = window.woodmart_settings?.ajaxurl || '/wp-admin/admin-ajax.php';
+
+  if (typeof jQuery !== 'undefined') {
+    
+    // Feedback visual
+    if (card) {
+      card.style.opacity = '0.5';
+      card.style.pointerEvents = 'none';
+    }
+
+    // Ação correta para Woodmart
+    jQuery.ajax({
+      url: ajaxurl,
+      type: 'POST',
+      data: {
+        action: 'woodmart_remove_from_wishlist',
+        product_id: productId
+      },
+      success: function(response) {
+        if (card) {
+          card.style.opacity = '0';
+          card.style.transition = 'opacity 0.3s ease';
+          setTimeout(() => {
+            card.remove();
+            
+            // Verifica se lista ficou vazia
+            const productList = document.querySelector('.products, ul.products');
+            if (productList && productList.querySelectorAll('li.product').length === 0) {
+              location.reload();
+            }
+          }, 300);
+        }
+      },
+      error: function() {
+        // Fallback: recarrega a página
+        location.reload();
+      }
+    });
+    
+  } else {
+    // Sem jQuery: recarrega a página
+    location.reload();
+  }
 
 }, true);
+
 
 
 
