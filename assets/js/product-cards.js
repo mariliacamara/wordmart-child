@@ -5,26 +5,20 @@ document.addEventListener("click", function(e) {
     e.preventDefault();
 
     const productId = btn.dataset.productId;
-    const wrapper = document.querySelector(".wd-wishlist-content");
+    const card = btn.closest("li.product");
 
-    fetch(`/?remove_from_wishlist=${productId}`, {
+    fetch(`/wishlist/?remove_from_wishlist=${productId}`, {
         credentials: "same-origin"
     }).then(() => {
 
-        fetch(window.location.href, { credentials: "same-origin" })
-            .then(r => r.text())
-            .then(html => {
+        if (card) {
+            card.style.opacity = "0";
+            card.style.transition = "opacity .2s ease";
 
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, "text/html");
-
-                const newContent = doc.querySelector(".wd-wishlist-content");
-
-                if (wrapper && newContent) {
-                    wrapper.innerHTML = newContent.innerHTML;
-                }
-
-            });
+            setTimeout(() => {
+                card.remove();
+            }, 200);
+        }
 
     });
 });
