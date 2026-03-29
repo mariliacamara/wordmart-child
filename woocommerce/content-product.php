@@ -19,14 +19,14 @@ $is_oos = ! $product->is_in_stock();
 
 	<?php if ( is_page('wishlist') ) : ?>
 		<a
-			class="wd-wishlist-remove"
 			href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product->get_id() ) ); ?>"
+			class="remove remove_from_wishlist"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
-			aria-label="Remover da wishlist"
+			data-title="<?php esc_attr_e( 'Remover da wishlist', 'woocommerce' ); ?>"
 		>
 			× Remover
 		</a>
-		<?php endif; ?>
+	<?php endif; ?>
 
 	<div class="product-wrapper">
 
