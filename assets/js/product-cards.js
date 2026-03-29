@@ -45,7 +45,6 @@
   }
 
 document.addEventListener('click', function (e) {
-
   const btn = e.target.closest('.wd-wishlist-remove');
   if (!btn) return;
 
@@ -53,44 +52,11 @@ document.addEventListener('click', function (e) {
   e.stopPropagation();
   if (e.stopImmediatePropagation) e.stopImmediatePropagation();
 
-  const card = btn.closest('li.product, li.product-grid-item');
-  const productId = card?.dataset.id || btn.getAttribute('data-product-id');
-
-  const ajaxurl = window.woodmart_settings?.ajaxurl || 
-                  window.wc_add_to_cart_params?.ajax_url ||
-                  '/wp-admin/admin-ajax.php';
-
-  if (typeof jQuery !== 'undefined' && productId) {
-    
-    // Feedback visual
-    if (card) {
-      card.style.opacity = '0.5';
-      card.style.pointerEvents = 'none';
-    }
-
-    jQuery.post(ajaxurl, {
-      action: 'yith_wcwl_remove_from_wishlist',
-      remove_from_wishlist: productId,
-      context: 'frontend'
-    })
-    .done(function () {
-      if (card) {
-        card.style.opacity = '0';
-        card.style.transition = 'opacity 0.3s ease';
-        setTimeout(() => card.remove(), 300);
-      }
-    })
-    .fail(function () {
-      // Fallback: redireciona se AJAX falhar
-      window.location.href = btn.href;
-    });
-    
-  } else {
-    // Fallback: redireciona se jQuery não estiver disponível
-    window.location.href = btn.href;
-  }
+  // Simplesmente redireciona para a URL de remoção
+  window.location.href = btn.href;
 
 }, true);
+
 
 
   // document.addEventListener('click', function (e) {
