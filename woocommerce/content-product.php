@@ -17,16 +17,16 @@ $is_oos = ! $product->is_in_stock();
 
 <li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
 	data-id="<?php echo esc_attr( $product->get_id() ); ?>">
-
+	<!-- WISHLIST -->
 	<?php if ( is_page('wishlist') ) : ?>
-		<?php do_action( 'woodmart_wishlist_remove_btn', $product->get_id() ); ?>
+		<div class="wd-wishlist-remove-btn">
+			<?php woodmart_wishlist_btn( $product->get_id() ); ?>
+		</div>
 	<?php endif; ?>
 
 	<div class="product-wrapper">
-
 		<!-- TOP -->
 		<div class="product-element-top">
-
 			<?php if ( $is_oos ) : ?>
 				<div class="oos-svg-badge" aria-hidden="true">
 					<?php
@@ -37,22 +37,17 @@ $is_oos = ! $product->is_in_stock();
 				</div>
 			<?php endif; ?>
 
-
-
 			<div class="wd-buttons wd-pos-r-t<?php echo esc_attr( woodmart_get_old_classes( ' woodmart-buttons' ) ); ?>">
 				<?php do_action( 'woodmart_product_action_buttons' ); ?>
 			</div>
 
 			<?php
 			$price = (float) $product->get_price();
-
 			if ( $price > 64.00 ) : ?>
 				<div class="price-badge free-shipping-badge" aria-label="Envio grátis" data-tooltip="Portes grátis">
 					<?php echo file_get_contents( get_stylesheet_directory() . '/assets/icons/gratis.svg' ); ?>
 				</div>
 			<?php endif; ?>
-
-
 
 			<a href="<?php echo esc_url( get_permalink( $product->get_id() ) ); ?>" class="product-image-link">
 				<?php do_action( 'woocommerce_before_shop_loop_item_title' ); ?>
