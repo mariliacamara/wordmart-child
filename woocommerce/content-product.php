@@ -17,10 +17,11 @@ $is_oos = ! $product->is_in_stock();
 <li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
 	data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 
-	<?php if ( is_page('wishlist') ) : ?>
+	<?php if ( is_page('wishlist') && ! empty( $wd_wishlist_loop['key'] ) ) : ?>
 		<a
 			href="#"
-			class="wd-wishlist-remove wd-action-btn wd-style-icon"
+			class="wd-wishlist-remove"
+			data-key="<?php echo esc_attr( $wd_wishlist_loop['key'] ); ?>"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
 		>
 			× Remover
