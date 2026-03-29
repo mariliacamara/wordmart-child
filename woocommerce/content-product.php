@@ -19,7 +19,7 @@ $is_oos = ! $product->is_in_stock();
 	<!-- WISHLIST -->
 	<?php if ( is_page('wishlist') ) : ?>
 		<a
-			href="#"
+			href="<?php echo esc_url( add_query_arg( 'remove_from_wishlist', $product->get_id(), wc_get_page_permalink('wishlist') ) ); ?>"
 			class="wd-wishlist-remove"
 			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
 		>

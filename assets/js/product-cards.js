@@ -33,22 +33,13 @@ document.addEventListener("click", function(e) {
     const btn = e.target.closest(".wd-wishlist-remove");
     if (!btn) return;
 
-    e.preventDefault();
+    const card = btn.closest("li.product");
+    if (!card) return;
 
-    const productId = btn.dataset.productId;
-    const wrapper = document.querySelector(".wd-wishlist-content");
-
-    fetch(`/wishlist/?remove_from_wishlist=${productId}`, {
-        credentials: "same-origin"
-    }).then(() => {
-
-        fetch('/wp-admin/admin-ajax.php?action=woodmart_refresh_wishlist', {
-            credentials: "same-origin"
-        })
-        .then(r => r.text())
-        .then(html => {
-            wrapper.innerHTML = html;
-        });
-
-    });
+    // deixa o JS do tema rodar normalmente e depois remove o card
+    setTimeout(() => {
+        card.style.transition = "opacity .2s ease";
+        card.style.opacity = "0";
+        setTimeout(() => card.remove(), 200);
+    }, 50);
 });
