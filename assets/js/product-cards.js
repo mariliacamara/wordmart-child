@@ -29,17 +29,32 @@
 //     });
 // });
 
-document.addEventListener("click", function(e) {
-    const btn = e.target.closest(".wd-wishlist-remove");
-    if (!btn) return;
+function attachWishlistRemoveUX() {
+    document.querySelectorAll(".wd-wishlist-remove").forEach(btn => {
 
-    const card = btn.closest("li.product");
-    if (!card) return;
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "true";
 
-    // deixa o JS do tema rodar normalmente e depois remove o card
-    setTimeout(() => {
-        card.style.transition = "opacity .2s ease";
-        card.style.opacity = "0";
-        setTimeout(() => card.remove(), 200);
-    }, 50);
-});
+        btn.addEventListener("click", function() {
+
+            const card = btn.closest("li.product");
+
+            setTimeout(() => {
+                if (card) {
+                    card.style.transition = "opacity .2s ease";
+                    card.style.opacity = "0";
+
+                    setTimeout(() => card.remove(), 200);
+                }
+            }, 50);
+
+        });
+
+    });
+}
+
+// inicial
+attachWishlistRemoveUX();
+
+// sempre que o Woodmart atualizar a wishlist
+document.body.addEventListener("wdWishlistRefresh", attachWishlistRemoveUX);
