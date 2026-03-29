@@ -15,13 +15,16 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 $is_oos = ! $product->is_in_stock();
 ?>
 
-<li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?>
-	data-id="<?php echo esc_attr( $product->get_id() ); ?>">
+<li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?> data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 	<!-- WISHLIST -->
 	<?php if ( is_page('wishlist') ) : ?>
-		<div class="wd-wishlist-remove-btn">
-			<?php woodmart_wishlist_btn( $product->get_id() ); ?>
-		</div>
+		<a
+			href="#"
+			class="wd-wishlist-remove"
+			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
+		>
+			× Remover
+		</a>
 	<?php endif; ?>
 
 	<div class="product-wrapper">
