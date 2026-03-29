@@ -17,15 +17,13 @@ $is_oos = ! $product->is_in_stock();
 
 <li <?php wc_product_class( 'product-grid-item product wd-hover-standard' . ( $is_oos ? ' is-outofstock' : '' ), $product ); ?> data-id="<?php echo esc_attr( $product->get_id() ); ?>">
 	<!-- WISHLIST -->
-	<?php if ( in_array( 'woodmart-wishlist', get_body_class() ) ) : ?>
-		<a
-			href="#"
-			class="wd-wishlist-remove"
-			data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
-		>
-			× Remover
-		</a>
-	<?php endif; ?>
+	<a
+		href="#"
+		class="wd-wishlist-remove"
+		data-product-id="<?php echo esc_attr( $product->get_id() ); ?>"
+	>
+		× Remover
+	</a>
 
 	<div class="product-wrapper">
 		<!-- TOP -->
