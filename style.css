@@ -4982,7 +4982,7 @@ body > div.website-wrapper > div > div.page-title.page-title-default.title-size-
     display: none;
 }
 
-body.woodmart-wishlist .wd-wishlist-remove {
+body.is-wishlist-page .wd-wishlist-remove {
     display: block;
 }
 
