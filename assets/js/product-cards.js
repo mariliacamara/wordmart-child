@@ -7,14 +7,12 @@ document.addEventListener("click", function(e) {
     const productId = btn.dataset.productId;
     const card = btn.closest("li.product");
 
-    fetch(`/?remove_from_wishlist=${productId}`, {
-        credentials: "same-origin"
-    }).then(() => {
+    if (typeof woodmartWishlist !== "undefined") {
+        woodmartWishlist.remove(productId);
+    }
 
-        if (card) {
-            card.style.opacity = "0";
-            setTimeout(() => card.remove(), 300);
-        }
-
-    });
+    if (card) {
+        card.style.opacity = "0";
+        setTimeout(() => card.remove(), 300);
+    }
 });
