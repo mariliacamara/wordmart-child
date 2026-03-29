@@ -1,3 +1,34 @@
+// document.addEventListener("click", function(e) {
+//     const btn = e.target.closest(".wd-wishlist-remove");
+//     if (!btn) return;
+
+//     e.preventDefault();
+
+//     const productId = btn.dataset.productId;
+//     const wrapper = document.querySelector(".wd-wishlist-content");
+
+//     fetch(`/?remove_from_wishlist=${productId}`, {
+//         credentials: "same-origin"
+//     }).then(() => {
+
+//         fetch(window.location.href, { credentials: "same-origin" })
+//             .then(r => r.text())
+//             .then(html => {
+
+//                 const parser = new DOMParser();
+//                 const doc = parser.parseFromString(html, "text/html");
+
+//                 const newContent = doc.querySelector(".wd-wishlist-content");
+
+//                 if (wrapper && newContent) {
+//                     wrapper.innerHTML = newContent.innerHTML;
+//                 }
+
+//             });
+
+//     });
+// });
+
 document.addEventListener("click", function(e) {
     const btn = e.target.closest(".wd-wishlist-remove");
     if (!btn) return;
@@ -5,20 +36,13 @@ document.addEventListener("click", function(e) {
     e.preventDefault();
 
     const productId = btn.dataset.productId;
-    const card = btn.closest("li.product");
 
     fetch(`/wishlist/?remove_from_wishlist=${productId}`, {
         credentials: "same-origin"
     }).then(() => {
 
-        if (card) {
-            card.style.opacity = "0";
-            card.style.transition = "opacity .2s ease";
-
-            setTimeout(() => {
-                card.remove();
-            }, 200);
-        }
+        // dispara refresh do woodmart
+        document.body.dispatchEvent(new CustomEvent("wdWishlistRefresh"));
 
     });
 });
