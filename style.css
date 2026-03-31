@@ -4370,6 +4370,12 @@ p.price del .woocommerce-Price-amount.amount {
   opacity: 1 !important;
 }
 
+.product-cta-price del {
+  text-decoration: line-through !important;
+  color: #999;
+  margin-right: 5px;
+}
+
 /* 4) REMOVE ESTILO PADRÃO DO INS */
 p.price ins {
   text-decoration: none !important;
