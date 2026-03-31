@@ -5027,7 +5027,7 @@ body.is-wishlist-page .wd-wishlist-remove {
 .pagination-pagination .product-grid-item .product-cta-price del .woocommerce-Price-amount {
   background: transparent !important;
   text-decoration: line-through;
-  padding: 5px 12px !important;
+  padding: 5px 0px !important;
   color: var(--dark-grey) !important;
   font-weight: 600 !important;
   opacity: 1 !important;
