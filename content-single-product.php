@@ -237,7 +237,32 @@ global $product;
 
     <?php
   $limit = 5;
-  $related_ids = wc_get_related_products( $product->get_id(), $limit );
+  // Prioriza cross-sells e upsells, depois produtos relacionados
+  $related_ids = array();
+
+  // 1. Cross-sells
+  $cross_sell_ids = $product->get_cross_sell_ids();
+  if ( ! empty( $cross_sell_ids ) ) {
+      $related_ids = array_merge( $related_ids, $cross_sell_ids );
+  }
+
+  // 2. Upsells
+  $upsell_ids = $product->get_upsell_ids();
+  if ( ! empty( $upsell_ids ) ) {
+      $related_ids = array_merge( $related_ids, $upsell_ids );
+  }
+
+  // 3. Produtos relacionados (se ainda não tiver o suficiente)
+  if ( count( $related_ids ) < $limit ) {
+      $remaining = $limit - count( $related_ids );
+      $auto_related = wc_get_related_products( $product->get_id(), $remaining );
+      $related_ids = array_merge( $related_ids, $auto_related );
+  }
+
+  // Remove duplicados e limita ao número desejado
+  $related_ids = array_unique( $related_ids );
+  $related_ids = array_slice( $related_ids, 0, $limit );
+
 
   if ( ! empty( $related_ids ) ) :
 
