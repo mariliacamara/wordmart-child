@@ -5027,7 +5027,7 @@ body.is-wishlist-page .wd-wishlist-remove {
 .pagination-pagination .product-grid-item .product-cta-price del .woocommerce-Price-amount {
   background: transparent !important;
   text-decoration: line-through;
-  padding: 0 !important;
+  padding: 5px 12px !important;
   color: var(--dark-grey) !important;
   font-weight: 600 !important;
   opacity: 1 !important;
@@ -5038,7 +5038,7 @@ body.is-wishlist-page .wd-wishlist-remove {
 .pagination-pagination .product-grid-item .product-cta-price ins .woocommerce-Price-amount {
   background: #f5c63b !important;
   color: var(--primary-color) !important;
-  padding: 8px 12px !important;
+  padding: 5px 12px !important;
   border-radius: 5px !important;
   font-weight: 700 !important;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06) inset !important;
