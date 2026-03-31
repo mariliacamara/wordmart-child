@@ -4986,6 +4986,43 @@ body.is-wishlist-page .wd-wishlist-remove {
     display: block;
 }
 
+.section-title {
+  text-align: center;
+  margin: 10px 0 10px;
+  position: relative;
+}
+
+.section-title::before {
+  content: "";
+  width: 20%;
+  height: 15px;
+  background: #191e46; /* cor da barra */
+  border-radius: 10px;
+  position: absolute;
+  top: -15px; /* sobe a barra */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-title span {
+  font-size: 24px;
+  font-weight: 900;
+  color: #191e46;
+}
+
+.softblue-bg {
+	background-color: #e5f0fb;
+}
+
+.lightgrey-bg {
+	background-color: #f7f6f5;
+}
+
+.product-box {
+  margin-bottom: 0 !important;
+  padding-bottom: 10px !important;
+}
+
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30.1 30.1'>\
