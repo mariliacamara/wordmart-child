@@ -4370,12 +4370,6 @@ p.price del .woocommerce-Price-amount.amount {
   opacity: 1 !important;
 }
 
-.product-cta-price del {
-  text-decoration: line-through !important;
-  color: #999;
-  margin-right: 5px;
-}
-
 /* 4) REMOVE ESTILO PADRÃO DO INS */
 p.price ins {
   text-decoration: none !important;
@@ -5028,6 +5022,27 @@ body.is-wishlist-page .wd-wishlist-remove {
   margin-bottom: 0 !important;
   padding-bottom: 10px !important;
 }
+
+/* Preço original riscado */
+.pagination-pagination .product-grid-item .product-cta-price del .woocommerce-Price-amount {
+  background: transparent !important;
+  color: #999 !important;
+  text-decoration: line-through;
+  font-size: 0.85em;
+  padding: 0 !important;
+}
+
+/* Preço promocional com badge amarelo */
+.pagination-pagination .product-grid-item .product-cta-price ins .woocommerce-Price-amount {
+  background: #f5c63b !important;
+  color: var(--primary-color) !important;
+  padding: 8px 12px !important;
+  border-radius: 5px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.06) inset !important;
+  text-decoration: none !important;
+}
+
 
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
