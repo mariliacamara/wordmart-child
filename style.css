@@ -5045,9 +5045,12 @@ body.is-wishlist-page .wd-wishlist-remove {
   text-decoration: none !important;
 }
 
-.woocommerce-MyAccount-content {
-  display: flex!important;
-  flex-direction: column!important;
+body.woocommerce-account .woocommerce-MyAccount-content {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  flex: 1 1 auto !important;
 }
 
 .searchform .searchsubmit:after {
