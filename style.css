@@ -5045,6 +5045,10 @@ body.is-wishlist-page .wd-wishlist-remove {
   text-decoration: none !important;
 }
 
+.woocommerce-MyAccount-content {
+  display: flex!important;
+  flex-direction: column!important;
+}
 
 .searchform .searchsubmit:after {
   background-image: url("data:image/svg+xml;utf8,\
@@ -5053,4 +5057,3 @@ body.is-wishlist-page .wd-wishlist-remove {
 fill='none' stroke='%2329b0c2' stroke-width='1.5'/>\
 </svg>");
 }
-
