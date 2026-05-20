@@ -5045,12 +5045,28 @@ body.is-wishlist-page .wd-wishlist-remove {
   text-decoration: none !important;
 }
 
-body.woocommerce-account .woocommerce-MyAccount-content {
+body.woocommerce-account .woocommerce-my-account-wrapper {
+  display: block !important;
+}
+
+body.woocommerce-account .woocommerce-my-account-wrapper > .wd-my-account-sidebar,
+body.woocommerce-account .woocommerce-my-account-wrapper > .woocommerce-MyAccount-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  flex: none !important;
+}
+
+body.woocommerce-account .woocommerce-MyAccount-content.wd-grid-col {
+  --wd-col-lg: 12 !important;
+  --wd-col-md: 12 !important;
+  --wd-col-sm: 12 !important;
+}
+
+body.woocommerce-account .woocommerce-MyAccount-content .wd-my-account-links.wd-grid {
   display: flex !important;
   flex-direction: column !important;
-  width: 100% !important;
-  max-width: none !important;
-  flex: 1 1 auto !important;
+  gap: 12px;
 }
 
 .searchform .searchsubmit:after {
